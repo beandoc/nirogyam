@@ -558,6 +558,25 @@ export default function NirogyamPage() {
                         <ContactForm />
                     </div>
                 </section>
+
+                <section id="whatsapp-cta" className="py-16 bg-green-50">
+                    <div className="container mx-auto px-4 text-center">
+                        <div className="max-w-2xl mx-auto">
+                            <div className="flex justify-center mb-4">
+                               <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 fill-green-600">
+                                    <path d="M17.472 14.382c-.297-.149-.88-.436-1.017-.486s-.282-.08-.41.08c-.128.16-.49.614-.602.737-.112.123-.224.137-.41.04-.187-.097-.796-.293-1.517-.925-.568-.487-.945-1.09-.945-1.09s-.04-.055.03-.105c.06-.05.136-.123.204-.195.07-.07.09-.123.136-.203.048-.08.024-.15-.014-.24-.038-.09-.41-.986-.562-1.355-.15-.37-.304-.32-.41-.326-.102-.005-.224-.005-.346-.005s-.33.04-.49.195c-.16.155-.613.59-.613,1.44s.627,1.66.713,1.78c.085.12.97,1.48,2.34,2.05.34.14.58.22.77.28.32.09.62.08.86.05.28-.04.88-.36,1-1.004.12-.644.12-.97.08-1.014s-.07-.07-.15-.123zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.15c-4.477 0-8.125-3.648-8.125-8.125S7.523 3.875 12 3.875 20.125 7.523 20.125 12 16.477 20.15 12 20.15z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-3xl font-bold text-green-800 mb-4">Stay Connected on WhatsApp</h3>
+                            <p className="text-lg text-green-700/80 mb-8 max-w-xl mx-auto">Join our WhatsApp channel for the latest updates, health tips, and community support directly on your phone.</p>
+                            <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
+                                <a href="https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R" target="_blank" rel="noopener noreferrer">
+                                    Follow Our Channel
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <footer className="bg-primary/90 text-primary-foreground">
@@ -587,7 +606,6 @@ export default function NirogyamPage() {
                             <ul className="space-y-2 opacity-80">
                                 <li>Dept of Nephrology Command Hospital, Pune.</li>
                                 <li>Email: nirogyam93@gmail.com</li>
-                                <li>Phone: (123) 456-7890</li>
                             </ul>
                         </div>
                     </div>
