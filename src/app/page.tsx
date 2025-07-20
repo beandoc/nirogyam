@@ -297,10 +297,10 @@ export default function NirogyamPage() {
                               </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                               <Link href="/kidney-transplant" legacyBehavior passHref>
-                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                   Kidney Transplant
-                                 </NavigationMenuLink>
+                               <Link href="/kidney-transplant" passHref>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                  Kidney Transplant
+                                </NavigationMenuLink>
                                </Link>
                             </NavigationMenuItem>
                           </NavigationMenuList>
@@ -468,6 +468,18 @@ export default function NirogyamPage() {
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
                                         <a href="https://beandoc.github.io/adpkd/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                            <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical consent" />
+                                <CardHeader>
+                                    <CardTitle>Biopsy Consent</CardTitle>
+                                    <CardDescription>An interactive guide to understanding the biopsy consent process.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/Biopsyconsent/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
                                     </Button>
                                 </CardFooter>
                             </Card>
