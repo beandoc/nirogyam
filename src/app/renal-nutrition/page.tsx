@@ -4,16 +4,21 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Home, Droplet, Flame, HeartPulse, Bone, Utensils, Scale, UserCheck, Wind, Soup, Cloudy, Leaf } from 'lucide-react';
+import { Home, Droplet, Flame, HeartPulse, Bone, Utensils, Scale, UserCheck, Wind, Soup, Cloudy, Leaf, ArrowRight } from 'lucide-react';
 
-const NutrientCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-    <Card>
+const NutrientCard = ({ icon, title, href, children }: { icon: React.ReactNode, title: string, href?: string, children: React.ReactNode }) => (
+    <Card className="flex flex-col">
         <CardHeader className="flex flex-row items-center gap-4">
             {icon}
             <CardTitle>{title}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-grow">
             <div className="text-foreground/80 space-y-2">{children}</div>
+            {href && (
+                <Button asChild variant="link" className="px-0 mt-4">
+                    <Link href={href}>Learn More <ArrowRight className="ml-2 h-4 w-4"/></Link>
+                </Button>
+            )}
         </CardContent>
     </Card>
 );
@@ -69,37 +74,34 @@ const RenalNutritionPage = () => {
                     </section>
 
                     <section id="nutrients" className="mb-12">
-                         <h2 className="text-3xl font-bold text-primary mb-8 text-center">Nutrition for People with CKD</h2>
+                         <h2 className="text-3xl font-bold text-primary mb-8 text-center">Key Nutrients to Manage in CKD</h2>
                          <p className="text-center text-foreground/80 max-w-3xl mx-auto mb-10">Eating a well-balanced diet helps manage CKD better. People with CKD may need to control their intake of certain nutrients to avoid buildup in the blood. Your dietitian or healthcare provider will guide you based on your specific needs and lab results.</p>
                         
-                        <div className="space-y-8">
-                            <NutrientCard icon={<Bone className="h-8 w-8 text-primary" />} title="Phosphorus and Your Diet">
-                                <p>As kidney function declines, extra phosphorus can start building up in the blood. High phosphorus levels can cause bones to get weaker. Your dietitian or healthcare provider can tell you if you need to limit foods that are high in phosphorus.</p>
-                                <p>High-phosphorus foods include dairy products, organ meats, colas, deli meats, and processed foods with phosphate additives (look for "PHOS" in the ingredients list).</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <NutrientCard icon={<Bone className="h-8 w-8 text-primary" />} title="Phosphorus" href="/phosphorus-explained">
+                                <p>As kidney function declines, extra phosphorus can build up, weakening bones. Managing your intake of phosphorus-rich foods is crucial for bone and heart health.</p>
                             </NutrientCard>
-                             <NutrientCard icon={<HeartPulse className="h-8 w-8 text-primary" />} title="Potassium in Your CKD Diet">
-                                <p>Potassium is vital for muscle and heart function, but too much can be dangerous in advanced CKD. Your required intake depends on your kidney function and medications.</p>
-                                <p>High-potassium foods include bananas, oranges, dried fruits, winter squash, and some salt substitutes. Note that potassium from animal foods is absorbed more easily than from plants.</p>
+                             <NutrientCard icon={<HeartPulse className="h-8 w-8 text-primary" />} title="Potassium" href="/potassium-explained">
+                                <p>Potassium is vital for muscle and heart function. In advanced CKD, too much can be dangerous. Your needs will depend on your kidney function and medications.</p>
                             </NutrientCard>
-                            <NutrientCard icon={<Leaf className="h-8 w-8 text-primary" />} title="CKD Diet: How much protein is the right amount?">
-                                <p>Protein is essential for muscle and tissue repair. Plant-based proteins (beans, nuts) are often easier on the kidneys than animal proteins because they produce less acid. Eating the right amount—not too much, not too little—is key.</p>
-                                <p>Your dietitian will help determine your specific protein needs based on your weight, age, and health status.</p>
+                            <NutrientCard icon={<Leaf className="h-8 w-8 text-primary" />} title="Protein">
+                                <p>Protein is essential for muscle and tissue repair. Eating the right amount—not too much, not too little—is key. Plant-based proteins are often easier on the kidneys.</p>
                             </NutrientCard>
-                             <NutrientCard icon={<Cloudy className="h-8 w-8 text-primary" />} title="Sodium and Your CKD Diet: How to Spice Up Your Cooking">
-                                <p>Healthy kidneys balance sodium levels, but in CKD, excess sodium can cause fluid buildup, swelling, and high blood pressure. Limiting salt intake is crucial. Your healthcare provider will recommend a specific daily limit for you. Focus on using herbs and spices for flavor instead of salt.</p>
+                             <NutrientCard icon={<Cloudy className="h-8 w-8 text-primary" />} title="Sodium">
+                                <p>Limiting sodium is crucial to manage blood pressure and prevent fluid buildup. Focus on fresh foods and flavor with herbs and spices instead of salt.</p>
                             </NutrientCard>
                         </div>
 
-                        <h3 className="text-2xl font-bold text-primary mt-16 mb-8 text-center">Other Important Nutrients</h3>
+                        <h3 className="text-2xl font-bold text-primary mt-16 mb-8 text-center">Other Important Considerations</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <NutrientCard icon={<Bone className="h-8 w-8 text-primary" />} title="Calcium">
                                 <p>Foods high in calcium are often also high in phosphorus. Your doctor will guide you on whether to limit calcium. Always consult them before taking any over-the-counter calcium or vitamin D supplements.</p>
                             </NutrientCard>
                             <NutrientCard icon={<Droplet className="h-8 w-8 text-primary" />} title="Fluids">
-                                <p>In early-stage CKD, fluid restriction is usually not needed. As the disease progresses, your doctor may advise you to limit your fluid intake to prevent swelling and heart strain. Fluids include any food that is liquid at room temperature.</p>
+                                <p>In early-stage CKD, fluid restriction is usually not needed. As the disease progresses, your doctor may advise you to limit your fluid intake to prevent swelling and heart strain.</p>
                             </NutrientCard>
                              <NutrientCard icon={<Flame className="h-8 w-8 text-primary" />} title="Calories">
-                                <p>Getting the right number of calories provides the energy your body needs and helps it use protein effectively. A dietitian can help you create a plan to maintain a healthy weight without overburdening your kidneys.</p>
+                                <p>Getting the right number of calories provides the energy your body needs and helps it use protein effectively. A dietitian can help you create a plan to maintain a healthy weight.</p>
                             </NutrientCard>
                             <NutrientCard icon={<Utensils className="h-8 w-8 text-primary" />} title="Vitamins and Minerals">
                                 <p>People with CKD may need special vitamin or mineral supplements because some foods are restricted. Only take supplements prescribed by your doctor, as many over-the-counter products can be harmful.</p>

@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake } from 'lucide-react';
+import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet } from 'lucide-react';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
     <Card className="text-center p-4">
@@ -102,6 +102,18 @@ const KidneyHealthPage = () => {
                     title="Good Nutrition"
                     description="General tips for a healthy diet and lifestyle for overall well-being."
                     href="/good-nutrition"
+                />
+                <TopicCard
+                    icon={<Bone className="h-8 w-8 text-primary" />}
+                    title="Phosphorus Explained"
+                    description="Learn how to manage phosphorus levels for bone and heart health in CKD."
+                    href="/phosphorus-explained"
+                />
+                <TopicCard
+                    icon={<Droplet className="h-8 w-8 text-primary" />}
+                    title="Potassium Explained"
+                    description="A guide to managing potassium in your diet for kidney health."
+                    href="/potassium-explained"
                 />
             </div>
         </main>

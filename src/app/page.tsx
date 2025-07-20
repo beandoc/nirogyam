@@ -226,13 +226,12 @@ export default function NirogyamPage() {
                                     </ul>
                                   </div>
                                   <div>
-                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">BROWSE BY CATEGORY</h3>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">DIET & NUTRITION</h3>
                                      <ul className="flex flex-col gap-1">
-                                      <li><Link href="/renal-nutrition" className="p-3 block hover:bg-accent rounded-md">Diet and nutrition</Link></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Diseases and conditions</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Prevention, daily life, and wellbeing</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Tests and procedures</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Treatments and therapies</a></li>
+                                      <li><Link href="/renal-nutrition" className="p-3 block hover:bg-accent rounded-md">Renal Nutrition Guide</Link></li>
+                                      <li><Link href="/phosphorus-explained" className="p-3 block hover:bg-accent rounded-md">Phosphorus and Your Diet</Link></li>
+                                      <li><Link href="/potassium-explained" className="p-3 block hover:bg-accent rounded-md">Potassium and Your Diet</Link></li>
+                                      <li><Link href="/good-nutrition" className="p-3 block hover:bg-accent rounded-md">Good Nutrition Basics</Link></li>
                                     </ul>
                                   </div>
                                 </div>
