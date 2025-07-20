@@ -211,6 +211,11 @@ const kidneyHealthTopics = [
     href: "/kidney-stones",
     description: "Learn about the causes, symptoms, and treatments for kidney stones.",
   },
+  {
+    title: "Living with a Single Kidney",
+    href: "/living-with-single-kidney",
+    description: "Information and guidance for individuals with one kidney.",
+  },
 ];
 
 const dietAndNutritionTopics = [

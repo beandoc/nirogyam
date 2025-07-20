@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter } from 'lucide-react';
+import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User } from 'lucide-react';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
     <Card className="text-center p-4">
@@ -132,6 +132,12 @@ const KidneyHealthPage = () => {
                     title="Sodium Explained"
                     description="How to limit sodium and use herbs and spices for flavor."
                     href="/sodium-explained"
+                />
+                 <TopicCard 
+                    icon={<User className="h-8 w-8 text-primary" />}
+                    title="Living with a Single Kidney"
+                    description="Information and guidance for individuals with one kidney."
+                    href="/living-with-single-kidney"
                 />
             </div>
         </main>
