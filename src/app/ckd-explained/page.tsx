@@ -103,7 +103,7 @@ const CkdExplainedPage = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg">
                       <Download className="mr-2 h-5 w-5" />
-                      Download NKF Fact Sheet
+                      Download Fact Sheet
                     </Button>
                   </div>
                 </section>
