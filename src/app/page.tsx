@@ -175,6 +175,76 @@ const Quiz = () => {
     );
 };
 
+const kidneyHealthTopics = [
+  {
+    title: "How Kidneys Work",
+    href: "/how-kidneys-work",
+    description: "Learn the fundamentals of how your kidneys filter waste and keep you healthy.",
+  },
+  {
+    title: "CKD Explained",
+    href: "/ckd-explained",
+    description: "Understand Chronic Kidney Disease, its causes, symptoms, and progression.",
+  },
+  {
+    title: "Stages of CKD",
+    href: "/stages-of-ckd",
+    description: "Find out about the different stages of CKD and what they mean for you.",
+  },
+  {
+    title: "eGFR Explained",
+    href: "/egfr-explained",
+    description: "What your estimated Glomerular Filtration Rate means for your kidney health.",
+  },
+  {
+    title: "Creatinine Explained",
+    href: "/creatinine-explained",
+    description: "Understand what creatinine is and its important role in kidney health.",
+  },
+  {
+    title: "Kidney Function Tests",
+    href: "/kidney-function-tests",
+    description: "A guide to the various tests used to monitor your kidney health.",
+  },
+  {
+    title: "Kidney Stones",
+    href: "/kidney-stones",
+    description: "Learn about the causes, symptoms, and treatments for kidney stones.",
+  },
+];
+
+const dietAndNutritionTopics = [
+    {
+        title: "Renal Nutrition Guide",
+        href: "/renal-nutrition",
+        description: "Your main guide to a kidney-friendly diet to help manage CKD.",
+    },
+    {
+        title: "Good Nutrition",
+        href: "/good-nutrition",
+        description: "General tips for a healthy diet and lifestyle for overall well-being.",
+    },
+    {
+        title: "Sodium Explained",
+        href: "/sodium-explained",
+        description: "How to limit sodium and use herbs and spices for flavor.",
+    },
+    {
+        title: "Potassium Explained",
+        href: "/potassium-explained",
+        description: "A guide to managing potassium in your diet for kidney health.",
+    },
+    {
+        title: "Phosphorus Explained",
+        href: "/phosphorus-explained",
+        description: "Learn how to manage phosphorus levels for bone and heart health.",
+    },
+    {
+        title: "Protein Explained",
+        href: "/protein-explained",
+        description: "Learn the right amount of protein to eat with and without dialysis.",
+    },
+];
 
 export default function NirogyamPage() {
     
@@ -192,31 +262,49 @@ export default function NirogyamPage() {
                     </Link>
 
                     <nav className="hidden md:flex items-center">
-                      <NavigationMenu>
-                        <NavigationMenuList>
-                          <NavigationMenuItem>
-                            <Link href="/kidney-health">
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Kidney Health
-                              </NavigationMenuLink>
-                            </Link>
-                          </NavigationMenuItem>
-                          <NavigationMenuItem>
-                            <Link href="/renal-nutrition">
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Diet &amp; Nutrition
-                              </NavigationMenuLink>
-                            </Link>
-                          </NavigationMenuItem>
-                           <NavigationMenuItem>
-                              <Link href="/kidney-transplant">
-                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                 Kidney Transplant
-                               </NavigationMenuLink>
-                              </Link>
-                           </NavigationMenuItem>
-                        </NavigationMenuList>
-                      </NavigationMenu>
+                       <NavigationMenu>
+                          <NavigationMenuList>
+                            <NavigationMenuItem>
+                              <NavigationMenuTrigger>Kidney Health</NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                  {kidneyHealthTopics.map((component) => (
+                                    <ListItem
+                                      key={component.title}
+                                      title={component.title}
+                                      href={component.href}
+                                    >
+                                      {component.description}
+                                    </ListItem>
+                                  ))}
+                                </ul>
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                              <NavigationMenuTrigger>Diet & Nutrition</NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                  {dietAndNutritionTopics.map((component) => (
+                                    <ListItem
+                                      key={component.title}
+                                      title={component.title}
+                                      href={component.href}
+                                    >
+                                      {component.description}
+                                    </ListItem>
+                                  ))}
+                                </ul>
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                               <Link href="/kidney-transplant" legacyBehavior passHref>
+                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                   Kidney Transplant
+                                 </NavigationMenuLink>
+                               </Link>
+                            </NavigationMenuItem>
+                          </NavigationMenuList>
+                        </NavigationMenu>
                     </nav>
 
                     <div className="md:hidden">
