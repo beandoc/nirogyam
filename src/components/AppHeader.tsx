@@ -171,13 +171,13 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
+    const currentLocale = pathname.split('/')[1];
 
     const changeLanguage = (newLocale: string) => {
         if (newLocale === currentLocale) return;
-        // Use the router's built-in locale switching feature
-        // This correctly handles the path and avoids manual string manipulation
-        router.push(pathname, { locale: newLocale });
+
+        const newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+        router.push(newPathname);
     };
 
     return (
@@ -201,15 +201,17 @@ const LanguageSwitcher = () => {
 
 export const AppHeader = () => {
     const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
-    const router = useRouter();
     const pathname = usePathname();
-    const locale = pathname.startsWith('/hi') ? 'hi' : 'en';
+    const locale = pathname.split('/')[1] || 'en';
     const t = locale === 'hi' ? hi : en;
+
+    const getLocalizedHref = (href: string) => `/${locale}${href}`;
+    const getLocalizedHome = () => `/${locale}`;
 
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-                <Link href="/" className="flex items-center gap-2">
+                <Link href={getLocalizedHome()} className="flex items-center gap-2">
                     <Image src="/nephrodeptlogo.png" alt="Nirogyam Logo" width={40} height={40} className="rounded-full" />
                     <h1 className="text-2xl font-bold text-primary">{t.header.title}</h1>
                 </Link>
@@ -225,7 +227,7 @@ export const AppHeader = () => {
                                 <ListItem
                                   key={component.title}
                                   title={component.title}
-                                  href={component.href}
+                                  href={getLocalizedHref(component.href)}
                                 >
                                   {component.description}
                                 </ListItem>
@@ -241,7 +243,7 @@ export const AppHeader = () => {
                                 <ListItem
                                   key={component.title}
                                   title={component.title}
-                                  href={component.href}
+                                  href={getLocalizedHref(component.href)}
                                 >
                                   {component.description}
                                 </ListItem>
@@ -257,7 +259,7 @@ export const AppHeader = () => {
                                 <ListItem
                                   key={component.title}
                                   title={component.title}
-                                  href={component.href}
+                                  href={getLocalizedHref(component.href)}
                                 >
                                   {component.description}
                                 </ListItem>
@@ -285,12 +287,12 @@ export const AppHeader = () => {
                                     <SheetTitle>Nirogyam</SheetTitle>
                                 </SheetHeader>
                                 <div className="flex flex-col space-y-4 mt-8">
-                                    <Button variant="link" asChild><Link href="/kidney-health">{t.header.kidneyHealth}</Link></Button>
-                                    <Button variant="link" asChild><Link href="/renal-nutrition">{t.header.dietNutrition}</Link></Button>
-                                    <Button variant="link" asChild><Link href="/kidney-transplant">{t.header.kidneyTransplant}</Link></Button>
-                                    <Button variant="link" asChild><a href="/#assess-kidney">Risk Quiz</a></Button>
-                                    <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                    <Button variant="link" asChild><a href="/#contact">Contact Us</a></Button>
+                                    <Button variant="link" asChild><Link href={getLocalizedHref("/kidney-health")}>{t.header.kidneyHealth}</Link></Button>
+                                    <Button variant="link" asChild><Link href={getLocalizedHref("/renal-nutrition")}>{t.header.dietNutrition}</Link></Button>
+                                    <Button variant="link" asChild><Link href={getLocalizedHref("/kidney-transplant")}>{t.header.kidneyTransplant}</Link></Button>
+                                    <Button variant="link" asChild><a href={getLocalizedHref("/#assess-kidney")}>Risk Quiz</a></Button>
+                                    <Button variant="link" asChild><a href={getLocalizedHref("/#faq")}>FAQs</a></Button>
+                                    <Button variant="link" asChild><a href={getLocalizedHref("/#contact")}>Contact Us</a></Button>
                                     <div className="pt-4 border-t">
                                      <LanguageSwitcher />
                                     </div>
@@ -303,5 +305,3 @@ export const AppHeader = () => {
         </header>
     )
 }
-
-    
