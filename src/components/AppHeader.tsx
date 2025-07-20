@@ -171,21 +171,14 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    
-    const changeLanguage = (newLocale: string) => {
-        const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
-        if (newLocale === currentLocale) return;
-
-        const pathWithoutLocale = currentLocale === 'hi' ? pathname.substring(3) : pathname;
-        
-        let newPath = newLocale === 'hi' ? `/hi${pathWithoutLocale}` : pathWithoutLocale;
-
-        if (newPath === '') newPath = '/';
-
-        router.push(newPath);
-    };
-
     const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
+
+    const changeLanguage = (newLocale: string) => {
+        if (newLocale === currentLocale) return;
+        // Use the router's built-in locale switching feature
+        // This correctly handles the path and avoids manual string manipulation
+        router.push(pathname, { locale: newLocale });
+    };
 
     return (
         <div className="flex items-center space-x-2 text-sm">
@@ -310,3 +303,5 @@ export const AppHeader = () => {
         </header>
     )
 }
+
+    
