@@ -45,9 +45,12 @@ import {
   CheckCircle,
   HeartHandshake,
   ArrowRight,
+  Leaf,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -220,18 +223,15 @@ export default function NirogyamPage() {
                               </ul>
                             </NavigationMenuContent>
                           </NavigationMenuItem>
-                          <NavigationMenuItem>
+                           <NavigationMenuItem>
                             <NavigationMenuTrigger>Diet &amp; Nutrition</NavigationMenuTrigger>
                             <NavigationMenuContent>
                               <div className="grid w-[600px] grid-cols-[1fr_2fr]">
                                 <div className="p-4 bg-primary/5">
                                     <Link href="/renal-nutrition" className="flex items-center font-semibold text-primary mb-4">
-                                      Renal Nutrition <ArrowRight className="ml-2 h-4 w-4" />
+                                      Renal Nutrition Guide <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
                                     <div className="flex flex-col gap-1">
-                                      <NavigationMenuLink asChild>
-                                        <Link href="/renal-nutrition" className="p-3 font-semibold bg-primary/10 rounded-md">Full Nutrition Guide</Link>
-                                      </NavigationMenuLink>
                                       <NavigationMenuLink asChild>
                                         <Link href="/good-nutrition" className="p-3 rounded-md hover:bg-accent">General Wellness</Link>
                                       </NavigationMenuLink>
@@ -261,12 +261,12 @@ export default function NirogyamPage() {
                               </div>
                             </NavigationMenuContent>
                           </NavigationMenuItem>
-                           <NavigationMenuItem>
-                             <Link href="/kidney-transplant" legacyBehavior passHref>
-                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                 Kidney Transplant
-                               </NavigationMenuLink>
-                             </Link>
+                          <NavigationMenuItem>
+                            <Link href="/kidney-transplant" passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Kidney Transplant
+                              </NavigationMenuLink>
+                            </Link>
                           </NavigationMenuItem>
                         </NavigationMenuList>
                       </NavigationMenu>
@@ -380,18 +380,16 @@ export default function NirogyamPage() {
                 </section>
 
                  <section id="renal-nutrition" className="py-20 bg-card">
-                    <div className="container mx-auto px-4">
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
-                            <div className="relative rounded-lg overflow-hidden shadow-xl">
-                                <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
-                            </div>
-                             <div>
-                                <h3 className="text-3xl font-bold text-primary mb-4">Your Guide to Renal Nutrition</h3>
-                                <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
-                                <Button size="lg" asChild>
-                                    <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
-                                </Button>
-                            </div>
+                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
+                            <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
+                            <Button size="lg" asChild>
+                                <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
+                            </Button>
+                        </div>
+                         <div className="relative rounded-lg overflow-hidden shadow-xl">
+                            <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
                         </div>
                     </div>
                 </section>
