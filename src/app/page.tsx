@@ -49,6 +49,7 @@ import {
   FileText,
   TestTube,
   Diamond,
+  HeartHandshake,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -364,6 +365,20 @@ export default function NirogyamPage() {
                                     </Button>
                                 </CardContent>
                             </Card>
+                            <Card className="text-center p-4">
+                                <CardHeader>
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <HeartHandshake className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Kidney Transplant</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">Explore the process and benefits of receiving a kidney transplant.</p>
+                                    <Button asChild variant="link">
+                                        <Link href="/kidney-transplant">Learn More</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>
@@ -611,3 +626,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
