@@ -1,4 +1,5 @@
 
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +9,7 @@ import Image from 'next/image';
 import { Droplets, Gauge, Scale, Cake, Dna, Cigarette, Heart, Activity, Home } from 'lucide-react';
 import { Sidebar, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
+import { cn } from "@/lib/utils";
 
 
 const KidneyIcon = ({ percentage }: { percentage: number }) => (
@@ -35,6 +37,17 @@ const RiskFactorCard = ({ icon, title, description }: { icon: React.ReactNode, t
         {description && <CardContent><p className="text-muted-foreground text-sm">{description}</p></CardContent>}
     </Card>
 );
+
+const StageButton = ({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) => (
+    <Link href={href} className={cn(
+        "block relative bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1",
+        "after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-[-10px] after:w-[20px] after:bg-inherit after:transform after:skew-x-[-20deg] after:rounded-r-lg",
+        className
+    )}>
+        {children}
+    </Link>
+);
+
 
 const CkdStagesPage = () => {
     const stages = [
@@ -88,6 +101,19 @@ const CkdStagesPage = () => {
                                 <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
                                     Chronic Kidney Disease (CKD) signifies a gradual loss of kidney function over time. Your kidneys are vital for filtering waste, managing blood pressure, and maintaining overall balance in your body. Understanding the stage of your CKD is key to determining the right treatment plan.
                                 </p>
+                            </section>
+
+                            <section id="diagnosis-guide" className="mb-16 p-8 bg-blue-100 rounded-lg shadow-md">
+                                <p className="text-center text-xl text-blue-800 mb-8">Being diagnosed with a kidney condition can be a scary time. Find out about treatments across the five stages of chronic kidney disease (CKD).</p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-2xl mx-auto">
+                                    <StageButton href="/stages-of-ckd">Newly diagnosed?</StageButton>
+                                    <StageButton href="/stages-of-ckd">Kidney disease stages</StageButton>
+                                    <StageButton href="/stages-of-ckd" className="!bg-orange-600 !text-white">Stage 1 (CKD1)</StageButton>
+                                    <StageButton href="/stages-of-ckd">Stage 2 (CKD2)</StageButton>
+                                    <StageButton href="/stages-of-ckd">Stage 3 (CKD3)</StageButton>
+                                    <StageButton href="/stages-of-ckd">Stage 4 (CKD4)</StageButton>
+                                    <StageButton href="/stages-of-ckd">Stage 5 (CKD5)</StageButton>
+                                </div>
                             </section>
                             
                             <section id="how-ckd-is-evaluated" className="mb-16 p-8 bg-card rounded-lg shadow-md">
