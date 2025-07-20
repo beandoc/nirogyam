@@ -166,6 +166,8 @@ const transplantTopics = [
 ];
 
 export const AppHeader = () => {
+    const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
+
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -174,11 +176,11 @@ export const AppHeader = () => {
                     <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-4">
+                <nav className="hidden md:flex items-center">
                    <NavigationMenu>
-                      <NavigationMenuList>
+                      <NavigationMenuList className="gap-4">
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger>Kidney Health</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>Kidney Health</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {kidneyHealthTopics.map((component) => (
@@ -194,7 +196,7 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger>Diet & Nutrition</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>Diet & Nutrition</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {dietAndNutritionTopics.map((component) => (
@@ -210,7 +212,7 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger>Kidney Transplant</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>Kidney Transplant</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {transplantTopics.map((component) => (
