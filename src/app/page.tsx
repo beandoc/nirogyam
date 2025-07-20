@@ -409,7 +409,7 @@ export default function NirogyamPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <Card>
-                                <CardHeader><CardTitle>CKD "A Blind Spot"</CardTitle></CardHeader>
+                                <CardHeader><CardTitle className="text-primary">CKD "A Blind Spot"</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">An introductory episode covering the basics of Chronic Kidney Disease.</p>
                                     <audio controls className="w-full">
@@ -419,7 +419,7 @@ export default function NirogyamPage() {
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader><CardTitle>CKD- Correct BP measurement</CardTitle></CardHeader>
+                                <CardHeader><CardTitle className="text-primary">CKD- Correct BP measurement</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Expert insights on managing your diet for kidney health.</p>
                                     <audio controls className="w-full">
@@ -429,7 +429,7 @@ export default function NirogyamPage() {
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader><CardTitle>Sharing your feelings</CardTitle></CardHeader>
+                                <CardHeader><CardTitle className="text-primary">Sharing your feelings</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Inspiring journeys from individuals living with kidney disease.</p>
                                     <audio controls className="w-full">
