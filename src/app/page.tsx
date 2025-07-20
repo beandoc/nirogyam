@@ -30,12 +30,6 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-} from "@/components/ui/tabs"
-import {
   Stethoscope,
   Utensils,
   MessageSquare,
@@ -229,7 +223,7 @@ export default function NirogyamPage() {
                                         <Link href="#assess-kidney" className="p-3 rounded-md hover:bg-accent">Assess Your Kidney Health</Link>
                                       </NavigationMenuLink>
                                       <NavigationMenuLink asChild>
-                                        <Link href="#renal-nutrition" className="p-3 rounded-md hover:bg-accent">Diet & Nutrition</Link>
+                                        <Link href="/renal-nutrition" className="p-3 rounded-md hover:bg-accent">Diet & Nutrition</Link>
                                       </NavigationMenuLink>
                                     </div>
                                 </div>
@@ -250,7 +244,7 @@ export default function NirogyamPage() {
                                   <div>
                                     <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">BROWSE BY CATEGORY</h3>
                                      <ul className="flex flex-col gap-1">
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Diet and nutrition</a></li>
+                                      <li><Link href="/renal-nutrition" className="p-3 block hover:bg-accent rounded-md">Diet and nutrition</Link></li>
                                       <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Diseases and conditions</a></li>
                                       <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Prevention, daily life, and wellbeing</a></li>
                                       <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Tests and procedures</a></li>
@@ -324,18 +318,18 @@ export default function NirogyamPage() {
                             </NavigationMenuContent>
                           </NavigationMenuItem>
                            <NavigationMenuItem>
-                            <Link href="#" legacyBehavior passHref>
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                For Professionals
-                              </NavigationMenuLink>
-                            </Link>
-                          </NavigationMenuItem>
+                             <Link href="#" legacyBehavior passHref>
+                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                 For Professionals
+                               </NavigationMenuLink>
+                             </Link>
+                           </NavigationMenuItem>
                            <NavigationMenuItem>
-                            <Link href="#" legacyBehavior passHref>
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Take Action
-                              </NavigationMenuLink>
-                            </Link>
+                             <Link href="#" legacyBehavior passHref>
+                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                 Take Action
+                               </NavigationMenuLink>
+                             </Link>
                           </NavigationMenuItem>
                         </NavigationMenuList>
                       </NavigationMenu>
@@ -355,7 +349,7 @@ export default function NirogyamPage() {
                                 </SheetHeader>
                                 <div className="flex flex-col space-y-4 mt-8">
                                     <Button variant="link" asChild><a href="#kidney-topic">Kidney Topics</a></Button>
-                                    <Button variant="link" asChild><a href="#renal-nutrition">Renal Nutrition</a></Button>
+                                    <Button variant="link" asChild><a href="/renal-nutrition">Renal Nutrition</a></Button>
                                     <Button variant="link" asChild><a href="#assess-kidney">Risk Quiz</a></Button>
                                     <Button variant="link" asChild><a href="#services">Services</a></Button>
                                     <Button variant="link" asChild><a href="#faq">FAQs</a></Button>
@@ -401,7 +395,7 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#kidney-topic" className="hover:underline">Explore Kidney Topics</a></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#renal-nutrition" className="hover:underline">Diet &amp; Nutrition Guides</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="/renal-nutrition" className="hover:underline">Diet &amp; Nutrition Guides</a></li>
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#assess-kidney" className="hover:underline">Take the Risk Quiz</a></li>
                                     </ul>
                                 </CardContent>
@@ -606,49 +600,17 @@ export default function NirogyamPage() {
 
                 <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
-                        <div className="text-center mb-12">
-                            <h3 className="text-3xl font-bold text-primary">Renal Nutrition Guide</h3>
-                             <p className="text-lg text-foreground/80 mt-2 max-w-3xl mx-auto">A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression.</p>
-                        </div>
                         <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 className="text-3xl font-bold text-primary mb-4">Renal Nutrition Guide</h3>
+                                <p className="text-lg text-foreground/80 mb-6">A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression. Understanding what to eat is a crucial step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
+                                <Button size="lg" asChild>
+                                    <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
+                                </Button>
+                            </div>
                             <div className="relative rounded-lg overflow-hidden shadow-xl">
                                 <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
                             </div>
-                            <Tabs defaultValue="basics" className="w-full">
-                                <TabsList className="grid w-full grid-cols-3 mb-4">
-                                    <TabsTrigger value="basics">Basics</TabsTrigger>
-                                    <TabsTrigger value="ckd-specific">CKD Specific</TabsTrigger>
-                                    <TabsTrigger value="advanced">Advanced</TabsTrigger>
-                                </TabsList>
-                                <TabsContent value="basics" className="p-4 bg-background rounded-lg border">
-                                    <h4 className="text-xl font-semibold mb-3 text-primary">Basic Nutrition and CKD</h4>
-                                    <p className="text-muted-foreground mb-4">Nutrition education for patients with CKD.</p>
-                                    <ul className="space-y-3">
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Carbohydrate Counting with Chronic Kidney Disease</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">What You Should Know About Good Nutrition</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Your Guide to the New and Improved Nutrition Facts Label</a></li>
-                                    </ul>
-                                </TabsContent>
-                                <TabsContent value="ckd-specific" className="p-4 bg-background rounded-lg border">
-                                    <h4 className="text-xl font-semibold mb-3 text-primary">Nutrition for People with CKD</h4>
-                                    <p className="text-muted-foreground mb-4">Eating a well balanced diet helps manage CKD.</p>
-                                     <ul className="space-y-3">
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Phosphorus and Your Diet</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Potassium in Your CKD Diet</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">CKD Diet: How much protein is the right amount?</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Sodium and Your CKD Diet: How to Spice Up Your Cooking</a></li>
-                                    </ul>
-                                </TabsContent>
-                                <TabsContent value="advanced" className="p-4 bg-background rounded-lg border">
-                                    <h4 className="text-xl font-semibold mb-3 text-primary">Nutrition for ESKD & Transplant</h4>
-                                    <p className="text-muted-foreground mb-4">Good nutrition with End Stage Kidney Disease supports your overall health.</p>
-                                    <ul className="space-y-3">
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Nutrition and Hemodialysis</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Nutrition and Peritoneal Dialysis</a></li>
-                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Diet and Transplantation</a></li>
-                                    </ul>
-                                </TabsContent>
-                            </Tabs>
                         </div>
                     </div>
                 </section>
