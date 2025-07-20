@@ -51,7 +51,9 @@ const KidneyStonesPage = () => {
                             </Link>
                             <nav>
                                 <Button variant="ghost" asChild>
-                                    <Link href="/"><Home className="mr-2 h-4 w-4" /> Home</Link>
+                                    <Link href="/">
+                                      <Home className="mr-2 h-4 w-4" /> Home
+                                    </Link>
                                 </Button>
                             </nav>
                         </div>
@@ -161,7 +163,6 @@ const KidneyStonesPage = () => {
                                     </div>
                                 </InfoCard>
                             </section>
-                            
                         </div>
                     </main>
                 </div>
