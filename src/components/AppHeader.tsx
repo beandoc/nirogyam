@@ -178,11 +178,13 @@ const LanguageSwitcher = () => {
             return;
         }
 
+        const currentPathWithoutLocale = currentLocale === 'hi' ? pathname.substring(3) : pathname;
+        
         let newPath;
         if (newLocale === 'hi') {
-            newPath = `/hi${pathname}`;
+            newPath = `/hi${currentPathWithoutLocale || '/'}`;
         } else {
-            newPath = pathname.replace('/hi', '') || '/';
+            newPath = currentPathWithoutLocale || '/';
         }
         
         router.push(newPath);
