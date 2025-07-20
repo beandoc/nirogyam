@@ -398,7 +398,7 @@ export default function NirogyamPage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-10 w-10 text-primary"/></div>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Chronic Kidney Disease</CardTitle>
                                     <CardDescription>Guidance and resources tailored for your health journey.</CardDescription>
                                 </CardHeader>
