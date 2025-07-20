@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -31,11 +32,14 @@ import {
   Users,
   CheckCircle,
   ArrowRight,
+  Calculator,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AppHeader } from '@/components/AppHeader';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 
 const FaqItem = ({ question, children, value }: { question: string, children: React.ReactNode, value: string }) => {
@@ -127,6 +131,102 @@ const Quiz = () => {
                 {currentQuestion === questions.length - 1 && <Button onClick={handleSubmit}>Submit</Button>}
             </div>
           </CardContent>
+        </Card>
+    );
+};
+
+const EgfrCalculator = () => {
+    const [creatinine, setCreatinine] = useState('');
+    const [age, setAge] = useState('');
+    const [sex, setSex] = useState<'male' | 'female' | ''>('');
+    const [egfrResult, setEgfrResult] = useState<number | null>(null);
+
+    const calculateEgfr = (e: React.FormEvent) => {
+        e.preventDefault();
+        const scr = parseFloat(creatinine);
+        const patientAge = parseInt(age, 10);
+
+        if (isNaN(scr) || isNaN(patientAge) || !sex) {
+            alert("Please fill in all fields correctly.");
+            return;
+        }
+
+        const kappa = sex === 'female' ? 0.7 : 0.9;
+        const alpha = sex === 'female' ? -0.241 : -0.302;
+        const sexFactor = sex === 'female' ? 1.012 : 1;
+
+        const scrOverKappa = scr / kappa;
+        
+        const term1 = Math.min(scrOverKappa, 1) ** alpha;
+        const term2 = Math.max(scrOverKappa, 1) ** -1.200;
+        const term3 = 0.9938 ** patientAge;
+
+        const result = 142 * term1 * term2 * term3 * sexFactor;
+        setEgfrResult(Math.round(result));
+    };
+
+    return (
+        <Card className="max-w-xl mx-auto shadow-xl border-primary/20">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-primary">
+                    <Calculator className="h-6 w-6" />
+                    eGFR Calculator (CKD-EPI 2021)
+                </CardTitle>
+                <CardDescription>
+                    Estimate your Glomerular Filtration Rate using the race-free 2021 CKD-EPI formula. This tool is for informational purposes only.
+                </CardDescription>
+            </CardHeader>
+            <CardContent>
+                <form onSubmit={calculateEgfr} className="space-y-6">
+                    <div className="space-y-2">
+                        <Label htmlFor="creatinine">Serum Creatinine (mg/dL)</Label>
+                        <Input
+                            id="creatinine"
+                            type="number"
+                            step="0.01"
+                            placeholder="e.g., 1.2"
+                            value={creatinine}
+                            onChange={(e) => setCreatinine(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="age">Age</Label>
+                        <Input
+                            id="age"
+                            type="number"
+                            placeholder="e.g., 55"
+                            value={age}
+                            onChange={(e) => setAge(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label>Sex</Label>
+                        <RadioGroup onValueChange={(value) => setSex(value as 'male' | 'female')} value={sex} className="flex gap-4">
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="female" id="female" />
+                                <Label htmlFor="female">Female</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="male" id="male" />
+                                <Label htmlFor="male">Male</Label>
+                            </div>
+                        </RadioGroup>
+                    </div>
+                    <Button type="submit" className="w-full">Calculate eGFR</Button>
+                </form>
+                {egfrResult !== null && (
+                    <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-lg text-center">
+                        <p className="text-lg text-foreground/80">Your estimated GFR is:</p>
+                        <p className="text-4xl font-bold text-primary my-2">{egfrResult}</p>
+                        <p className="text-sm text-muted-foreground">mL/min/1.73m²</p>
+                        <p className="mt-4 text-xs text-foreground/70">
+                            This result is an estimate. Consult a healthcare professional for a proper diagnosis and to understand what this value means for your health.
+                        </p>
+                    </div>
+                )}
+            </CardContent>
         </Card>
     );
 };
@@ -433,7 +533,17 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="renal-nutrition" className="py-20 bg-background">
+                <section id="egfr-calculator" className="py-20 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary">Calculate Your eGFR</h3>
+                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Use this tool to get an estimate of your kidney function. This calculator is intended for informational purposes and is not a substitute for professional medical advice.</p>
+                        </div>
+                        <EgfrCalculator />
+                    </div>
+                </section>
+
+                <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative rounded-lg overflow-hidden shadow-xl">
                             <Image src="/foodbasics.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" />
@@ -451,7 +561,7 @@ export default function NirogyamPage() {
                 </section>
                 
                 {isClient && (
-                <section id="kidney-conversations" className="py-20 bg-card">
+                <section id="kidney-conversations" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Kidney Conversations</h3>
@@ -496,7 +606,7 @@ export default function NirogyamPage() {
                 </section>
                 )}
                 
-                <section id="faq" className="py-20 bg-background">
+                <section id="faq" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
@@ -539,7 +649,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="about" className="py-20 bg-card">
+                <section id="about" className="py-20 bg-background">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
@@ -551,7 +661,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 bg-background">
+                <section id="contact" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
