@@ -43,18 +43,19 @@ import {
   HeartPulse,
   Leaf,
   GraduationCap,
-  Users
+  Users,
+  CheckCircle,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const FaqItem = ({ question, answer, value }: { question: string, answer: string, value: string }) => {
   return (
-    <AccordionItem value={value} className="border-b-0 mb-2">
-        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:no-underline bg-card p-4 rounded-lg border">
+    <AccordionItem value={value} className="border-b bg-background rounded-lg mb-2">
+        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:no-underline p-4 rounded-lg">
             {question}
         </AccordionTrigger>
-        <AccordionContent className="text-foreground/80 mt-2 p-4 text-base bg-card/50 rounded-lg">
+        <AccordionContent className="text-foreground/80 mt-1 p-4 pt-0 text-base rounded-lg">
             {answer}
         </AccordionContent>
     </AccordionItem>
@@ -111,7 +112,7 @@ const Quiz = () => {
     }
 
     return (
-        <Card className="max-w-xl mx-auto p-2 sm:p-8 shadow-xl">
+        <Card className="max-w-xl mx-auto p-2 sm:p-8 shadow-xl border-primary/20">
           <CardContent className="pt-6">
             <div>
                 {questions.map((q, index) => (
@@ -212,59 +213,69 @@ export default function NirogyamPage() {
             </header>
 
             <main>
-                <section className="hero-pattern py-24 md:py-32">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-4xl md:text-6xl font-extrabold text-primary leading-tight mb-4 tracking-tight">Empowering Your Kidney Health Journey</h2>
-                        <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-3xl mx-auto">A comprehensive, compassionate resource for understanding kidney health, managing kidney disease, and finding the support you need.</p>
-                        <Button size="lg" asChild>
-                            <a href="#assess-kidney">Assess Your Risk Now</a>
-                        </Button>
+                <section className="hero-pattern py-20 md:py-24">
+                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-4 tracking-tight">Empowering Your Kidney Health Journey</h2>
+                            <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl">A comprehensive, compassionate resource for understanding kidney health, managing kidney disease, and finding the support you need.</p>
+                            <Button size="lg" asChild>
+                                <a href="#assess-kidney">Assess Your Risk Now</a>
+                            </Button>
+                        </div>
+                        <div className="hidden md:block">
+                            <Image src="https://placehold.co/600x400.png" alt="Healthy kidneys illustration" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="kidney health" />
+                        </div>
                     </div>
                 </section>
 
-                <section id="iam-a-section" className="py-20 md:py-24 bg-background">
-                    <div className="container mx-auto px-4 text-center">
-                        <h3 className="text-3xl font-bold text-primary mb-4">How Can We Help?</h3>
-                         <p className="text-lg text-foreground/80 max-w-3xl mx-auto mb-12">
-                            A kidney disease diagnosis can be overwhelming. You may be wondering, "What can I do to avoid dialysis?" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.
-                        </p>
+                <section id="iam-a-section" className="py-20 bg-card">
+                    <div className="container mx-auto px-4">
+                         <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary mb-4">How Can We Help?</h3>
+                             <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
+                                A kidney disease diagnosis can be overwhelming. You may be wondering, "What can I do to avoid dialysis?" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.
+                            </p>
+                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-8 w-8 text-primary"/></div>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Patients</CardTitle>
+                                    <CardDescription>Guidance and resources tailored for your health journey.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="text-foreground/80 text-center space-y-2">
-                                        <li><a href="#kidney-topic" className="hover:underline">Kidney Topics</a></li>
-                                        <li><a href="#renal-nutrition" className="hover:underline">Diet & Nutrition</a></li>
-                                        <li><a href="#assess-kidney" className="hover:underline">Risk Quiz</a></li>
+                                    <ul className="text-foreground/80 text-left space-y-3">
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#kidney-topic" className="hover:underline">Explore Kidney Topics</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#renal-nutrition" className="hover:underline">Diet & Nutrition Guides</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#assess-kidney" className="hover:underline">Take the Risk Quiz</a></li>
                                     </ul>
                                 </CardContent>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Stethoscope className="h-8 w-8 text-primary"/></div>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Stethoscope className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Health Professionals</CardTitle>
+                                    <CardDescription>Clinical tools and the latest research to support your practice.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="text-foreground/80 text-center space-y-2">
-                                        <li><a href="#clinical-resources" className="hover:underline">Clinical Resources</a></li>
-                                        <li><a href="#latest-research" className="hover:underline">Latest Research</a></li>
-                                        <li><a href="#treatment-guidelines" className="hover:underline">Treatment Guidelines</a></li>
+                                    <ul className="text-foreground/80 text-left space-y-3">
+                                       <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#clinical-resources" className="hover:underline">Access Clinical Resources</a></li>
+                                       <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#latest-research" className="hover:underline">Review Latest Research</a></li>
+                                       <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#treatment-guidelines" className="hover:underline">Consult Treatment Guidelines</a></li>
                                     </ul>
                                 </CardContent>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-8 w-8 text-primary"/></div>
+                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Caregivers</CardTitle>
+                                     <CardDescription>Support and information to help you care for your loved ones.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="text-foreground/80 text-center space-y-2">
-                                        <li><a href="#support-resources" className="hover:underline">Support Resources</a></li>
-                                        <li><a href="#diet-planning" className="hover:underline">Diet Planning</a></li>
-                                        <li><a href="#treatment-preparation" className="hover:underline">Post-Treatment Care</a></li>
+                                    <ul className="text-foreground/80 text-left space-y-3">
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#support-resources" className="hover:underline">Find Support Resources</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#diet-planning" className="hover:underline">Get Help with Diet Planning</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#treatment-preparation" className="hover:underline">Prepare for Treatments</a></li>
                                     </ul>
                                 </CardContent>
                             </Card>
@@ -272,14 +283,14 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                 <section id="kidney-topic" className="py-20 md:py-24 bg-card">
+                 <section id="kidney-topic" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Explore Kidney Topics</h3>
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into common topics to understand your kidney health.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <Card className="text-center border-none shadow-none bg-transparent">
+                            <Card className="text-center p-4">
                                 <CardHeader>
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
                                         <HeartPulse className="h-8 w-8 text-primary" />
@@ -288,7 +299,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardContent><p className="text-foreground/80">Learn about the stages of Chronic Kidney Disease, its causes, symptoms, and progression.</p></CardContent>
                             </Card>
-                             <Card className="text-center border-none shadow-none bg-transparent">
+                             <Card className="text-center p-4">
                                 <CardHeader>
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
                                         <Leaf className="h-8 w-8 text-primary" />
@@ -297,7 +308,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardContent><p className="text-foreground/80">Tips and guidelines for maintaining healthy kidneys and preventing kidney disease.</p></CardContent>
                             </Card>
-                             <Card className="text-center border-none shadow-none bg-transparent">
+                             <Card className="text-center p-4">
                                 <CardHeader>
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
                                         <GraduationCap className="h-8 w-8 text-primary" />
@@ -310,7 +321,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="assess-kidney" className="py-20 md:py-24 bg-background">
+                <section id="assess-kidney" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                          <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Assess Your Kidney Health</h3>
@@ -320,7 +331,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="renal-nutrition" className="py-20 md:py-24 bg-card">
+                <section id="renal-nutrition" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Renal Nutrition Guide</h3>
@@ -328,17 +339,17 @@ export default function NirogyamPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                            <Card className="overflow-hidden group">
-                             <Image src="https://placehold.co/600x400.png" alt="Healthy food" width={600} height={400} className="rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="healthy food" />
+                             <Image src="https://placehold.co/600x400.png" alt="Healthy food" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="healthy food" />
                              <CardHeader><CardTitle>Diet for Early Stages</CardTitle></CardHeader>
                              <CardContent><p className="text-foreground/80">Learn the best foods to support kidney function in early CKD stages.</p></CardContent>
                            </Card>
                            <Card className="overflow-hidden group">
-                             <Image src="https://placehold.co/600x400.png" alt="Low potassium foods" width={600} height={400} className="rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low potassium food" />
+                             <Image src="https://placehold.co/600x400.png" alt="Low potassium foods" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low potassium food" />
                              <CardHeader><CardTitle>Managing Potassium</CardTitle></CardHeader>
                              <CardContent><p className="text-foreground/80">Tips and food lists to help control potassium levels in your diet.</p></CardContent>
                            </Card>
                            <Card className="overflow-hidden group">
-                              <Image src="https://placehold.co/600x400.png" alt="Low phosphorus foods" width={600} height={400} className="rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low phosphorus food" />
+                              <Image src="https://placehold.co/600x400.png" alt="Low phosphorus foods" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low phosphorus food" />
                              <CardHeader><CardTitle>Controlling Phosphorus</CardTitle></CardHeader>
                              <CardContent><p className="text-foreground/80">Understand phosphorus restrictions and find smart food choices.</p></CardContent>
                            </Card>
@@ -346,7 +357,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                 <section id="kidney-conversations" className="py-20 md:py-24 bg-primary/5">
+                 <section id="kidney-conversations" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Kidney Conversations</h3>
@@ -390,39 +401,39 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="services" className="py-20 md:py-24 bg-card">
-                    <div className="container mx-auto px-4 text-center">
+                <section id="services" className="py-20 bg-background">
+                    <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                            <h3 className="text-3xl font-bold text-primary">Our Comprehensive Services</h3>
                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">We provide a wide range of resources and tools to support you at every stage of your journey.</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="text-center p-6">
+                            <div className="text-center p-6 bg-card rounded-lg">
                                 <Stethoscope className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Expert Articles</h4>
                                 <p className="text-foreground/80">Access a wealth of information written and reviewed by kidney health experts.</p>
                             </div>
-                            <div className="text-center p-6">
+                            <div className="text-center p-6 bg-card rounded-lg">
                                 <Utensils className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Dietary Guidance</h4>
                                 <p className="text-foreground/80">Find kidney-friendly recipes and personalized nutrition advice.</p>
                             </div>
-                            <div className="text-center p-6">
+                            <div className="text-center p-6 bg-card rounded-lg">
                                 <MessageSquare className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Support Forums</h4>
                                 <p className="text-foreground/80">Connect with a community of patients and caregivers for shared experiences.</p>
                             </div>
-                            <div className="text-center p-6">
+                            <div className="text-center p-6 bg-card rounded-lg">
                                 <Calendar className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Event Calendar</h4>
                                 <p className="text-foreground/80">Stay informed about upcoming webinars, workshops, and awareness campaigns.</p>
                             </div>
-                             <div className="text-center p-6">
+                             <div className="text-center p-6 bg-card rounded-lg">
                                 <BookOpen className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Resource Library</h4>
                                 <p className="text-foreground/80">Downloadable guides, infographics, and other helpful resources.</p>
                             </div>
-                            <div className="text-center p-6">
+                            <div className="text-center p-6 bg-card rounded-lg">
                                 <Hospital className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Find a Specialist</h4>
                                 <p className="text-foreground/80">Directory of nephrologists and kidney care centers near you.</p>
@@ -431,23 +442,23 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section className="py-20 md:py-24 bg-background">
+                <section className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-12">What Our Community Says</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <Card className="border-primary/20 bg-card">
+                            <Card className="border-primary/20 bg-background">
                                 <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"Nirogyam has been an invaluable resource in understanding my kidney condition. The information is so clear and easy to understand."</p>
                                     <p className="font-semibold text-primary">- Priya S.</p>
                                 </CardContent>
                             </Card>
-                            <Card className="border-primary/20 bg-card">
+                            <Card className="border-primary/20 bg-background">
                                <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"The dietary advice provided here has significantly helped me manage my diet and feel better. Highly recommend!"</p>
                                     <p className="font-semibold text-primary">- Rajesh K.</p>
                                 </CardContent>
                             </Card>
-                             <Card className="border-primary/20 bg-card">
+                             <Card className="border-primary/20 bg-background">
                                 <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"The assessment tool was a great starting point for me to realize the importance of kidney health."</p>
                                     <p className="font-semibold text-primary">- Sunita R.</p>
@@ -457,14 +468,14 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="faq" className="py-20 md:py-24 bg-card">
+                <section id="faq" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                            <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Find quick answers to common questions about kidney health and treatment.</p>
                         </div>
                         <div className="max-w-3xl mx-auto">
-                            <Accordion type="single" collapsible className="w-full space-y-2">
+                            <Accordion type="single" collapsible className="w-full space-y-3">
                                 <FaqItem 
                                     value="item-1"
                                     question="What are the early signs of kidney disease?"
@@ -485,9 +496,9 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                 <section id="about" className="py-20 md:py-24 bg-background">
+                 <section id="about" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                         <div className="text-center md:text-left">
+                        <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
                             <p className="text-lg text-foreground/80 max-w-xl">Nirogyam is dedicated to providing clear, reliable, and accessible information on kidney health. We believe that informed patients and caregivers are empowered to make the best decisions for their health journey. Our content is curated by medical professionals and patient advocates to ensure accuracy and relevance.</p>
                         </div>
@@ -497,11 +508,11 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 md:py-24 bg-card">
+                <section id="contact" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
-                        <Card className="max-w-lg mx-auto shadow-xl">
+                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20">
                             <CardContent className="pt-6">
                                 <form className="space-y-4">
                                     <Input type="text" placeholder="Your Name" />
