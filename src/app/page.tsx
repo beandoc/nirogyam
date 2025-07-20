@@ -33,6 +33,8 @@ import {
   CheckCircle,
   ArrowRight,
   Calculator,
+  Home,
+  Droplet,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -380,7 +382,7 @@ export default function NirogyamPage() {
                             </Button>
                         </div>
                         <div className="hidden md:block">
-                            <Image src="/herosection_image.png" alt="Illustration of doctors and a patient discussing kidney health" width={600} height={400} className="rounded-lg shadow-xl" />
+                            <Image src="/herosection_image.png" alt="Illustration of doctors and a patient discussing kidney health" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="doctors patient kidney" />
                         </div>
                     </div>
                 </section>
@@ -397,20 +399,18 @@ export default function NirogyamPage() {
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Patients</CardTitle>
+                                    <CardTitle className="text-primary text-2xl">Chronic Kidney Disease</CardTitle>
                                     <CardDescription>Guidance and resources tailored for your health journey.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-health" className="hover:underline">Explore Kidney Topics</Link></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/renal-nutrition" className="hover:underline">Diet &amp; Nutrition Guides</Link></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#assess-kidney" className="hover:underline">Take the Risk Quiz</a></li>
                                     </ul>
                                 </CardContent>
                             </Card>
                              <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Stethoscope className="h-10 w-10 text-primary"/></div>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Droplet className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Hemodialysis</CardTitle>
                                     <CardDescription>What is it? How can it help? Learn about the treatment and preparation.</CardDescription>
                                 </CardHeader>
@@ -422,7 +422,7 @@ export default function NirogyamPage() {
                             </Card>
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Home className="h-10 w-10 text-primary"/></div>
                                     <CardTitle className="text-primary text-2xl">Peritoneal dialysis</CardTitle>
                                     <CardDescription>Learn about peritoneal dialysis, a treatment for kidney failure that you can do at home.</CardDescription>
                                 </CardHeader>
@@ -444,7 +444,7 @@ export default function NirogyamPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                             <Card className="flex flex-col">
-                                <Image src="/hemodialysis_image.png" alt="Know Hemodialysis" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/hemodialysis_image.png" alt="Know Hemodialysis" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical equipment" />
                                 <CardHeader>
                                     <CardTitle>Know Hemodialysis</CardTitle>
                                     <CardDescription>An interactive guide to understanding hemodialysis.</CardDescription>
@@ -456,7 +456,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="/ckdassessment.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/ckdassessment.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical checklist" />
                                 <CardHeader>
                                     <CardTitle>CKD Assessment</CardTitle>
                                     <CardDescription>Assess your risk and stages of Chronic Kidney Disease.</CardDescription>
@@ -468,7 +468,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/akiriskassessment.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/akiriskassessment.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="risk assessment" />
                                 <CardHeader>
                                     <CardTitle>AKI Risk Assessment</CardTitle>
                                     <CardDescription>Evaluate the risk factors for Acute Kidney Injury.</CardDescription>
@@ -480,7 +480,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/kidneycarechoice.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/kidneycarechoice.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" data-ai-hint="decision tree" />
                                 <CardHeader>
                                     <CardTitle>Kidney Care Choices</CardTitle>
                                     <CardDescription>Explore treatment options and make informed care decisions.</CardDescription>
@@ -492,7 +492,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="/adpkdroadmap.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/adpkdroadmap.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical roadmap" />
                                 <CardHeader>
                                     <CardTitle>ADPKD Road Map</CardTitle>
                                     <CardDescription>A guide for navigating Autosomal Dominant Polycystic Kidney Disease.</CardDescription>
@@ -504,7 +504,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/kidneybiopsyconsent.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/kidneybiopsyconsent.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical consent" />
                                 <CardHeader>
                                     <CardTitle>Biopsy Consent</CardTitle>
                                     <CardDescription>An interactive guide to understanding the biopsy consent process.</CardDescription>
@@ -542,7 +542,7 @@ export default function NirogyamPage() {
                 <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative rounded-lg overflow-hidden shadow-xl">
-                            <Image src="/foodbasics.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" />
+                            <Image src="/foodbasics.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
                         </div>
                         <div>
                             <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
@@ -652,7 +652,7 @@ export default function NirogyamPage() {
                             <p className="text-lg text-foreground/80 max-w-xl">Nirogyam is dedicated to providing clear, reliable, and accessible information on kidney health. We believe that informed patients and caregivers are empowered to make the best decisions for their health journey. Our content is curated by medical professionals and patient advocates to ensure accuracy and relevance.</p>
                         </div>
                         <div>
-                        <Image src="/nirogyamlogo.png" alt="Nirogyam company logo" width={600} height={400} className="rounded-lg shadow-lg" />
+                        <Image src="/nirogyamlogo.png" alt="Nirogyam company logo" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="company logo" />
                         </div>
                     </div>
                 </section>
