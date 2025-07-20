@@ -186,7 +186,7 @@ export default function NirogyamPage() {
                 <AppSidebar />
             </Sidebar>
             <SidebarInset>
-                <div className="bg-background text-foreground">
+                <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
                     <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
                         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                             <Link href="/" className="flex items-center gap-2">
@@ -202,21 +202,21 @@ export default function NirogyamPage() {
                               <NavigationMenu>
                                 <NavigationMenuList>
                                   <NavigationMenuItem>
-                                    <Link href="/kidney-health">
+                                    <Link href="/kidney-health" legacyBehavior passHref>
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Kidney Health
                                       </NavigationMenuLink>
                                     </Link>
                                   </NavigationMenuItem>
                                   <NavigationMenuItem>
-                                    <Link href="/renal-nutrition">
+                                    <Link href="/renal-nutrition" legacyBehavior passHref>
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Diet &amp; Nutrition
                                       </NavigationMenuLink>
                                     </Link>
                                   </NavigationMenuItem>
                                   <NavigationMenuItem>
-                                    <Link href="/kidney-transplant">
+                                    <Link href="/kidney-transplant" legacyBehavior passHref>
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Kidney Transplant
                                       </NavigationMenuLink>
@@ -252,7 +252,7 @@ export default function NirogyamPage() {
                         </div>
                     </header>
 
-                    <main>
+                    <main className="flex-grow">
                         <section className="hero-pattern py-20 md:py-24">
                             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                                 <div>

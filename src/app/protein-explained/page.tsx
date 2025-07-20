@@ -26,7 +26,7 @@ const ProteinExplainedPage = () => {
                 <AppSidebar />
             </Sidebar>
             <SidebarInset>
-                <div className="bg-background text-foreground">
+                <div className="bg-background text-foreground flex-1">
                     <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
                         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                             <Link href="/" className="flex items-center gap-2">
