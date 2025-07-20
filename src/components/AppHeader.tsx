@@ -13,6 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import {
     Sheet,
@@ -164,9 +165,6 @@ const transplantTopics = [
     },
 ];
 
-const navigationMenuTriggerStyle = "group inline-flex h-10 w-max items-center justify-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/90 focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50";
-
-
 export const AppHeader = () => {
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
@@ -176,61 +174,59 @@ export const AppHeader = () => {
                     <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-2">
-                   <div className="flex items-center gap-2">
-                       <NavigationMenu>
-                          <NavigationMenuList>
-                            <NavigationMenuItem>
-                               <NavigationMenuTrigger className={navigationMenuTriggerStyle}>Kidney Health</NavigationMenuTrigger>
-                              <NavigationMenuContent>
-                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                  {kidneyHealthTopics.map((component) => (
-                                    <ListItem
-                                      key={component.title}
-                                      title={component.title}
-                                      href={component.href}
-                                    >
-                                      {component.description}
-                                    </ListItem>
-                                  ))}
-                                </ul>
-                              </NavigationMenuContent>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                               <NavigationMenuTrigger className={navigationMenuTriggerStyle}>Diet & Nutrition</NavigationMenuTrigger>
-                              <NavigationMenuContent>
-                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                  {dietAndNutritionTopics.map((component) => (
-                                    <ListItem
-                                      key={component.title}
-                                      title={component.title}
-                                      href={component.href}
-                                    >
-                                      {component.description}
-                                    </ListItem>
-                                  ))}
-                                </ul>
-                              </NavigationMenuContent>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                               <NavigationMenuTrigger className={navigationMenuTriggerStyle}>Kidney Transplant</NavigationMenuTrigger>
-                              <NavigationMenuContent>
-                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                  {transplantTopics.map((component) => (
-                                    <ListItem
-                                      key={component.title}
-                                      title={component.title}
-                                      href={component.href}
-                                    >
-                                      {component.description}
-                                    </ListItem>
-                                  ))}
-                                </ul>
-                              </NavigationMenuContent>
-                            </NavigationMenuItem>
-                          </NavigationMenuList>
-                        </NavigationMenu>
-                   </div>
+                <nav className="hidden md:flex items-center gap-4">
+                   <NavigationMenu>
+                      <NavigationMenuList>
+                        <NavigationMenuItem>
+                           <NavigationMenuTrigger>Kidney Health</NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                              {kidneyHealthTopics.map((component) => (
+                                <ListItem
+                                  key={component.title}
+                                  title={component.title}
+                                  href={component.href}
+                                >
+                                  {component.description}
+                                </ListItem>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                           <NavigationMenuTrigger>Diet & Nutrition</NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                              {dietAndNutritionTopics.map((component) => (
+                                <ListItem
+                                  key={component.title}
+                                  title={component.title}
+                                  href={component.href}
+                                >
+                                  {component.description}
+                                </ListItem>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                           <NavigationMenuTrigger>Kidney Transplant</NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                              {transplantTopics.map((component) => (
+                                <ListItem
+                                  key={component.title}
+                                  title={component.title}
+                                  href={component.href}
+                                >
+                                  {component.description}
+                                </ListItem>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      </NavigationMenuList>
+                    </NavigationMenu>
                 </nav>
 
                 <div className="md:hidden">
