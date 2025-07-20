@@ -6,15 +6,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User } from 'lucide-react';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
-    <Card className="text-center p-4">
-        <CardHeader>
+    <Card className="text-center p-4 hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+        <CardHeader className="items-center">
             <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
                 {icon}
             </div>
             <CardTitle>{title}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-grow">
             <p className="text-foreground/80 mb-4">{description}</p>
+        </CardContent>
+        <CardContent>
             <Button asChild variant="link">
                 <Link href={href}>Learn More</Link>
             </Button>
