@@ -46,6 +46,9 @@ import {
   HeartHandshake,
   ArrowRight,
   Leaf,
+  Filter,
+  GraduationCap,
+  TestTube,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -211,14 +214,14 @@ export default function NirogyamPage() {
                                     </Link>
                                   </NavigationMenuLink>
                                 </li>
+                                <ListItem href="/how-kidneys-work" title="How Kidneys Work">
+                                  Learn the fundamentals of kidney function.
+                                </ListItem>
                                 <ListItem href="/ckd-explained" title="CKD Explained">
                                   Learn the basics of Chronic Kidney Disease.
                                 </ListItem>
                                 <ListItem href="/stages-of-ckd" title="Stages of CKD">
                                   Understand the progression of kidney disease.
-                                </ListItem>
-                                <ListItem href="/kidney-function-tests" title="Kidney Function Tests">
-                                 A guide to the various tests used to monitor health.
                                 </ListItem>
                               </ul>
                             </NavigationMenuContent>
@@ -251,8 +254,9 @@ export default function NirogyamPage() {
                                     </ul>
                                   </div>
                                    <div>
-                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">OTHER GUIDES</h3>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">TESTING &amp; RESULTS</h3>
                                      <ul className="flex flex-col gap-1">
+                                      <li><Link href="/kidney-function-tests" className="p-3 block hover:bg-accent rounded-md">Kidney Function Tests</Link></li>
                                       <li><Link href="/creatinine-explained" className="p-3 block hover:bg-accent rounded-md">Creatinine Explained</Link></li>
                                       <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">eGFR Explained</Link></li>
                                     </ul>
@@ -262,7 +266,7 @@ export default function NirogyamPage() {
                             </NavigationMenuContent>
                           </NavigationMenuItem>
                           <NavigationMenuItem>
-                            <Link href="/kidney-transplant" passHref>
+                             <Link href="/kidney-transplant" legacyBehavior passHref>
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Kidney Transplant
                               </NavigationMenuLink>
@@ -381,15 +385,15 @@ export default function NirogyamPage() {
 
                  <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                         <div className="relative rounded-lg overflow-hidden shadow-xl">
+                            <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
+                        </div>
                         <div>
                             <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
                             <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
                             <Button size="lg" asChild>
                                 <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
                             </Button>
-                        </div>
-                         <div className="relative rounded-lg overflow-hidden shadow-xl">
-                            <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
                         </div>
                     </div>
                 </section>
@@ -534,3 +538,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    

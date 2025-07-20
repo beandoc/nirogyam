@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf } from 'lucide-react';
+import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter } from 'lucide-react';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
     <Card className="text-center p-4">
@@ -49,6 +49,12 @@ const KidneyHealthPage = () => {
                 <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into our library of articles to understand every aspect of your kidney health.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <TopicCard 
+                    icon={<Filter className="h-8 w-8 text-primary" />}
+                    title="How Kidneys Work"
+                    description="Learn the fundamentals of how your kidneys filter waste and keep you healthy."
+                    href="/how-kidneys-work"
+                />
                 <TopicCard 
                     icon={<HeartPulse className="h-8 w-8 text-primary" />}
                     title="CKD Explained"
@@ -134,3 +140,5 @@ const KidneyHealthPage = () => {
 };
 
 export default KidneyHealthPage;
+
+    
