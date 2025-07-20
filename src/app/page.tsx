@@ -225,6 +225,9 @@ export default function NirogyamPage() {
                                       <NavigationMenuLink asChild>
                                         <Link href="/renal-nutrition" className="p-3 rounded-md hover:bg-accent">Diet & Nutrition</Link>
                                       </NavigationMenuLink>
+                                      <NavigationMenuLink asChild>
+                                        <Link href="/good-nutrition" className="p-3 rounded-md hover:bg-accent">Good Nutrition</Link>
+                                      </NavigationMenuLink>
                                     </div>
                                 </div>
                                 <div className="p-4 grid grid-cols-2 gap-4">
