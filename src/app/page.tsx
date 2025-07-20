@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -297,7 +298,12 @@ export default function NirogyamPage() {
                                     </div>
                                     <CardTitle>CKD Explained</CardTitle>
                                 </CardHeader>
-                                <CardContent><p className="text-foreground/80">Learn about the stages of Chronic Kidney Disease, its causes, symptoms, and progression.</p></CardContent>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">Learn about the stages of Chronic Kidney Disease, its causes, symptoms, and progression.</p>
+                                    <Button asChild variant="link">
+                                        <Link href="/ckd-explained">Learn More</Link>
+                                    </Button>
+                                </CardContent>
                             </Card>
                              <Card className="text-center p-4">
                                 <CardHeader>
