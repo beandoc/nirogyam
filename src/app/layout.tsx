@@ -2,7 +2,6 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/lib/utils';
-import { SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
   title: 'Nirogyam - Kidney Health Education',
@@ -22,9 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn("min-h-screen font-sans antialiased")}>
-        <SidebarProvider defaultOpen={false}>
-          {children}
-        </SidebarProvider>
+        {children}
         <Toaster />
       </body>
     </html>
