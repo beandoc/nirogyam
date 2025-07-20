@@ -346,7 +346,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical roadmap" />
+                                <Image src="/adpkd_roadmap_image.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>ADPKD Road Map</CardTitle>
                                     <CardDescription>A guide for navigating Autosomal Dominant Polycystic Kidney Disease.</CardDescription>
@@ -358,7 +358,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical consent" />
+                                <Image src="/biopsy_consent_image.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>Biopsy Consent</CardTitle>
                                     <CardDescription>An interactive guide to understanding the biopsy consent process.</CardDescription>
@@ -558,3 +558,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
