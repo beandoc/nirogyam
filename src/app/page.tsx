@@ -49,9 +49,10 @@ import {
   Filter,
   GraduationCap,
   TestTube,
+  ExternalLink,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const ListItem = React.forwardRef<
@@ -194,21 +195,21 @@ export default function NirogyamPage() {
                       <NavigationMenu>
                         <NavigationMenuList>
                           <NavigationMenuItem>
-                            <Link href="/kidney-health" legacyBehavior passHref>
+                            <Link href="/kidney-health">
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Kidney Health
                               </NavigationMenuLink>
                             </Link>
                           </NavigationMenuItem>
                           <NavigationMenuItem>
-                            <Link href="/renal-nutrition" legacyBehavior passHref>
+                            <Link href="/renal-nutrition">
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Diet &amp; Nutrition
                               </NavigationMenuLink>
                             </Link>
                           </NavigationMenuItem>
                            <NavigationMenuItem>
-                              <Link href="/kidney-transplant" legacyBehavior passHref>
+                              <Link href="/kidney-transplant">
                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                  Kidney Transplant
                                </NavigationMenuLink>
@@ -315,7 +316,78 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="assess-kidney" className="py-20 bg-background">
+                <section id="digital-toolkits" className="py-20 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary">Digital Toolkits</h3>
+                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Interactive tools to help you assess risks and make informed decisions about your kidney health.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                            <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="Know Hemodialysis" width={600} height={400} className="rounded-t-lg" data-ai-hint="dialysis machine" />
+                                <CardHeader>
+                                    <CardTitle>Know Hemodialysis</CardTitle>
+                                    <CardDescription>An interactive guide to understanding hemodialysis.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/know_hemodialysis/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                             <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical assessment" />
+                                <CardHeader>
+                                    <CardTitle>CKD Assessment</CardTitle>
+                                    <CardDescription>Assess your risk and stages of Chronic Kidney Disease.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/ckdassessment/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                            <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="risk chart" />
+                                <CardHeader>
+                                    <CardTitle>AKI Risk Assessment</CardTitle>
+                                    <CardDescription>Evaluate the risk factors for Acute Kidney Injury.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/AKI-risk-index/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                            <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" data-ai-hint="decision tree" />
+                                <CardHeader>
+                                    <CardTitle>Kidney Care Choices</CardTitle>
+                                    <CardDescription>Explore treatment options and make informed care decisions.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/Kidneycarechoices/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                             <Card className="flex flex-col">
+                                <Image src="https://placehold.co/600x400.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical roadmap" />
+                                <CardHeader>
+                                    <CardTitle>ADPKD Road Map</CardTitle>
+                                    <CardDescription>A guide for navigating Autosomal Dominant Polycystic Kidney Disease.</CardDescription>
+                                </CardHeader>
+                                <CardFooter className="mt-auto">
+                                    <Button asChild className="w-full">
+                                        <a href="https://beandoc.github.io/adpkd/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="assess-kidney" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Assess Your Kidney Health</h3>
@@ -325,7 +397,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="renal-nutrition" className="py-20 bg-card">
+                <section id="renal-nutrition" className="py-20 bg-background">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative rounded-lg overflow-hidden shadow-xl">
                             <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
@@ -342,7 +414,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="kidney-conversations" className="py-20 bg-background">
+                <section id="kidney-conversations" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Kidney Conversations</h3>
@@ -386,7 +458,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="faq" className="py-20 bg-card">
+                <section id="faq" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
@@ -414,7 +486,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="about" className="py-20 bg-background">
+                <section id="about" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
@@ -426,17 +498,18 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 bg-card">
+                <section id="contact" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
-                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-background">
+                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-card">
                             <CardContent className="pt-6">
                                 <form className="space-y-4">
                                     <Input type="text" placeholder="Your Name" />
                                     <Input type="email" placeholder="Your Email" />
                                     <Textarea placeholder="Your Message" rows={5} />
                                     <Button type="submit" size="lg" className="w-full">Send Message</Button>
+
                                 </form>
                             </CardContent>
                         </Card>
