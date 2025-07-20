@@ -408,17 +408,15 @@ export default function NirogyamPage() {
                                     </ul>
                                 </CardContent>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
+                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><Stethoscope className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Health Professionals</CardTitle>
-                                    <CardDescription>Clinical tools and the latest research to support your practice.</CardDescription>
+                                    <CardTitle className="text-primary text-2xl">Hemodialysis</CardTitle>
+                                    <CardDescription>What is it? How can it help? Learn about the treatment and preparation.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-function-tests" className="hover:underline">Access Clinical Resources</Link></li>
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/stages-of-ckd" className="hover:underline">Review Latest Research</Link></li>
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-transplant" className="hover:underline">Consult Treatment Guidelines</Link></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/hemodialysis" className="hover:underline">Learn About Hemodialysis</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
