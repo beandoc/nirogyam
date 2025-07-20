@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/sheet"
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname, useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -171,12 +171,19 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const currentLocale = pathname.split('/')[1];
+    const params = useParams();
 
     const changeLanguage = (newLocale: string) => {
+        const currentLocale = params.lang;
         if (newLocale === currentLocale) return;
 
-        const newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+        let newPathname = pathname;
+        if (pathname.startsWith(`/${currentLocale}`)) {
+            newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+        } else {
+            newPathname = `/${newLocale}${pathname}`;
+        }
+        
         router.push(newPathname);
     };
 
@@ -184,14 +191,14 @@ const LanguageSwitcher = () => {
         <div className="flex items-center space-x-2 text-sm">
             <button 
                 onClick={() => changeLanguage('en')} 
-                className={cn("font-medium", { 'text-primary underline': currentLocale === 'en' })}
+                className={cn("font-medium", { 'text-primary underline': params.lang === 'en' })}
             >
                 English
             </button>
             <span>|</span>
             <button 
                 onClick={() => changeLanguage('hi')} 
-                className={cn("font-medium", { 'text-primary underline': currentLocale === 'hi' })}
+                className={cn("font-medium", { 'text-primary underline': params.lang === 'hi' })}
             >
                 हिन्दी
             </button>
@@ -201,8 +208,8 @@ const LanguageSwitcher = () => {
 
 export const AppHeader = () => {
     const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
-    const pathname = usePathname();
-    const locale = pathname.split('/')[1] || 'en';
+    const params = useParams();
+    const locale = (params.lang as string) || 'en';
     const t = locale === 'hi' ? hi : en;
 
     const getLocalizedHref = (href: string) => `/${locale}${href}`;

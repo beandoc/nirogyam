@@ -1,43 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const locales = ['en', 'hi'];
+const defaultLocale = 'en';
 
-// Get the preferred locale, similar to above or using a library
 function getLocale(request: NextRequest) {
   const acceptLanguage = request.headers.get('accept-language');
   if (acceptLanguage) {
     const preferredLocales = acceptLanguage.split(',').map((lang) => lang.split(';')[0]);
     for (const locale of preferredLocales) {
-        if (locales.includes(locale)) {
-            return locale;
-        }
+      const generalLocale = locale.split('-')[0];
+      if (locales.includes(generalLocale)) {
+        return generalLocale;
+      }
     }
   }
-  return 'en'; // default locale
+  return defaultLocale;
 }
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) return;
 
-  // Redirect if there is no locale
   const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
-  // e.g. incoming request is /products
-  // The new URL is now /en/products
-  return Response.redirect(request.nextUrl);
+  
+  return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|api|.*\\..*).*)',
-    // Optional: only run on root (/) URL
-    // '/'
+    // Skip all internal paths (_next) and assets
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)',
   ],
 };
