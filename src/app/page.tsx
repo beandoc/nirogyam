@@ -202,14 +202,14 @@ export default function NirogyamPage() {
                               <NavigationMenu>
                                 <NavigationMenuList>
                                   <NavigationMenuItem>
-                                    <Link href="/kidney-health" legacyBehavior passHref>
+                                    <Link href="/kidney-health">
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Kidney Health
                                       </NavigationMenuLink>
                                     </Link>
                                   </NavigationMenuItem>
                                   <NavigationMenuItem>
-                                    <Link href="/renal-nutrition" legacyBehavior passHref>
+                                    <Link href="/renal-nutrition">
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Diet &amp; Nutrition
                                       </NavigationMenuLink>
@@ -334,18 +334,20 @@ export default function NirogyamPage() {
                         </section>
 
                         <section id="renal-nutrition" className="py-20 bg-card">
-                          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                              <div className="relative rounded-lg overflow-hidden shadow-xl">
-                                <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
-                              </div>
-                              <div>
-                                  <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
-                                  <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
-                                  <Button size="lg" asChild>
-                                      <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
-                                  </Button>
-                              </div>
-                          </div>
+                            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                                <div className="relative rounded-lg overflow-hidden shadow-xl">
+                                    <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
+                                    <p className="text-lg text-foreground/80 mb-6">
+                                        A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression.
+                                    </p>
+                                    <Button size="lg" asChild>
+                                        <Link href="/renal-nutrition">Explore the Nutrition Guide <ArrowRight className="ml-2 h-4 w-4"/></Link>
+                                    </Button>
+                                </div>
+                            </div>
                         </section>
                         
                         <section id="kidney-conversations" className="py-20 bg-background">
@@ -490,5 +492,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    

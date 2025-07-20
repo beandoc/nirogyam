@@ -146,7 +146,7 @@ const KidneyTransplantPage = () => {
                                             <AccordionContent>Your doctor can provide personalized advice on whether a transplant, and which type (living vs. deceased donor), is suitable for you.</AccordionContent>
                                         </AccordionItem>
                                         <AccordionItem value="item-4">
-                                            <AccordionTrigger>Can you explain the differences between life on dialysis and life with a transplant?</AccordionTrigger>
+                                            <AccordionTrigger>Could you explain the differences between life on dialysis and life with a transplant?</AccordionTrigger>
                                             <AccordionContent>This comparison will help you understand the long-term lifestyle implications of each treatment path.</AccordionContent>
                                         </AccordionItem>
                                         <AccordionItem value="item-5">

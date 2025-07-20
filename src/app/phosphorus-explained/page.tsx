@@ -94,7 +94,7 @@ const PhosphorusExplainedPage = () => {
                                                 <TableRow>
                                                     <TableCell className="font-medium">Dairy</TableCell>
                                                     <TableCell>Cheese, milk, ice cream, pudding, most yogurts.</TableCell>
-                                                    <TableCell>Rice milk, almond milk, cottage cheese, sherbet, vegan cheese.</TableCell>
+                                                    <TableCell>Rice milk, almond milk, cottage cheese, vegan cheese, sherbet, popsicles.</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell className="font-medium">Protein</TableCell>
