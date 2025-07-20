@@ -246,6 +246,40 @@ const dietAndNutritionTopics = [
     },
 ];
 
+const transplantTopics = [
+    {
+        title: "About Kidney Transplant",
+        href: "/kidney-transplant#about",
+        description: "Learn what a transplant is and when to consider it.",
+    },
+    {
+        title: "Benefits and Risks",
+        href: "/kidney-transplant#benefits",
+        description: "Understand the pros and cons of transplant surgery.",
+    },
+    {
+        title: "Types of Donors",
+        href: "/kidney-transplant#types",
+        description: "Explore the differences between living and deceased donors.",
+    },
+    {
+        title: "The Surgery Process",
+        href: "/kidney-transplant#surgery",
+        description: "What to expect during and after the transplant operation.",
+    },
+    {
+        title: "Eligibility",
+        href: "/kidney-transplant#eligibility",
+        description: "Find out who is a candidate for a kidney transplant.",
+    },
+    {
+        title: "Getting Started",
+        href: "/kidney-transplant#getting-started",
+        description: "Your first steps toward evaluation at a transplant center.",
+    },
+];
+
+
 export default function NirogyamPage() {
     
     return (
@@ -297,11 +331,20 @@ export default function NirogyamPage() {
                               </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                               <Link href="/kidney-transplant" passHref>
-                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                  Kidney Transplant
-                                </NavigationMenuLink>
-                               </Link>
+                              <NavigationMenuTrigger>Kidney Transplant</NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                  {transplantTopics.map((component) => (
+                                    <ListItem
+                                      key={component.title}
+                                      title={component.title}
+                                      href={component.href}
+                                    >
+                                      {component.description}
+                                    </ListItem>
+                                  ))}
+                                </ul>
+                              </NavigationMenuContent>
                             </NavigationMenuItem>
                           </NavigationMenuList>
                         </NavigationMenu>
