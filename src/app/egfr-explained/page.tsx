@@ -1,4 +1,5 @@
 
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,24 +7,31 @@ import { Button } from '@/components/ui/button';
 import { ChevronsRight, Download, Droplets, Gauge, Scale, Cake, Dna, Home, ArrowLeft } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AppHeader } from '@/components/AppHeader';
+import { usePathname } from 'next/navigation';
+import en from '@/locales/en.json';
+import hi from '@/locales/hi.json';
 
-const TableOfContents = () => (
+const TableOfContents = ({ t }: { t: any }) => (
     <Card className="mb-12">
         <CardHeader>
-            <CardTitle>Table of Contents</CardTitle>
+            <CardTitle>{t.egfrExplained.toc.title}</CardTitle>
         </CardHeader>
         <CardContent>
             <ul className="space-y-2">
-                <li><a href="#about-egfr" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />About eGFR</a></li>
-                <li><a href="#types" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Types of GFR Measurement</a></li>
-                <li><a href="#purpose" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Purpose of eGFR Testing</a></li>
-                <li><a href="#results" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Understanding Your Results</a></li>
+                <li><a href="#about-egfr" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />{t.egfrExplained.toc.about}</a></li>
+                <li><a href="#types" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />{t.egfrExplained.toc.types}</a></li>
+                <li><a href="#purpose" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />{t.egfrExplained.toc.purpose}</a></li>
+                <li><a href="#results" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />{t.egfrExplained.toc.results}</a></li>
             </ul>
         </CardContent>
     </Card>
 );
 
 const EgfrExplainedPage = () => {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1];
+  const t = locale === 'hi' ? hi : en;
+
   return (
     <div className="bg-background text-foreground flex-1">
       <AppHeader />
@@ -32,107 +40,104 @@ const EgfrExplainedPage = () => {
             <Button asChild variant="outline" className="mb-8">
                 <Link href="/">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Home
+                    {t.buttons.backToHome}
                 </Link>
             </Button>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Understanding Your eGFR</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">{t.egfrExplained.title}</h1>
             <p className="text-lg text-foreground/80 mb-10">
-            Your estimated Glomerular Filtration Rate (eGFR) is a key indicator of kidney function, showing how effectively your kidneys are filtering waste from your blood.
+            {t.egfrExplained.intro}
             </p>
 
-            <TableOfContents />
+            <TableOfContents t={t} />
 
             <article className="prose lg:prose-xl max-w-none text-foreground/90">
                 <section id="about-egfr" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">About Estimated Glomerular Rate (eGFR)</h2>
-                    <p>Your kidneys work by filtering your blood to remove waste products and excess water, which are then expelled as urine. The Glomerular Filtration Rate (GFR) is a measure of how well your kidneys perform this filtering task. With an estimated 37 million adults in the U.S. potentially having chronic kidney disease (CKD)—and nearly 90% of them unaware—early detection through GFR assessment is critical for protecting kidney health.</p>
+                    <h2 className="text-3xl font-bold text-primary mb-4">{t.egfrExplained.sections.about.title}</h2>
+                    <p>{t.egfrExplained.sections.about.content}</p>
                 </section>
 
                 <section id="types" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Measuring and Estimating GFR</h2>
-                    <p>Obtaining a directly measured GFR (mGFR) is a complex and time-consuming process, making it impractical for routine clinical use. Therefore, healthcare providers rely on a formula to calculate an estimated GFR (eGFR). Since CKD often shows no symptoms until its later stages, a reliable eGFR calculation is vital for early diagnosis.</p>
-                    <p>The most common method for calculating eGFR involves a simple blood test to measure creatinine levels. Creatinine is a waste product from protein digestion and the natural breakdown of muscle tissue. However, factors other than kidney function—such as diet, muscle mass, malnutrition, and other health conditions—can influence creatinine levels.</p>
-                    <h3 className="text-2xl font-bold text-primary/90 mt-8 mb-4">Differences between eGFR and mGFR</h3>
+                    <h2 className="text-3xl font-bold text-primary mb-4">{t.egfrExplained.sections.measuring.title}</h2>
+                    <p>{t.egfrExplained.sections.measuring.p1}</p>
+                    <p>{t.egfrExplained.sections.measuring.p2}</p>
+                    <h3 className="text-2xl font-bold text-primary/90 mt-8 mb-4">{t.egfrExplained.sections.measuring.comparison.title}</h3>
                     <Card>
                     <Table>
                         <TableHeader>
                         <TableRow>
                             <TableHead className="w-[200px]"></TableHead>
-                            <TableHead className="font-bold text-foreground">Estimated GFR (eGFR)</TableHead>
-                            <TableHead className="font-bold text-foreground">Measured GFR (mGFR)</TableHead>
+                            <TableHead className="font-bold text-foreground">{t.egfrExplained.sections.measuring.comparison.egfr}</TableHead>
+                            <TableHead className="font-bold text-foreground">{t.egfrExplained.sections.measuring.comparison.mgfr}</TableHead>
                         </TableRow>
                         </TableHeader>
                         <TableBody>
                         <TableRow>
-                            <TableHead>How it works</TableHead>
-                            <TableCell>A calculation estimating how well kidneys filter substances produced by the body, like creatinine (from muscle wear) or cystatin C (a protein).</TableCell>
-                            <TableCell>A direct measurement of how well kidneys filter external agents like inulin (a plant fiber) or iohexol (a medical contrast agent).</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.how.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.how.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.how.mgfr}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableHead>Availability</TableHead>
-                            <TableCell>Widely available</TableCell>
-                            <TableCell>Not widely available</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.availability.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.availability.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.availability.mgfr}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableHead>Cost</TableHead>
-                            <TableCell>Less expensive</TableCell>
-                            <TableCell>More expensive</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.cost.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.cost.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.cost.mgfr}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableHead>Time</TableHead>
-                            <TableCell>Less time needed</TableCell>
-                            <TableCell>More time consuming</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.time.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.time.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.time.mgfr}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableHead>Accuracy</TableHead>
-                            <TableCell>Estimates can be less accurate in early-stage kidney disease (stages 1 and 2).*</TableCell>
-                            <TableCell>Provides accurate GFR measures, including in early stages.</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.accuracy.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.accuracy.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.accuracy.mgfr}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableHead>Precision</TableHead>
-                            <TableCell>May not detect subtle or rapid GFR changes.</TableCell>
-                            <TableCell>Can identify early and rapid changes in GFR levels.</TableCell>
+                            <TableHead>{t.egfrExplained.sections.measuring.comparison.rows.precision.header}</TableHead>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.precision.egfr}</TableCell>
+                            <TableCell>{t.egfrExplained.sections.measuring.comparison.rows.precision.mgfr}</TableCell>
                         </TableRow>
                         </TableBody>
                     </Table>
                     </Card>
-                    <p className="text-sm text-muted-foreground mt-4">*Other factors like pregnancy, age over 70, unusual muscle mass, liver cirrhosis, nephrotic syndrome, organ transplants, and certain medications can affect eGFR accuracy.</p>
+                    <p className="text-sm text-muted-foreground mt-4">{t.egfrExplained.sections.measuring.footnote}</p>
                 </section>
 
                 <section id="purpose" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Why eGFR Testing is Done</h2>
-                    <p>Since early-stage CKD often has no symptoms, your doctor may recommend an eGFR test if you have a higher risk of developing the disease. Risk factors include:</p>
+                    <h2 className="text-3xl font-bold text-primary mb-4">{t.egfrExplained.sections.purpose.title}</h2>
+                    <p>{t.egfrExplained.sections.purpose.p1}</p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 my-8">
-                        <div className="flex flex-col items-center text-center gap-2"><Droplets className="h-10 w-10 text-primary" /><span>Diabetes</span></div>
-                        <div className="flex flex-col items-center text-center gap-2"><Gauge className="h-10 w-10 text-primary" /><span>High Blood Pressure</span></div>
-                        <div className="flex flex-col items-center text-center gap-2"><Scale className="h-10 w-10 text-primary" /><span>Overweight/Obesity</span></div>
-                        <div className="flex flex-col items-center text-center gap-2"><Cake className="h-10 w-10 text-primary" /><span>Over Age 60</span></div>
-                        <div className="flex flex-col items-center text-center gap-2"><Dna className="h-10 w-10 text-primary" /><span>Family History of CKD</span></div>
+                         {t.egfrExplained.sections.purpose.riskFactors.map((factor: any, index: number) => (
+                            <div key={index} className="flex flex-col items-center text-center gap-2">
+                                <div dangerouslySetInnerHTML={{ __html: factor.icon === 'Droplets' ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.7-3.02C8.13 8.5 7 7.5 7 6c0-1.1.9-2 2-2s2 .9 2 2c0 1.83-2.35 3.52-3.46 4.33-.3.22-.54.5-.54.82v.15c0 .65.53 1.18 1.18 1.18.46 0 .88-.26 1.08-.63"/><path d="M14 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.7-3.02C15.13 8.5 14 7.5 14 6c0-1.1.9-2 2-2s2 .9 2 2c0 1.83-2.35 3.52-3.46 4.33-.3.22-.54.5-.54.82v.15c0 .65.53 1.18 1.18 1.18.46 0 .88-.26 1.08-.63"/></svg>' : factor.icon === 'Gauge' ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>' : factor.icon === 'Scale' ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary"><path d="m16 16-4-4-4 4"/><path d="M12 20V10"/><path d="M6 20h12"/><path d="M4 12H2"/><path d="M10 4H8"/><path d="M16 4h-2"/><path d="M22 12h-2"/><path d="M7.16 7.16l-1.42-1.42"/><path d="M18.26 18.26l-1.42-1.42"/><path d="M18.26 7.16l-1.42 1.42"/><path d="M7.16 18.26l-1.42-1.42"/></svg>' : factor.icon === 'Cake' ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v2"/><path d="M12 8v2"/><path d="M17 8v2"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary"><path d="M12.5 2a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5Z"/><path d="M12.5 21a.5.5 0 0 1 .5.5v-3a.5.5 0 0 1-1 0v3a.5.5 0 0 1 .5-.5Z"/><path d="M22 12.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 .5.5Z"/><path d="M5 12.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 .5.5Z"/><path d="m18.5 18-.5.5a.5.5 0 0 1-.7 0l-1-1a.5.5 0 1 1 .7-.7l1 1a.5.5 0 0 1 0 .7Z"/><path d="m5.5 5-.5.5a.5.5 0 0 1-.7 0l-1-1a.5.5 0 0 1 .7-.7l1 1a.5.5 0 0 1 0 .7Z"/><path d="m18 5.5.5.5a.5.5 0 0 0 0-.7l-1-1a.5.5 0 0 0-.7.7l1 1Z"/><path d="m5 18.5.5.5a.5.5 0 0 0 .7 0l1-1a.5.5 0 1 0-.7-.7l-1 1a.5.5 0 0 0 0 .7Z"/><path d="M12.5 8a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Z"/><path d="M8 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Z"/></svg>' }} />
+                                <span>{factor.label}</span>
+                            </div>
+                        ))}
                     </div>
-                    <p>The development of CKD is typically due to a combination of physical, environmental, and social factors rather than a single cause.</p>
-                    <p className="mt-4">An eGFR test may also be ordered if you exhibit symptoms of later-stage CKD, such as:</p>
+                    <p>{t.egfrExplained.sections.purpose.p2}</p>
+                    <p className="mt-4">{t.egfrExplained.sections.purpose.p3}</p>
                     <ul className="list-disc pl-6 space-y-2 mt-4">
-                        <li>Changes in urination frequency</li>
-                        <li>Itching or dry skin</li>
-                        <li>Persistent fatigue</li>
-                        <li>Swelling in arms, legs, or feet</li>
-                        <li>Muscle cramps</li>
-                        <li>Nausea and vomiting</li>
-                        <li>Loss of appetite</li>
+                        {t.egfrExplained.sections.purpose.symptoms.map((symptom: string, index: number) => (
+                           <li key={index}>{symptom}</li>
+                        ))}
                     </ul>
                 </section>
 
                 <section id="results" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Understanding Your Results</h2>
-                    <p>Your eGFR number helps your doctor determine the stage of kidney disease and create an appropriate treatment plan. The results are categorized into stages, from stage 1 (mild) to stage 5 (kidney failure). Discussing your eGFR result with your healthcare provider is the best way to understand your specific situation and next steps.</p>
+                    <h2 className="text-3xl font-bold text-primary mb-4">{t.egfrExplained.sections.results.title}</h2>
+                    <p>{t.egfrExplained.sections.results.content}</p>
                 </section>
                 
                 <section id="resources" className="mb-12 scroll-mt-20">
-                <h2 className="text-3xl font-bold text-primary mb-6">More Resources</h2>
+                <h2 className="text-3xl font-bold text-primary mb-6">{t.egfrExplained.sections.resources.title}</h2>
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg">
                     <Download className="mr-2 h-5 w-5" />
-                    Download eGFR Fact Sheet
+                    {t.egfrExplained.sections.resources.button}
                     </Button>
                 </div>
                 </section>

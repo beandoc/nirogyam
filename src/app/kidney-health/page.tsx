@@ -1,10 +1,14 @@
 
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
+import { usePathname } from 'next/navigation';
+import en from '@/locales/en.json';
+import hi from '@/locales/hi.json';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
     <Card className="text-center p-4 hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 flex flex-col">
@@ -26,6 +30,109 @@ const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, 
 );
 
 const KidneyHealthPage = () => {
+    const pathname = usePathname();
+    const locale = pathname.split('/')[1];
+    const t = locale === 'hi' ? hi : en;
+
+    const topics = [
+        { 
+            icon: <Filter className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.howKidneysWork.title,
+            description: t.kidneyHealth.topics.howKidneysWork.description,
+            href: "/how-kidneys-work"
+        },
+        { 
+            icon: <HeartPulse className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.ckdExplained.title,
+            description: t.kidneyHealth.topics.ckdExplained.description,
+            href: "/ckd-explained"
+        },
+        {
+            icon: <FileText className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.egfrExplained.title,
+            description: t.kidneyHealth.topics.egfrExplained.description,
+            href: "/egfr-explained"
+        },
+        {
+            icon: <GraduationCap className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.stagesOfCkd.title,
+            description: t.kidneyHealth.topics.stagesOfCkd.description,
+            href: "/stages-of-ckd"
+        },
+        {
+            icon: <Droplet className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.hemodialysis.title,
+            description: t.kidneyHealth.topics.hemodialysis.description,
+            href: "/hemodialysis"
+        },
+        {
+            icon: <TestTube className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.kidneyFunctionTests.title,
+            description: t.kidneyHealth.topics.kidneyFunctionTests.description,
+            href: "/kidney-function-tests"
+        },
+        {
+            icon: <Diamond className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.kidneyStones.title,
+            description: t.kidneyHealth.topics.kidneyStones.description,
+            href: "/kidney-stones"
+        },
+        {
+            icon: <HeartHandshake className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.kidneyTransplant.title,
+            description: t.kidneyHealth.topics.kidneyTransplant.description,
+            href: "/kidney-transplant"
+        },
+        {
+            icon: <TestTube className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.creatinineExplained.title,
+            description: t.kidneyHealth.topics.creatinineExplained.description,
+            href: "/creatinine-explained"
+        },
+        {
+            icon: <FileText className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.renalNutrition.title,
+            description: t.kidneyHealth.topics.renalNutrition.description,
+            href: "/renal-nutrition"
+        },
+        {
+            icon: <HeartPulse className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.goodNutrition.title,
+            description: t.kidneyHealth.topics.goodNutrition.description,
+            href: "/good-nutrition"
+        },
+        {
+            icon: <Bone className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.phosphorusExplained.title,
+            description: t.kidneyHealth.topics.phosphorusExplained.description,
+            href: "/phosphorus-explained"
+        },
+        {
+            icon: <Droplet className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.potassiumExplained.title,
+            description: t.kidneyHealth.topics.potassiumExplained.description,
+            href: "/potassium-explained"
+        },
+        {
+            icon: <Leaf className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.proteinExplained.title,
+            description: t.kidneyHealth.topics.proteinExplained.description,
+            href: "/protein-explained"
+        },
+        {
+            icon: <Cloudy className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.sodiumExplained.title,
+            description: t.kidneyHealth.topics.sodiumExplained.description,
+            href: "/sodium-explained"
+        },
+        { 
+            icon: <User className="h-8 w-8 text-primary" />,
+            title: t.kidneyHealth.topics.livingWithSingleKidney.title,
+            description: t.kidneyHealth.topics.livingWithSingleKidney.description,
+            href: "/living-with-single-kidney"
+        },
+    ];
+
   return (
     <div className="bg-background text-foreground flex-1">
         <AppHeader />
@@ -34,110 +141,23 @@ const KidneyHealthPage = () => {
             <Button asChild variant="outline" className="mb-8">
                 <Link href="/">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Home
+                    {t.buttons.backToHome}
                 </Link>
             </Button>
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Kidney Health Topics</h1>
-                <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into our library of articles to understand every aspect of your kidney health.</p>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">{t.kidneyHealth.title}</h1>
+                <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">{t.kidneyHealth.intro}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <TopicCard 
-                    icon={<Filter className="h-8 w-8 text-primary" />}
-                    title="How Kidneys Work"
-                    description="Learn the fundamentals of how your kidneys filter waste and keep you healthy."
-                    href="/how-kidneys-work"
-                />
-                <TopicCard 
-                    icon={<HeartPulse className="h-8 w-8 text-primary" />}
-                    title="CKD Explained"
-                    description="Learn about Chronic Kidney Disease, its causes, symptoms, and progression."
-                    href="/ckd-explained"
-                />
-                <TopicCard
-                    icon={<FileText className="h-8 w-8 text-primary" />}
-                    title="eGFR Explained"
-                    description="Understand what your estimated Glomerular Filtration Rate (eGFR) means for your kidney health."
-                    href="/egfr-explained"
-                />
-                <TopicCard
-                    icon={<GraduationCap className="h-8 w-8 text-primary" />}
-                    title="Stages of CKD"
-                    description="Find out about the different stages of CKD and what they mean for your treatment plan."
-                    href="/stages-of-ckd"
-                />
-                 <TopicCard
-                    icon={<Droplet className="h-8 w-8 text-primary" />}
-                    title="Hemodialysis"
-                    description="Learn about the hemodialysis process for treating kidney failure."
-                    href="/hemodialysis"
-                />
-                <TopicCard
-                    icon={<TestTube className="h-8 w-8 text-primary" />}
-                    title="Kidney Function Tests"
-                    description="A guide to the various tests used to monitor your kidney health."
-                    href="/kidney-function-tests"
-                />
-                <TopicCard
-                    icon={<Diamond className="h-8 w-8 text-primary" />}
-                    title="Kidney Stones"
-                    description="Learn about the causes, symptoms, and treatments for kidney stones."
-                    href="/kidney-stones"
-                />
-                <TopicCard
-                    icon={<HeartHandshake className="h-8 w-8 text-primary" />}
-                    title="Kidney Transplant"
-                    description="Explore the process and benefits of receiving a kidney transplant."
-                    href="/kidney-transplant"
-                />
-                <TopicCard
-                    icon={<TestTube className="h-8 w-8 text-primary" />}
-                    title="Creatinine Explained"
-                    description="Understand what creatinine is and its role in kidney health."
-                    href="/creatinine-explained"
-                />
-                <TopicCard
-                    icon={<FileText className="h-8 w-8 text-primary" />}
-                    title="Renal Nutrition"
-                    description="Your guide to a kidney-friendly diet to help manage CKD."
-                    href="/renal-nutrition"
-                />
-                <TopicCard
-                    icon={<HeartPulse className="h-8 w-8 text-primary" />}
-                    title="Good Nutrition"
-                    description="General tips for a healthy diet and lifestyle for overall well-being."
-                    href="/good-nutrition"
-                />
-                <TopicCard
-                    icon={<Bone className="h-8 w-8 text-primary" />}
-                    title="Phosphorus Explained"
-                    description="Learn how to manage phosphorus levels for bone and heart health in CKD."
-                    href="/phosphorus-explained"
-                />
-                <TopicCard
-                    icon={<Droplet className="h-8 w-8 text-primary" />}
-                    title="Potassium Explained"
-                    description="A guide to managing potassium in your diet for kidney health."
-                    href="/potassium-explained"
-                />
-                <TopicCard
-                    icon={<Leaf className="h-8 w-8 text-primary" />}
-                    title="Protein Explained"
-                    description="Learn the right amount of protein to eat with and without dialysis."
-                    href="/protein-explained"
-                />
-                <TopicCard
-                    icon={<Cloudy className="h-8 w-8 text-primary" />}
-                    title="Sodium Explained"
-                    description="How to limit sodium and use herbs and spices for flavor."
-                    href="/sodium-explained"
-                />
-                 <TopicCard 
-                    icon={<User className="h-8 w-8 text-primary" />}
-                    title="Living with a Single Kidney"
-                    description="Information and guidance for individuals with one kidney."
-                    href="/living-with-single-kidney"
-                />
+                {topics.map((topic, index) => (
+                    <TopicCard 
+                        key={index}
+                        icon={topic.icon}
+                        title={topic.title}
+                        description={topic.description}
+                        href={topic.href}
+                    />
+                ))}
             </div>
         </main>
     </div>

@@ -5,5 +5,496 @@
         "kidneyHealth": "Kidney Health",
         "dietNutrition": "Diet & Nutrition",
         "kidneyTransplant": "Kidney Transplant"
+    },
+    "buttons": {
+        "backToHome": "Back to Home"
+    },
+    "home": {
+        "hero": {
+            "title": "Empowering Your Kidney Health Journey",
+            "subtitle": "A comprehensive, compassionate resource for understanding kidney health, managing kidney disease, and finding the support you need.",
+            "ctaButton": "Assess Your Risk Now",
+            "imageAlt": "Illustration of doctors and a patient discussing kidney health"
+        },
+        "help": {
+            "title": "How Can We Help?",
+            "subtitle": "A kidney disease diagnosis can be overwhelming. You may be wondering, \"What can I do to avoid dialysis?\" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.",
+            "cards": {
+                "ckd": {
+                    "title": "Chronic Kidney Disease",
+                    "description": "Guidance and resources tailored for your health journey.",
+                    "link": "Explore Kidney Topics"
+                },
+                "hemodialysis": {
+                    "title": "Hemodialysis",
+                    "description": "What is it? How can it help? Learn about the treatment and preparation.",
+                    "link": "Learn About Hemodialysis"
+                },
+                "peritoneal": {
+                    "title": "Peritoneal dialysis",
+                    "description": "Learn about peritoneal dialysis, a treatment for kidney failure that you can do at home.",
+                    "link": "What is peritoneal dialysis?"
+                }
+            }
+        },
+        "toolkits": {
+            "title": "Digital Toolkits",
+            "subtitle": "Interactive tools to help you assess risks and make informed decisions about your kidney health.",
+            "launchButton": "Launch Toolkit",
+            "cards": [
+                {
+                    "image": "/hemodialysis_image.png",
+                    "title": "Know Hemodialysis",
+                    "description": "An interactive guide to understanding hemodialysis.",
+                    "href": "/toolkits/know-hemodialysis",
+                    "aiHint": "medical equipment"
+                },
+                {
+                    "image": "/ckdassessment.png",
+                    "title": "CKD Assessment",
+                    "description": "Assess your risk and stages of Chronic Kidney Disease.",
+                    "href": "/toolkits/ckd-assessment",
+                    "aiHint": "medical checklist"
+                },
+                {
+                    "image": "/akiriskassessment.png",
+                    "title": "AKI Risk Assessment",
+                    "description": "Evaluate the risk factors for Acute Kidney Injury.",
+                    "href": "/toolkits/aki-risk-assessment",
+                    "aiHint": "risk assessment"
+                },
+                {
+                    "image": "/kidneycarechoice.png",
+                    "title": "Kidney Care Choices",
+                    "description": "Explore treatment options and make informed care decisions.",
+                    "href": "/toolkits/kidney-care-choices",
+                    "aiHint": "decision tree"
+                },
+                {
+                    "image": "/adpkdroadmap.png",
+                    "title": "ADPKD Road Map",
+                    "description": "A guide for navigating Autosomal Dominant Polycystic Kidney Disease.",
+                    "href": "/toolkits/adpkd-road-map",
+                    "aiHint": "medical roadmap"
+                },
+                {
+                    "image": "/kidneybiopsyconsent.png",
+                    "title": "Biopsy Consent",
+                    "description": "An interactive guide to understanding the biopsy consent process.",
+                    "href": "/toolkits/biopsy-consent",
+                    "aiHint": "medical consent"
+                }
+            ]
+        },
+        "quiz": {
+            "title": "Assess Your Kidney Health",
+            "subtitle": "Take our quick assessment to understand your risk factors. Early detection can help prevent or slow the progression of kidney disease.",
+            "questions": [
+                "Do you have diabetes?",
+                "Do you have high blood pressure?",
+                "Is there a history of kidney disease in your family?",
+                "Are you over the age of 60?",
+                "Do you take over-the-counter pain medications regularly?"
+            ],
+            "options": {
+                "yes": "Yes",
+                "no": "No",
+                "unsure": "Unsure"
+            },
+            "buttons": {
+                "previous": "Previous",
+                "next": "Next",
+                "submit": "Submit"
+            },
+            "result": {
+                "title": "Quiz Results",
+                "description": "Thank you for taking the assessment. Based on your responses, here's a general indication of your potential risk. Please consult a healthcare professional for a complete evaluation.",
+                "retakeButton": "Retake Quiz"
+            }
+        },
+        "egfrCalculator": {
+            "sectionTitle": "Calculate Your eGFR",
+            "sectionSubtitle": "Use this tool to get an estimate of your kidney function. This calculator is intended for informational purposes and is not a substitute for professional medical advice.",
+            "title": "eGFR Calculator (CKD-EPI 2021)",
+            "description": "Estimate your Glomerular Filtration Rate using the race-free 2021 CKD-EPI formula. This tool is for informational purposes only.",
+            "alert": "Please fill in all fields correctly.",
+            "form": {
+                "creatinine": {
+                    "label": "Serum Creatinine (mg/dL)",
+                    "placeholder": "e.g., 1.2"
+                },
+                "age": {
+                    "label": "Age",
+                    "placeholder": "e.g., 55"
+                },
+                "sex": {
+                    "label": "Sex",
+                    "female": "Female",
+                    "male": "Male"
+                },
+                "button": "Calculate eGFR"
+            },
+            "result": {
+                "prefix": "Your estimated GFR is:",
+                "unit": "mL/min/1.73m²",
+                "disclaimer": "This result is an estimate. Consult a healthcare professional for a proper diagnosis and to understand what this value means for your health."
+            }
+        },
+        "nutrition": {
+            "title": "Your Guide to Renal Nutrition",
+            "description": "A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression.",
+            "ctaButton": "Explore the Nutrition Guide",
+            "imageAlt": "A colorful plate of healthy food"
+        },
+        "podcasts": {
+            "title": "Kidney Conversations",
+            "subtitle": "Tune into our podcasts for in-depth discussions with experts, patient stories, and the latest advancements in kidney care.",
+            "episodes": [
+                { "title": "CKD \"A Blind Spot\"", "description": "An introductory episode covering the basics of Chronic Kidney Disease.", "src": "/podcast_episode_1.mp4" },
+                { "title": "CKD- Correct BP measurement", "description": "Expert insights on managing your diet for kidney health.", "src": "/podcast_episode_2.mp4" },
+                { "title": "Sharing your feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" }
+            ],
+            "videoError": "Your browser does not support the video element.",
+            "moreButton": "Explore More Podcasts"
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Find quick answers to common questions about kidney health and treatment.",
+            "tabs": {
+                "general": "General",
+                "living": "Living Donation",
+                "deceased": "Deceased Donation"
+            },
+            "generalFaqs": [
+                { "question": "How successful are kidney transplants?", "answer": "The success rate for a kidney transplant from a living donor is 90–95% after one year and the transplanted kidney lasts 15 to 20 years on average. For transplants from a deceased donor, the success rate is also high: 85–90% of these kidneys are working well after one year and will last on average from 10 to 15 years." },
+                { "question": "What percentage of people on the waiting list for an organ transplant are waiting for a kidney?", "answer": "About 80% of those on the waiting list need a kidney." },
+                { "question": "Can a person sell their organs for money?", "answer": "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation, and it is illegal to buy or sell organs." }
+            ],
+            "livingDonationFaqs": [
+                { "question": "What organs can be donated through living donation?", "answer": [{ "text": "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."}] },
+                { "question": "Who can be a living donor?", "answer": [{ "text": "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."}] },
+                { "question": "What are the risks of donating a kidney?", "answer": [{ "text": "As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include:", "list": ["Slight increased risk of high blood pressure", "Slight increased incidence of kidney failure", "Possibility of injuring the remaining kidney", "Slight risk of developing a disease of the remaining kidney", "Some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney"] }] },
+                { "question": "Are there any costs I'll have to pay?", "answer": [{ "text": "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."}] },
+                { "question": "How much time will I need to take off work?", "answer": [{ "text": "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process." }] },
+                { "question": "How do I become a living donor?", "answer": [{ "text": "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process." }] },
+                { "question": "Can I change my mind after I've decided to become a living donor?", "answer": [{ "text": "Yes, you can change your mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient." }] },
+                { "question": "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?", "answer": [{ "text": "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony." }] }
+            ],
+            "deceasedDonationFaqs": [
+                { "question": "What organs can be donated through deceased donation?", "answer": "The lungs, heart, liver, kidneys, pancreas and bowel can be donated. Tissues may include eye tissue, heart valves, bone, tendons, veins and ligaments. It is the health of the organs and tissues that is most important, not the age of the donor." },
+                { "question": "If I have indicated my decision for organ donation, will everything be done to save my life?", "answer": "Yes. The first and foremost concern for doctors caring for critically ill patients is to do everything possible to save their lives. The possibility of donation is considered only when all lifesaving efforts have failed." },
+                { "question": "How can I make sure my wishes to donate will be respected?", "answer": "Once you’ve registered your intention to donate your organs, it is crucial to speak to your family and loved ones to make sure they know your wishes." }
+            ]
+        },
+        "about": {
+            "title": "About Nirogyam",
+            "description": "Nirogyam is dedicated to providing clear, reliable, and accessible information on kidney health. We believe that informed patients and caregivers are empowered to make the best decisions for their health journey. Our content is curated by medical professionals and patient advocates to ensure accuracy and relevance.",
+            "imageAlt": "Nirogyam company logo"
+        },
+        "contact": {
+            "title": "Get In Touch",
+            "subtitle": "Have questions, need support, or want to share your story? Reach out to us!",
+            "form": {
+                "namePlaceholder": "Your Name",
+                "emailPlaceholder": "Your Email",
+                "messagePlaceholder": "Your Message",
+                "sendButton": "Send Message",
+                "subjectPrefix": "Contact from",
+                "bodyName": "Name",
+                "bodyEmail": "Email",
+                "bodyMessage": "Message"
+            }
+        },
+        "whatsapp": {
+            "title": "Stay Connected on WhatsApp",
+            "subtitle": "Join our WhatsApp channel for the latest updates, health tips, and community support directly on your phone.",
+            "button": "Follow Our Channel"
+        }
+    },
+    "footer": {
+        "quickLinks": {
+            "title": "Quick Links",
+            "about": "About Us",
+            "kidneyHealth": "Kidney Health",
+            "faqs": "FAQs",
+            "contact": "Contact"
+        },
+        "followUs": {
+            "title": "Follow Us"
+        },
+        "contactInfo": {
+            "title": "Contact Info",
+            "address": "Dept of Nephrology Command Hospital, Pune.",
+            "email": "Email: nirogyam93@gmail.com"
+        },
+        "copyright": "© 2025 Nirogyam. All rights reserved."
+    },
+    "ckdExplained": {
+        "title": "Chronic Kidney Disease (CKD) Explained",
+        "intro": "Chronic kidney disease (CKD) means your kidneys slowly get damaged and can't do important jobs like removing waste and keeping blood pressure normal.",
+        "toc": {
+            "title": "Table of Contents",
+            "about": "About chronic kidney disease (CKD)",
+            "symptoms": "Signs and symptoms",
+            "causes": "Causes",
+            "complications": "Complications",
+            "diagnosis": "Diagnosis",
+            "treatment": "Treatment",
+            "appointment": "Preparing for your appointment"
+        },
+        "sections": {
+            "about": {
+                "title": "About chronic kidney disease (CKD)",
+                "p1": "Your kidneys do many important jobs. Some of the ways they keep your whole body in balance include:",
+                "list": [
+                    "Removing natural waste products and extra water from your body",
+                    "Helping make red blood cells",
+                    "Balancing important minerals in your body",
+                    "Helping maintain your blood pressure",
+                    "Keeping your bones healthy"
+                ],
+                "p2": "Chronic kidney disease (CKD) is when the kidneys have become damaged over time (for at least 3 months) and have a hard time doing all their important jobs. CKD also increases the risk of other health problems like heart disease and stroke. Developing CKD is usually a very slow process with very few symptoms at first. So, CKD is divided into 5 stages to help guide treatment decisions."
+            },
+            "symptoms": {
+                "title": "Signs and symptoms",
+                "p1": "Many people living with CKD do not have any symptoms until the more advanced stages and/or complications develop. If symptoms do happen, they may include:",
+                "list1": [
+                    "Foamy urine",
+                    "Urinating (peeing) more often or less often than usual",
+                    "Itchy and/or dry skin",
+                    "Feeling tired",
+                    "Nausea",
+                    "Loss of appetite",
+                    "Weight loss without trying to lose weight"
+                ],
+                "p2": "People who have more advanced stages of CKD may also notice:",
+                "list2": [
+                    "Trouble concentrating",
+                    "Numbness or swelling in your arms, legs, ankles, or feet",
+                    "Achy muscles or cramping",
+                    "Shortness of breath",
+                    "Vomiting",
+                    "Trouble sleeping",
+                    "Breath smells like ammonia"
+                ]
+            },
+            "causes": { "title": "Causes", "content": "Content for causes will be added here." },
+            "complications": { "title": "Complications", "content": "Content for complications will be added here." },
+            "diagnosis": { "title": "Diagnosis", "content": "Content for diagnosis will be added here." },
+            "treatment": { "title": "Treatment", "content": "Content for treatment will be added here." },
+            "appointment": { "title": "Preparing for your appointment", "content": "Content for preparing for your appointment will be added here." },
+            "resources": {
+                "title": "More resources",
+                "button": "Download Fact Sheet"
+            }
+        }
+    },
+    "creatinineExplained": {
+        "title": "Understanding the Creatinine Test",
+        "intro": "Creatinine is a natural waste product from protein digestion and muscle activity. Your kidneys filter it from your blood. While everyone has creatinine, high levels can indicate a kidney issue.",
+        "purpose": {
+            "title": "Purpose of the Test",
+            "p1": "The serum (blood) creatinine test is a fundamental tool for assessing how well your kidneys are filtering waste. It's a common, frequently ordered test, often included in a Basic or Comprehensive Metabolic Panel (BMP or CMP) during routine health checks. This test helps your healthcare provider:",
+            "list": [
+                "Check kidney health in individuals at high risk for Chronic Kidney Disease (CKD) or those showing symptoms of Acute Kidney Injury (AKI).",
+                "Monitor changes in kidney function over time for people diagnosed with CKD.",
+                "Determine if medication dosages need to be adjusted or stopped to protect your kidneys."
+            ]
+        },
+        "process": {
+            "title": "The Testing Process",
+            "before": {
+                "title": "Before the Test",
+                "content": "Typically, no special preparation is needed. However, your doctor may ask you to avoid eating or drinking (except water) for a few hours beforehand. In some cases, you might be instructed to avoid cooked meat the night before, as it can temporarily raise creatinine levels and affect your eGFR results."
+            },
+            "during": {
+                "title": "During the Test",
+                "content": "A healthcare professional will draw a small blood sample from a vein in your arm. The process is quick, usually taking less than five minutes. You might feel a brief sting when the needle is inserted."
+            },
+            "after": {
+                "title": "After the Test",
+                "content": "There are no restrictions after the test. You may have slight pain or bruising at the needle site, but this typically resolves quickly."
+            }
+        },
+        "results": {
+            "title": "Interpreting Your Results",
+            "p1": "While the creatinine test is common, the result alone isn't the best measure of kidney health because \"normal\" levels vary based on age, sex, and body size. Some people with \"normal\" creatinine might have kidney disease, while others with \"high\" levels may not.",
+            "p2": "The most accurate way to assess kidney function is the estimated Glomerular Filtration Rate (eGFR), which is calculated using your creatinine level, age, and sex.",
+            "p3": "For even greater accuracy, your doctor might also use a Cystatin C test along with creatinine to calculate your eGFR."
+        },
+        "considerations": {
+            "title": "Additional Considerations",
+            "p1": "Several factors unrelated to kidney health can influence your creatinine levels, potentially making your eGFR appear higher or lower than it actually is. It's important to discuss these with your doctor.",
+            "factorsRaise": {
+                "title": "Factors that can raise creatinine (making eGFR seem lower):",
+                "list": [
+                    "Eating large amounts of cooked meat",
+                    "Taking creatine supplements or certain medications (cimetidine, fenofibrate, etc.)",
+                    "Recent high-intensity exercise",
+                    "High muscle mass (e.g., bodybuilders)"
+                ]
+            },
+            "factorsLower": {
+                "title": "Factors that can lower creatinine (making eGFR seem higher):",
+                "list": [
+                    "A vegan or vegetarian diet",
+                    "Low muscle mass, muscle-wasting diseases, or a history of amputation",
+                    "Pregnancy",
+                    "Severe liver disease (cirrhosis)"
+                ]
+            }
+        },
+        "questions": {
+            "title": "Questions for Your Healthcare Team",
+            "list": [
+                "When was my last creatinine test, and what was my eGFR based on that result?",
+                "When should I have this test done again?",
+                "Do I have any personal factors that might affect my creatinine levels, and how should we interpret my eGFR in light of that?"
+            ]
+        }
+    },
+    "egfrExplained": {
+        "title": "Understanding Your eGFR",
+        "intro": "Your estimated Glomerular Filtration Rate (eGFR) is a key indicator of kidney function, showing how effectively your kidneys are filtering waste from your blood.",
+        "toc": {
+            "title": "Table of Contents",
+            "about": "About eGFR",
+            "types": "Types of GFR Measurement",
+            "purpose": "Purpose of eGFR Testing",
+            "results": "Understanding Your Results"
+        },
+        "sections": {
+            "about": {
+                "title": "About Estimated Glomerular Rate (eGFR)",
+                "content": "Your kidneys work by filtering your blood to remove waste products and excess water, which are then expelled as urine. The Glomerular Filtration Rate (GFR) is a measure of how well your kidneys perform this filtering task. With an estimated 37 million adults in the U.S. potentially having chronic kidney disease (CKD)—and nearly 90% of them unaware—early detection through GFR assessment is critical for protecting kidney health."
+            },
+            "measuring": {
+                "title": "Measuring and Estimating GFR",
+                "p1": "Obtaining a directly measured GFR (mGFR) is a complex and time-consuming process, making it impractical for routine clinical use. Therefore, healthcare providers rely on a formula to calculate an estimated GFR (eGFR). Since CKD often shows no symptoms until its later stages, a reliable eGFR calculation is vital for early diagnosis.",
+                "p2": "The most common method for calculating eGFR involves a simple blood test to measure creatinine levels. Creatinine is a waste product from protein digestion and the natural breakdown of muscle tissue. However, factors other than kidney function—such as diet, muscle mass, malnutrition, and other health conditions—can influence creatinine levels.",
+                "comparison": {
+                    "title": "Differences between eGFR and mGFR",
+                    "egfr": "Estimated GFR (eGFR)",
+                    "mgfr": "Measured GFR (mGFR)",
+                    "rows": {
+                        "how": { "header": "How it works", "egfr": "A calculation estimating how well kidneys filter substances produced by the body, like creatinine (from muscle wear) or cystatin C (a protein).", "mgfr": "A direct measurement of how well kidneys filter external agents like inulin (a plant fiber) or iohexol (a medical contrast agent)." },
+                        "availability": { "header": "Availability", "egfr": "Widely available", "mgfr": "Not widely available" },
+                        "cost": { "header": "Cost", "egfr": "Less expensive", "mgfr": "More expensive" },
+                        "time": { "header": "Time", "egfr": "Less time needed", "mgfr": "More time consuming" },
+                        "accuracy": { "header": "Accuracy", "egfr": "Estimates can be less accurate in early-stage kidney disease (stages 1 and 2).*", "mgfr": "Provides accurate GFR measures, including in early stages." },
+                        "precision": { "header": "Precision", "egfr": "May not detect subtle or rapid GFR changes.", "mgfr": "Can identify early and rapid changes in GFR levels." }
+                    }
+                },
+                "footnote": "*Other factors like pregnancy, age over 70, unusual muscle mass, liver cirrhosis, nephrotic syndrome, organ transplants, and certain medications can affect eGFR accuracy."
+            },
+            "purpose": {
+                "title": "Why eGFR Testing is Done",
+                "p1": "Since early-stage CKD often has no symptoms, your doctor may recommend an eGFR test if you have a higher risk of developing the disease. Risk factors include:",
+                "riskFactors": [
+                    { "icon": "Droplets", "label": "Diabetes" },
+                    { "icon": "Gauge", "label": "High Blood Pressure" },
+                    { "icon": "Scale", "label": "Overweight/Obesity" },
+                    { "icon": "Cake", "label": "Over Age 60" },
+                    { "icon": "Dna", "label": "Family History of CKD" }
+                ],
+                "p2": "The development of CKD is typically due to a combination of physical, environmental, and social factors rather than a single cause.",
+                "p3": "An eGFR test may also be ordered if you exhibit symptoms of later-stage CKD, such as:",
+                "symptoms": [
+                    "Changes in urination frequency",
+                    "Itching or dry skin",
+                    "Persistent fatigue",
+                    "Swelling in arms, legs, or feet",
+                    "Muscle cramps",
+                    "Nausea and vomiting",
+                    "Loss of appetite"
+                ]
+            },
+            "results": {
+                "title": "Understanding Your Results",
+                "content": "Your eGFR number helps your doctor determine the stage of kidney disease and create an appropriate treatment plan. The results are categorized into stages, from stage 1 (mild) to stage 5 (kidney failure). Discussing your eGFR result with your healthcare provider is the best way to understand your specific situation and next steps."
+            },
+            "resources": {
+                "title": "More Resources",
+                "button": "Download eGFR Fact Sheet"
+            }
+        }
+    },
+    "kidneyHealth": {
+        "title": "Kidney Health Topics",
+        "intro": "Dive deep into our library of articles to understand every aspect of your kidney health.",
+        "topics": {
+            "howKidneysWork": { "title": "How Kidneys Work", "description": "Learn the fundamentals of how your kidneys filter waste and keep you healthy." },
+            "ckdExplained": { "title": "CKD Explained", "description": "Learn about Chronic Kidney Disease, its causes, symptoms, and progression." },
+            "egfrExplained": { "title": "eGFR Explained", "description": "Understand what your estimated Glomerular Filtration Rate (eGFR) means for your kidney health." },
+            "stagesOfCkd": { "title": "Stages of CKD", "description": "Find out about the different stages of CKD and what they mean for your treatment plan." },
+            "hemodialysis": { "title": "Hemodialysis", "description": "Learn about the hemodialysis process for treating kidney failure." },
+            "kidneyFunctionTests": { "title": "Kidney Function Tests", "description": "A guide to the various tests used to monitor your kidney health." },
+            "kidneyStones": { "title": "Kidney Stones", "description": "Learn about the causes, symptoms, and treatments for kidney stones." },
+            "kidneyTransplant": { "title": "Kidney Transplant", "description": "Explore the process and benefits of receiving a kidney transplant." },
+            "creatinineExplained": { "title": "Creatinine Explained", "description": "Understand what creatinine is and its role in kidney health." },
+            "renalNutrition": { "title": "Renal Nutrition", "description": "Your guide to a kidney-friendly diet to help manage CKD." },
+            "goodNutrition": { "title": "Good Nutrition", "description": "General tips for a healthy diet and lifestyle for overall well-being." },
+            "phosphorusExplained": { "title": "Phosphorus Explained", "description": "Learn how to manage phosphorus levels for bone and heart health in CKD." },
+            "potassiumExplained": { "title": "Potassium Explained", "description": "A guide to managing potassium in your diet for kidney health." },
+            "proteinExplained": { "title": "Protein Explained", "description": "Learn the right amount of protein to eat with and without dialysis." },
+            "sodiumExplained": { "title": "Sodium Explained", "description": "How to limit sodium and use herbs and spices for flavor." },
+            "livingWithSingleKidney": { "title": "Living with a Single Kidney", "description": "Information and guidance for individuals with one kidney." }
+        }
+    },
+    "peritonealDialysis": {
+        "title": "Understanding Peritoneal Dialysis (PD)",
+        "intro": "Peritoneal dialysis is a treatment for kidney failure that cleans your blood using the lining of your own abdomen, offering greater flexibility and independence.",
+        "whatIs": {
+            "title": "What is Peritoneal Dialysis?",
+            "p1": "When kidneys fail, they can't clean your blood effectively, causing toxins and excess fluid to build up. Peritoneal dialysis (PD) is a treatment that uses the inside lining of your abdomen—the peritoneum—as a natural filter.",
+            "p2": "A soft tube called a catheter is placed in your abdomen. Through this catheter, a special cleansing fluid called dialysate flows into your belly. While the fluid is inside you, it absorbs waste products and extra water from your blood. After a few hours, this fluid is drained out, taking the harmful toxins with it. This entire process is called an \"exchange.\""
+        },
+        "howItHelps": {
+            "title": "How Can Peritoneal Dialysis Help Me?",
+            "p1": "PD can significantly improve symptoms of kidney failure, such as nausea, fatigue, and weakness. It also helps reduce fluid buildup that causes swelling and shortness of breath. By managing waste products, it can also help protect your bones and keep potassium levels in a safe range.",
+            "p2": "Unlike haemodialysis, which is typically done in a hospital, PD is performed at home, giving you more control over your treatment schedule and daily life."
+        },
+        "types": {
+            "title": "Types of Peritoneal Dialysis",
+            "intro": "There are two main types of PD, allowing you to choose whether to dialyze during the day or overnight. Your healthcare team will help you decide which method best fits your lifestyle and medical needs.",
+            "capd": {
+                "title": "Continuous Ambulatory Peritoneal Dialysis (CAPD)",
+                "description": "With CAPD, you perform exchanges manually during the day, typically one to four times. Each exchange takes about 30-40 minutes. You'll drain the old fluid, fill your abdomen with new dialysate, and then disconnect, allowing you to go about your day while the fluid cleans your blood."
+            },
+            "apd": {
+                "title": "Automated Peritoneal Dialysis (APD)",
+                "description": "APD uses a machine, often called a cycler, to perform exchanges automatically overnight while you sleep. You'll connect to the machine before bed, and it will handle the exchanges for you over several hours."
+            }
+        },
+        "accordion1": {
+            "title": "Preparation and Lifestyle",
+            "gettingStarted": {
+                "title": "Getting Started",
+                "content": "Before beginning PD, you'll need a minor surgery to place the catheter in your abdomen. After a recovery period of about two weeks, a dialysis nurse will train you on how to perform your exchanges safely at home and avoid infection."
+            },
+            "dailyLife": {
+                "title": "Daily Life with PD",
+                "content": "You'll need a clean, dry, well-lit space at home to perform exchanges and a separate cool, dry space for storing your supplies. Your routine will adapt to include time for exchanges or setting up your APD machine. Your medical team will also advise on medications, such as laxatives to ensure the dialysis works effectively, and possibly vitamin supplements."
+            },
+            "team": {
+                "title": "Your Healthcare Team",
+                "content": "You are the primary person in charge of your treatment, but you'll have a dedicated team supporting you. This includes nurses for training, a dietitian to guide your food choices, and doctors who monitor your lab results and adjust your treatment plan as needed."
+            }
+        },
+        "accordion2": {
+            "title": "Staying Healthy and Treatment Alternatives",
+            "sideEffects": {
+                "title": "Side Effects",
+                "content": "Common side effects can include fatigue or feeling \"washed out.\" There is also a risk of infection at the catheter site or within the abdomen (peritonitis), as well as a risk of developing a hernia. Your team will teach you how to spot and report any issues early so they can be treated promptly with antibiotics."
+            },
+            "stayHealthy": {
+                "title": "How to Stay Healthy",
+                "content": "To get the most from your treatment, it's vital to perform every exchange as prescribed. Additionally, staying physically active, following your diet and fluid advice, checking your blood pressure, taking medications correctly, and avoiding smoking will help you stay as healthy as possible."
+            },
+            "alternatives": {
+                "title": "Are there any alternatives?",
+                "content": "PD is a treatment, not a cure. The damage from CKD is not reversible. Other treatment options for kidney failure include haemodialysis, a kidney transplant, or conservative care (managing symptoms without dialysis). Your kidney team will discuss all these choices with you to find the best path forward."
+            }
+        }
     }
 }
