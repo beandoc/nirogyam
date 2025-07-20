@@ -230,7 +230,7 @@ export default function NirogyamPage() {
                             </Button>
                         </div>
                         <div className="hidden md:block">
-                            <Image src="https://placehold.co/600x400.png" alt="Healthy kidneys illustration" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="kidney health" />
+                            <Image src="/herosection_image.png" alt="Illustration of healthy kidneys and a heart" width={600} height={400} className="rounded-lg shadow-xl" />
                         </div>
                     </div>
                 </section>
@@ -558,5 +558,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
