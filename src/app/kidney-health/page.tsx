@@ -39,97 +39,97 @@ const KidneyHealthPage = () => {
             icon: <Filter className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.howKidneysWork.title,
             description: t.kidneyHealth.topics.howKidneysWork.description,
-            href: "/how-kidneys-work"
+            href: `/${locale}/how-kidneys-work`
         },
         { 
             icon: <HeartPulse className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.ckdExplained.title,
             description: t.kidneyHealth.topics.ckdExplained.description,
-            href: "/ckd-explained"
+            href: `/${locale}/ckd-explained`
         },
         {
             icon: <FileText className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.egfrExplained.title,
             description: t.kidneyHealth.topics.egfrExplained.description,
-            href: "/egfr-explained"
+            href: `/${locale}/egfr-explained`
         },
         {
             icon: <GraduationCap className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.stagesOfCkd.title,
             description: t.kidneyHealth.topics.stagesOfCkd.description,
-            href: "/stages-of-ckd"
+            href: `/${locale}/stages-of-ckd`
         },
         {
             icon: <Droplet className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.hemodialysis.title,
             description: t.kidneyHealth.topics.hemodialysis.description,
-            href: "/hemodialysis"
+            href: `/${locale}/hemodialysis`
         },
         {
             icon: <TestTube className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.kidneyFunctionTests.title,
             description: t.kidneyHealth.topics.kidneyFunctionTests.description,
-            href: "/kidney-function-tests"
+            href: `/${locale}/kidney-function-tests`
         },
         {
             icon: <Diamond className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.kidneyStones.title,
             description: t.kidneyHealth.topics.kidneyStones.description,
-            href: "/kidney-stones"
+            href: `/${locale}/kidney-stones`
         },
         {
             icon: <HeartHandshake className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.kidneyTransplant.title,
             description: t.kidneyHealth.topics.kidneyTransplant.description,
-            href: "/kidney-transplant"
+            href: `/${locale}/kidney-transplant`
         },
         {
             icon: <TestTube className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.creatinineExplained.title,
             description: t.kidneyHealth.topics.creatinineExplained.description,
-            href: "/creatinine-explained"
+            href: `/${locale}/creatinine-explained`
         },
         {
             icon: <FileText className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.renalNutrition.title,
             description: t.kidneyHealth.topics.renalNutrition.description,
-            href: "/renal-nutrition"
+            href: `/${locale}/renal-nutrition`
         },
         {
             icon: <HeartPulse className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.goodNutrition.title,
             description: t.kidneyHealth.topics.goodNutrition.description,
-            href: "/good-nutrition"
+            href: `/${locale}/good-nutrition`
         },
         {
             icon: <Bone className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.phosphorusExplained.title,
             description: t.kidneyHealth.topics.phosphorusExplained.description,
-            href: "/phosphorus-explained"
+            href: `/${locale}/phosphorus-explained`
         },
         {
             icon: <Droplet className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.potassiumExplained.title,
             description: t.kidneyHealth.topics.potassiumExplained.description,
-            href: "/potassium-explained"
+            href: `/${locale}/potassium-explained`
         },
         {
             icon: <Leaf className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.proteinExplained.title,
             description: t.kidneyHealth.topics.proteinExplained.description,
-            href: "/protein-explained"
+            href: `/${locale}/protein-explained`
         },
         {
             icon: <Cloudy className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.sodiumExplained.title,
             description: t.kidneyHealth.topics.sodiumExplained.description,
-            href: "/sodium-explained"
+            href: `/${locale}/sodium-explained`
         },
         { 
             icon: <User className="h-8 w-8 text-primary" />,
             title: t.kidneyHealth.topics.livingWithSingleKidney.title,
             description: t.kidneyHealth.topics.livingWithSingleKidney.description,
-            href: "/living-with-single-kidney"
+            href: `/${locale}/living-with-single-kidney`
         },
     ];
 
@@ -139,7 +139,7 @@ const KidneyHealthPage = () => {
 
         <main className="container mx-auto px-4 py-12 md:py-20">
             <Button asChild variant="outline" className="mb-8">
-                <Link href="/">
+                <Link href={`/${locale}`}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {t.buttons.backToHome}
                 </Link>
