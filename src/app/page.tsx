@@ -84,7 +84,7 @@ ListItem.displayName = "ListItem"
 
 const FaqItem = ({ question, children, value }: { question: string, children: React.ReactNode, value: string }) => {
   return (
-    <AccordionItem value={value} className="border-b bg-background rounded-lg mb-2">
+    <AccordionItem value={value} className="border-b bg-card rounded-lg mb-2">
         <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:no-underline p-4 rounded-lg text-left">
             {question}
         </AccordionTrigger>
@@ -548,7 +548,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/know_hemodialysis/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/know-hemodialysis">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -560,7 +560,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/ckdassessment/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/ckd-assessment">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -572,7 +572,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/AKI-risk-index/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/aki-risk-assessment">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -584,7 +584,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/Kidneycarechoices/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/kidney-care-choices">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -596,7 +596,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/adpkd/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/adpkd-road-map">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -608,7 +608,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardFooter className="mt-auto">
                                     <Button asChild className="w-full">
-                                        <a href="https://beandoc.github.io/Biopsyconsent/" target="_blank" rel="noopener noreferrer">Launch Toolkit <ExternalLink className="ml-2 h-4 w-4" /></a>
+                                        <Link href="/toolkits/biopsy-consent">Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
