@@ -171,24 +171,21 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
-
+    
     const changeLanguage = (newLocale: string) => {
-        if (newLocale === currentLocale) {
-            return;
-        }
+        const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
+        if (newLocale === currentLocale) return;
 
-        const currentPathWithoutLocale = currentLocale === 'hi' ? pathname.substring(3) : pathname;
+        const pathWithoutLocale = currentLocale === 'hi' ? pathname.substring(3) : pathname;
         
-        let newPath;
-        if (newLocale === 'hi') {
-            newPath = `/hi${currentPathWithoutLocale || '/'}`;
-        } else {
-            newPath = currentPathWithoutLocale || '/';
-        }
-        
+        let newPath = newLocale === 'hi' ? `/hi${pathWithoutLocale}` : pathWithoutLocale;
+
+        if (newPath === '') newPath = '/';
+
         router.push(newPath);
     };
+
+    const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
 
     return (
         <div className="flex items-center space-x-2 text-sm">
