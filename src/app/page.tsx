@@ -421,12 +421,12 @@ export default function NirogyamPage() {
                         </div>
                         <div>
                             <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
-                            <p className="mb-2">123 Kidney Health Rd, Nephron City, KN 12345</p>
-                            <p className="mb-2">Email: info@nirogyam.com</p>
+                            <p className="mb-2">Dept of Nephrology Command Hospital, Pune.</p>
+                            <p className="mb-2">Email: nirogyam93@gmail.com</p>
                             <p>Phone: (123) 456-7890</p>
                         </div>
                     </div>
-                    <p className="text-sm border-t border-blue-700 pt-6">&copy; 2024 Nirogyam. All rights reserved.</p>
+                    <p className="text-sm border-t border-blue-700 pt-6">&copy; 2025 Nirogyam. All rights reserved.</p>
                 </div>
             </footer>
         </div>
