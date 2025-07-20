@@ -47,6 +47,7 @@ import {
   Users,
   CheckCircle,
   FileText,
+  TestTube,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -291,7 +292,7 @@ export default function NirogyamPage() {
                             <h3 className="text-3xl font-bold text-primary">Explore Kidney Topics</h3>
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into common topics to understand your kidney health.</p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             <Card className="text-center p-4">
                                 <CardHeader>
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
@@ -331,6 +332,20 @@ export default function NirogyamPage() {
                                     <p className="text-foreground/80 mb-4">Find out about the different stages of CKD and what they mean for your treatment plan.</p>
                                     <Button asChild variant="link">
                                         <Link href="/stages-of-ckd">Learn More</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                            <Card className="text-center p-4">
+                                <CardHeader>
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <TestTube className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Kidney Function Tests</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">A guide to the various tests used to monitor your kidney health.</p>
+                                    <Button asChild variant="link">
+                                        <Link href="/kidney-function-tests">Learn More</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
