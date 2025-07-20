@@ -14,13 +14,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 import {
     Sheet,
     SheetContent,
@@ -50,9 +51,37 @@ import {
   TestTube,
   Diamond,
   HeartHandshake,
+  ArrowRight,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
+
 
 const FaqItem = ({ question, answer, value }: { question: string, answer: string, value: string }) => {
   return (
@@ -163,34 +192,91 @@ export default function NirogyamPage() {
                         <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
                     </Link>
 
-                    <nav className="hidden md:flex items-center space-x-1">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button variant="ghost">I am a... <ChevronDown className="inline h-4 w-4 ml-1" /></Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>Patient</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem asChild><a href="#kidney-topic">Kidney Topics</a></DropdownMenuItem>
-                                <DropdownMenuItem asChild><a href="#renal-nutrition">Diet & Nutrition</a></DropdownMenuItem>
-                                <DropdownMenuItem asChild><a href="#assess-kidney">Know Your Risk Quiz</a></DropdownMenuItem>
-                                <DropdownMenuItem asChild><a href="#transplant-surgery">Kidney Transplantation</a></DropdownMenuItem>
-                                <DropdownMenuLabel>Health Professional</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem asChild><a href="#clinical-resources">Clinical Resources</a></DropdownMenuItem>
-                                <DropdownMenuItem asChild><a href="#latest-research">Latest Research</a></DropdownMenuItem>
-                                <DropdownMenuLabel>Caregiver</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem asChild><a href="#support-resources">Support Resources</a></DropdownMenuItem>
-                                <DropdownMenuItem asChild><a href="#diet-planning">Diet Planning</a></DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-
-                        <Button variant="ghost" asChild><a href="#services">Services</a></Button>
-                        <Button variant="ghost" asChild><a href="#faq">FAQs</a></Button>
-                        <Button variant="ghost" asChild><a href="#contact">Contact Us</a></Button>
-
+                    <nav className="hidden md:flex items-center">
+                      <NavigationMenu>
+                        <NavigationMenuList>
+                           <NavigationMenuItem>
+                            <NavigationMenuTrigger>Kidney Health</NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                              <div className="grid w-[600px] grid-cols-[1fr_2fr]">
+                                <div className="p-4 bg-primary/5">
+                                    <Link href="/" className="flex items-center font-semibold text-primary mb-4">
+                                      Kidney Health <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                    <div className="flex flex-col gap-1">
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#kidney-topic" className="p-3 font-semibold bg-primary/10 rounded-md">Kidney Topics</Link>
+                                      </NavigationMenuLink>
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#" className="p-3 rounded-md hover:bg-accent">News & Stories</Link>
+                                      </NavigationMenuLink>
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#assess-kidney" className="p-3 rounded-md hover:bg-accent">Assess Your Kidney Health</Link>
+                                      </NavigationMenuLink>
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#renal-nutrition" className="p-3 rounded-md hover:bg-accent">Diet & Nutrition</Link>
+                                      </NavigationMenuLink>
+                                    </div>
+                                </div>
+                                <div className="p-4 grid grid-cols-2 gap-4">
+                                  <div>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">FEATURED TOPICS</h3>
+                                    <ul className="flex flex-col gap-1">
+                                      <li><Link href="/ckd-explained" className="p-3 block hover:bg-accent rounded-md">Chronic Kidney Disease (CKD)</Link></li>
+                                      <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">Estimated Glomerular Filtration Rate (eGFR)</Link></li>
+                                      <li><Link href="/stages-of-ckd" className="p-3 block hover:bg-accent rounded-md">Stages of Chronic Kidney Disease (CKD)</Link></li>
+                                      <li><Link href="/kidney-function-tests" className="p-3 block hover:bg-accent rounded-md">Tests to Check Your Kidney Health</Link></li>
+                                      <li><Link href="/kidney-stones" className="p-3 block hover:bg-accent rounded-md">Understanding Kidney Stones</Link></li>
+                                      <li><Link href="/kidney-transplant" className="p-3 block hover:bg-accent rounded-md">Understanding Your Lab Values</Link></li>
+                                      <li><a href="#" className="p-3 block text-primary hover:bg-accent rounded-md font-semibold">See All Kidney Topics</a></li>
+                                    </ul>
+                                  </div>
+                                  <div>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">BROWSE BY CATEGORY</h3>
+                                     <ul className="flex flex-col gap-1">
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Diet and nutrition</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Diseases and conditions</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Prevention, daily life, and wellbeing</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Tests and procedures</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Treatments and therapies</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </NavigationMenuContent>
+                          </NavigationMenuItem>
+                          <NavigationMenuItem>
+                             <Link href="#" legacyBehavior passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Treatment & Support
+                              </NavigationMenuLink>
+                            </Link>
+                          </NavigationMenuItem>
+                          <NavigationMenuItem>
+                             <Link href="#" legacyBehavior passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Transplantation
+                              </NavigationMenuLink>
+                            </Link>
+                          </NavigationMenuItem>
+                          <NavigationMenuItem>
+                             <Link href="#" legacyBehavior passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                For Professionals
+                              </NavigationMenuLink>
+                            </Link>
+                          </NavigationMenuItem>
+                           <NavigationMenuItem>
+                             <Link href="#" legacyBehavior passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Take Action
+                              </NavigationMenuLink>
+                            </Link>
+                          </NavigationMenuItem>
+                        </NavigationMenuList>
+                      </NavigationMenu>
                     </nav>
+
                      <div className="md:hidden">
                         <Sheet>
                             <SheetTrigger asChild>
@@ -626,5 +712,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
