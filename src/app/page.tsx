@@ -504,9 +504,9 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Access Clinical Resources</a></li>
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Review Latest Research</a></li>
-                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Consult Treatment Guidelines</a></li>
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-function-tests" className="hover:underline">Access Clinical Resources</Link></li>
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/stages-of-ckd" className="hover:underline">Review Latest Research</Link></li>
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-transplant" className="hover:underline">Consult Treatment Guidelines</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
@@ -518,9 +518,9 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Find Support Resources</a></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Get Help with Diet Planning</a></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#" className="hover:underline">Prepare for Treatments</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-health" className="hover:underline">Find Support Resources</Link></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/renal-nutrition" className="hover:underline">Get Help with Diet Planning</Link></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-transplant" className="hover:underline">Prepare for Treatments</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
