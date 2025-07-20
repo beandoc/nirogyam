@@ -298,7 +298,7 @@ export default function NirogyamPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                             <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="Know Hemodialysis" width={600} height={400} className="rounded-t-lg" data-ai-hint="dialysis machine" />
+                                <Image src="/hemodialysis_image.png" alt="Know Hemodialysis" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>Know Hemodialysis</CardTitle>
                                     <CardDescription>An interactive guide to understanding hemodialysis.</CardDescription>
