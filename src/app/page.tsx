@@ -407,7 +407,7 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">An introductory episode covering the basics of Chronic Kidney Disease.</p>
                                     <audio controls className="w-full">
-                                        <source src="placeholder_podcast_1.mp3" type="audio/mpeg" />
+                                        <source src="/podcast_episode_1.mp3" type="audio/mpeg" />
                                         Your browser does not support the audio element.
                                     </audio>
                                 </CardContent>
@@ -417,7 +417,7 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Expert insights on managing your diet for kidney health.</p>
                                     <audio controls className="w-full">
-                                        <source src="placeholder_podcast_2.mp3" type="audio/mpeg" />
+                                        <source src="/podcast_episode_2.mp3" type="audio/mpeg" />
                                         Your browser does not support the audio element.
                                     </audio>
                                 </CardContent>
@@ -427,7 +427,7 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Inspiring journeys from individuals living with kidney disease.</p>
                                     <audio controls className="w-full">
-                                        <source src="placeholder_podcast_3.mp3" type="audio/mpeg" />
+                                        <source src="/podcast_episode_3.mp3" type="audio/mpeg" />
                                         Your browser does not support the audio element.
                                     </audio>
                                 </CardContent>
