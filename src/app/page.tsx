@@ -310,7 +310,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="medical assessment" />
+                                <Image src="/ckd_assessment_image.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>CKD Assessment</CardTitle>
                                     <CardDescription>Assess your risk and stages of Chronic Kidney Disease.</CardDescription>
@@ -322,7 +322,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" data-ai-hint="risk chart" />
+                                <Image src="/aki_risk_assessment_image.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>AKI Risk Assessment</CardTitle>
                                     <CardDescription>Evaluate the risk factors for Acute Kidney Injury.</CardDescription>
@@ -334,7 +334,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="https://placehold.co/600x400.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" data-ai-hint="decision tree" />
+                                <Image src="/kidney_care_choices_image.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>Kidney Care Choices</CardTitle>
                                     <CardDescription>Explore treatment options and make informed care decisions.</CardDescription>
