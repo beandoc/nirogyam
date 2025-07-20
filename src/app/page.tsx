@@ -207,6 +207,56 @@ const deceasedDonationFaqs = [
     }
 ];
 
+const ContactForm = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSendMessage = () => {
+        const subject = encodeURIComponent(`Contact from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+        window.location.href = `mailto:nirogyam93@gmail.com?subject=${subject}&body=${body}`;
+    };
+
+    return (
+        <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-card">
+            <CardContent className="pt-6">
+                <div className="space-y-4">
+                    <Input 
+                        type="text" 
+                        placeholder="Your Name" 
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <Input 
+                        type="email" 
+                        placeholder="Your Email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <Textarea 
+                        placeholder="Your Message" 
+                        rows={5} 
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <Button size="lg" className="w-full" onClick={handleSendMessage}>
+                        Send Message
+                    </Button>
+                </div>
+            </CardContent>
+        </Card>
+    );
+};
+
+const WhatsAppIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 fill-current">
+        <path d="M17.472 14.382c-.297-.149-.88-.436-1.017-.486s-.282-.08-.41.08c-.128.16-.49.614-.602.737-.112.123-.224.137-.41.04-.187-.097-.796-.293-1.517-.925-.568-.487-.945-1.09-.945-1.09s-.04-.055.03-.105c.06-.05.136-.123.204-.195.07-.07.09-.123.136-.203.048-.08.024-.15-.014-.24-.038-.09-.41-.986-.562-1.355-.15-.37-.304-.32-.41-.326-.102-.005-.224-.005-.346-.005s-.33.04-.49.195c-.16.155-.613.59-.613,1.44s.627,1.66.713,1.78c.085.12.97,1.48,2.34,2.05.34.14.58.22.77.28.32.09.62.08.86.05.28-.04.88-.36,1-1.004.12-.644.12-.97.08-1.014s-.07-.07-.15-.123zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.15c-4.477 0-8.125-3.648-8.125-8.125S7.523 3.875 12 3.875 20.125 7.523 20.125 12 16.477 20.15 12 20.15z" />
+    </svg>
+);
+
 
 export default function NirogyamPage() {
     const [isClient, setIsClient] = useState(false);
@@ -505,17 +555,7 @@ export default function NirogyamPage() {
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
-                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-card">
-                            <CardContent className="pt-6">
-                                <form className="space-y-4">
-                                    <Input type="text" placeholder="Your Name" />
-                                    <Input type="email" placeholder="Your Email" />
-                                    <Textarea placeholder="Your Message" rows={5} />
-                                    <Button type="submit" size="lg" className="w-full">Send Message</Button>
-
-                                </form>
-                            </CardContent>
-                        </Card>
+                        <ContactForm />
                     </div>
                 </section>
             </main>
@@ -539,6 +579,7 @@ export default function NirogyamPage() {
                                 <a href="#" aria-label="Twitter" className="opacity-80 hover:opacity-100"><Twitter /></a>
                                 <a href="#" aria-label="Instagram" className="opacity-80 hover:opacity-100"><Instagram /></a>
                                 <a href="#" aria-label="LinkedIn" className="opacity-80 hover:opacity-100"><Linkedin /></a>
+                                <a href="https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="opacity-80 hover:opacity-100"><WhatsAppIcon /></a>
                             </div>
                         </div>
                         <div>
@@ -558,5 +599,7 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
 
     
