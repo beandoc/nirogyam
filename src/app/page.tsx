@@ -299,8 +299,8 @@ const generalFaqs = [
         answer: "About 80% of those on the waiting list need a kidney."
     },
     {
-        question: "Can a person sell their organs for money in Canada?",
-        answer: "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation. It is illegal to buy or sell organs in Canada."
+        question: "Can a person sell their organs for money?",
+        answer: "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation, and it is illegal to buy or sell organs."
     }
 ];
 
@@ -311,7 +311,7 @@ const livingDonationFaqs = [
     },
     {
         question: "Who can be a living donor?",
-        answer: "Anyone who is healthy can be a living donor. The age of consent to be a living donor varies from 16 - 19 depending on the province in which you live. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."
+        answer: "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."
     },
     {
         question: "What are the risks of donating a kidney?",
@@ -330,7 +330,7 @@ const livingDonationFaqs = [
     },
     {
         question: "Are there any costs I'll have to pay?",
-        answer: "Yes, in most cases, you will have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. However, some provinces reimburse some of the non-medical expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."
+        answer: "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."
     },
     {
         question: "How much time will I need to take off work?",
@@ -361,7 +361,7 @@ const deceasedDonationFaqs = [
     },
     {
         question: "How can I make sure my wishes to donate will be respected?",
-        answer: "Once you’ve registered your intention to donate your organs (either on your health care card, driver’s license or through your provincial donor registry), speak to your family and loved ones to make sure they know your wishes."
+        answer: "Once you’ve registered your intention to donate your organs, it is crucial to speak to your family and loved ones to make sure they know your wishes."
     }
 ];
 
