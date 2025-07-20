@@ -172,18 +172,28 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const currentLocale = pathname.split('/')[1];
+    const pathParts = pathname.split('/');
+    const currentLocale = pathParts[1] === 'hi' ? 'hi' : 'en';
 
-    const changeLanguage = (locale: string) => {
-        const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
-        router.push(newPath);
+    const changeLanguage = (newLocale: string) => {
+        const newPath = pathname.startsWith(`/${currentLocale}`)
+            ? pathname.replace(`/${currentLocale}`, `/${newLocale}`)
+            : `/${newLocale}${pathname}`;
+
+        // Handle the case where the homepage is `/` for the default locale
+        if (newLocale === 'en' && pathname.startsWith('/hi')) {
+            const englishPath = pathname.replace('/hi', '');
+            router.push(englishPath === '' ? '/' : englishPath);
+        } else {
+             router.push(newPath);
+        }
     };
 
     return (
         <div className="flex items-center space-x-2 text-sm">
             <button 
                 onClick={() => changeLanguage('en')} 
-                className={cn("font-medium", { 'text-primary underline': currentLocale === 'en' || !currentLocale })}
+                className={cn("font-medium", { 'text-primary underline': currentLocale === 'en' })}
             >
                 English
             </button>
