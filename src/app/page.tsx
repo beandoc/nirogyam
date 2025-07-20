@@ -191,127 +191,80 @@ export default function NirogyamPage() {
                            <NavigationMenuItem>
                             <NavigationMenuTrigger>Kidney Health</NavigationMenuTrigger>
                             <NavigationMenuContent>
+                               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                                <li className="row-span-3">
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                      href="/kidney-health"
+                                    >
+                                      <BookOpen className="h-6 w-6" />
+                                      <div className="mb-2 mt-4 text-lg font-medium">
+                                        Kidney Health Hub
+                                      </div>
+                                      <p className="text-sm leading-tight text-muted-foreground">
+                                        Explore all topics related to kidney health, from CKD stages to kidney stones.
+                                      </p>
+                                    </Link>
+                                  </NavigationMenuLink>
+                                </li>
+                                <ListItem href="/ckd-explained" title="CKD Explained">
+                                  Learn the basics of Chronic Kidney Disease.
+                                </ListItem>
+                                <ListItem href="/stages-of-ckd" title="Stages of CKD">
+                                  Understand the progression of kidney disease.
+                                </ListItem>
+                                <ListItem href="/kidney-function-tests" title="Kidney Function Tests">
+                                 A guide to the various tests used to monitor health.
+                                </ListItem>
+                              </ul>
+                            </NavigationMenuContent>
+                          </NavigationMenuItem>
+                          <NavigationMenuItem>
+                            <NavigationMenuTrigger>Diet &amp; Nutrition</NavigationMenuTrigger>
+                            <NavigationMenuContent>
                               <div className="grid w-[600px] grid-cols-[1fr_2fr]">
                                 <div className="p-4 bg-primary/5">
-                                    <Link href="/kidney-health" className="flex items-center font-semibold text-primary mb-4">
-                                      Kidney Health <ArrowRight className="ml-2 h-4 w-4" />
+                                    <Link href="/renal-nutrition" className="flex items-center font-semibold text-primary mb-4">
+                                      Renal Nutrition <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
                                     <div className="flex flex-col gap-1">
                                       <NavigationMenuLink asChild>
-                                        <Link href="/kidney-health" className="p-3 font-semibold bg-primary/10 rounded-md">Kidney Topics</Link>
+                                        <Link href="/renal-nutrition" className="p-3 font-semibold bg-primary/10 rounded-md">Full Nutrition Guide</Link>
                                       </NavigationMenuLink>
                                       <NavigationMenuLink asChild>
-                                        <Link href="#" className="p-3 rounded-md hover:bg-accent">News & Stories</Link>
+                                        <Link href="/good-nutrition" className="p-3 rounded-md hover:bg-accent">General Wellness</Link>
                                       </NavigationMenuLink>
-                                      <NavigationMenuLink asChild>
+                                       <NavigationMenuLink asChild>
                                         <Link href="#assess-kidney" className="p-3 rounded-md hover:bg-accent">Assess Your Kidney Health</Link>
-                                      </NavigationMenuLink>
-                                      <NavigationMenuLink asChild>
-                                        <Link href="/renal-nutrition" className="p-3 rounded-md hover:bg-accent">Diet & Nutrition</Link>
-                                      </NavigationMenuLink>
-                                      <NavigationMenuLink asChild>
-                                        <Link href="/good-nutrition" className="p-3 rounded-md hover:bg-accent">Good Nutrition</Link>
                                       </NavigationMenuLink>
                                     </div>
                                 </div>
                                 <div className="p-4 grid grid-cols-2 gap-4">
                                   <div>
-                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">FEATURED TOPICS</h3>
-                                    <ul className="flex flex-col gap-1">
-                                      <li><Link href="/ckd-explained" className="p-3 block hover:bg-accent rounded-md">Chronic Kidney Disease (CKD)</Link></li>
-                                      <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">eGFR Explained</Link></li>
-                                      <li><Link href="/creatinine-explained" className="p-3 block hover:bg-accent rounded-md">Creatinine Explained</Link></li>
-                                      <li><Link href="/stages-of-ckd" className="p-3 block hover:bg-accent rounded-md">Stages of Chronic Kidney Disease (CKD)</Link></li>
-                                      <li><a href="/kidney-health" className="p-3 block text-primary hover:bg-accent rounded-md font-semibold">See All Kidney Topics</a></li>
-                                    </ul>
-                                  </div>
-                                  <div>
-                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">DIET & NUTRITION</h3>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">KEY NUTRIENTS</h3>
                                      <ul className="flex flex-col gap-1">
-                                      <li><Link href="/renal-nutrition" className="p-3 block hover:bg-accent rounded-md">Renal Nutrition Guide</Link></li>
-                                      <li><Link href="/phosphorus-explained" className="p-3 block hover:bg-accent rounded-md">Phosphorus Explained</Link></li>
-                                      <li><Link href="/potassium-explained" className="p-3 block hover:bg-accent rounded-md">Potassium Explained</Link></li>
-                                       <li><Link href="/protein-explained" className="p-3 block hover:bg-accent rounded-md">Protein Explained</Link></li>
-                                       <li><Link href="/sodium-explained" className="p-3 block hover:bg-accent rounded-md">Sodium Explained</Link></li>
+                                      <li><Link href="/protein-explained" className="p-3 block hover:bg-accent rounded-md">Protein</Link></li>
+                                      <li><Link href="/sodium-explained" className="p-3 block hover:bg-accent rounded-md">Sodium</Link></li>
+                                      <li><Link href="/potassium-explained" className="p-3 block hover:bg-accent rounded-md">Potassium</Link></li>
+                                      <li><Link href="/phosphorus-explained" className="p-3 block hover:bg-accent rounded-md">Phosphorus</Link></li>
+                                    </ul>
+                                  </div>
+                                   <div>
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">OTHER GUIDES</h3>
+                                     <ul className="flex flex-col gap-1">
+                                      <li><Link href="/creatinine-explained" className="p-3 block hover:bg-accent rounded-md">Creatinine Explained</Link></li>
+                                      <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">eGFR Explained</Link></li>
                                     </ul>
                                   </div>
                                 </div>
                               </div>
                             </NavigationMenuContent>
                           </NavigationMenuItem>
-                          <NavigationMenuItem>
-                            <NavigationMenuTrigger>Treatment &amp; Support</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                              <div className="grid w-[600px] grid-cols-[1fr_2fr]">
-                                <div className="p-4 bg-primary/5">
-                                    <Link href="#" className="flex items-center font-semibold text-primary mb-4">
-                                      Treatment &amp; Support <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Link>
-                                    <div className="flex flex-col gap-1">
-                                      <NavigationMenuLink asChild>
-                                        <Link href="#" className="p-3 rounded-md hover:bg-accent flex justify-between items-center">Dialysis <ArrowRight className="h-4 w-4" /></Link>
-                                      </NavigationMenuLink>
-                                      <NavigationMenuLink asChild>
-                                        <Link href="/kidney-transplant" className="p-3 rounded-md hover:bg-accent flex justify-between items-center">Transplant <ArrowRight className="h-4 w-4" /></Link>
-                                      </NavigationMenuLink>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">FEATURED TOPICS</h3>
-                                    <ul className="flex flex-col gap-1">
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Dialysis</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Hemodialysis</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Peritoneal Dialysis</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Home Dialysis</a></li>
-                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Coping Effectively</a></li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </NavigationMenuContent>
-                          </NavigationMenuItem>
-                          <NavigationMenuItem>
-                            <NavigationMenuTrigger>Transplantation</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                <li className="row-span-3">
-                                  <NavigationMenuLink asChild>
-                                    <a
-                                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                      href="/kidney-transplant"
-                                    >
-                                      <HeartHandshake className="h-6 w-6" />
-                                      <div className="mb-2 mt-4 text-lg font-medium">
-                                        Kidney Transplant
-                                      </div>
-                                      <p className="text-sm leading-tight text-muted-foreground">
-                                        A new beginning. Learn about the process and benefits.
-                                      </p>
-                                    </a>
-                                  </NavigationMenuLink>
-                                </li>
-                                <ListItem href="/kidney-transplant#about" title="About Transplants">
-                                  What to expect from the transplant journey.
-                                </ListItem>
-                                <ListItem href="/kidney-transplant#types" title="Living Donation">
-                                  How to become a living donor and save a life.
-                                </ListItem>
-                                <ListItem href="#" title="Patient Stories">
-                                  Real stories from transplant recipients.
-                                </ListItem>
-                              </ul>
-                            </NavigationMenuContent>
-                          </NavigationMenuItem>
                            <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
+                             <Link href="/kidney-transplant" legacyBehavior passHref>
                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                 For Professionals
-                               </NavigationMenuLink>
-                             </Link>
-                           </NavigationMenuItem>
-                           <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
-                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                 Take Action
+                                 Kidney Transplant
                                </NavigationMenuLink>
                              </Link>
                           </NavigationMenuItem>
@@ -334,8 +287,8 @@ export default function NirogyamPage() {
                                 <div className="flex flex-col space-y-4 mt-8">
                                     <Button variant="link" asChild><Link href="/kidney-health">Kidney Health</Link></Button>
                                     <Button variant="link" asChild><Link href="/renal-nutrition">Renal Nutrition</Link></Button>
+                                    <Button variant="link" asChild><Link href="/kidney-transplant">Kidney Transplant</Link></Button>
                                     <Button variant="link" asChild><a href="#assess-kidney">Risk Quiz</a></Button>
-                                    <Button variant="link" asChild><a href="#services">Services</a></Button>
                                     <Button variant="link" asChild><a href="#faq">FAQs</a></Button>
                                     <Button variant="link" asChild><a href="#contact">Contact Us</a></Button>
                                 </div>
@@ -426,18 +379,18 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="renal-nutrition" className="py-20 bg-card">
+                 <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div className="relative rounded-lg overflow-hidden shadow-xl">
+                                <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
+                            </div>
                              <div>
                                 <h3 className="text-3xl font-bold text-primary mb-4">Your Guide to Renal Nutrition</h3>
                                 <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
                                 <Button size="lg" asChild>
                                     <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
                                 </Button>
-                            </div>
-                            <div className="relative rounded-lg overflow-hidden shadow-xl">
-                                <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
                             </div>
                         </div>
                     </div>
