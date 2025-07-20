@@ -62,7 +62,7 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <Link
+        <a
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -74,7 +74,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </Link>
+        </a>
       </NavigationMenuLink>
     </li>
   )
@@ -82,14 +82,14 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
 
-const FaqItem = ({ question, answer, value }: { question: string, answer: string, value: string }) => {
+const FaqItem = ({ question, children, value }: { question: string, children: React.ReactNode, value: string }) => {
   return (
     <AccordionItem value={value} className="border-b bg-background rounded-lg mb-2">
-        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:no-underline p-4 rounded-lg">
+        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:no-underline p-4 rounded-lg text-left">
             {question}
         </AccordionTrigger>
-        <AccordionContent className="text-foreground/80 mt-1 p-4 pt-0 text-base rounded-lg">
-            {answer}
+        <AccordionContent className="text-foreground/80 mt-1 p-4 pt-0 text-base rounded-lg space-y-4">
+            {children}
         </AccordionContent>
     </AccordionItem>
   );
@@ -277,6 +277,82 @@ const transplantTopics = [
         href: "/kidney-transplant#getting-started",
         description: "Your first steps toward evaluation at a transplant center.",
     },
+];
+
+const generalFaqs = [
+    {
+        question: "How successful are kidney transplants?",
+        answer: "The success rate for a kidney transplant from a living donor is 90–95% after one year and the transplanted kidney lasts 15 to 20 years on average. For transplants from a deceased donor, the success rate is also high: 85–90% of these kidneys are working well after one year and will last on average from 10 to 15 years."
+    },
+    {
+        question: "What percentage of people on the waiting list for an organ transplant are waiting for a kidney?",
+        answer: "About 80% of those on the waiting list need a kidney."
+    },
+    {
+        question: "Can a person sell their organs for money in Canada?",
+        answer: "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation. It is illegal to buy or sell organs in Canada."
+    }
+];
+
+const livingDonationFaqs = [
+    {
+        question: "What organs can be donated through living donation?",
+        answer: "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."
+    },
+    {
+        question: "Who can be a living donor?",
+        answer: "Anyone who is healthy can be a living donor. The age of consent to be a living donor varies from 16 - 19 depending on the province in which you live. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."
+    },
+    {
+        question: "What are the risks of donating a kidney?",
+        answer: (
+            <>
+                <p>As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include:</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Slight increased risk of high blood pressure</li>
+                    <li>Slight increased incidence of kidney failure</li>
+                    <li>Possibility of injuring the remaining kidney</li>
+                    <li>Slight risk of developing a disease of the remaining kidney</li>
+                    <li>Some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney</li>
+                </ul>
+            </>
+        )
+    },
+    {
+        question: "Are there any costs I'll have to pay?",
+        answer: "Yes, in most cases, you will have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. However, some provinces reimburse some of the non-medical expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."
+    },
+    {
+        question: "How much time will I need to take off work?",
+        answer: "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process."
+    },
+    {
+        question: "How do I become a living donor?",
+        answer: "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process."
+    },
+    {
+        question: "Can I change my mind after I've decided to become a living donor?",
+        answer: "Yes, you can change your mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient."
+    },
+    {
+        question: "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?",
+        answer: "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony."
+    }
+];
+
+const deceasedDonationFaqs = [
+    {
+        question: "What organs can be donated through deceased donation?",
+        answer: "The lungs, heart, liver, kidneys, pancreas and bowel can be donated. Tissues may include eye tissue, heart valves, bone, tendons, veins and ligaments. It is the health of the organs and tissues that is most important, not the age of the donor."
+    },
+    {
+        question: "If I have indicated my decision for organ donation, will everything be done to save my life?",
+        answer: "Yes. The first and foremost concern for doctors caring for critically ill patients is to do everything possible to save their lives. The possibility of donation is considered only when all lifesaving efforts have failed."
+    },
+    {
+        question: "How can I make sure my wishes to donate will be respected?",
+        answer: "Once you’ve registered your intention to donate your organs (either on your health care card, driver’s license or through your provincial donor registry), speak to your family and loved ones to make sure they know your wishes."
+    }
 ];
 
 
@@ -607,25 +683,40 @@ export default function NirogyamPage() {
                         <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
                         <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Find quick answers to common questions about kidney health and treatment.</p>
                         </div>
-                        <div className="max-w-3xl mx-auto">
-                            <Accordion type="single" collapsible className="w-full space-y-3">
-                                <FaqItem 
-                                    value="item-1"
-                                    question="What are the early signs of kidney disease?"
-                                    answer="Early signs can be subtle and include fatigue, swelling in legs, ankles, or feet, changes in urination frequency, muscle cramps, and dry, itchy skin."
-                                />
-                                <FaqItem
-                                    value="item-2"
-                                    question="How can diet affect kidney health?"
-                                    answer="Diet plays a crucial role. A kidney-friendly diet often involves limiting sodium, potassium, and phosphorus intake, and managing protein consumption."
-                                />
-                                <FaqItem
-                                    value="item-3"
-                                    question="What is the difference between hemodialysis and peritoneal dialysis?"
-                                    answer="Hemodialysis uses an artificial kidney machine to filter waste and excess fluid from your blood, typically done at a clinic. Peritoneal dialysis uses the lining of your abdomen (peritoneum) to filter blood inside your body, which can often be done at home."
-                                />
-                            </Accordion>
-                        </div>
+                        <Tabs defaultValue="general" className="max-w-3xl mx-auto">
+                            <TabsList className="grid w-full grid-cols-3">
+                                <TabsTrigger value="general">General</TabsTrigger>
+                                <TabsTrigger value="living">Living Donation</TabsTrigger>
+                                <TabsTrigger value="deceased">Deceased Donation</TabsTrigger>
+                            </TabsList>
+                            <TabsContent value="general">
+                                <Accordion type="single" collapsible className="w-full space-y-3">
+                                    {generalFaqs.map((faq, index) => (
+                                        <FaqItem key={`general-${index}`} value={`item-${index}`} question={faq.question}>
+                                            <p>{faq.answer}</p>
+                                        </FaqItem>
+                                    ))}
+                                </Accordion>
+                            </TabsContent>
+                            <TabsContent value="living">
+                                <Accordion type="single" collapsible className="w-full space-y-3">
+                                    {livingDonationFaqs.map((faq, index) => (
+                                        <FaqItem key={`living-${index}`} value={`item-${index}`} question={faq.question}>
+                                            {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
+                                        </FaqItem>
+                                    ))}
+                                </Accordion>
+                            </TabsContent>
+                            <TabsContent value="deceased">
+                                <Accordion type="single" collapsible className="w-full space-y-3">
+                                    {deceasedDonationFaqs.map((faq, index) => (
+                                        <FaqItem key={`deceased-${index}`} value={`item-${index}`} question={faq.question}>
+                                            <p>{faq.answer}</p>
+                                        </FaqItem>
+                                    ))}
+                                </Accordion>
+                            </TabsContent>
+                        </Tabs>
                     </div>
                 </section>
 
