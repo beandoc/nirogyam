@@ -428,7 +428,7 @@ export default function NirogyamPage() {
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/peritoneal-dialysis" className="hover:underline">What is peritoneal dialysis? Click to know more</Link></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/peritoneal-dialysis" className="hover:underline">What is peritoneal dialysis?</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
