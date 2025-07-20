@@ -496,7 +496,7 @@ export default function NirogyamPage() {
                             <p className="text-lg text-foreground/80 max-w-xl">Nirogyam is dedicated to providing clear, reliable, and accessible information on kidney health. We believe that informed patients and caregivers are empowered to make the best decisions for their health journey. Our content is curated by medical professionals and patient advocates to ensure accuracy and relevance.</p>
                         </div>
                         <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Team of doctors" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="doctors team" />
+                        <Image src="/nirogyamlogo.png" alt="Nirogyam company logo" width={600} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
                 </section>
