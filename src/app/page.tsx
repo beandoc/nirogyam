@@ -30,6 +30,12 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
+import {
   Stethoscope,
   Utensils,
   MessageSquare,
@@ -602,24 +608,47 @@ export default function NirogyamPage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Renal Nutrition Guide</h3>
-                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Proper nutrition is crucial. Explore resources on dietary guidelines for all stages of kidney disease.</p>
+                             <p className="text-lg text-foreground/80 mt-2 max-w-3xl mx-auto">A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression.</p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                           <Card className="overflow-hidden group">
-                             <Image src="https://placehold.co/600x400.png" alt="Healthy food" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="healthy food" />
-                             <CardHeader><CardTitle>Diet for Early Stages</CardTitle></CardHeader>
-                             <CardContent><p className="text-foreground/80">Learn the best foods to support kidney function in early CKD stages.</p></CardContent>
-                           </Card>
-                           <Card className="overflow-hidden group">
-                             <Image src="https://placehold.co/600x400.png" alt="Low potassium foods" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low potassium food" />
-                             <CardHeader><CardTitle>Managing Potassium</CardTitle></CardHeader>
-                             <CardContent><p className="text-foreground/80">Tips and food lists to help control potassium levels in your diet.</p></CardContent>
-                           </Card>
-                           <Card className="overflow-hidden group">
-                              <Image src="https://placehold.co/600x400.png" alt="Low phosphorus foods" width={600} height={400} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300" data-ai-hint="low phosphorus food" />
-                             <CardHeader><CardTitle>Controlling Phosphorus</CardTitle></CardHeader>
-                             <CardContent><p className="text-foreground/80">Understand phosphorus restrictions and find smart food choices.</p></CardContent>
-                           </Card>
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div className="relative rounded-lg overflow-hidden shadow-xl">
+                                <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
+                            </div>
+                            <Tabs defaultValue="basics" className="w-full">
+                                <TabsList className="grid w-full grid-cols-3 mb-4">
+                                    <TabsTrigger value="basics">Basics</TabsTrigger>
+                                    <TabsTrigger value="ckd-specific">CKD Specific</TabsTrigger>
+                                    <TabsTrigger value="advanced">Advanced</TabsTrigger>
+                                </TabsList>
+                                <TabsContent value="basics" className="p-4 bg-background rounded-lg border">
+                                    <h4 className="text-xl font-semibold mb-3 text-primary">Basic Nutrition and CKD</h4>
+                                    <p className="text-muted-foreground mb-4">Nutrition education for patients with CKD.</p>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Carbohydrate Counting with Chronic Kidney Disease</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">What You Should Know About Good Nutrition</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Your Guide to the New and Improved Nutrition Facts Label</a></li>
+                                    </ul>
+                                </TabsContent>
+                                <TabsContent value="ckd-specific" className="p-4 bg-background rounded-lg border">
+                                    <h4 className="text-xl font-semibold mb-3 text-primary">Nutrition for People with CKD</h4>
+                                    <p className="text-muted-foreground mb-4">Eating a well balanced diet helps manage CKD.</p>
+                                     <ul className="space-y-3">
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Phosphorus and Your Diet</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Potassium in Your CKD Diet</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">CKD Diet: How much protein is the right amount?</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Sodium and Your CKD Diet: How to Spice Up Your Cooking</a></li>
+                                    </ul>
+                                </TabsContent>
+                                <TabsContent value="advanced" className="p-4 bg-background rounded-lg border">
+                                    <h4 className="text-xl font-semibold mb-3 text-primary">Nutrition for ESKD & Transplant</h4>
+                                    <p className="text-muted-foreground mb-4">Good nutrition with End Stage Kidney Disease supports your overall health.</p>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Nutrition and Hemodialysis</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Nutrition and Peritoneal Dialysis</a></li>
+                                        <li className="flex items-start gap-3"><ArrowRight className="h-5 w-5 text-primary mt-1 shrink-0" /><a href="#" className="hover:underline">Diet and Transplantation</a></li>
+                                    </ul>
+                                </TabsContent>
+                            </Tabs>
                         </div>
                     </div>
                 </section>
@@ -831,5 +860,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
