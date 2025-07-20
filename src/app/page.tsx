@@ -223,11 +223,12 @@ export default function NirogyamPage() {
                                     <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">FEATURED TOPICS</h3>
                                     <ul className="flex flex-col gap-1">
                                       <li><Link href="/ckd-explained" className="p-3 block hover:bg-accent rounded-md">Chronic Kidney Disease (CKD)</Link></li>
-                                      <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">Estimated Glomerular Filtration Rate (eGFR)</Link></li>
+                                      <li><Link href="/egfr-explained" className="p-3 block hover:bg-accent rounded-md">eGFR Explained</Link></li>
+                                      <li><Link href="/creatinine-explained" className="p-3 block hover:bg-accent rounded-md">Creatinine Explained</Link></li>
                                       <li><Link href="/stages-of-ckd" className="p-3 block hover:bg-accent rounded-md">Stages of Chronic Kidney Disease (CKD)</Link></li>
-                                      <li><Link href="/kidney-function-tests" className="p-3 block hover:bg-accent rounded-md">Tests to Check Your Kidney Health</Link></li>
-                                      <li><Link href="/kidney-stones" className="p-3 block hover:bg-accent rounded-md">Understanding Kidney Stones</Link></li>
-                                      <li><Link href="/kidney-transplant" className="p-3 block hover:bg-accent rounded-md">Understanding Your Lab Values</Link></li>
+                                      <li><Link href="/kidney-function-tests" className="p-3 block hover:bg-accent rounded-md">Kidney Function Tests</Link></li>
+                                      <li><Link href="/kidney-stones" className="p-3 block hover:bg-accent rounded-md">Kidney Stones</Link></li>
+                                      <li><Link href="/kidney-transplant" className="p-3 block hover:bg-accent rounded-md">Kidney Transplant</Link></li>
                                       <li><a href="#" className="p-3 block text-primary hover:bg-accent rounded-md font-semibold">See All Kidney Topics</a></li>
                                     </ul>
                                   </div>
@@ -246,20 +247,68 @@ export default function NirogyamPage() {
                             </NavigationMenuContent>
                           </NavigationMenuItem>
                           <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Treatment & Support
-                              </NavigationMenuLink>
-                            </Link>
+                            <NavigationMenuTrigger>Treatment &amp; Support</NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                              <div className="grid w-[600px] grid-cols-[1fr_2fr]">
+                                <div className="p-4 bg-primary/5">
+                                    <Link href="/" className="flex items-center font-semibold text-primary mb-4">
+                                      Treatment &amp; Support <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                    <div className="flex flex-col gap-1">
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#" className="p-3 font-semibold bg-primary/10 rounded-md flex justify-between items-center">Dialysis <ArrowRight className="h-4 w-4" /></Link>
+                                      </NavigationMenuLink>
+                                      <NavigationMenuLink asChild>
+                                        <Link href="#" className="p-3 rounded-md hover:bg-accent flex justify-between items-center">Transplant <ArrowRight className="h-4 w-4" /></Link>
+                                      </NavigationMenuLink>
+                                    </div>
+                                </div>
+                                <div className="p-4">
+                                    <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">FEATURED TOPICS</h3>
+                                    <ul className="flex flex-col gap-1">
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Dialysis</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Hemodialysis</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Peritoneal Dialysis</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Home Dialysis</a></li>
+                                      <li><a href="#" className="p-3 block hover:bg-accent rounded-md">Coping Effectively</a></li>
+                                    </ul>
+                                </div>
+                              </div>
+                            </NavigationMenuContent>
                           </NavigationMenuItem>
                           <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Transplantation
-                              </NavigationMenuLink>
-                            </Link>
+                            <NavigationMenuTrigger>Transplantation</NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                                <li className="row-span-3">
+                                  <NavigationMenuLink asChild>
+                                    <a
+                                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                      href="/"
+                                    >
+                                      <HeartHandshake className="h-6 w-6" />
+                                      <div className="mb-2 mt-4 text-lg font-medium">
+                                        Kidney Transplant
+                                      </div>
+                                      <p className="text-sm leading-tight text-muted-foreground">
+                                        A new beginning. Learn about the process and benefits.
+                                      </p>
+                                    </a>
+                                  </NavigationMenuLink>
+                                </li>
+                                <ListItem href="/kidney-transplant" title="About Transplants">
+                                  What to expect from the transplant journey.
+                                </ListItem>
+                                <ListItem href="#" title="Living Donation">
+                                  How to become a living donor and save a life.
+                                </ListItem>
+                                <ListItem href="#" title="Patient Stories">
+                                  Real stories from transplant recipients.
+                                </ListItem>
+                              </ul>
+                            </NavigationMenuContent>
                           </NavigationMenuItem>
-                          <NavigationMenuItem>
+                           <NavigationMenuItem>
                              <Link href="#" legacyBehavior passHref>
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 For Professionals
@@ -337,7 +386,7 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#kidney-topic" className="hover:underline">Explore Kidney Topics</a></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#renal-nutrition" className="hover:underline">Diet & Nutrition Guides</a></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#renal-nutrition" className="hover:underline">Diet &amp; Nutrition Guides</a></li>
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><a href="#assess-kidney" className="hover:underline">Take the Risk Quiz</a></li>
                                     </ul>
                                 </CardContent>
