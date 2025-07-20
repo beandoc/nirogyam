@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -209,6 +209,11 @@ const deceasedDonationFaqs = [
 
 
 export default function NirogyamPage() {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
     
     return (
         <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
@@ -395,6 +400,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
+                {isClient && (
                 <section id="kidney-conversations" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
@@ -438,6 +444,7 @@ export default function NirogyamPage() {
                         </div>
                     </div>
                 </section>
+                )}
                 
                 <section id="faq" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
