@@ -1,5 +1,4 @@
 
-
 'use client'
 
 import React from 'react';
@@ -179,15 +178,13 @@ const LanguageSwitcher = () => {
             return;
         }
 
-        let newPath = '';
+        let newPath;
         if (newLocale === 'hi') {
             newPath = `/hi${pathname}`;
-        } else { // Switching back to 'en'
-            newPath = pathname.replace('/hi', '');
-            if (newPath === '') {
-                newPath = '/';
-            }
+        } else {
+            newPath = pathname.replace('/hi', '') || '/';
         }
+        
         router.push(newPath);
     };
 
