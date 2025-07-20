@@ -300,7 +300,7 @@ export default function NirogyamPage() {
                                     <CardTitle>CKD Explained</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-foreground/80 mb-4">Learn about the stages of Chronic Kidney Disease, its causes, symptoms, and progression.</p>
+                                    <p className="text-foreground/80 mb-4">Learn about Chronic Kidney Disease, its causes, symptoms, and progression.</p>
                                     <Button asChild variant="link">
                                         <Link href="/ckd-explained">Learn More</Link>
                                     </Button>
@@ -325,9 +325,14 @@ export default function NirogyamPage() {
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
                                         <GraduationCap className="h-8 w-8 text-primary" />
                                     </div>
-                                    <CardTitle>Dialysis Explained</CardTitle>
+                                    <CardTitle>Stages of CKD</CardTitle>
                                 </CardHeader>
-                                <CardContent><p className="text-foreground/80">Detailed information on hemodialysis and peritoneal dialysis, including what to expect.</p></CardContent>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">Find out about the different stages of CKD and what they mean for your treatment plan.</p>
+                                    <Button asChild variant="link">
+                                        <Link href="/stages-of-ckd">Learn More</Link>
+                                    </Button>
+                                </CardContent>
                             </Card>
                         </div>
                     </div>
