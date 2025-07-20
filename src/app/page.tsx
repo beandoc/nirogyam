@@ -191,6 +191,11 @@ const kidneyHealthTopics = [
     href: "/stages-of-ckd",
     description: "Find out about the different stages of CKD and what they mean for you.",
   },
+   {
+    title: "Hemodialysis",
+    href: "/hemodialysis",
+    description: "Learn about the hemodialysis process for treating kidney failure.",
+  },
   {
     title: "eGFR Explained",
     href: "/egfr-explained",

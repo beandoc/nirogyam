@@ -73,6 +73,12 @@ const KidneyHealthPage = () => {
                     description="Find out about the different stages of CKD and what they mean for your treatment plan."
                     href="/stages-of-ckd"
                 />
+                 <TopicCard
+                    icon={<Droplet className="h-8 w-8 text-primary" />}
+                    title="Hemodialysis"
+                    description="Learn about the hemodialysis process for treating kidney failure."
+                    href="/hemodialysis"
+                />
                 <TopicCard
                     icon={<TestTube className="h-8 w-8 text-primary" />}
                     title="Kidney Function Tests"
