@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Home, Leaf, AlertTriangle, ShieldCheck, Scale, Info, Users } from 'lucide-react';
+import { Home, Leaf, AlertTriangle, ShieldCheck, Scale, Info, Users, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
@@ -24,6 +24,12 @@ const ProteinExplainedPage = () => {
             <AppHeader />
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
                     <section className="text-center mb-16">
                         <Leaf className="h-16 w-16 text-primary mx-auto mb-4" />
                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Protein and Your CKD Diet</h1>

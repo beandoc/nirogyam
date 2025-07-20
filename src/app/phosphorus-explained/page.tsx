@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Home, Bone, Droplet, Stethoscope, AlertTriangle, ShieldCheck, Soup } from 'lucide-react';
+import { Home, Bone, Droplet, Stethoscope, AlertTriangle, ShieldCheck, Soup, ArrowLeft } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AppHeader } from '@/components/AppHeader';
 
@@ -25,6 +25,12 @@ const PhosphorusExplainedPage = () => {
             <AppHeader />
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
                     <section className="text-center mb-16">
                         <Bone className="h-16 w-16 text-primary mx-auto mb-4" />
                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Phosphorus and Your Diet</h1>

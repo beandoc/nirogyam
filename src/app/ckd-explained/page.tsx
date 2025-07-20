@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, ChevronsRight, Home } from 'lucide-react';
+import { Download, ChevronsRight, Home, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const TableOfContents = () => (
@@ -31,6 +31,12 @@ const CkdExplainedPage = () => {
       <AppHeader />
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
+            <Button asChild variant="outline" className="mb-8">
+                <Link href="/">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Home
+                </Link>
+            </Button>
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Chronic Kidney Disease (CKD) Explained</h1>
             <p className="text-lg text-foreground/80 mb-10">
               Chronic kidney disease (CKD) means your kidneys slowly get damaged and can't do important jobs like removing waste and keeping blood pressure normal.

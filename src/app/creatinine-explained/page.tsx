@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { TestTube, FileText, Activity, Users, ShieldAlert, HeartPulse, Home } from 'lucide-react';
+import { TestTube, FileText, Activity, Users, ShieldAlert, HeartPulse, Home, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
@@ -26,6 +26,12 @@ const CreatinineExplainedPage = () => {
 
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
                     <section id="intro" className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Understanding the Creatinine Test</h1>
                         <p className="text-lg text-foreground/80 max-w-3xl mx-auto">

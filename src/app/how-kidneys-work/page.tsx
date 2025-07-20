@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Home, Droplet, Wind, Heart, TestTube, Filter, Droplets } from 'lucide-react';
+import { Home, Droplet, Wind, Heart, TestTube, Filter, Droplets, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import { AppHeader } from '@/components/AppHeader';
 
@@ -26,6 +26,12 @@ const HowKidneysWorkPage = () => {
 
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
                     <section id="intro" className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">How Your Kidneys Work</h1>
                         <p className="text-lg text-foreground/80 max-w-3xl mx-auto">

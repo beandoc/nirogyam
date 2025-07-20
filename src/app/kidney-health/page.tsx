@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User } from 'lucide-react';
+import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
@@ -31,6 +31,12 @@ const KidneyHealthPage = () => {
         <AppHeader />
 
         <main className="container mx-auto px-4 py-12 md:py-20">
+            <Button asChild variant="outline" className="mb-8">
+                <Link href="/">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Home
+                </Link>
+            </Button>
             <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Kidney Health Topics</h1>
                 <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into our library of articles to understand every aspect of your kidney health.</p>

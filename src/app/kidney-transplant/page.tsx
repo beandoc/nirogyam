@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Home, ChevronsRight, Heart, Shield, Users, Stethoscope, HelpCircle, ArrowRightCircle } from 'lucide-react';
+import { Home, ChevronsRight, Heart, Shield, Users, Stethoscope, HelpCircle, ArrowRightCircle, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const TableOfContents = () => (
@@ -34,6 +34,12 @@ const KidneyTransplantPage = () => {
 
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Kidney Transplant: A New Beginning</h1>
                     <p className="text-lg text-foreground/80 mb-10">
                         A transplant is a treatment for kidney failure that involves placing a healthy kidney from a donor into your body, potentially offering a longer, more active life than dialysis.
