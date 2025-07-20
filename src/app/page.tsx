@@ -202,16 +202,16 @@ export default function NirogyamPage() {
                               <NavigationMenu>
                                 <NavigationMenuList>
                                   <NavigationMenuItem>
-                                    <Link href="/kidney-health">
+                                    <Link href="/kidney-health" legacyBehavior passHref>
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Kidney Health
                                       </NavigationMenuLink>
                                     </Link>
                                   </NavigationMenuItem>
                                   <NavigationMenuItem>
-                                    <Link href="/renal-nutrition">
+                                    <Link href="/renal-nutrition" legacyBehavior passHref>
                                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Diet & Nutrition
+                                        Diet &amp; Nutrition
                                       </NavigationMenuLink>
                                     </Link>
                                   </NavigationMenuItem>
@@ -490,3 +490,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
