@@ -423,14 +423,12 @@ export default function NirogyamPage() {
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Caregivers</CardTitle>
-                                    <CardDescription>Support and information to help you care for your loved ones.</CardDescription>
+                                    <CardTitle className="text-primary text-2xl">Peritoneal dialysis</CardTitle>
+                                    <CardDescription>Learn about peritoneal dialysis, a treatment for kidney failure that you can do at home.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-health" className="hover:underline">Find Support Resources</Link></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/renal-nutrition" className="hover:underline">Get Help with Diet Planning</Link></li>
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-transplant" className="hover:underline">Prepare for Treatments</Link></li>
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/peritoneal-dialysis" className="hover:underline">What is peritoneal dialysis? Click to know more</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
