@@ -14,13 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn("bg-gray-50", "min-h-screen font-sans")}>
+      <body className={cn("min-h-screen font-sans antialiased")}>
         {children}
         <Toaster />
       </body>
