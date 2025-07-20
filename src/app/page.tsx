@@ -36,7 +36,6 @@ import {
   Calendar,
   BookOpen,
   Hospital,
-  ChevronDown,
   Menu,
   Facebook,
   Twitter,
@@ -52,6 +51,16 @@ import {
   Diamond,
   HeartHandshake,
   ArrowRight,
+  Shield,
+  Gauge,
+  Sparkles,
+  Wind,
+  Droplet,
+  Hand,
+  Ban,
+  ClipboardCheck,
+  TestTube2,
+  Apple,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -259,7 +268,7 @@ export default function NirogyamPage() {
                                         <Link href="#" className="p-3 font-semibold bg-primary/10 rounded-md flex justify-between items-center">Dialysis <ArrowRight className="h-4 w-4" /></Link>
                                       </NavigationMenuLink>
                                       <NavigationMenuLink asChild>
-                                        <Link href="#" className="p-3 rounded-md hover:bg-accent flex justify-between items-center">Transplant <ArrowRight className="h-4 w-4" /></Link>
+                                        <Link href="/kidney-transplant" className="p-3 rounded-md hover:bg-accent flex justify-between items-center">Transplant <ArrowRight className="h-4 w-4" /></Link>
                                       </NavigationMenuLink>
                                     </div>
                                 </div>
@@ -284,7 +293,7 @@ export default function NirogyamPage() {
                                   <NavigationMenuLink asChild>
                                     <a
                                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                      href="/"
+                                      href="/kidney-transplant"
                                     >
                                       <HeartHandshake className="h-6 w-6" />
                                       <div className="mb-2 mt-4 text-lg font-medium">
@@ -528,7 +537,68 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="renal-nutrition" className="py-20 bg-background">
+                <section id="prevention-tips" className="py-20 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary">Guarding Your Health: Simple Tips for Happy Kidneys</h3>
+                            <p className="text-lg text-foreground/80 mt-2 max-w-3xl mx-auto">
+                                Small, consistent habits can make a big difference in keeping your kidneys healthy. Here are some simple tips to keep your kidneys smiling.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <Gauge className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Maintain Normal Blood Pressure</CardTitle>
+                                </CardHeader>
+                            </Card>
+                             <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <Hand className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Hand Hygiene</CardTitle>
+                                </CardHeader>
+                            </Card>
+                            <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <Ban className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Avoid Pain Killers</CardTitle>
+                                </CardHeader>
+                            </Card>
+                             <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <Droplet className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Check Blood Sugar</CardTitle>
+                                </CardHeader>
+                            </Card>
+                            <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <Apple className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Healthy Diet</CardTitle>
+                                </CardHeader>
+                            </Card>
+                             <Card className="text-center p-4">
+                                <CardHeader className="items-center">
+                                    <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                                        <TestTube2 className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle>Test for Protein in Urine</CardTitle>
+                                </CardHeader>
+                            </Card>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Renal Nutrition Guide</h3>
@@ -554,7 +624,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                 <section id="kidney-conversations" className="py-20 bg-card">
+                 <section id="kidney-conversations" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Kidney Conversations</h3>
@@ -598,39 +668,39 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="services" className="py-20 bg-background">
+                <section id="services" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                            <h3 className="text-3xl font-bold text-primary">Our Comprehensive Services</h3>
                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">We provide a wide range of resources and tools to support you at every stage of your journey.</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="text-center p-6 bg-card rounded-lg">
+                            <div className="text-center p-6 bg-background rounded-lg">
                                 <Stethoscope className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Expert Articles</h4>
                                 <p className="text-foreground/80">Access a wealth of information written and reviewed by kidney health experts.</p>
                             </div>
-                            <div className="text-center p-6 bg-card rounded-lg">
+                            <div className="text-center p-6 bg-background rounded-lg">
                                 <Utensils className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Dietary Guidance</h4>
                                 <p className="text-foreground/80">Find kidney-friendly recipes and personalized nutrition advice.</p>
                             </div>
-                            <div className="text-center p-6 bg-card rounded-lg">
+                            <div className="text-center p-6 bg-background rounded-lg">
                                 <MessageSquare className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Support Forums</h4>
                                 <p className="text-foreground/80">Connect with a community of patients and caregivers for shared experiences.</p>
                             </div>
-                            <div className="text-center p-6 bg-card rounded-lg">
+                            <div className="text-center p-6 bg-background rounded-lg">
                                 <Calendar className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Event Calendar</h4>
                                 <p className="text-foreground/80">Stay informed about upcoming webinars, workshops, and awareness campaigns.</p>
                             </div>
-                             <div className="text-center p-6 bg-card rounded-lg">
+                             <div className="text-center p-6 bg-background rounded-lg">
                                 <BookOpen className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Resource Library</h4>
                                 <p className="text-foreground/80">Downloadable guides, infographics, and other helpful resources.</p>
                             </div>
-                            <div className="text-center p-6 bg-card rounded-lg">
+                            <div className="text-center p-6 bg-background rounded-lg">
                                 <Hospital className="mx-auto h-12 w-12 text-primary mb-4" />
                                 <h4 className="text-xl font-semibold mb-3">Find a Specialist</h4>
                                 <p className="text-foreground/80">Directory of nephrologists and kidney care centers near you.</p>
@@ -639,23 +709,23 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section className="py-20 bg-card">
+                <section className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-12">What Our Community Says</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <Card className="border-primary/20 bg-background">
+                            <Card className="border-primary/20 bg-card">
                                 <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"Nirogyam has been an invaluable resource in understanding my kidney condition. The information is so clear and easy to understand."</p>
                                     <p className="font-semibold text-primary">- Priya S.</p>
                                 </CardContent>
                             </Card>
-                            <Card className="border-primary/20 bg-background">
+                            <Card className="border-primary/20 bg-card">
                                <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"The dietary advice provided here has significantly helped me manage my diet and feel better. Highly recommend!"</p>
                                     <p className="font-semibold text-primary">- Rajesh K.</p>
                                 </CardContent>
                             </Card>
-                             <Card className="border-primary/20 bg-background">
+                             <Card className="border-primary/20 bg-card">
                                 <CardContent className="pt-6">
                                     <p className="text-foreground/80 italic mb-4">"The assessment tool was a great starting point for me to realize the importance of kidney health."</p>
                                     <p className="font-semibold text-primary">- Sunita R.</p>
@@ -665,7 +735,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="faq" className="py-20 bg-background">
+                <section id="faq" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                            <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
@@ -693,7 +763,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                 <section id="about" className="py-20 bg-card">
+                 <section id="about" className="py-20 bg-background">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
@@ -705,11 +775,11 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 bg-background">
+                <section id="contact" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
-                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20">
+                        <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-background">
                             <CardContent className="pt-6">
                                 <form className="space-y-4">
                                     <Input type="text" placeholder="Your Name" />
@@ -761,3 +831,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
