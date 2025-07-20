@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Home, Leaf, ShoppingCart, Pill, Dumbbell, HeartPulse, CheckCircle } from 'lucide-react';
+import { Home, Leaf, ShoppingCart, Pill, Dumbbell, HeartPulse, CheckCircle, Gauge, Hand, Ban, Droplet, Apple, TestTube2 } from 'lucide-react';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
     <Card>
@@ -14,6 +14,17 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
         <CardContent>
             <div className="text-foreground/80 space-y-3">{children}</div>
         </CardContent>
+    </Card>
+);
+
+const PreventionTipCard = ({ icon, title }: { icon: React.ReactNode, title: string }) => (
+    <Card className="text-center p-4">
+        <CardHeader className="items-center">
+            <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                {icon}
+            </div>
+            <CardTitle>{title}</CardTitle>
+        </CardHeader>
     </Card>
 );
 
@@ -97,6 +108,25 @@ const GoodNutritionPage = () => {
                             </ul>
                         </InfoCard>
                     </div>
+
+                    <section id="prevention-tips" className="py-20 bg-background">
+                        <div className="container mx-auto px-4">
+                            <div className="text-center mb-12">
+                                <h2 className="text-3xl font-bold text-primary">Guarding Your Health: Simple Tips for Happy Kidneys</h2>
+                                <p className="text-lg text-foreground/80 mt-2 max-w-3xl mx-auto">
+                                    Small, consistent habits can make a big difference in keeping your kidneys healthy. Here are some simple tips to keep your kidneys smiling.
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <PreventionTipCard icon={<Gauge className="h-8 w-8 text-primary" />} title="Maintain Normal Blood Pressure" />
+                                <PreventionTipCard icon={<Hand className="h-8 w-8 text-primary" />} title="Hand Hygiene" />
+                                <PreventionTipCard icon={<Ban className="h-8 w-8 text-primary" />} title="Avoid Pain Killers" />
+                                <PreventionTipCard icon={<Droplet className="h-8 w-8 text-primary" />} title="Check Blood Sugar" />
+                                <PreventionTipCard icon={<Apple className="h-8 w-8 text-primary" />} title="Healthy Diet" />
+                                <PreventionTipCard icon={<TestTube2 className="h-8 w-8 text-primary" />} title="Test for Protein in Urine" />
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </main>
         </div>
