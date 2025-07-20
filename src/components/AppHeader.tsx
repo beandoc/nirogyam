@@ -211,7 +211,7 @@ export const AppHeader = () => {
     const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
     const router = useRouter();
     const pathname = usePathname();
-    const locale = pathname.split('/')[1];
+    const locale = pathname.startsWith('/hi') ? 'hi' : 'en';
     const t = locale === 'hi' ? hi : en;
 
     return (
