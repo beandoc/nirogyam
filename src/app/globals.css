@@ -80,6 +80,38 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-50 text-foreground;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
   }
+  .hero-pattern {
+    background-color: #e8f4f8;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2393c5fd' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+    .dropdown {
+        @apply relative inline-block;
+    }
+    .dropdown-content {
+        @apply hidden absolute bg-white min-w-[250px] shadow-lg z-50 rounded-md;
+    }
+    .dropdown:hover .dropdown-content {
+        @apply block;
+    }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    .faq-item.active .faq-answer {
+        max-height: 500px;
+    }
+    .faq-question svg {
+        transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question svg {
+        transform: rotate(180deg);
+    }
 }
