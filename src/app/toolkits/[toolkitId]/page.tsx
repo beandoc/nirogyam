@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, ArrowLeft } from 'lucide-react';
 import { useParams } from 'next/navigation';
+import { AppHeader } from '@/components/AppHeader';
 
 const toolkitMap: { [key: string]: { url: string; title: string } } = {
     'know-hemodialysis': {
