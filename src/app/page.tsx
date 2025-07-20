@@ -403,7 +403,7 @@ export default function NirogyamPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <Card>
-                                <CardHeader><CardTitle>Episode 1: Understanding CKD</CardTitle></CardHeader>
+                                <CardHeader><CardTitle>CKD "A Blind Spot"</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">An introductory episode covering the basics of Chronic Kidney Disease.</p>
                                     <audio controls className="w-full">
