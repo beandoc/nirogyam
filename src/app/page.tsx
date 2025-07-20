@@ -413,7 +413,7 @@ export default function NirogyamPage() {
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader><CardTitle>Episode 2: The Role of Diet</CardTitle></CardHeader>
+                                <CardHeader><CardTitle>CKD- Correct BP measurement</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Expert insights on managing your diet for kidney health.</p>
                                     <audio controls className="w-full">
@@ -423,7 +423,7 @@ export default function NirogyamPage() {
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader><CardTitle>Episode 3: Patient Stories</CardTitle></CardHeader>
+                                <CardHeader><CardTitle>Sharing your feelings</CardTitle></CardHeader>
                                 <CardContent>
                                     <p className="text-foreground/80 mb-4">Inspiring journeys from individuals living with kidney disease.</p>
                                     <audio controls className="w-full">
