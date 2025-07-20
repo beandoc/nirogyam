@@ -41,7 +41,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AppHeader } from '@/components/AppHeader';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -236,7 +236,9 @@ const WhatsAppIcon = () => (
 );
 
 
-export default function NirogyamPage({ params: { lang } }: { params: { lang: string } }) {
+export default function NirogyamPage() {
+    const params = useParams();
+    const lang = params.lang || 'en';
     const [isClient, setIsClient] = useState(false);
     const t = lang === 'hi' ? hi : en;
 

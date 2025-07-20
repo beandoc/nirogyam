@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronsRight, Download, Droplets, Gauge, Scale, Cake, Dna, Home, ArrowLeft } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AppHeader } from '@/components/AppHeader';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -28,8 +28,8 @@ const TableOfContents = ({ t }: { t: any }) => (
 );
 
 const EgfrExplainedPage = () => {
-  const pathname = usePathname();
-  const locale = pathname.split('/')[1];
+  const params = useParams();
+  const locale = params.lang || 'en';
   const t = locale === 'hi' ? hi : en;
 
   return (

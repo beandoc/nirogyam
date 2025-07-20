@@ -8,6 +8,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Home, Droplet, Clock, Heart, Download, Settings, Hospital, Syringe, Users, LifeBuoy, Plane, AlertTriangle, ShieldCheck, Dumbbell, Info, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
+import { useParams } from 'next/navigation';
+import en from '@/locales/en.json';
+import hi from '@/locales/hi.json';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
     <Card className="mb-8">
@@ -22,6 +25,10 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 );
 
 const HemodialysisPage = () => {
+    const params = useParams();
+    const locale = params.lang || 'en';
+    const t = locale === 'hi' ? hi : en;
+
     return (
         <div className="bg-background text-foreground flex-1">
             <AppHeader />

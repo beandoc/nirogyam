@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Home, Droplet, Clock, Heart, Download, Settings, Hospital, Syringe, Users, LifeBuoy, Plane, AlertTriangle, ShieldCheck, Dumbbell, Info, ArrowLeft, Sun, Moon } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -25,8 +25,8 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 );
 
 const PeritonealDialysisPage = () => {
-    const pathname = usePathname();
-    const locale = pathname.split('/')[1];
+    const params = useParams();
+    const locale = params.lang || 'en';
     const t = locale === 'hi' ? hi : en;
     const content = t.peritonealDialysis;
 

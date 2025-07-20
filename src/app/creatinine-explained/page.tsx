@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TestTube, FileText, Activity, Users, ShieldAlert, HeartPulse, Home, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -24,8 +24,8 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 );
 
 const CreatinineExplainedPage = () => {
-    const pathname = usePathname();
-    const locale = pathname.split('/')[1];
+    const params = useParams();
+    const locale = params.lang || 'en';
     const t = locale === 'hi' ? hi : en;
 
     return (

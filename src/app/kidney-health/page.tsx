@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
 
@@ -30,8 +30,8 @@ const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, 
 );
 
 const KidneyHealthPage = () => {
-    const pathname = usePathname();
-    const locale = pathname.split('/')[1];
+    const params = useParams();
+    const locale = params.lang || 'en';
     const t = locale === 'hi' ? hi : en;
 
     const topics = [
