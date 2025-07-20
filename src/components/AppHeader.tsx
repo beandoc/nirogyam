@@ -24,6 +24,10 @@ import {
 } from "@/components/ui/sheet"
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useRouter, usePathname } from 'next/navigation';
+import en from '@/locales/en.json';
+import hi from '@/locales/hi.json';
+
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -165,22 +169,55 @@ const transplantTopics = [
     },
 ];
 
+const LanguageSwitcher = () => {
+    const router = useRouter();
+    const pathname = usePathname();
+    const currentLocale = pathname.split('/')[1];
+
+    const changeLanguage = (locale: string) => {
+        const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
+        router.push(newPath);
+    };
+
+    return (
+        <div className="flex items-center space-x-2 text-sm">
+            <button 
+                onClick={() => changeLanguage('en')} 
+                className={cn("font-medium", { 'text-primary underline': currentLocale === 'en' || !currentLocale })}
+            >
+                English
+            </button>
+            <span>|</span>
+            <button 
+                onClick={() => changeLanguage('hi')} 
+                className={cn("font-medium", { 'text-primary underline': currentLocale === 'hi' })}
+            >
+                हिन्दी
+            </button>
+        </div>
+    );
+};
+
 export const AppHeader = () => {
     const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
+    const router = useRouter();
+    const pathname = usePathname();
+    const locale = pathname.split('/')[1];
+    const t = locale === 'hi' ? hi : en;
 
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2">
                     <Image src="/nephrodeptlogo.png" alt="Nirogyam Logo" width={40} height={40} className="rounded-full" />
-                    <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
+                    <h1 className="text-2xl font-bold text-primary">{t.header.title}</h1>
                 </Link>
 
                 <nav className="hidden md:flex items-center">
                    <NavigationMenu>
                       <NavigationMenuList className="gap-4">
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Kidney Health</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>{t.header.kidneyHealth}</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {kidneyHealthTopics.map((component) => (
@@ -196,7 +233,7 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Diet & Nutrition</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>{t.header.dietNutrition}</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {dietAndNutritionTopics.map((component) => (
@@ -212,7 +249,7 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Kidney Transplant</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>{t.header.kidneyTransplant}</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                               {transplantTopics.map((component) => (
@@ -230,29 +267,36 @@ export const AppHeader = () => {
                       </NavigationMenuList>
                     </NavigationMenu>
                 </nav>
-
-                <div className="md:hidden">
-                    <Sheet>
-                        <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon">
-                                <Menu className="h-6 w-6" />
-                                <span className="sr-only">Open menu</span>
-                            </Button>
-                        </SheetTrigger>
-                        <SheetContent side="right">
-                            <SheetHeader>
-                                <SheetTitle>Nirogyam</SheetTitle>
-                            </SheetHeader>
-                            <div className="flex flex-col space-y-4 mt-8">
-                                <Button variant="link" asChild><Link href="/kidney-health">Kidney Health</Link></Button>
-                                <Button variant="link" asChild><Link href="/renal-nutrition">Renal Nutrition</Link></Button>
-                                <Button variant="link" asChild><Link href="/kidney-transplant">Kidney Transplant</Link></Button>
-                                <Button variant="link" asChild><a href="/#assess-kidney">Risk Quiz</a></Button>
-                                <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                <Button variant="link" asChild><a href="/#contact">Contact Us</a></Button>
-                            </div>
-                        </SheetContent>
-                    </Sheet>
+                <div className="flex items-center gap-4">
+                    <div className="hidden md:block">
+                        <LanguageSwitcher />
+                    </div>
+                    <div className="md:hidden">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <Button variant="ghost" size="icon">
+                                    <Menu className="h-6 w-6" />
+                                    <span className="sr-only">Open menu</span>
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent side="right">
+                                <SheetHeader>
+                                    <SheetTitle>Nirogyam</SheetTitle>
+                                </SheetHeader>
+                                <div className="flex flex-col space-y-4 mt-8">
+                                    <Button variant="link" asChild><Link href="/kidney-health">{t.header.kidneyHealth}</Link></Button>
+                                    <Button variant="link" asChild><Link href="/renal-nutrition">{t.header.dietNutrition}</Link></Button>
+                                    <Button variant="link" asChild><Link href="/kidney-transplant">{t.header.kidneyTransplant}</Link></Button>
+                                    <Button variant="link" asChild><a href="/#assess-kidney">Risk Quiz</a></Button>
+                                    <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
+                                    <Button variant="link" asChild><a href="/#contact">Contact Us</a></Button>
+                                    <div className="pt-4 border-t">
+                                     <LanguageSwitcher />
+                                    </div>
+                                </div>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                 </div>
             </div>
         </header>
