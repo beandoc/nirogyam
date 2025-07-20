@@ -172,21 +172,23 @@ const transplantTopics = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const pathParts = pathname.split('/');
-    const currentLocale = pathParts[1] === 'hi' ? 'hi' : 'en';
+    const currentLocale = pathname.startsWith('/hi') ? 'hi' : 'en';
 
     const changeLanguage = (newLocale: string) => {
-        const newPath = pathname.startsWith(`/${currentLocale}`)
-            ? pathname.replace(`/${currentLocale}`, `/${newLocale}`)
-            : `/${newLocale}${pathname}`;
-
-        // Handle the case where the homepage is `/` for the default locale
-        if (newLocale === 'en' && pathname.startsWith('/hi')) {
-            const englishPath = pathname.replace('/hi', '');
-            router.push(englishPath === '' ? '/' : englishPath);
-        } else {
-             router.push(newPath);
+        if (newLocale === currentLocale) {
+            return;
         }
+
+        let newPath = '';
+        if (newLocale === 'hi') {
+            newPath = `/hi${pathname}`;
+        } else { // Switching back to 'en'
+            newPath = pathname.replace('/hi', '');
+            if (newPath === '') {
+                newPath = '/';
+            }
+        }
+        router.push(newPath);
     };
 
     return (
