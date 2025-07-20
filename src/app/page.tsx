@@ -318,14 +318,14 @@ export default function NirogyamPage() {
                             </NavigationMenuContent>
                           </NavigationMenuItem>
                            <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
+                             <Link href="#">
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 For Professionals
                               </NavigationMenuLink>
                             </Link>
                           </NavigationMenuItem>
                            <NavigationMenuItem>
-                             <Link href="#" legacyBehavior passHref>
+                             <Link href="#">
                               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Take Action
                               </NavigationMenuLink>
