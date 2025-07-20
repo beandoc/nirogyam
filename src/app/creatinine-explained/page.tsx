@@ -5,11 +5,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { TestTube, FileText, Activity, Users, ShieldAlert, HeartPulse, Home, ArrowLeft } from 'lucide-react';
+import { TestTube, FileText, Activity, Users, ShieldAlert, HeartPulse, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { useParams } from 'next/navigation';
-import en from '@/locales/en.json';
-import hi from '@/locales/hi.json';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
     <Card className="mb-8">
@@ -24,9 +21,32 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 );
 
 const CreatinineExplainedPage = () => {
-    const params = useParams();
-    const locale = params.lang || 'en';
-    const t = locale === 'hi' ? hi : en;
+
+    const purposeList = [
+        "Check kidney health in individuals at high risk for Chronic Kidney Disease (CKD) or those showing symptoms of Acute Kidney Injury (AKI).",
+        "Monitor changes in kidney function over time for people diagnosed with CKD.",
+        "Determine if medication dosages need to be adjusted or stopped to protect your kidneys."
+    ];
+
+    const factorsRaiseList = [
+        "Eating large amounts of cooked meat",
+        "Taking creatine supplements or certain medications (cimetidine, fenofibrate, etc.)",
+        "Recent high-intensity exercise",
+        "High muscle mass (e.g., bodybuilders)"
+    ];
+
+    const factorsLowerList = [
+        "A vegan or vegetarian diet",
+        "Low muscle mass, muscle-wasting diseases, or a history of amputation",
+        "Pregnancy",
+        "Severe liver disease (cirrhosis)"
+    ];
+
+    const questionsList = [
+        "When was my last creatinine test, and what was my eGFR based on that result?",
+        "When should I have this test done again?",
+        "Do I have any personal factors that might affect my creatinine levels, and how should we interpret my eGFR in light of that?"
+    ];
 
     return (
         <div className="bg-background text-foreground flex-1">
@@ -35,69 +55,69 @@ const CreatinineExplainedPage = () => {
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
                     <Button asChild variant="outline" className="mb-8">
-                        <Link href={`/${locale}`}>
+                        <Link href="/">
                             <ArrowLeft className="mr-2 h-4 w-4" />
-                            {t.buttons.backToHome}
+                            Back to Home
                         </Link>
                     </Button>
                     <section id="intro" className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">{t.creatinineExplained.title}</h1>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Understanding the Creatinine Test</h1>
                         <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-                           {t.creatinineExplained.intro}
+                           Creatinine is a natural waste product from protein digestion and muscle activity. Your kidneys filter it from your blood. While everyone has creatinine, high levels can indicate a kidney issue.
                         </p>
                     </section>
 
-                    <InfoCard icon={<FileText className="h-10 w-10 text-primary" />} title={t.creatinineExplained.purpose.title}>
-                        <p className="text-foreground/80">{t.creatinineExplained.purpose.p1}</p>
+                    <InfoCard icon={<FileText className="h-10 w-10 text-primary" />} title="Purpose of the Test">
+                        <p className="text-foreground/80">The serum (blood) creatinine test is a fundamental tool for assessing how well your kidneys are filtering waste. It's a common, frequently ordered test, often included in a Basic or Comprehensive Metabolic Panel (BMP or CMP) during routine health checks. This test helps your healthcare provider:</p>
                         <ul className="list-disc pl-6 mt-4 space-y-2 text-foreground/80">
-                            {t.creatinineExplained.purpose.list.map((item: string, index: number) => <li key={index}>{item}</li>)}
+                            {purposeList.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                     </InfoCard>
                     
-                    <InfoCard icon={<TestTube className="h-10 w-10 text-primary" />} title={t.creatinineExplained.process.title}>
+                    <InfoCard icon={<TestTube className="h-10 w-10 text-primary" />} title="The Testing Process">
                         <Accordion type="single" collapsible className="w-full">
                             <AccordionItem value="before">
-                                <AccordionTrigger>{t.creatinineExplained.process.before.title}</AccordionTrigger>
+                                <AccordionTrigger>Before the Test</AccordionTrigger>
                                 <AccordionContent>
-                                    <p className="text-foreground/80">{t.creatinineExplained.process.before.content}</p>
+                                    <p className="text-foreground/80">Typically, no special preparation is needed. However, your doctor may ask you to avoid eating or drinking (except water) for a few hours beforehand. In some cases, you might be instructed to avoid cooked meat the night before, as it can temporarily raise creatinine levels and affect your eGFR results.</p>
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="during">
-                                <AccordionTrigger>{t.creatinineExplained.process.during.title}</AccordionTrigger>
+                                <AccordionTrigger>During the Test</AccordionTrigger>
                                 <AccordionContent>
-                                    <p className="text-foreground/80">{t.creatinineExplained.process.during.content}</p>
+                                    <p className="text-foreground/80">A healthcare professional will draw a small blood sample from a vein in your arm. The process is quick, usually taking less than five minutes. You might feel a brief sting when the needle is inserted.</p>
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="after">
-                                <AccordionTrigger>{t.creatinineExplained.process.after.title}</AccordionTrigger>
+                                <AccordionTrigger>After the Test</AccordionTrigger>
                                 <AccordionContent>
-                                    <p className="text-foreground/80">{t.creatinineExplained.process.after.content}</p>
+                                    <p className="text-foreground/80">There are no restrictions after the test. You may have slight pain or bruising at the needle site, but this typically resolves quickly.</p>
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>
                     </InfoCard>
 
-                    <InfoCard icon={<HeartPulse className="h-10 w-10 text-primary" />} title={t.creatinineExplained.results.title}>
-                        <p className="text-foreground/80 mb-4">{t.creatinineExplained.results.p1}</p>
-                        <p className="text-foreground/80 font-semibold mb-4">{t.creatinineExplained.results.p2}</p>
-                        <p className="text-foreground/80">{t.creatinineExplained.results.p3}</p>
+                    <InfoCard icon={<HeartPulse className="h-10 w-10 text-primary" />} title="Interpreting Your Results">
+                        <p className="text-foreground/80 mb-4">While the creatinine test is common, the result alone isn't the best measure of kidney health because "normal" levels vary based on age, sex, and body size. Some people with "normal" creatinine might have kidney disease, while others with "high" levels may not.</p>
+                        <p className="text-foreground/80 font-semibold mb-4">The most accurate way to assess kidney function is the estimated Glomerular Filtration Rate (eGFR), which is calculated using your creatinine level, age, and sex.</p>
+                        <p className="text-foreground/80">For even greater accuracy, your doctor might also use a Cystatin C test along with creatinine to calculate your eGFR.</p>
                     </InfoCard>
                     
-                    <InfoCard icon={<ShieldAlert className="h-10 w-10 text-primary" />} title={t.creatinineExplained.considerations.title}>
-                        <p className="text-foreground/80 mb-4">{t.creatinineExplained.considerations.p1}</p>
-                        <h3 className="font-semibold mb-2">{t.creatinineExplained.considerations.factorsRaise.title}</h3>
+                    <InfoCard icon={<ShieldAlert className="h-10 w-10 text-primary" />} title="Additional Considerations">
+                        <p className="text-foreground/80 mb-4">Several factors unrelated to kidney health can influence your creatinine levels, potentially making your eGFR appear higher or lower than it actually is. It's important to discuss these with your doctor.</p>
+                        <h3 className="font-semibold mb-2">Factors that can raise creatinine (making eGFR seem lower):</h3>
                         <ul className="list-disc pl-6 mb-4 space-y-1 text-foreground/80">
-                            {t.creatinineExplained.considerations.factorsRaise.list.map((item: string, index: number) => <li key={index}>{item}</li>)}
+                            {factorsRaiseList.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
-                        <h3 className="font-semibold mb-2">{t.creatinineExplained.considerations.factorsLower.title}</h3>
+                        <h3 className="font-semibold mb-2">Factors that can lower creatinine (making eGFR seem higher):</h3>
                         <ul className="list-disc pl-6 space-y-1 text-foreground/80">
-                            {t.creatinineExplained.considerations.factorsLower.list.map((item: string, index: number) => <li key={index}>{item}</li>)}
+                            {factorsLowerList.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                     </InfoCard>
 
-                    <InfoCard icon={<Users className="h-10 w-10 text-primary" />} title={t.creatinineExplained.questions.title}>
+                    <InfoCard icon={<Users className="h-10 w-10 text-primary" />} title="Questions for Your Healthcare Team">
                         <ul className="list-disc pl-6 space-y-3 text-foreground/80">
-                            {t.creatinineExplained.questions.list.map((item: string, index: number) => <li key={index}>{item}</li>)}
+                            {questionsList.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                     </InfoCard>
                 </div>

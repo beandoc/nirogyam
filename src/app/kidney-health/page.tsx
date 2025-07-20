@@ -4,11 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
+import { HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { useParams } from 'next/navigation';
-import en from '@/locales/en.json';
-import hi from '@/locales/hi.json';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
     <Card className="text-center p-4 hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 flex flex-col">
@@ -30,106 +27,103 @@ const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, 
 );
 
 const KidneyHealthPage = () => {
-    const params = useParams();
-    const locale = params.lang || 'en';
-    const t = locale === 'hi' ? hi : en;
 
     const topics = [
         { 
             icon: <Filter className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.howKidneysWork.title,
-            description: t.kidneyHealth.topics.howKidneysWork.description,
-            href: `/${locale}/how-kidneys-work`
+            title: "How Kidneys Work",
+            description: "Learn the fundamentals of how your kidneys filter waste and keep you healthy.",
+            href: "/how-kidneys-work"
         },
         { 
             icon: <HeartPulse className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.ckdExplained.title,
-            description: t.kidneyHealth.topics.ckdExplained.description,
-            href: `/${locale}/ckd-explained`
+            title: "CKD Explained",
+            description: "Learn about Chronic Kidney Disease, its causes, symptoms, and progression.",
+            href: "/ckd-explained"
         },
         {
             icon: <FileText className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.egfrExplained.title,
-            description: t.kidneyHealth.topics.egfrExplained.description,
-            href: `/${locale}/egfr-explained`
+            title: "eGFR Explained",
+            description: "Understand what your estimated Glomerular Filtration Rate (eGFR) means for your kidney health.",
+            href: "/egfr-explained"
         },
         {
             icon: <GraduationCap className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.stagesOfCkd.title,
-            description: t.kidneyHealth.topics.stagesOfCkd.description,
-            href: `/${locale}/stages-of-ckd`
+            title: "Stages of CKD",
+            description: "Find out about the different stages of CKD and what they mean for your treatment plan.",
+            href: "/stages-of-ckd"
         },
         {
             icon: <Droplet className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.hemodialysis.title,
-            description: t.kidneyHealth.topics.hemodialysis.description,
-            href: `/${locale}/hemodialysis`
+            title: "Hemodialysis",
+            description: "Learn about the hemodialysis process for treating kidney failure.",
+            href: "/hemodialysis"
         },
         {
             icon: <TestTube className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.kidneyFunctionTests.title,
-            description: t.kidneyHealth.topics.kidneyFunctionTests.description,
-            href: `/${locale}/kidney-function-tests`
+            title: "Kidney Function Tests",
+            description: "A guide to the various tests used to monitor your kidney health.",
+            href: "/kidney-function-tests"
         },
         {
             icon: <Diamond className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.kidneyStones.title,
-            description: t.kidneyHealth.topics.kidneyStones.description,
-            href: `/${locale}/kidney-stones`
+            title: "Kidney Stones",
+            description: "Learn about the causes, symptoms, and treatments for kidney stones.",
+            href: "/kidney-stones"
         },
         {
             icon: <HeartHandshake className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.kidneyTransplant.title,
-            description: t.kidneyHealth.topics.kidneyTransplant.description,
-            href: `/${locale}/kidney-transplant`
+            title: "Kidney Transplant",
+            description: "Explore the process and benefits of receiving a kidney transplant.",
+            href: "/kidney-transplant"
         },
         {
             icon: <TestTube className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.creatinineExplained.title,
-            description: t.kidneyHealth.topics.creatinineExplained.description,
-            href: `/${locale}/creatinine-explained`
+            title: "Creatinine Explained",
+            description: "Understand what creatinine is and its role in kidney health.",
+            href: "/creatinine-explained"
         },
         {
             icon: <FileText className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.renalNutrition.title,
-            description: t.kidneyHealth.topics.renalNutrition.description,
-            href: `/${locale}/renal-nutrition`
+            title: "Renal Nutrition",
+            description: "Your guide to a kidney-friendly diet to help manage CKD.",
+            href: "/renal-nutrition"
         },
         {
             icon: <HeartPulse className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.goodNutrition.title,
-            description: t.kidneyHealth.topics.goodNutrition.description,
-            href: `/${locale}/good-nutrition`
+            title: "Good Nutrition",
+            description: "General tips for a healthy diet and lifestyle for overall well-being.",
+            href: "/good-nutrition"
         },
         {
             icon: <Bone className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.phosphorusExplained.title,
-            description: t.kidneyHealth.topics.phosphorusExplained.description,
-            href: `/${locale}/phosphorus-explained`
+            title: "Phosphorus Explained",
+            description: "Learn how to manage phosphorus levels for bone and heart health in CKD.",
+            href: "/phosphorus-explained"
         },
         {
             icon: <Droplet className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.potassiumExplained.title,
-            description: t.kidneyHealth.topics.potassiumExplained.description,
-            href: `/${locale}/potassium-explained`
+            title: "Potassium Explained",
+            description: "A guide to managing potassium in your diet for kidney health.",
+            href: "/potassium-explained"
         },
         {
             icon: <Leaf className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.proteinExplained.title,
-            description: t.kidneyHealth.topics.proteinExplained.description,
-            href: `/${locale}/protein-explained`
+            title: "Protein Explained",
+            description: "Learn the right amount of protein to eat with and without dialysis.",
+            href: "/protein-explained"
         },
         {
             icon: <Cloudy className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.sodiumExplained.title,
-            description: t.kidneyHealth.topics.sodiumExplained.description,
-            href: `/${locale}/sodium-explained`
+            title: "Sodium Explained",
+            description: "How to limit sodium and use herbs and spices for flavor.",
+            href: "/sodium-explained"
         },
         { 
             icon: <User className="h-8 w-8 text-primary" />,
-            title: t.kidneyHealth.topics.livingWithSingleKidney.title,
-            description: t.kidneyHealth.topics.livingWithSingleKidney.description,
-            href: `/${locale}/living-with-single-kidney`
+            title: "Living with a Single Kidney",
+            description: "Information and guidance for individuals with one kidney.",
+            href: "/living-with-single-kidney"
         },
     ];
 
@@ -139,14 +133,14 @@ const KidneyHealthPage = () => {
 
         <main className="container mx-auto px-4 py-12 md:py-20">
             <Button asChild variant="outline" className="mb-8">
-                <Link href={`/${locale}`}>
+                <Link href="/">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    {t.buttons.backToHome}
+                    Back to Home
                 </Link>
             </Button>
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">{t.kidneyHealth.title}</h1>
-                <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">{t.kidneyHealth.intro}</p>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Kidney Health Topics</h1>
+                <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Dive deep into our library of articles to understand every aspect of your kidney health.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {topics.map((topic, index) => (
