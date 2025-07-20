@@ -84,10 +84,10 @@ const RenalNutritionPage = () => {
                              <NutrientCard icon={<HeartPulse className="h-8 w-8 text-primary" />} title="Potassium" href="/potassium-explained">
                                 <p>Potassium is vital for muscle and heart function. In advanced CKD, too much can be dangerous. Your needs will depend on your kidney function and medications.</p>
                             </NutrientCard>
-                            <NutrientCard icon={<Leaf className="h-8 w-8 text-primary" />} title="Protein">
+                             <NutrientCard icon={<Leaf className="h-8 w-8 text-primary" />} title="Protein" href="/protein-explained">
                                 <p>Protein is essential for muscle and tissue repair. Eating the right amount—not too much, not too little—is key. Plant-based proteins are often easier on the kidneys.</p>
                             </NutrientCard>
-                             <NutrientCard icon={<Cloudy className="h-8 w-8 text-primary" />} title="Sodium">
+                             <NutrientCard icon={<Cloudy className="h-8 w-8 text-primary" />} title="Sodium" href="/sodium-explained">
                                 <p>Limiting sodium is crucial to manage blood pressure and prevent fluid buildup. Focus on fresh foods and flavor with herbs and spices instead of salt.</p>
                             </NutrientCard>
                         </div>

@@ -229,9 +229,10 @@ export default function NirogyamPage() {
                                     <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-3">DIET & NUTRITION</h3>
                                      <ul className="flex flex-col gap-1">
                                       <li><Link href="/renal-nutrition" className="p-3 block hover:bg-accent rounded-md">Renal Nutrition Guide</Link></li>
-                                      <li><Link href="/phosphorus-explained" className="p-3 block hover:bg-accent rounded-md">Phosphorus and Your Diet</Link></li>
-                                      <li><Link href="/potassium-explained" className="p-3 block hover:bg-accent rounded-md">Potassium and Your Diet</Link></li>
-                                      <li><Link href="/good-nutrition" className="p-3 block hover:bg-accent rounded-md">Good Nutrition Basics</Link></li>
+                                      <li><Link href="/phosphorus-explained" className="p-3 block hover:bg-accent rounded-md">Phosphorus Explained</Link></li>
+                                      <li><Link href="/potassium-explained" className="p-3 block hover:bg-accent rounded-md">Potassium Explained</Link></li>
+                                       <li><Link href="/protein-explained" className="p-3 block hover:bg-accent rounded-md">Protein Explained</Link></li>
+                                       <li><Link href="/sodium-explained" className="p-3 block hover:bg-accent rounded-md">Sodium Explained</Link></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -428,9 +429,9 @@ export default function NirogyamPage() {
                 <section id="renal-nutrition" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
-                            <div>
+                             <div>
                                 <h3 className="text-3xl font-bold text-primary mb-4">Your Guide to Renal Nutrition</h3>
-                                <p className="text-lg text-foreground/80 mb-6">A well-balanced diet of nutritious, low-sodium foods rich in vitamins and minerals can slow or stop kidney disease progression. Understanding what to eat is a crucial step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
+                                <p className="text-lg text-foreground/80 mb-6">A well-balanced diet is crucial for slowing the progression of kidney disease. Understanding what to eat—from managing protein to limiting sodium—is a key step in managing your health. Our comprehensive guide covers the basics, specific needs for different stages of CKD, and nutritional advice for post-transplant life.</p>
                                 <Button size="lg" asChild>
                                     <Link href="/renal-nutrition">Explore the Nutrition Guide</Link>
                                 </Button>
