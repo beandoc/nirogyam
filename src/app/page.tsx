@@ -46,6 +46,7 @@ import {
   GraduationCap,
   Users,
   CheckCircle,
+  FileText,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -305,14 +306,19 @@ export default function NirogyamPage() {
                                     </Button>
                                 </CardContent>
                             </Card>
-                             <Card className="text-center p-4">
+                            <Card className="text-center p-4">
                                 <CardHeader>
                                     <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
-                                        <Leaf className="h-8 w-8 text-primary" />
+                                        <FileText className="h-8 w-8 text-primary" />
                                     </div>
-                                    <CardTitle>Preventive Measures</CardTitle>
+                                    <CardTitle>eGFR Explained</CardTitle>
                                 </CardHeader>
-                                <CardContent><p className="text-foreground/80">Tips and guidelines for maintaining healthy kidneys and preventing kidney disease.</p></CardContent>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">Understand what your estimated Glomerular Filtration Rate (eGFR) means for your kidney health.</p>
+                                    <Button asChild variant="link">
+                                        <Link href="/egfr-explained">Learn More</Link>
+                                    </Button>
+                                </CardContent>
                             </Card>
                              <Card className="text-center p-4">
                                 <CardHeader>
