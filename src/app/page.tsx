@@ -310,7 +310,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="/ckd_assessment_image.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/ckdassessment.png" alt="CKD Assessment" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>CKD Assessment</CardTitle>
                                     <CardDescription>Assess your risk and stages of Chronic Kidney Disease.</CardDescription>
@@ -322,7 +322,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/aki_risk_assessment_image.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/akiriskassessment.png" alt="AKI Risk Assessment" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>AKI Risk Assessment</CardTitle>
                                     <CardDescription>Evaluate the risk factors for Acute Kidney Injury.</CardDescription>
@@ -334,7 +334,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/kidney_care_choices_image.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/kidneycarechoice.png" alt="Kidney Care Choices" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>Kidney Care Choices</CardTitle>
                                     <CardDescription>Explore treatment options and make informed care decisions.</CardDescription>
@@ -346,7 +346,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                              <Card className="flex flex-col">
-                                <Image src="/adpkd_roadmap_image.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/adpkdroadmap.png" alt="ADPKD Road map" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>ADPKD Road Map</CardTitle>
                                     <CardDescription>A guide for navigating Autosomal Dominant Polycystic Kidney Disease.</CardDescription>
@@ -358,7 +358,7 @@ export default function NirogyamPage() {
                                 </CardFooter>
                             </Card>
                             <Card className="flex flex-col">
-                                <Image src="/biopsy_consent_image.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" />
+                                <Image src="/kidneybiopsyconsent.png" alt="Biopsy Consent" width={600} height={400} className="rounded-t-lg" />
                                 <CardHeader>
                                     <CardTitle>Biopsy Consent</CardTitle>
                                     <CardDescription>An interactive guide to understanding the biopsy consent process.</CardDescription>
@@ -386,7 +386,7 @@ export default function NirogyamPage() {
                 <section id="renal-nutrition" className="py-20 bg-background">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative rounded-lg overflow-hidden shadow-xl">
-                            <Image src="https://placehold.co/600x600.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" data-ai-hint="healthy food plate" />
+                            <Image src="/foodbasics.png" alt="A colorful plate of healthy food" width={600} height={600} className="object-cover" />
                         </div>
                         <div>
                             <h3 className="text-3xl font-bold text-primary mb-6">Your Guide to Renal Nutrition</h3>
@@ -558,5 +558,7 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
 
     
