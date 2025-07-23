@@ -613,7 +613,7 @@ export default function NirogyamPage() {
 
             <footer className="bg-primary/90 text-primary-foreground">
                 <div className="container mx-auto px-4 py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center md:text-left">
                         <div>
                             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
                             <ul className="space-y-2">
@@ -622,16 +622,6 @@ export default function NirogyamPage() {
                                 <li><a href="#faq" className="hover:underline opacity-80 hover:opacity-100">FAQs</a></li>
                                 <li><a href="#contact" className="hover:underline opacity-80 hover:opacity-100">Contact</a></li>
                             </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-                            <div className="flex justify-center md:justify-start space-x-4">
-                                <a href="#" aria-label="Facebook" className="opacity-80 hover:opacity-100"><Facebook /></a>
-                                <a href="#" aria-label="Twitter" className="opacity-80 hover:opacity-100"><Twitter /></a>
-                                <a href="#" aria-label="Instagram" className="opacity-80 hover:opacity-100"><Instagram /></a>
-                                <a href="#" aria-label="LinkedIn" className="opacity-80 hover:opacity-100"><Linkedin /></a>
-                                <a href="https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="opacity-80 hover:opacity-100"><WhatsAppIcon /></a>
-                            </div>
                         </div>
                         <div>
                             <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
