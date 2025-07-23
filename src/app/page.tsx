@@ -585,8 +585,8 @@ export default function NirogyamPage() {
 
                 <section id="contact" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
-                        <h3 className="text-3xl font-bold text-primary mb-4">Get In Touch</h3>
-                        <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to share your story? Reach out to us!</p>
+                        <h3 className="text-3xl font-bold text-primary mb-4">Share Your Story</h3>
+                        <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to tell your story? or Write a testimonial for the department...</p>
                         <ContactForm />
                     </div>
                 </section>
