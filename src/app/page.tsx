@@ -66,7 +66,7 @@ const Quiz = () => {
     ];
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [answers, setAnswers] = useState<{[key: number]: string}>({});
+    const [answers, setAnswers] = useState<Record<string, string>>({});
     const [showResult, setShowResult] = useState(false);
 
     const handleAnswer = (questionIndex: number, value: string) => {
@@ -81,7 +81,7 @@ const Quiz = () => {
 
     const prevQuestion = () => {
         if (currentQuestion > 0) {
-            setCurrentQuestion(currentQuestion - 1);
+            setCurrentQuestion(currentQuestion + 1);
         }
     };
 
@@ -627,7 +627,6 @@ export default function NirogyamPage() {
                             <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
                             <ul className="space-y-2 opacity-80">
                                 <li>Dept of Nephrology Command Hospital, Pune.</li>
-                                <li>Email: nirogyam93@gmail.com</li>
                             </ul>
                         </div>
                     </div>
