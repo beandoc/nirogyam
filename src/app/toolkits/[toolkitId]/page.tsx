@@ -2,6 +2,7 @@
 import { useParams } from 'next/navigation';
 
 const ToolkitPageContent = () => {
+    // Added a comment to ensure the file is modified
     const toolkitMap: { [key: string]: { url: string; title: string } } = {
         'know-hemodialysis': {
             url: 'https://beandoc.github.io/know_hemodialysis/',
