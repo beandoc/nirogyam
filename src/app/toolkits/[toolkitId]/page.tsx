@@ -1,4 +1,5 @@
 
+'use client';
 import { useParams } from 'next/navigation';
 
 const ToolkitPageContent = () => {
@@ -59,3 +60,5 @@ const ToolkitPageContent = () => {
 };
 
 export default ToolkitPageContent;
+
+    
