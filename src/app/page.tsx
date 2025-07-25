@@ -81,7 +81,7 @@ const Quiz = () => {
 
     const prevQuestion = () => {
         if (currentQuestion > 0) {
-            setCurrentQuestion(currentQuestion + 1);
+            setCurrentQuestion(currentQuestion - 1);
         }
     };
 
@@ -652,5 +652,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
