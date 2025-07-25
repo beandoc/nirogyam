@@ -66,7 +66,7 @@ const Quiz = () => {
     ];
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [answers, setAnswers] = useState<Record<string, string>>({});
+    const [answers, setAnswers] = useState<Record<number, string>>({});
     const [showResult, setShowResult] = useState(false);
 
     const handleAnswer = (questionIndex: number, value: string) => {
@@ -334,14 +334,14 @@ export default function NirogyamPage() {
             "aiHint": "medical consent"
         },
         {
-            "image": "/kidneyhealthdashboard.png",
+            "image": "/kidneyhealthdashboard_new.png",
             "title": "Kidney Health Dashboard",
             "description": "Track your kidney health metrics over time.",
             "href": "/toolkits/kidney-health-dashboard",
             "aiHint": "medical dashboard"
         },
         {
-            "image": "/herosection_image.png",
+            "image": "/ckdroadmap.png",
             "title": "Your CKD Road Map",
             "description": "A personalized guide for your CKD journey.",
             "href": "/toolkits/ckd-road-map",
