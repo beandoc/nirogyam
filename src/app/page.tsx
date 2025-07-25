@@ -341,11 +341,11 @@ export default function NirogyamPage() {
             "aiHint": "medical dashboard"
         },
         {
-            "image": "/ckdroadmap.png",
+            "image": "/herosection_image.png",
             "title": "Your CKD Road Map",
             "description": "A personalized guide for your CKD journey.",
             "href": "/toolkits/ckd-road-map",
-            "aiHint": "journey map"
+            "aiHint": "doctors patient kidney"
         }
     ];
 
