@@ -334,7 +334,7 @@ export default function NirogyamPage() {
             "aiHint": "medical consent"
         },
         {
-            "image": "/kidneyhealthdashboard_new.png",
+            "image": "/kidneyhealthdashboard.png",
             "title": "Kidney Health Dashboard",
             "description": "Track your kidney health metrics over time.",
             "href": "/toolkits/kidney-health-dashboard",
@@ -652,7 +652,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
-
-    
