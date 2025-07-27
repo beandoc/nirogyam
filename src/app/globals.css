@@ -74,6 +74,6 @@
   }
 }
 
-zapier-interfaces-chatbot-embed {
-    --zapier-interfaces-chatbot-zapier-logo-display: none;
+zapier-interfaces-chatbot-embed::part(zapier-logo) {
+    display: none;
 }

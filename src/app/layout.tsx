@@ -28,9 +28,7 @@ export default function RootLayout({
             {children}
         </div>
         <Toaster />
-        <div className="w-full">
-            <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
-        </div>
+        <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
       </body>
     </html>
   );
