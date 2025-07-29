@@ -382,6 +382,7 @@ export default function NirogyamPage() {
     return (
         <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
             <AppHeader />
+            <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
 
             <main className="flex-grow">
                 <section className="hero-pattern py-20 md:py-24">
@@ -668,7 +669,6 @@ export default function NirogyamPage() {
                     </div>
                     <div className="text-center text-sm border-t border-primary-foreground/20 pt-6 mt-6">
                         <p>© 2025 Nirogyam. All rights reserved.</p>
-                        <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
                     </div>
                 </div>
             </footer>
