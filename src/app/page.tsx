@@ -34,6 +34,7 @@ import {
   Calculator,
   Home,
   Droplet,
+  Download,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -329,7 +330,7 @@ export default function NirogyamPage() {
         {
             "image": "/kidneybiopsyconsent.png",
             "title": "Biopsy Consent",
-            "description": "An interactive guide to understanding the biopsy consent process.",
+            "description": "An interactive guide to a better understanding of the biopsy consent process.",
             "href": "/toolkits/biopsy-consent",
             "aiHint": "medical consent"
         },
@@ -356,44 +357,20 @@ export default function NirogyamPage() {
     ];
 
     const generalFaqs = [
-        { "question": "How successful are kidney transplants?", "answer": "The success rate for a kidney transplant from a living donor is 90–95% after one year and the transplanted kidney lasts 15 to 20 years on average. For transplants from a deceased donor, the success rate is also high: 85–90% of these kidneys are working well after one year and will last on average from 10 to 15 years." },
-        { "question": "What percentage of people on the waiting list for an organ transplant are waiting for a kidney?", "answer": "About 80% of those on the waiting list need a kidney." },
-        { "question": "Can a person sell their organs for money?", "answer": "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation, and it is illegal to buy or sell organs." }
+        {"question": "How successful are kidney transplants?", "answer": "The success rate for a kidney transplant from a living donor is 90–95% after one year and the transplanted kidney lasts 15 to 20 years on average. For transplants from a deceased donor, the success rate is also high: 85–90% of these kidneys are working well after one year and will last on average from 10 to 15 years."},
+        {"question": "What percentage of people on the waiting list for an organ transplant are waiting for a kidney?", "answer": "About 80% of those on the waiting list need a kidney."},
+        {"question": "Can a person sell their organs for money?", "answer": "No. The key word is “donate”. Organ donation is a gift. There is no monetary compensation, and it is illegal to buy or sell organs."}
     ];
     
     const livingDonationFaqs = [
-        {
-            "question": "What organs can be donated through living donation?",
-            "answer": "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."
-        },
-        {
-            "question": "Who can be a living donor?",
-            "answer": "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."
-        },
-        {
-            "question": "What are the risks of donating a kidney?",
-            "answer": "As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include a slight increased risk of high blood pressure, a slight increased incidence of kidney failure, the possibility of injuring the remaining kidney, a slight risk of developing a disease of the remaining kidney, and some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney."
-        },
-        {
-            "question": "Are there any costs I'll have to pay?",
-            "answer": "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."
-        },
-        {
-            "question": "How much time will I need to take off work?",
-            "answer": "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process."
-        },
-        {
-            "question": "How do I become a living donor?",
-            "answer": "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process."
-        },
-        {
-            "question": "Can I change my mind after I've decided to become a living donor?",
-            "answer": "Yes, you can change my mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient."
-        },
-        {
-            "question": "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?",
-            "answer": "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony."
-        }
+        {"question": "What organs can be donated through living donation?","answer": "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."},
+        {"question": "Who can be a living donor?","answer": "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."},
+        {"question": "What are the risks of donating a kidney?","answer": "As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include a slight increased risk of high blood pressure, a slight increased incidence of kidney failure, the possibility of injuring the remaining kidney, a slight risk of developing a disease of the remaining kidney, and some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney."},
+        {"question": "Are there any costs I'll have to pay?","answer": "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."},
+        {"question": "How much time will I need to take off work?","answer": "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process."},
+        {"question": "How do I become a living donor?","answer": "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process."},
+        {"question": "Can I change my mind after I've decided to become a living donor?","answer": "Yes, you can change my mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient."},
+        {"question": "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?","answer": "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony."}
     ];
 
     const deceasedDonationFaqs = [
@@ -561,7 +538,33 @@ export default function NirogyamPage() {
                 </section>
                 )}
                 
-                <section id="faq" className="py-20 bg-card">
+                <section id="resources" className="py-20 bg-card">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary">Resources</h3>
+                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Download helpful guides and fact sheets to support your kidney health journey.</p>
+                        </div>
+                        <div className="max-w-md mx-auto">
+                            <Card>
+                                <CardContent className="pt-6">
+                                    <ul className="space-y-4">
+                                        <li className="flex items-center justify-between">
+                                            <span className="text-lg">CKD Fact Sheet</span>
+                                            <Button asChild>
+                                                <a href="/ckd-fact-sheet.pdf" download>
+                                                    <Download className="mr-2 h-4 w-4" />
+                                                    Download
+                                                </a>
+                                            </Button>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="faq" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
@@ -604,7 +607,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="about" className="py-20 bg-background">
+                <section id="about" className="py-20 bg-card">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
@@ -616,7 +619,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 bg-card">
+                <section id="contact" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Share Your Story</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to tell your story? or Write a testimonial for the department...</p>
@@ -665,12 +668,10 @@ export default function NirogyamPage() {
                     </div>
                     <div className="text-center text-sm border-t border-primary-foreground/20 pt-6 mt-6">
                         <p>© 2025 Nirogyam. All rights reserved.</p>
-                        <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
+                        <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
                     </div>
                 </div>
             </footer>
         </div>
     );
 }
-
-    
