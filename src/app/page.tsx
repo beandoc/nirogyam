@@ -334,18 +334,18 @@ export default function NirogyamPage() {
             "aiHint": "medical consent"
         },
         {
-            "image": "/kidneyhealthdashboard.png",
+            "image": "https://placehold.co/600x400.png",
             "title": "Kidney Health Dashboard",
             "description": "Track your kidney health metrics over time.",
             "href": "/toolkits/kidney-health-dashboard",
             "aiHint": "medical dashboard"
         },
         {
-            "image": "/ckdroadmap.png",
+            "image": "https://placehold.co/600x400.png",
             "title": "Your CKD Road Map",
             "description": "A personalized guide for your CKD journey.",
             "href": "/toolkits/ckd-road-map",
-            "aiHint": "doctors patient kidney"
+            "aiHint": "doctors patient"
         }
     ];
 
@@ -362,14 +362,38 @@ export default function NirogyamPage() {
     ];
     
     const livingDonationFaqs = [
-        { "question": "What organs can be donated through living donation?", "answer": [{ "text": "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."}] },
-        { "question": "Who can be a living donor?", "answer": [{ "text": "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."}] },
-        { "question": "What are the risks of donating a kidney?", "answer": [{ "text": "As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include:", "list": ["Slight increased risk of high blood pressure", "Slight increased incidence of kidney failure", "Possibility of injuring the remaining kidney", "Slight risk of developing a disease of the remaining kidney", "Some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney"] }] },
-        { "question": "Are there any costs I'll have to pay?", "answer": [{ "text": "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."}] },
-        { "question": "How much time will I need to take off work?", "answer": [{ "text": "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process." }] },
-        { "question": "How do I become a living donor?", "answer": [{ "text": "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process." }] },
-        { "question": "Can I change my mind after I've decided to become a living donor?", "answer": [{ "text": "Yes, you can change my mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient." }] },
-        { "question": "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?", "answer": [{ "text": "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony." }] }
+        {
+            "question": "What organs can be donated through living donation?",
+            "answer": "A kidney, or part of the liver, lung, small bowel or pancreas can be donated through living donation."
+        },
+        {
+            "question": "Who can be a living donor?",
+            "answer": "Anyone who is healthy and meets the required age of consent can be a potential living donor. They must be in good general health with no evidence of significant high blood pressure, diabetes, cancer, kidney disease, heart disease or hepatitis."
+        },
+        {
+            "question": "What are the risks of donating a kidney?",
+            "answer": "As with any major surgery, there are risks of physical complications, but these can usually be effectively managed. Short term risks include pneumonia, infection, pain and discomfort, allergic reaction to anesthesia, collapsed lung or blood clots. Rarely, death occurs. In the longer term, potential risks include a slight increased risk of high blood pressure, a slight increased incidence of kidney failure, the possibility of injuring the remaining kidney, a slight risk of developing a disease of the remaining kidney, and some people also experience psychological difficulties, although most donors are satisfied with their decision to donate a kidney."
+        },
+        {
+            "question": "Are there any costs I'll have to pay?",
+            "answer": "In most cases, you may have to pay any non-medical costs such as travel expenses, out-of-pocket costs, and any additional child-care costs. You may also have a possible loss of salary for time off work for recovery from the surgery, unless you have sick leave coverage from your employer’s company health plan. Some programs may offer financial assistance for these expenses, so speak to the social worker or Living Donor Coordinator at the transplant center to find out more."
+        },
+        {
+            "question": "How much time will I need to take off work?",
+            "answer": "Depending on the type of surgery you have (traditional open nephrectomy or keyhole nephrectomy) full recovery may take up to twelve weeks. You may be able to return to work within three to six weeks depending on the type of work you do. Before the surgery, you may also need some time off work for medical tests and appointments, counselling sessions and other aspects of the pre-donation evaluation process."
+        },
+        {
+            "question": "How do I become a living donor?",
+            "answer": "First, learn as much as you can about living donation, and find out your blood type. Then, contact the transplant center that is taking care of the potential recipient to arrange testing to confirm whether your blood type is compatible. From there, the transplant center staff will lead you through the process."
+        },
+        {
+            "question": "Can I change my mind after I've decided to become a living donor?",
+            "answer": "Yes, you can change my mind at any time during the process, and your decision will be respected by the health care team. They'll also help you communicate your decision to the potential recipient."
+        },
+        {
+            "question": "I've been asked to donate one of my kidneys, but I just don't want to do it. What should I do?",
+            "answer": "If after learning about living donation you choose not to become a living donor, speak to the social worker, counsellor or any member of the health care team at the transplant center. They will support your decision and help you to communicate this decision to the recipient, and family members, in a way that preserves harmony."
+        }
     ];
 
     const deceasedDonationFaqs = [
@@ -562,12 +586,7 @@ export default function NirogyamPage() {
                                 <Accordion type="single" collapsible className="w-full space-y-3">
                                     {livingDonationFaqs.map((faq, index) => (
                                         <FaqItem key={`living-${index}`} value={`item-${index}`} question={faq.question}>
-                                            {faq.answer.map((p, i) => (
-                                                <div key={i}>
-                                                  <p>{p.text}</p>
-                                                  {p.list && <ul className="list-disc pl-6 mt-2 space-y-1">{p.list.map((item: string, j:number) => <li key={j}>{item}</li>)}</ul>}
-                                                </div>
-                                            ))}
+                                            <p>{faq.answer}</p>
                                         </FaqItem>
                                     ))}
                                 </Accordion>
