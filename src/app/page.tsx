@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
+import { AppHeader } from '@/components/AppHeader';
 
 export default function NirogyamPage() {
   const toolkits = [
@@ -70,6 +71,7 @@ export default function NirogyamPage() {
 
   return (
     <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
+      <AppHeader />
       {/* Hero Section */}
       <section className="hero-pattern py-20 md:py-24">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
