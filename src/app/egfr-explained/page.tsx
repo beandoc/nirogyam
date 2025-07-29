@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronsRight, Download, Droplets, Gauge, Scale, Cake, Dna, ArrowLeft } from 'lucide-react';
+import { ChevronsRight, Download, Droplets, Gauge, Scale, Cake, Dna, ArrowLeft, Calculator } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AppHeader } from '@/components/AppHeader';
 
@@ -59,6 +59,20 @@ const EgfrExplainedPage = () => {
             <p className="text-lg text-foreground/80 mb-10">
             Your estimated Glomerular Filtration Rate (eGFR) is a key indicator of kidney function, showing how effectively your kidneys are filtering waste from your blood.
             </p>
+
+            <Card className="mb-12 bg-primary/10 border-primary/20">
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-4"><Calculator className="h-8 w-8 text-primary"/> Try the eGFR Calculator</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-foreground/80 mb-4">Want to see what your eGFR is? Use our interactive calculator to get an estimate based on your latest lab results.</p>
+                    <Button asChild>
+                        <Link href="/egfr-calculator">
+                           Calculate Your eGFR
+                        </Link>
+                    </Button>
+                </CardContent>
+            </Card>
 
             <TableOfContents />
 

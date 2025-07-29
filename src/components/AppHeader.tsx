@@ -77,6 +77,11 @@ const kidneyHealthTopics = [
     description: "What your estimated Glomerular Filtration Rate means for your kidney health.",
   },
   {
+    title: "eGFR Calculator",
+    href: "/egfr-calculator",
+    description: "Estimate your eGFR with our interactive calculator.",
+  },
+  {
     title: "Creatinine Explained",
     href: "/creatinine-explained",
     description: "Understand what creatinine is and its important role in kidney health.",
