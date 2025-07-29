@@ -646,13 +646,12 @@ export default function NirogyamPage() {
                     </div>
                     <div className="text-center text-sm border-t border-primary-foreground/20 pt-6 mt-6">
                         <p>© 2025 Nirogyam. All rights reserved.</p>
+                        <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
                     </div>
                 </div>
             </footer>
         </div>
     );
 }
-
-    
 
     
