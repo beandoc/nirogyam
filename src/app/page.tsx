@@ -676,7 +676,4 @@ export default function NirogyamPage() {
     );
 }
 
-
-    
-
     
