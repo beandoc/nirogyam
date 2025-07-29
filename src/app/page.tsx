@@ -99,6 +99,21 @@ export default function NirogyamPage() {
         </div>
       </section>
 
+      {/* Assess Your Kidney Risk */}
+      <section id="assess-kidney" className="py-20 bg-card">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold text-primary mb-6">Are you at risk for kidney disease?</h3>
+          <p className="text-lg text-foreground/80 mb-8 max-w-3xl mx-auto">
+            Take a one-minute quiz to find out if you are among the 33% of adults in the U.S. at risk for kidney disease. This short quiz will help you understand your personal risk factors so you can have an informed conversation with your doctor.
+          </p>
+          <Button size="lg" asChild>
+            <Link href="/toolkits/ckd-assessment">
+              Take the Quiz Now <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
       {/* Digital Toolkits */}
       <section id="digital-toolkits" className="py-20 bg-background">
         <div className="container mx-auto px-4">
