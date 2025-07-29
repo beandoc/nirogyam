@@ -335,14 +335,14 @@ export default function NirogyamPage() {
             "aiHint": "medical consent"
         },
         {
-            "image": "/kidneyhealthdashboard.png",
+            "image": "/dummy_dashboard_image.png",
             "title": "Kidney Health Dashboard",
             "description": "Track your kidney health metrics over time.",
             "href": "/toolkits/kidney-health-dashboard",
             "aiHint": "medical dashboard"
         },
         {
-            "image": "/ckdroadmap.png",
+            "image": "/dummy_roadmap_image.png",
             "title": "Your CKD Road Map",
             "description": "A personalized guide for your CKD journey.",
             "href": "/toolkits/ckd-road-map",
@@ -676,5 +676,7 @@ export default function NirogyamPage() {
     );
 }
 
+
+    
 
     
