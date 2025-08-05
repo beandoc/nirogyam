@@ -454,29 +454,50 @@ export default function NirogyamPage() {
                             <h3 className="text-3xl font-bold text-primary">Resources</h3>
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Download helpful guides and fact sheets to support your kidney health journey.</p>
                         </div>
-                        <div className="max-w-md mx-auto">
+                        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <Card>
-                                <CardContent className="pt-6">
-                                    <ul className="space-y-4">
-                                        <li className="flex items-center justify-between">
-                                            <span className="text-lg">CKD Fact Sheet</span>
-                                            <Button asChild>
-                                                <a href="/ckd-fact-sheet.pdf" download>
-                                                    <Download className="mr-2 h-4 w-4" />
-                                                    Download
-                                                </a>
-                                            </Button>
-                                        </li>
-                                        <li className="flex items-center justify-between">
-                                            <span className="text-lg">eGFR Fact Sheet</span>
-                                            <Button asChild>
-                                                <a href="/egfr-fact-sheet.pdf" download>
-                                                    <Download className="mr-2 h-4 w-4" />
-                                                    Download
-                                                </a>
-                                            </Button>
-                                        </li>
-                                    </ul>
+                                <CardContent className="pt-6 text-center">
+                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                    <h4 className="font-semibold text-lg mb-2">CKD Fact Sheet</h4>
+                                    <Button asChild>
+                                        <a href="/ckd-fact-sheet.pdf" download>Download</a>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                             <Card>
+                                <CardContent className="pt-6 text-center">
+                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                    <h4 className="font-semibold text-lg mb-2">eGFR Fact Sheet</h4>
+                                    <Button asChild>
+                                        <a href="/egfr-fact-sheet.pdf" download>Download</a>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                             <Card>
+                                <CardContent className="pt-6 text-center">
+                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                    <h4 className="font-semibold text-lg mb-2">Hemodialysis Guide</h4>
+                                    <Button asChild>
+                                        <a href="/hemodialysis-guide.pdf" download>Download</a>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                             <Card>
+                                <CardContent className="pt-6 text-center">
+                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                    <h4 className="font-semibold text-lg mb-2">Renal Nutrition Plan</h4>
+                                    <Button asChild>
+                                        <a href="/renal-nutrition-plan.pdf" download>Download</a>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                             <Card>
+                                <CardContent className="pt-6 text-center">
+                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                    <h4 className="font-semibold text-lg mb-2">Transplant Information</h4>
+                                    <Button asChild>
+                                        <a href="/transplant-info.pdf" download>Download</a>
+                                    </Button>
                                 </CardContent>
                             </Card>
                         </div>
