@@ -289,35 +289,35 @@ export default function NirogyamPage() {
             title: "Signs of Kidney Disease",
             description: "Learn to recognize the early signs of kidney disease.",
             href: "/signs%20of%20kidney%20disease.pdf",
-            image: "/signs of kidney disease.png",
+            image: "/signs%20of%20kidney%20disease.png",
             aiHint: "medical infographic"
         },
         {
             title: "Diabetes and Kidney Newsletter",
             description: "A newsletter discussing the link between diabetes and kidney health.",
             href: "/diabetes%20and%20Kidney%20Newsletter.pdf",
-            image: "/diabetes and Kidney Newsletter.png",
+            image: "/diabetes%20and%20Kidney%20Newsletter.png",
             aiHint: "newsletter cover"
         },
         {
             title: "TOLVAPTAN Infographic",
             description: "An infographic explaining the medication Tolvaptan.",
             href: "/TOLVAPTAN%20Infographic.pdf",
-            image: "/TOLVAPTAN Infographic.png",
+            image: "/TOLVAPTAN%20Infographic.png",
             aiHint: "medical poster"
         },
         {
             title: "Steroids Education Infographic",
             description: "Understand the use of steroids in kidney treatment.",
             href: "/Steroids%20Education%20Infographic.pdf",
-            image: "/Steroids Education Infographic.png",
+            image: "/Steroids%20Education%20Infographic.png",
             aiHint: "informational chart"
         },
         {
             title: "ADPKD Multilingual Newsletter",
             description: "A newsletter about ADPKD available in multiple languages.",
             href: "/ADPKD%20newsletter%20multilingual.pdf",
-            image: "/ADPKD newsletter multilingual.png",
+            image: "/ADPKD%20newsletter%20multilingual.png",
             aiHint: "document cover"
         }
     ];
