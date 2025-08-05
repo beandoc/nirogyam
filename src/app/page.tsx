@@ -286,14 +286,14 @@ export default function NirogyamPage() {
             title: "Signs of Kidney Disease",
             description: "Learn to recognize the early signs of kidney disease.",
             href: "/signs%20of%20kidney%20disease.pdf",
-            image: "https://placehold.co/210x297.png",
+            image: "/signs of kidney disease.png",
             aiHint: "medical infographic"
         },
         {
             title: "Diabetes and Kidney Newsletter",
             description: "A newsletter discussing the link between diabetes and kidney health.",
             href: "/diabetes%20and%20Kidney%20Newsletter.pdf",
-            image: "https://placehold.co/210x297.png",
+            image: "/diabetes and Kidney Newsletter.png",
             aiHint: "newsletter cover"
         },
         {
@@ -307,14 +307,14 @@ export default function NirogyamPage() {
             title: "Steroids Education Infographic",
             description: "Understand the use of steroids in kidney treatment.",
             href: "/Steroids%20Education%20Infographic.pdf",
-            image: "https://placehold.co/210x297.png",
+            image: "/Steroids Education Infographic.png",
             aiHint: "informational chart"
         },
         {
             title: "ADPKD Multilingual Newsletter",
             description: "A newsletter about ADPKD available in multiple languages.",
             href: "/ADPKD%20newsletter%20multilingual.pdf",
-            image: "https://placehold.co/210x297.png",
+            image: "/ADPKD newsletter multilingual.png",
             aiHint: "document cover"
         }
     ];
@@ -635,5 +635,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
