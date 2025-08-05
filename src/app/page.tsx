@@ -248,12 +248,14 @@ export default function NirogyamPage() {
     ];
 
     const podcasts = [
-        { "title": "CKD \"A Blind Spot\"", "description": "An introductory episode covering the basics of Chronic Kidney Disease.", "src": "/podcast_episode_1.mp4" },
-        { "title": "CKD- Correct BP measurement", "description": "Expert insights on managing your diet for kidney health.", "src": "/podcast_episode_2.mp4" },
-        { "title": "Sharing your feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" },
-        { "title": "Navigating Your CKD Journey", "description": "Tips and strategies for managing your day-to-day life with CKD.", "src": "/podcast_episode_4.mp4" },
-        { "title": "The Importance of Diet", "description": "A deep dive into renal nutrition with a specialized dietitian.", "src": "/podcast_episode_5.mp4" },
-        { "title": "Your New Podcast Title", "description": "A short description about your new podcast episode.", "src": "/new_podcast.mp4" }
+        { "title": "Episode 1: CKD \"A Blind Spot\"", "description": "An introductory episode covering the basics of Chronic Kidney Disease.", "src": "/podcast_episode_1.mp4" },
+        { "title": "Episode 2: Correct BP Measurement", "description": "Expert insights on managing your diet for kidney health.", "src": "/podcast_episode_2.mp4" },
+        { "title": "Episode 3: Sharing Your Feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" },
+        { "title": "Episode 4: Navigating Your CKD Journey", "description": "Tips and strategies for managing your day-to-day life with CKD.", "src": "/podcast_episode_4.mp4" },
+        { "title": "Episode 5: The Importance of Diet", "description": "A deep dive into renal nutrition with a specialized dietitian.", "src": "/podcast_episode_5.mp4" },
+        { "title": "Episode 6: Understanding Dialysis", "description": "A detailed explanation of dialysis options and what to expect.", "src": "/podcast_episode_6.mp4" },
+        { "title": "Episode 7: Transplant Talk", "description": "Exploring the kidney transplant process from start to finish.", "src": "/podcast_episode_7.mp4" },
+        { "title": "Episode 8: Ask the Nephrologist", "description": "A Q&A session answering common questions from patients.", "src": "/podcast_episode_8.mp4" }
     ];
 
     const generalFaqs = [
