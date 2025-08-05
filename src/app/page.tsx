@@ -467,6 +467,15 @@ export default function NirogyamPage() {
                                                 </a>
                                             </Button>
                                         </li>
+                                        <li className="flex items-center justify-between">
+                                            <span className="text-lg">eGFR Fact Sheet</span>
+                                            <Button asChild>
+                                                <a href="/egfr-fact-sheet.pdf" download>
+                                                    <Download className="mr-2 h-4 w-4" />
+                                                    Download
+                                                </a>
+                                            </Button>
+                                        </li>
                                     </ul>
                                 </CardContent>
                             </Card>
