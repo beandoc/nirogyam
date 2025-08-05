@@ -137,109 +137,6 @@ const Quiz = () => {
     );
 };
 
-const EgfrCalculator = () => {
-    const [creatinine, setCreatinine] = useState('');
-    const [age, setAge] = useState('');
-    const [sex, setSex] = useState<'male' | 'female' | ''>('');
-    const [egfrResult, setEgfrResult] = useState<number | null>(null);
-
-    const calculateEgfr = (e: React.FormEvent) => {
-        e.preventDefault();
-        const scr = parseFloat(creatinine);
-        const patientAge = parseInt(age, 10);
-
-        if (isNaN(scr) || isNaN(patientAge) || !sex) {
-            alert('Please fill in all fields correctly.');
-            return;
-        }
-
-        const kappa = sex === 'female' ? 0.7 : 0.9;
-        const alpha = sex === 'female' ? -0.241 : -0.302;
-        const sexFactor = sex === 'female' ? 1.012 : 1;
-
-        const scrOverKappa = scr / kappa;
-        
-        const term1 = Math.min(scrOverKappa, 1) ** alpha;
-        const term2 = Math.max(scrOverKappa, 1) ** -1.200;
-        const term3 = 0.9938 ** patientAge;
-
-        const result = 142 * term1 * term2 * term3 * sexFactor;
-        setEgfrResult(Math.round(result));
-    };
-
-    return (
-        <Card className="max-w-xl mx-auto shadow-xl border-primary/20">
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary">
-                    <Calculator className="h-6 w-6" />
-                    eGFR Calculator (CKD-EPI 2021)
-                </CardTitle>
-                <CardDescription>
-                    Estimate your Glomerular Filtration Rate using the race-free 2021 CKD-EPI formula. This tool is for informational purposes only.
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <form onSubmit={calculateEgfr} className="space-y-6">
-                    <div className="space-y-2">
-                        <Label htmlFor="creatinine">Serum Creatinine (mg/dL)</Label>
-                        <Input
-                            id="creatinine"
-                            type="number"
-                            step="0.01"
-                            placeholder="e.g., 1.2"
-                            value={creatinine}
-                            onChange={(e) => setCreatinine(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="age">Age</Label>
-                        <Input
-                            id="age"
-                            type="number"
-                            placeholder="e.g., 55"
-                            value={age}
-                            onChange={(e) => setAge(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <Label>Sex</Label>
-                        <RadioGroup onValueChange={(value) => setSex(value as 'male' | 'female')} value={sex} className="flex gap-4">
-                            <div className="flex items-center space-x-2">
-                                <RadioGroupItem value="female" id="female" />
-                                <Label htmlFor="female">Female</Label>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <RadioGroupItem value="male" id="male" />
-                                <Label htmlFor="male">Male</Label>
-                            </div>
-                        </RadioGroup>
-                    </div>
-                    <Button type="submit" className="w-full">Calculate eGFR</Button>
-                </form>
-                {egfrResult !== null && (
-                    <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-lg text-center">
-                        <p className="text-lg text-foreground/80">Your estimated GFR is:</p>
-                        <p className="text-4xl font-bold text-primary my-2">{egfrResult}</p>
-                        <p className="text-sm text-muted-foreground">mL/min/1.73m²</p>
-                        <p className="mt-4 text-xs text-foreground/70">
-                            This result is an estimate. Consult a healthcare professional for a proper diagnosis and to understand what this value means for your health.
-                        </p>
-                    </div>
-                )}
-            </CardContent>
-        </Card>
-    );
-};
-
-const WhatsAppIcon = () => (
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 fill-current">
-        <path d="M17.472 14.382c-.297-.149-.88-.436-1.017-.486s-.282-.08-.41.08c-.128.16-.49.614-.602.737-.112.123-.224.137-.41.04-.187-.097-.796-.293-1.517-.925-.568-.487-.945-1.09-.945-1.09s-.04-.055.03-.105c.06-.05.136-.123.204-.195.07-.07.09-.123.136-.203.048-.08.024-.15-.014-.24-.038-.09-.41-.986-.562-1.355-.15-.37-.304-.32-.41-.326-.102-.005-.224-.005-.346-.005s-.33.04-.49.195c-.16.155-.613.59-.613,1.44s.627,1.66.713,1.78c.085.12.97,1.48,2.34,2.05.34.14.58.22.77.28.32.09.62.08.86.05.28-.04.88-.36,1-1.004.12-.644.12-.97.08-1.014s-.07-.07-.15-.123zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.15c-4.477 0-8.125-3.648-8.125-8.125S7.523 3.875 12 3.875 20.125 7.523 20.125 12 16.477 20.15 12 20.15z" />
-    </svg>
-);
-
-
 export default function NirogyamPage() {
     const [isClient, setIsClient] = useState(false);
 
@@ -355,7 +252,8 @@ export default function NirogyamPage() {
         { "title": "CKD- Correct BP measurement", "description": "Expert insights on managing your diet for kidney health.", "src": "/podcast_episode_2.mp4" },
         { "title": "Sharing your feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" },
         { "title": "Navigating Your CKD Journey", "description": "Tips and strategies for managing your day-to-day life with CKD.", "src": "/podcast_episode_4.mp4" },
-        { "title": "The Importance of Diet", "description": "A deep dive into renal nutrition with a specialized dietitian.", "src": "/podcast_episode_5.mp4" }
+        { "title": "The Importance of Diet", "description": "A deep dive into renal nutrition with a specialized dietitian.", "src": "/podcast_episode_5.mp4" },
+        { "title": "Your New Podcast Title", "description": "A short description about your new podcast episode.", "src": "/new_podcast.mp4" }
     ];
 
     const generalFaqs = [
@@ -405,7 +303,7 @@ export default function NirogyamPage() {
                 <section id="iam-a-section" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h3 className="text-3xl font-bold text-primary mb-4">How Can We Help?</h3>
+                            <h3 className="text-3xl font-bold text-primary mb-4">Are you at risk for kidney disease?</h3>
                             <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
                                 A kidney disease diagnosis can be overwhelming. You may be wondering, "What can I do to avoid dialysis?" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.
                             </p>
@@ -486,13 +384,20 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="egfr-calculator" className="py-20 bg-background">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center mb-12">
-                            <h3 className="text-3xl font-bold text-primary">Calculate Your eGFR</h3>
-                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Use this tool to get an estimate of your kidney function. This calculator is intended for informational purposes and is not a substitute for professional medical advice.</p>
+                <section id="egfr-calculator-section" className="py-20 bg-background">
+                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                         <div>
+                            <h3 className="text-3xl font-bold text-primary mb-6">eGFR Calculator</h3>
+                            <p className="text-lg text-foreground/80 mb-6">
+                                The estimated Glomerular Filtration Rate (eGFR) is a key measure of kidney function. Use our calculator to get an estimate based on your lab results.
+                            </p>
+                            <Button size="lg" asChild>
+                                <Link href="/egfr-calculator">Go to Calculator <ArrowRight className="ml-2 h-4 w-4"/></Link>
+                            </Button>
                         </div>
-                        <EgfrCalculator />
+                        <div className="relative rounded-lg overflow-hidden shadow-xl">
+                             <Image src="/calculator_image.png" alt="A calculator and medical chart" width={600} height={400} className="object-cover" data-ai-hint="calculator medical" />
+                        </div>
                     </div>
                 </section>
 
@@ -676,5 +581,4 @@ export default function NirogyamPage() {
             </footer>
         </div>
     );
-
-    
+}
