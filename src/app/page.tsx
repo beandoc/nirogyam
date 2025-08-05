@@ -353,7 +353,9 @@ export default function NirogyamPage() {
     const podcasts = [
         { "title": "CKD \"A Blind Spot\"", "description": "An introductory episode covering the basics of Chronic Kidney Disease.", "src": "/podcast_episode_1.mp4" },
         { "title": "CKD- Correct BP measurement", "description": "Expert insights on managing your diet for kidney health.", "src": "/podcast_episode_2.mp4" },
-        { "title": "Sharing your feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" }
+        { "title": "Sharing your feelings", "description": "Inspiring journeys from individuals living with kidney disease.", "src": "/podcast_episode_3.mp4" },
+        { "title": "Navigating Your CKD Journey", "description": "Tips and strategies for managing your day-to-day life with CKD.", "src": "/podcast_episode_4.mp4" },
+        { "title": "The Importance of Diet", "description": "A deep dive into renal nutrition with a specialized dietitian.", "src": "/podcast_episode_5.mp4" }
     ];
 
     const generalFaqs = [
@@ -674,4 +676,5 @@ export default function NirogyamPage() {
             </footer>
         </div>
     );
-}
+
+    
