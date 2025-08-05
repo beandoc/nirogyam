@@ -139,6 +139,9 @@ const Quiz = () => {
 
 export default function NirogyamPage() {
     const [isClient, setIsClient] = useState(false);
+    const [showAllPodcasts, setShowAllPodcasts] = useState(false);
+    const [showAllResources, setShowAllResources] = useState(false);
+
 
     useEffect(() => {
         setIsClient(true);
@@ -466,7 +469,7 @@ export default function NirogyamPage() {
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Tune into our podcasts for in-depth discussions with experts, patient stories, and the latest advancements in kidney care.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                             {podcasts.map((episode, index) => (
+                             {podcasts.slice(0, showAllPodcasts ? podcasts.length : 3).map((episode, index) => (
                                 <Card key={index}>
                                     <CardHeader><CardTitle className="text-primary">{episode.title}</CardTitle></CardHeader>
                                     <CardContent>
@@ -480,7 +483,9 @@ export default function NirogyamPage() {
                             ))}
                         </div>
                         <div className="mt-12">
-                            <Button size="lg" variant="outline">Explore More Podcasts</Button>
+                            <Button size="lg" variant="outline" onClick={() => setShowAllPodcasts(!showAllPodcasts)}>
+                                {showAllPodcasts ? 'Show Less' : 'Explore More Podcasts'}
+                            </Button>
                         </div>
                     </div>
                 </section>
@@ -493,7 +498,7 @@ export default function NirogyamPage() {
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Download helpful guides and fact sheets to support your kidney health journey.</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {resources.map((resource, index) => (
+                            {resources.slice(0, showAllResources ? resources.length : 3).map((resource, index) => (
                                 <Card key={index} className="flex flex-col text-center hover:shadow-lg transition-shadow">
                                     <CardHeader>
                                         <div className="mb-4">
@@ -521,6 +526,11 @@ export default function NirogyamPage() {
                                     </CardFooter>
                                 </Card>
                             ))}
+                        </div>
+                         <div className="mt-12 text-center">
+                            <Button size="lg" variant="outline" onClick={() => setShowAllResources(!showAllResources)}>
+                                {showAllResources ? 'Show Less' : 'Show More Resources'}
+                            </Button>
                         </div>
                     </div>
                 </section>
