@@ -285,27 +285,37 @@ export default function NirogyamPage() {
         {
             title: "Signs of Kidney Disease",
             description: "Learn to recognize the early signs of kidney disease.",
-            href: "/signs%20of%20kidney%20disease.pdf"
+            href: "/signs%20of%20kidney%20disease.pdf",
+            image: "https://placehold.co/210x297.png",
+            aiHint: "medical infographic"
         },
         {
             title: "Diabetes and Kidney Newsletter",
             description: "A newsletter discussing the link between diabetes and kidney health.",
-            href: "/diabetes%20and%20Kidney%20Newsletter.pdf"
+            href: "/diabetes%20and%20Kidney%20Newsletter.pdf",
+            image: "https://placehold.co/210x297.png",
+            aiHint: "newsletter cover"
         },
         {
             title: "TOLVAPTAN Infographic",
             description: "An infographic explaining the medication Tolvaptan.",
-            href: "/TOLVAPTAN%20Infographic.pdf"
+            href: "/TOLVAPTAN%20Infographic.pdf",
+            image: "https://placehold.co/210x297.png",
+            aiHint: "medical poster"
         },
         {
             title: "Steroids Education Infographic",
             description: "Understand the use of steroids in kidney treatment.",
-            href: "/Steroids%20Education%20Infographic.pdf"
+            href: "/Steroids%20Education%20Infographic.pdf",
+            image: "https://placehold.co/210x297.png",
+            aiHint: "informational chart"
         },
         {
             title: "ADPKD Multilingual Newsletter",
             description: "A newsletter about ADPKD available in multiple languages.",
-            href: "/ADPKD%20newsletter%20multilingual.pdf"
+            href: "/ADPKD%20newsletter%20multilingual.pdf",
+            image: "https://placehold.co/210x297.png",
+            aiHint: "document cover"
         }
     ];
 
@@ -482,17 +492,33 @@ export default function NirogyamPage() {
                             <h3 className="text-3xl font-bold text-primary">Resources</h3>
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Download helpful guides and fact sheets to support your kidney health journey.</p>
                         </div>
-                        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {resources.map((resource, index) => (
-                                <Card key={index}>
-                                    <CardContent className="pt-6 text-center">
-                                        <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                        <h4 className="font-semibold text-lg mb-1">{resource.title}</h4>
-                                        <p className="text-sm text-foreground/80 mb-3 px-2">{resource.description}</p>
-                                        <Button asChild>
-                                            <a href={resource.href} download>Download</a>
-                                        </Button>
+                                <Card key={index} className="flex flex-col text-center hover:shadow-lg transition-shadow">
+                                    <CardHeader>
+                                        <div className="mb-4">
+                                            <Image 
+                                                src={resource.image} 
+                                                alt={`Preview of ${resource.title}`} 
+                                                width={210} 
+                                                height={297} 
+                                                className="rounded-md shadow-md mx-auto"
+                                                data-ai-hint={resource.aiHint} 
+                                            />
+                                        </div>
+                                        <CardTitle className="text-lg">{resource.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <p className="text-sm text-muted-foreground">{resource.description}</p>
                                     </CardContent>
+                                    <CardFooter className="justify-center">
+                                        <Button asChild>
+                                            <a href={resource.href} download>
+                                                <Download className="mr-2 h-4 w-4" />
+                                                Download
+                                            </a>
+                                        </Button>
+                                    </CardFooter>
                                 </Card>
                             ))}
                         </div>
@@ -609,3 +635,5 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
+    
