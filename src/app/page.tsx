@@ -283,29 +283,29 @@ export default function NirogyamPage() {
 
     const resources = [
         {
-            title: "CKD Fact Sheet",
-            description: "A quick guide to understanding Chronic Kidney Disease.",
-            href: "/CKD-Fact-Sheet.pdf"
+            title: "Signs of Kidney Disease",
+            description: "Learn to recognize the early signs of kidney disease.",
+            href: "/signs of kidney disease.pdf"
         },
         {
-            title: "eGFR Fact Sheet",
-            description: "Learn what your eGFR numbers mean for your kidney health.",
-            href: "/eGFR-Fact-Sheet.pdf"
+            title: "Diabetes and Kidney Newsletter",
+            description: "A newsletter discussing the link between diabetes and kidney health.",
+            href: "/diabetes and Kidney Newsletter.pdf"
         },
         {
-            title: "Hemodialysis Guide",
-            description: "A comprehensive overview of the hemodialysis treatment.",
-            href: "/Hemodialysis-Guide.pdf"
+            title: "TOLVAPTAN Infographic",
+            description: "An infographic explaining the medication Tolvaptan.",
+            href: "/TOLVAPTAN Infographic.pdf"
         },
         {
-            title: "Renal Nutrition Plan",
-            description: "Tips and meal ideas for a kidney-friendly diet.",
-            href: "/Renal-Nutrition-Plan.pdf"
+            title: "Steroids Education Infographic",
+            description: "Understand the use of steroids in kidney treatment.",
+            href: "/Steroids Education Infographic.pdf"
         },
         {
-            title: "Transplant Information",
-            description: "An introduction to the kidney transplant process.",
-            href: "/Transplant-Information.pdf"
+            title: "ADPKD Multilingual Newsletter",
+            description: "A newsletter about ADPKD available in multiple languages.",
+            href: "/ADPKD newsletter multilingual.pdf"
         }
     ];
 
