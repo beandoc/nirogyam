@@ -285,27 +285,27 @@ export default function NirogyamPage() {
         {
             title: "CKD Fact Sheet",
             description: "A quick guide to understanding Chronic Kidney Disease.",
-            href: "/ckd-fact-sheet.pdf"
+            href: "/CKD-Fact-Sheet.pdf"
         },
         {
             title: "eGFR Fact Sheet",
             description: "Learn what your eGFR numbers mean for your kidney health.",
-            href: "/egfr-fact-sheet.pdf"
+            href: "/eGFR-Fact-Sheet.pdf"
         },
         {
             title: "Hemodialysis Guide",
             description: "A comprehensive overview of the hemodialysis treatment.",
-            href: "/hemodialysis-guide.pdf"
+            href: "/Hemodialysis-Guide.pdf"
         },
         {
             title: "Renal Nutrition Plan",
             description: "Tips and meal ideas for a kidney-friendly diet.",
-            href: "/renal-nutrition-plan.pdf"
+            href: "/Renal-Nutrition-Plan.pdf"
         },
         {
             title: "Transplant Information",
             description: "An introduction to the kidney transplant process.",
-            href: "/transplant-info.pdf"
+            href: "/Transplant-Information.pdf"
         }
     ];
 
@@ -571,7 +571,7 @@ export default function NirogyamPage() {
                                 </svg>
                             </div>
                             <h3 className="text-3xl font-bold text-green-800 mb-4">Stay Connected on WhatsApp</h3>
-                            <p className="text-lg text-green-700/80 mb-8 max-w-xl mx-auto">Join our WhatsApp channel for the latest updates, health tips, and community support directly on your phone.</p>
+                            <p className="text-lg text-green-700/80 mb-8 max-w-xl mx-auto">Join our WhatsApp channel for the latest updates, health tips, and a community support directly on your phone.</p>
                             <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
                                 <a href="https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R" target="_blank" rel="noopener noreferrer">
                                     Follow Our Channel
