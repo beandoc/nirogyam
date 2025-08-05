@@ -300,7 +300,7 @@ export default function NirogyamPage() {
             title: "TOLVAPTAN Infographic",
             description: "An infographic explaining the medication Tolvaptan.",
             href: "/TOLVAPTAN%20Infographic.pdf",
-            image: "https://placehold.co/210x297.png",
+            image: "/TOLVAPTAN Infographic.png",
             aiHint: "medical poster"
         },
         {
