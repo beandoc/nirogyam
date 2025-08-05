@@ -281,6 +281,34 @@ export default function NirogyamPage() {
         { "question": "How can I make sure my wishes to donate will be respected?", "answer": "Once you’ve registered your intention to donate your organs, it is crucial to speak to your family and loved ones to make sure they know your wishes." }
     ];
 
+    const resources = [
+        {
+            title: "CKD Fact Sheet",
+            description: "A quick guide to understanding Chronic Kidney Disease.",
+            href: "/ckd-fact-sheet.pdf"
+        },
+        {
+            title: "eGFR Fact Sheet",
+            description: "Learn what your eGFR numbers mean for your kidney health.",
+            href: "/egfr-fact-sheet.pdf"
+        },
+        {
+            title: "Hemodialysis Guide",
+            description: "A comprehensive overview of the hemodialysis treatment.",
+            href: "/hemodialysis-guide.pdf"
+        },
+        {
+            title: "Renal Nutrition Plan",
+            description: "Tips and meal ideas for a kidney-friendly diet.",
+            href: "/renal-nutrition-plan.pdf"
+        },
+        {
+            title: "Transplant Information",
+            description: "An introduction to the kidney transplant process.",
+            href: "/transplant-info.pdf"
+        }
+    ];
+
     return (
         <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
             <AppHeader />
@@ -454,52 +482,19 @@ export default function NirogyamPage() {
                             <h3 className="text-3xl font-bold text-primary">Resources</h3>
                             <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Download helpful guides and fact sheets to support your kidney health journey.</p>
                         </div>
-                        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <Card>
-                                <CardContent className="pt-6 text-center">
-                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                    <h4 className="font-semibold text-lg mb-2">CKD Fact Sheet</h4>
-                                    <Button asChild>
-                                        <a href="/ckd-fact-sheet.pdf" download>Download</a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                             <Card>
-                                <CardContent className="pt-6 text-center">
-                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                    <h4 className="font-semibold text-lg mb-2">eGFR Fact Sheet</h4>
-                                    <Button asChild>
-                                        <a href="/egfr-fact-sheet.pdf" download>Download</a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                             <Card>
-                                <CardContent className="pt-6 text-center">
-                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                    <h4 className="font-semibold text-lg mb-2">Hemodialysis Guide</h4>
-                                    <Button asChild>
-                                        <a href="/hemodialysis-guide.pdf" download>Download</a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                             <Card>
-                                <CardContent className="pt-6 text-center">
-                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                    <h4 className="font-semibold text-lg mb-2">Renal Nutrition Plan</h4>
-                                    <Button asChild>
-                                        <a href="/renal-nutrition-plan.pdf" download>Download</a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                             <Card>
-                                <CardContent className="pt-6 text-center">
-                                    <Download className="mx-auto h-8 w-8 text-primary mb-3" />
-                                    <h4 className="font-semibold text-lg mb-2">Transplant Information</h4>
-                                    <Button asChild>
-                                        <a href="/transplant-info.pdf" download>Download</a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {resources.map((resource, index) => (
+                                <Card key={index}>
+                                    <CardContent className="pt-6 text-center">
+                                        <Download className="mx-auto h-8 w-8 text-primary mb-3" />
+                                        <h4 className="font-semibold text-lg mb-1">{resource.title}</h4>
+                                        <p className="text-sm text-foreground/80 mb-3 px-2">{resource.description}</p>
+                                        <Button asChild>
+                                            <a href={resource.href} download>Download</a>
+                                        </Button>
+                                    </CardContent>
+                                </Card>
+                            ))}
                         </div>
                     </div>
                 </section>
