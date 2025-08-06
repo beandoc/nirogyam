@@ -439,7 +439,7 @@ export default function NirogyamPage() {
                             </Button>
                         </div>
                         <div className="relative rounded-lg overflow-hidden shadow-xl">
-                             <Image src="/calculator_image.png" alt="A calculator and medical chart" width={600} height={400} className="object-cover" data-ai-hint="calculator medical" />
+                             <Image src="https://placehold.co/600x400.png" alt="A calculator and medical chart" width={600} height={400} className="object-cover" data-ai-hint="calculator medical" />
                         </div>
                     </div>
                 </section>
