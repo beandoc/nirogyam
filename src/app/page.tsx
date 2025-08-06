@@ -288,14 +288,14 @@ export default function NirogyamPage() {
         {
             title: "Signs of Kidney Disease",
             description: "Learn to recognize the early signs of kidney disease.",
-            href: "/signs%20of%20kidney%20disease.pdf",
+            href: "/Signs%20of%20Kidney%20Disease.pdf",
             image: "/Signs%20of%20Kidney%20Disease.png",
             aiHint: "medical infographic"
         },
         {
             title: "Diabetes and Kidney Newsletter",
             description: "A newsletter discussing the link between diabetes and kidney health.",
-            href: "/diabetes%20and%20Kidney%20Newsletter.pdf",
+            href: "/Diabetes%20and%20Kidney%20Newsletter.pdf",
             image: "/Diabetes%20and%20Kidney%20Newsletter.png",
             aiHint: "newsletter cover"
         },
@@ -503,7 +503,7 @@ export default function NirogyamPage() {
                                     <CardHeader>
                                         <div className="mb-4">
                                             <Image 
-                                                src={resource.image} 
+                                                src={resource.image.replace(/ /g, '%20')} 
                                                 alt={`Preview of ${resource.title}`} 
                                                 width={210} 
                                                 height={297} 
