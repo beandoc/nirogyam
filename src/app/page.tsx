@@ -54,6 +54,13 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 
 const formSchema = z.object({
@@ -469,6 +476,17 @@ export default function NirogyamPage() {
         }
     ];
 
+    const keyInsights = [
+        {
+            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "kidney diagram",
+            description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
+            href: "/insights/kidneys-explained"
+        }
+    ];
+
     return (
         <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
             <AppHeader />
@@ -484,7 +502,7 @@ export default function NirogyamPage() {
                                 <a href="#assess-kidney">Assess Your Risk Now</a>
                             </Button>
                         </div>
-                        <div className="hidden md:block">
+                        <div>
                             <Image src="/herosection_image.png" alt="Illustration of doctors and a patient discussing kidney health" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="doctors patient kidney" />
                         </div>
                     </div>
@@ -608,8 +626,50 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
+                <section id="key-insights" className="py-20 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-primary">Key Insights</h3>
+                            <p className="text-lg text-foreground/80 mt-2 max-w-2xl mx-auto">Explore our articles for in-depth information on kidney health, treatment, and living well with kidney disease.</p>
+                        </div>
+                        <Carousel
+                            opts={{
+                                align: "start",
+                                loop: keyInsights.length > 1,
+                            }}
+                            className="w-full max-w-4xl mx-auto"
+                        >
+                            <CarouselContent>
+                                {keyInsights.map((insight, index) => (
+                                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                                        <div className="p-1">
+                                            <Card className="flex flex-col h-full">
+                                                <CardHeader>
+                                                    <Image src={insight.image} alt={insight.title} width={600} height={400} className="rounded-t-lg aspect-[3/2] object-cover" data-ai-hint={insight.aiHint} />
+                                                    <CardTitle className="mt-4">{insight.title}</CardTitle>
+                                                    <CardDescription>{insight.minutesToRead} min read</CardDescription>
+                                                </CardHeader>
+                                                <CardContent className="flex-grow">
+                                                    <p className="text-sm text-muted-foreground line-clamp-3">{insight.description}</p>
+                                                </CardContent>
+                                                <CardFooter>
+                                                    <Button asChild variant="secondary" className="w-full">
+                                                        <Link href={insight.href}>Read More</Link>
+                                                    </Button>
+                                                </CardFooter>
+                                            </Card>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
+                </section>
+
                 {isClient && (
-                <section id="kidney-conversations" className="py-20 bg-background">
+                <section id="kidney-conversations" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Kidney Conversations</h3>
@@ -638,7 +698,7 @@ export default function NirogyamPage() {
                 </section>
                 )}
                 
-                <section id="resources" className="py-20 bg-card">
+                <section id="resources" className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h3 className="text-3xl font-bold text-primary">Resources</h3>
@@ -647,14 +707,14 @@ export default function NirogyamPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {resources.slice(0, showAllResources ? resources.length : 3).map((resource, index) => (
                                 <Card key={index} className="flex flex-col text-center hover:shadow-lg transition-shadow">
-                                    <CardHeader>
+                                    <CardHeader className="flex-grow">
                                         <div className="mb-4">
                                             <Image 
                                                 src={resource.image.replace(/ /g, '%20')} 
                                                 alt={`Preview of ${resource.title}`} 
                                                 width={210} 
                                                 height={297} 
-                                                className="rounded-md shadow-md mx-auto"
+                                                className="rounded-md shadow-md mx-auto aspect-[210/297] object-cover"
                                                 data-ai-hint={resource.aiHint} 
                                             />
                                         </div>
@@ -663,7 +723,7 @@ export default function NirogyamPage() {
                                     <CardContent className="flex-grow">
                                         <p className="text-sm text-muted-foreground">{resource.description}</p>
                                     </CardContent>
-                                    <CardFooter className="justify-center">
+                                    <CardFooter className="justify-center pt-4">
                                         <Button asChild>
                                             <a href={resource.href} download>
                                                 <Download className="mr-2 h-4 w-4" />
@@ -682,7 +742,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
                 
-                <section id="faq" className="py-20 bg-background">
+                <section id="faq" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-primary">Frequently Asked Questions</h3>
@@ -725,7 +785,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="about" className="py-20 bg-card">
+                <section id="about" className="py-20 bg-background">
                     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
                             <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
@@ -737,7 +797,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 bg-background">
+                <section id="contact" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl font-bold text-primary mb-4">Share Your Story</h3>
                         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to tell your story? or Write a testimonial for the department...</p>
@@ -792,3 +852,4 @@ export default function NirogyamPage() {
         </div>
     );
 }
+
