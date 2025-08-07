@@ -620,6 +620,14 @@ export default function NirogyamPage() {
             aiHint: "blood test tube",
             description: "High phosphorus is a common and serious problem for people with kidney disease. Learn why it happens and what you can do about it.",
             href: "/insights/high-phosphorus-explained"
+        },
+        {
+            title: "What is Creatinine? The Simple Blood Test That Reveals Your Kidney Health",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood test kidney",
+            description: "A simple blood test for creatinine can tell you a huge amount about how well your kidneys are working. Learn why this number is so important for early detection.",
+            href: "/insights/creatinine-explained"
         }
     ];
 
