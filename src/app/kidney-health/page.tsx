@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft } from 'lucide-react';
+import { HeartPulse, FileText, GraduationCap, TestTube, Diamond, HeartHandshake, Bone, Droplet, Cloudy, Leaf, Filter, User, ArrowLeft, Shield } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const TopicCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
@@ -124,6 +124,12 @@ const KidneyHealthPage = () => {
             title: "Living with a Single Kidney",
             description: "Information and guidance for individuals with one kidney.",
             href: "/living-with-single-kidney"
+        },
+        { 
+            icon: <Shield className="h-8 w-8 text-primary" />,
+            title: "Urinary Tract Infections (UTIs)",
+            description: "A comprehensive guide to understanding and preventing urinary tract infections.",
+            href: "/urinary-tract-infection"
         },
     ];
 
