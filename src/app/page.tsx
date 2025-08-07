@@ -492,6 +492,14 @@ export default function NirogyamPage() {
             aiHint: "pain comparison",
             description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
             href: "/insights/kidney-stones-vs-failure"
+        },
+        {
+            title: "The Silent Worker: Why Your Kidneys Need a Yearly Check-Up",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "doctor patient checkup",
+            description: "Your kidneys are like the silent, hardworking staff of your body. Problems can develop for years without causing any pain or obvious signs. A simple, yearly kidney health check is one of the smartest things you can do.",
+            href: "/insights/yearly-check-up"
         }
     ];
 
@@ -860,4 +868,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
