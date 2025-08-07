@@ -20,7 +20,7 @@ const InfoCard = ({ title, children }: { title: string, children: React.ReactNod
     </Card>
 );
 
-const CreatinineExplainedPage = () => {
+const InsightCreatinineExplainedPage = () => {
     return (
         <div className="bg-background text-foreground flex-1">
             <AppHeader />
@@ -85,4 +85,4 @@ const CreatinineExplainedPage = () => {
     );
 };
 
-export default CreatinineExplainedPage;
+export default InsightCreatinineExplainedPage;
