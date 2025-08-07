@@ -645,6 +645,14 @@ export default function NirogyamPage() {
             aiHint: "urine test red",
             description: "Blood in the urine, or hematuria, is a signal from your body that something isn't right. Learn about the common causes, from minor issues to more serious conditions.",
             href: "/insights/seeing-red"
+        },
+        {
+            title: "Beyond Drinking Water: Simple Hygiene Habits to Prevent Painful UTIs",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "hygiene bathroom",
+            description: "Discover practical, everyday hygiene habits that can significantly reduce your risk of UTIs, going beyond the standard advice to just drink more water.",
+            href: "/insights/beyond-drinking-water-uti-prevention"
         }
     ];
 
