@@ -655,7 +655,7 @@ export default function NirogyamPage() {
             href: "/insights/beyond-drinking-water-uti-prevention"
         },
         {
-            title: "Leaking When You Laugh? You're Not Alone: A Simple Guide to Urinary Incontinence",
+            title: "Leaking When You Laugh? A Simple Guide to Urinary Incontinence",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
             aiHint: "person laughing",
@@ -669,6 +669,14 @@ export default function NirogyamPage() {
             aiHint: "lab report",
             description: "Learn what the different values on your Kidney Function Test (KFT) mean, from creatinine and eGFR to urine protein, and understand your kidney health better.",
             href: "/insights/kidney-function-tests-explained"
+        },
+        {
+            title: "Hidden Sodium in 'Healthy' Foods: A Guide to Protecting Your Heart",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "packaged food labels",
+            description: "Discover how even 'healthy' packaged foods can be loaded with sodium. Learn to read labels and make smarter choices to protect your heart and blood pressure.",
+            href: "/sodium-explained"
         }
     ];
 
