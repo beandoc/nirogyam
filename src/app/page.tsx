@@ -653,6 +653,14 @@ export default function NirogyamPage() {
             aiHint: "hygiene bathroom",
             description: "Discover practical, everyday hygiene habits that can significantly reduce your risk of UTIs, going beyond the standard advice to just drink more water.",
             href: "/insights/beyond-drinking-water-uti-prevention"
+        },
+        {
+            title: "Leaking When You Laugh? You're Not Alone: A Simple Guide to Urinary Incontinence",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "person laughing",
+            description: "Urinary incontinence is a common and treatable condition. This guide explains the different types, causes, and effective ways to regain control and confidence.",
+            href: "/insights/leaking-when-you-laugh"
         }
     ];
 
