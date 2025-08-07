@@ -7,133 +7,89 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, ChevronsRight, ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-const TableOfContents = () => (
-    <Card className="mb-12">
+const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
+    <Card className="mb-8">
         <CardHeader>
-            <CardTitle>Table of Contents</CardTitle>
+            <CardTitle className="text-2xl text-primary">{title}</CardTitle>
         </CardHeader>
         <CardContent>
-            <ul className="space-y-2">
-                <li><a href="#about-ckd" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />About chronic kidney disease (CKD)</a></li>
-                <li><a href="#symptoms" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Signs and symptoms</a></li>
-                <li><a href="#causes" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Causes</a></li>
-                <li><a href="#complications" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Complications</a></li>
-                <li><a href="#diagnosis" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Diagnosis</a></li>
-                <li><a href="#treatment" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Treatment</a></li>
-                <li><a href="#appointment" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Preparing for your appointment</a></li>
-            </ul>
+            <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-4">
+                {children}
+            </div>
         </CardContent>
     </Card>
 );
 
-const CkdExplainedPage = () => {
-    const aboutList = [
-        "Removing natural waste products and extra water from your body",
-        "Helping make red blood cells",
-        "Balancing important minerals in your body",
-        "Helping maintain your blood pressure",
-        "Keeping your bones healthy"
-    ];
-    const symptomsList1 = [
-        "Foamy urine",
-        "Urinating (peeing) more often or less often than usual",
-        "Itchy and/or dry skin",
-        "Feeling tired",
-        "Nausea",
-        "Loss of appetite",
-        "Weight loss without trying to lose weight"
-    ];
-    const symptomsList2 = [
-        "Trouble concentrating",
-        "Numbness or swelling in your arms, legs, ankles, or feet",
-        "Achy muscles or cramping",
-        "Shortness of breath",
-        "Vomiting",
-        "Trouble sleeping",
-        "Breath smells like ammonia"
-    ];
 
+const CkdExplainedPage = () => {
+    
   return (
     <div className="bg-background text-foreground flex-1">
       <AppHeader />
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
             <Button asChild variant="outline" className="mb-8">
-                <Link href="/">
+                <Link href="/kidney-health">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Home
+                    Back to Kidney Health Topics
                 </Link>
             </Button>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Chronic Kidney Disease (CKD) Explained</h1>
-            <p className="text-lg text-foreground/80 mb-10">
-              Chronic kidney disease (CKD) means your kidneys slowly get damaged and can't do important jobs like removing waste and keeping blood pressure normal.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">A Simple Guide to Chronic Kidney Disease (CKD)</h1>
+            
+            <div className="prose lg:prose-xl max-w-none text-foreground/80 mb-12">
+                <p>Chronic Kidney Disease (CKD) is a condition where your kidneys slowly lose their ability to work over time. Think of your kidneys as your body's expert cleaning crew. When they can't filter properly, waste can build up, leading to health problems. With the rise of conditions like diabetes and high blood pressure, CKD is becoming more common, so understanding it is more important than ever.</p>
+            </div>
 
-            <TableOfContents />
+            <InfoCard title="What Do Your Kidneys Actually Do?">
+                <p>Your kidneys are a pair of amazing, bean-shaped organs that do much more than just make urine. Their vital jobs include:</p>
+                <ul className="list-disc pl-6">
+                    <li>Filtering waste and extra water from your blood.</li>
+                    <li>Helping to control your blood pressure.</li>
+                    <li>Playing a role in making red blood cells to prevent you from feeling tired.</li>
+                    <li>Keeping your bones strong by balancing important minerals.</li>
+                </ul>
+            </InfoCard>
 
-            <article className="prose lg:prose-xl max-w-none text-foreground/90">
-                <section id="about-ckd" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">About chronic kidney disease (CKD)</h2>
-                    <p>Your kidneys do many important jobs. Some of the ways they keep your whole body in balance include:</p>
-                    <ul className="list-disc pl-6 space-y-2">
-                        {aboutList.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                    <p>Chronic kidney disease (CKD) is when the kidneys have become damaged over time (for at least 3 months) and have a hard time doing all their important jobs. CKD also increases the risk of other health problems like heart disease and stroke. Developing CKD is usually a very slow process with very few symptoms at first. So, CKD is divided into 5 stages to help guide treatment decisions.</p>
-                </section>
+            <InfoCard title="What Does 'Chronic' Mean?">
+                <p>When a doctor says kidney disease is "chronic," it means the damage has happened over a long period and, unfortunately, can't be reversed. This is different from a "sudden" or "acute" kidney problem, which can often be fixed.</p>
+                <p>The main goal with CKD is to "hit the brakes" and slow the damage down as much as possible. If the damage becomes too severe, it leads to kidney failure, where treatments like dialysis or a kidney transplant are needed to keep you healthy.</p>
+            </InfoCard>
 
-                <section id="symptoms" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Signs and symptoms</h2>
-                    <p>Many people living with CKD do not have any symptoms until the more advanced stages and/or complications develop. If symptoms do happen, they may include:</p>
-                    <ul className="list-disc pl-6 space-y-2">
-                        {symptomsList1.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                    <p>People who have more advanced stages of CKD may also notice:</p>
-                    <ul className="list-disc pl-6 space-y-2">
-                         {symptomsList2.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                </section>
+            <InfoCard title="How is CKD Found? The 'Silent' Disease">
+                <p>One of the biggest challenges with CKD is that it's often a "silent" disease. You can lose a lot of kidney function without feeling any different. That's why tests are so important.</p>
+                <ul className="list-disc pl-6">
+                    <li><strong>Blood Test:</strong> Checks your creatinine level, a waste product. High levels mean your kidneys aren't filtering well.</li>
+                    <li><strong>Urine Test:</strong> Looks for protein in your urine, which is an early sign of kidney damage.</li>
+                    <li><strong>Ultrasound:</strong> Gives your doctor a picture of your kidneys to check their size and shape.</li>
+                </ul>
+                <p>Symptoms usually only appear in the later stages. These can include swelling in your legs, feeling very tired, nausea, or a poor appetite.</p>
+            </InfoCard>
 
-                <section id="causes" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Causes</h2>
-                    <p>Content for causes will be added here.</p>
-                </section>
+            <InfoCard title="Slowing It Down: Your Treatment Plan">
+                <p>While CKD can't be cured, you have a lot of power to slow it down. The main goal is to protect the kidney function you have left.</p>
+                <h3 className="text-xl font-semibold text-foreground">Controlling the Causes</h3>
+                <p>The most important step is to manage the conditions that harm the kidneys. This means working with your doctor to keep your blood pressure and blood sugar at healthy levels.</p>
 
-                <section id="complications" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Complications</h2>
-                    <p>Content for complications will be added here.</p>
-                </section>
+                <h3 className="text-xl font-semibold text-foreground mt-4">A Kidney-Friendly Lifestyle</h3>
+                <p>Your daily habits are your best defense:</p>
+                <ul className="list-disc pl-6">
+                    <li><strong>Diet:</strong> A "renal diet" is key. A dietitian can help you create a plan that's low in salt, and might limit protein, potassium, or phosphorus.</li>
+                    <li><strong>Fluids:</strong> You may need to watch how much you drink.</li>
+                </ul>
 
-                <section id="diagnosis" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Diagnosis</h2>
-                    <p>Content for diagnosis will be added here.</p>
-                </section>
+                <h3 className="text-xl font-semibold text-foreground mt-4">When Kidneys Fail: Advanced Treatment</h3>
+                <p>If CKD progresses to kidney failure, there are two main treatments to take over the work of your kidneys:</p>
+                <ul className="list-disc pl-6">
+                    <li><strong>Dialysis:</strong> A treatment that cleans your blood for you, either with a machine (hemodialysis) or at home (peritoneal dialysis).</li>
+                    <li><strong>Kidney Transplant:</strong> A surgery to give you a healthy kidney from a donor. This is often the best long-term solution for a better quality of life.</li>
+                </ul>
+            </InfoCard>
 
-                <section id="treatment" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Treatment</h2>
-                    <p>Content for treatment will be added here.</p>
-                </section>
+            <InfoCard title="The Path Forward">
+                <p>Managing CKD is a team effort between you and your healthcare providers. Early detection through regular check-ups is the best way to protect yourself, especially if you have diabetes or high blood pressure.</p>
+                <p>With the right lifestyle changes and medical care, you can slow down CKD and live a full, healthy life. Even if you reach the final stages, treatments like dialysis and transplant allow people to continue living productively and well.</p>
+            </InfoCard>
 
-                <section id="appointment" className="mb-12 scroll-mt-20">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Preparing for your appointment</h2>
-                    <p>Content for preparing for your appointment will be added here.</p>
-                </section>
-
-                <section id="resources" className="mb-12 scroll-mt-20">
-                  <h2 className="text-3xl font-bold text-primary mb-6">More resources</h2>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg">
-                      <Download className="mr-2 h-5 w-5" />
-                      Download Fact Sheet
-                    </Button>
-                  </div>
-                </section>
-            </article>
         </div>
       </main>
     </div>
