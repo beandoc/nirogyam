@@ -478,52 +478,20 @@ export default function NirogyamPage() {
 
     const keyInsights = [
         {
-            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
+            title: "When Kidneys Stop Working: A Simple Guide to Kidney Failure",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
-            aiHint: "kidney diagram",
-            description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
-            href: "/insights/kidneys-explained"
+            aiHint: "sad kidney diagram",
+            description: "Kidney failure is what happens when the body's master cleaning system breaks down. This guide breaks down the basics of kidney failure in simple terms—what it is, what causes it, and what can be done about it.",
+            href: "/insights/kidney-failure-explained"
         },
         {
-            title: "Kidney Stones vs. Kidney Failure: They're Not the Same!",
-            minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "pain comparison",
-            description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
-            href: "/insights/kidney-stones-vs-failure"
-        },
-        {
-            title: "The Silent Worker: Why Your Kidneys Need a Yearly Check-Up",
-            minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "doctor patient checkup",
-            description: "Your kidneys are like the silent, hardworking staff of your body. Problems can develop for years without causing any pain or obvious signs. A simple, yearly kidney health check is one of the smartest things you can do.",
-            href: "/insights/yearly-check-up"
-        },
-        {
-            title: "The Dangerous Trio: How Diabetes, High BP, and Your Kidneys Are Linked",
+            title: "High BP's Secret Victim: Are Your Kidneys Paying the Price?",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
-            aiHint: "blood pressure monitor diabetes",
-            description: "Together, diabetes and high blood pressure are the number one cause of long-term kidney damage. When combined with kidney problems, they form a dangerous trio that often goes unnoticed until the damage is severe.",
-            href: "/insights/dangerous-trio"
-        },
-        {
-            title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
-            minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "weight scale blood pressure",
-            description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
-            href: "/insights/managing-weight-and-bp"
-        },
-        {
-            title: "Kidney Damage: Is It Possible to Turn Back the Clock?",
-            minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "clock reversal",
-            description: "If you or a loved one has been diagnosed with kidney disease, one of the first questions on your mind is likely: \"Can this be fixed? Can my kidneys heal?\" The answer depends on how early the problem is caught.",
-            href: "/insights/kidney-damage-reversal"
+            aiHint: "blood pressure kidney",
+            description: "High blood pressure is one of the top causes of kidney failure. The scariest part is that you might not feel a single thing until serious damage is already done. Learn how to protect these vital organs.",
+            href: "/insights/high-bp-secret-victim"
         },
         {
             title: "Are You Unknowingly Harming Your Kidneys? 10 Habits to Change Today",
@@ -534,12 +502,52 @@ export default function NirogyamPage() {
             href: "/insights/are-you-unknowingly-harming-your-kidneys"
         },
         {
-            title: "High BP's Secret Victim: Are Your Kidneys Paying the Price?",
+            title: "Kidney Damage: Is It Possible to Turn Back the Clock?",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "clock reversal",
+            description: "If you or a loved one has been diagnosed with kidney disease, one of the first questions on your mind is likely: \"Can this be fixed? Can my kidneys heal?\" The answer depends on how early the problem is caught.",
+            href: "/insights/kidney-damage-reversal"
+        },
+        {
+            title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
-            aiHint: "blood pressure kidney",
-            description: "High blood pressure is one of the top causes of kidney failure. The scariest part is that you might not feel a single thing until serious damage is already done. Learn how to protect these vital organs.",
-            href: "/insights/high-bp-secret-victim"
+            aiHint: "weight scale blood pressure",
+            description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
+            href: "/insights/managing-weight-and-bp"
+        },
+        {
+            title: "The Dangerous Trio: How Diabetes, High BP, and Your Kidneys Are Linked",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood pressure monitor diabetes",
+            description: "Together, diabetes and high blood pressure are the number one cause of long-term kidney damage. When combined with kidney problems, they form a dangerous trio that often goes unnoticed until the damage is severe.",
+            href: "/insights/dangerous-trio"
+        },
+        {
+            title: "The Silent Worker: Why Your Kidneys Need a Yearly Check-Up",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "doctor patient checkup",
+            description: "Your kidneys are like the silent, hardworking staff of your body. Problems can develop for years without causing any pain or obvious signs. A simple, yearly kidney health check is one of the smartest things you can do.",
+            href: "/insights/yearly-check-up"
+        },
+        {
+            title: "Kidney Stones vs. Kidney Failure: They're Not the Same!",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "pain comparison",
+            description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
+            href: "/insights/kidney-stones-vs-failure"
+        },
+        {
+            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "kidney diagram",
+            description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
+            href: "/insights/kidneys-explained"
         }
     ];
 
