@@ -50,31 +50,11 @@ const ListItem = React.forwardRef<
 })
 ListItem.displayName = "ListItem"
 
-const kidneyHealthTopics = [
+const resources = [
   {
-    title: "How Kidneys Work",
-    href: "/how-kidneys-work",
-    description: "Learn the fundamentals of how your kidneys filter waste and keep you healthy.",
-  },
-  {
-    title: "CKD Explained",
-    href: "/ckd-explained",
-    description: "Understand Chronic Kidney Disease, its causes, symptoms, and progression.",
-  },
-  {
-    title: "Stages of CKD",
-    href: "/stages-of-ckd",
-    description: "Find out about the different stages of CKD and what they mean for you.",
-  },
-   {
-    title: "Hemodialysis",
-    href: "/hemodialysis",
-    description: "Learn about the hemodialysis process for treating kidney failure.",
-  },
-  {
-    title: "eGFR Explained",
-    href: "/egfr-explained",
-    description: "What your estimated Glomerular Filtration Rate means for your kidney health.",
+    title: "Patient Education",
+    href: "/kidney-health",
+    description: "Browse our full library of articles on kidney health, diet, and treatment.",
   },
   {
     title: "eGFR Calculator",
@@ -82,101 +62,43 @@ const kidneyHealthTopics = [
     description: "Estimate your eGFR with our interactive calculator.",
   },
   {
-    title: "Creatinine Explained",
-    href: "/creatinine-explained",
-    description: "Understand what creatinine is and its important role in kidney health.",
+    title: "Digital Toolkits",
+    href: "/#digital-toolkits",
+    description: "Interactive tools to assess risks and make informed decisions.",
   },
   {
-    title: "Kidney Function Tests",
-    href: "/kidney-function-tests",
-    description: "A guide to the various tests used to monitor your kidney health.",
+    title: "Podcasts",
+    href: "/#kidney-conversations",
+    description: "Tune into discussions with experts and patients.",
   },
   {
-    title: "Kidney Stones",
-    href: "/kidney-stones",
-    description: "Learn about the causes, symptoms, and treatments for kidney stones.",
-  },
-  {
-    title: "Living with a Single Kidney",
-    href: "/living-with-single-kidney",
-    description: "Information and guidance for individuals with one kidney.",
-  },
-  {
-    title: "Urinary Tract Infections (UTIs)",
-    href: "/urinary-tract-infection",
-    description: "A comprehensive guide to understanding and preventing urinary tract infections.",
+    title: "Downloadable Resources",
+    href: "/#resources",
+    description: "Download helpful guides and fact sheets.",
   },
 ];
 
-const dietAndNutritionTopics = [
+const aboutUs = [
     {
-        title: "Renal Nutrition Guide",
-        href: "/renal-nutrition",
-        description: "Your main guide to a kidney-friendly diet to help manage CKD.",
+        title: "About Nirogyam",
+        href: "/#about",
+        description: "Learn about our mission to provide clear and reliable kidney health information.",
     },
     {
-        title: "Good Nutrition",
-        href: "/good-nutrition",
-        description: "General tips for a healthy diet and lifestyle for overall well-being.",
+        title: "Contact Us",
+        href: "/#contact",
+        description: "Share your story, ask questions, or get in touch with our team.",
     },
-    {
-        title: "Sodium Explained",
-        href: "/sodium-explained",
-        description: "How to limit sodium and use herbs and spices for flavor.",
-    },
-    {
-        title: "Potassium Explained",
-        href: "/potassium-explained",
-        description: "A guide to managing potassium in your diet for kidney health.",
-    },
-    {
-        title: "Phosphorus Explained",
-        href: "/phosphorus-explained",
-        description: "Learn how to manage phosphorus levels for bone and heart health.",
-    },
-    {
-        title: "Protein Explained",
-        href: "/protein-explained",
-        description: "Learn the right amount of protein to eat with and without dialysis.",
-    },
-];
-
-const transplantTopics = [
-    {
-        title: "About Kidney Transplant",
-        href: "/kidney-transplant#about",
-        description: "Learn what a transplant is and when to consider it.",
-    },
-    {
-        title: "Benefits and Risks",
-        href: "/kidney-transplant#benefits",
-        description: "Understand the pros and cons of transplant surgery.",
-    },
-    {
-        title: "Types of Donors",
-        href: "/kidney-transplant#types",
-        description: "Explore the differences between living and deceased donors.",
-    },
-    {
-        title: "The Surgery Process",
-        href: "/kidney-transplant#surgery",
-        description: "What to expect during and after the transplant operation.",
-    },
-    {
-        title: "Eligibility",
-        href: "/kidney-transplant#eligibility",
-        description: "Find out who is a candidate for a kidney transplant.",
-    },
-    {
-        title: "Getting Started",
-        href: "/kidney-transplant#getting-started",
-        description: "Your first steps toward evaluation at a transplant center.",
+     {
+        title: "FAQs",
+        href: "/#faq",
+        description: "Find answers to common questions about kidney health and donation.",
     },
 ];
 
 
 export const AppHeader = () => {
-    const triggerStyles = "bg-primary text-primary-foreground hover:bg-primary/90 data-[state=open]:bg-primary/90"
+    const triggerStyles = "bg-transparent text-foreground hover:bg-accent/50 data-[state=open]:bg-accent/50"
     
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
@@ -188,12 +110,19 @@ export const AppHeader = () => {
 
                 <nav className="hidden md:flex items-center">
                    <NavigationMenu>
-                      <NavigationMenuList className="gap-4">
+                      <NavigationMenuList className="gap-2">
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Kidney Health</NavigationMenuTrigger>
+                           <Link href="/kidney-health" legacyBehavior passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), triggerStyles)}>
+                                Patient Education
+                            </NavigationMenuLink>
+                           </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                           <NavigationMenuTrigger className={triggerStyles}>Patient Resources</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                              {kidneyHealthTopics.map((component) => (
+                              {resources.map((component) => (
                                 <ListItem
                                   key={component.title}
                                   title={component.title}
@@ -206,26 +135,10 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Diet & Nutrition</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>About</NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                              {dietAndNutritionTopics.map((component) => (
-                                <ListItem
-                                  key={component.title}
-                                  title={component.title}
-                                  href={component.href}
-                                >
-                                  {component.description}
-                                </ListItem>
-                              ))}
-                            </ul>
-                          </NavigationMenuContent>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Kidney Transplant</NavigationMenuTrigger>
-                          <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                              {transplantTopics.map((component) => (
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] ">
+                              {aboutUs.map((component) => (
                                 <ListItem
                                   key={component.title}
                                   title={component.title}
@@ -254,12 +167,10 @@ export const AppHeader = () => {
                                     <SheetTitle>Nirogyam</SheetTitle>
                                 </SheetHeader>
                                 <div className="flex flex-col space-y-4 mt-8">
-                                    <Button variant="link" asChild><Link href="/kidney-health">Kidney Health</Link></Button>
-                                    <Button variant="link" asChild><Link href="/renal-nutrition">Diet & Nutrition</Link></Button>
-                                    <Button variant="link" asChild><Link href="/kidney-transplant">Kidney Transplant</Link></Button>
-                                    <Button variant="link" asChild><a href="/#assess-kidney">Risk Quiz</a></Button>
+                                    <Button variant="link" asChild><Link href="/kidney-health">Patient Education</Link></Button>
+                                    <Button variant="link" asChild><a href="/#digital-toolkits">Toolkits</a></Button>
                                     <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                    <Button variant="link" asChild><a href="/#contact">Contact Us</a></Button>
+                                    <Button variant="link" asChild><a href="/#contact">Contact</a></Button>
                                 </div>
                             </SheetContent>
                         </Sheet>
@@ -269,5 +180,3 @@ export const AppHeader = () => {
         </header>
     )
 }
-
-    

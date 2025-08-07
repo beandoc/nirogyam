@@ -36,6 +36,7 @@ import {
   Droplet,
   Download,
   Shield,
+  BookOpen,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -527,7 +528,7 @@ export default function NirogyamPage() {
             href: "/ckd-explained"
         },
         {
-            title: "When Your Kidneys Are In Trouble: A Simple Guide to Kidney Dysfunction",
+            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
             image: "/yourkidneyhealth.png",
             aiHint: "kidney model doctor",
@@ -704,59 +705,50 @@ export default function NirogyamPage() {
                 <section id="iam-a-section" className="py-20 bg-card">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h3 className="text-3xl font-bold text-primary mb-4">Are you at risk for kidney disease?</h3>
+                            <h3 className="text-3xl font-bold text-primary mb-4">Your Health, Your Journey</h3>
                             <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-                                A kidney disease diagnosis can be overwhelming. You may be wondering, "What can I do to avoid dialysis?" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.
+                                Whether you're newly diagnosed, managing a chronic condition, or supporting a loved one, we have resources to guide you.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Chronic Kidney Disease</CardTitle>
-                                    <CardDescription>Guidance and resources tailored for your health journey.</CardDescription>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><BookOpen className="h-10 w-10 text-primary"/></div>
+                                    <CardTitle className="text-primary text-2xl">Patient Education</CardTitle>
+                                    <CardDescription>Browse our full library of articles on kidney health, diet, and treatment.</CardDescription>
                                 </CardHeader>
-                                <CardContent>
-                                    <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/kidney-health" className="hover:underline">Explore Kidney Topics</Link></li>
-                                    </ul>
-                                </CardContent>
+                                <CardContent className="flex-grow" />
+                                <CardFooter>
+                                    <Button asChild className="w-full">
+                                        <Link href="/kidney-health">Explore Topics</Link>
+                                    </Button>
+                                </CardFooter>
                             </Card>
-                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
+                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><Droplet className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Hemodialysis</CardTitle>
-                                    <CardDescription>What is it? How can it help? Learn about the treatment and preparation.</CardDescription>
+                                    <CardTitle className="text-primary text-2xl">Dialysis Information</CardTitle>
+                                    <CardDescription>Learn about treatment options like Hemodialysis and Peritoneal Dialysis.</CardDescription>
                                 </CardHeader>
-                                <CardContent>
-                                    <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/hemodialysis" className="hover:underline">Learn About Hemodialysis</Link></li>
-                                    </ul>
-                                </CardContent>
+                                <CardContent className="flex-grow" />
+                                <CardFooter>
+                                     <Button asChild className="w-full">
+                                        <Link href="/kidney-health">Learn About Dialysis</Link>
+                                    </Button>
+                                </CardFooter>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Home className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Peritoneal dialysis</CardTitle>
-                                    <CardDescription>Learn about peritoneal dialysis, a treatment for kidney failure that you can do at home.</CardDescription>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-10 w-10 text-primary"/></div>
+                                    <CardTitle className="text-primary text-2xl">Transplant Guide</CardTitle>
+                                    <CardDescription>Explore the process, benefits, and risks of kidney transplantation.</CardDescription>
                                 </CardHeader>
-                                <CardContent>
-                                    <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/peritoneal-dialysis" className="hover:underline">What is peritoneal dialysis?</Link></li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
-                                <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Shield className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Urinary Tract Infections</CardTitle>
-                                    <CardDescription>A comprehensive guide to understanding, treating, and preventing UTIs.</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="text-foreground/80 text-left space-y-3">
-                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/urinary-tract-infection" className="hover:underline">Explore the UTI Guide</Link></li>
-                                    </ul>
-                                </CardContent>
+                                <CardContent className="flex-grow" />
+                                <CardFooter>
+                                     <Button asChild className="w-full">
+                                        <Link href="/kidney-transplant">Explore Transplant</Link>
+                                    </Button>
+                                </CardFooter>
                             </Card>
                         </div>
                     </div>
@@ -1037,7 +1029,7 @@ export default function NirogyamPage() {
                             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
                             <ul className="space-y-2">
                                 <li><a href="#about" className="hover:underline opacity-80 hover:opacity-100">About Us</a></li>
-                                <li><Link href="/kidney-health" className="hover:underline opacity-80 hover:opacity-100">Kidney Health</Link></li>
+                                <li><Link href="/kidney-health" className="hover:underline opacity-80 hover:opacity-100">Patient Education</Link></li>
                                 <li><a href="#faq" className="hover:underline opacity-80 hover:opacity-100">FAQs</a></li>
                                 <li><a href="#contact" className="hover:underline opacity-80 hover:opacity-100">Contact</a></li>
                             </ul>
