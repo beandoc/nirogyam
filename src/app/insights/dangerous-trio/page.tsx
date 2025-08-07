@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Download } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -79,6 +79,26 @@ const DangerousTrioPage = () => {
                     <InfoCard title="A Final Word">
                         <p>High blood pressure and diabetes are more than just lifestyle conditions in India; they are the leading pathways to kidney failure. Their damage is silent, so you cannot wait for symptoms to appear. If you or a loved one lives with these conditions, make an annual kidney check-up your top health priority. Acting early is the best way to protect your kidneys for a long and healthy life.</p>
                     </InfoCard>
+
+                    <section id="resources" className="mt-12 not-prose">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Resources</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex flex-col sm:flex-row gap-4">
+                                <Button asChild className="w-full">
+                                    <Link href="/insights/dangerous-trio/summary">
+                                        <Download className="mr-2 h-4 w-4" /> View English Summary
+                                    </Link>
+                                </Button>
+                                <Button asChild className="w-full">
+                                    <Link href="/insights/dangerous-trio/summary-hindi">
+                                        <Download className="mr-2 h-4 w-4" /> View Hindi Summary
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    </section>
                 </div>
             </main>
         </div>
