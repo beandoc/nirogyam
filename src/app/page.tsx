@@ -500,6 +500,14 @@ export default function NirogyamPage() {
             aiHint: "doctor patient checkup",
             description: "Your kidneys are like the silent, hardworking staff of your body. Problems can develop for years without causing any pain or obvious signs. A simple, yearly kidney health check is one of the smartest things you can do.",
             href: "/insights/yearly-check-up"
+        },
+        {
+            title: "The Dangerous Trio: How Diabetes, High BP, and Your Kidneys Are Linked",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood pressure monitor diabetes",
+            description: "Together, diabetes and high blood pressure are the number one cause of long-term kidney damage. When combined with kidney problems, they form a dangerous trio that often goes unnoticed until the damage is severe.",
+            href: "/insights/dangerous-trio"
         }
     ];
 
@@ -726,7 +734,7 @@ export default function NirogyamPage() {
                                     <CardHeader className="flex-grow">
                                         <div className="mb-4">
                                             <Image 
-                                                src={resource.image.replace(/ /g, '%20')} 
+                                                src={resource.image}
                                                 alt={`Preview of ${resource.title}`} 
                                                 width={210} 
                                                 height={297} 
