@@ -502,12 +502,12 @@ export default function NirogyamPage() {
             href: "/insights/dialysis-vs-transplant"
         },
         {
-            title: "When Kidneys Stop Working: A Simple Guide to Kidney Failure",
+            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
-            aiHint: "sad kidney diagram",
-            description: "Kidney failure is what happens when the body's master cleaning system breaks down. This guide breaks down the basics of kidney failure in simple terms—what it is, what causes it, and what can be done about it.",
-            href: "/insights/kidney-failure-explained"
+            aiHint: "kidney diagram",
+            description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
+            href: "/insights/kidneys-explained"
         },
         {
             title: "High BP's Secret Victim: Are Your Kidneys Paying the Price?",
@@ -564,14 +564,6 @@ export default function NirogyamPage() {
             aiHint: "pain comparison",
             description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
             href: "/insights/kidney-stones-vs-failure"
-        },
-        {
-            title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
-            minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "kidney diagram",
-            description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
-            href: "/insights/kidneys-explained"
         },
         {
             title: "Myths Busted: How Much Water Do You Really Need?",

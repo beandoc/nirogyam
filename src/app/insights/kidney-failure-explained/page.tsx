@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
     <Card className="mb-8">
@@ -21,7 +20,7 @@ const InfoCard = ({ title, children }: { title: string, children: React.ReactNod
     </Card>
 );
 
-const KidneyFailureExplainedPage = () => {
+const KidneysExplainedPage = () => {
     return (
         <div className="bg-background text-foreground flex-1">
             <AppHeader />
@@ -33,118 +32,109 @@ const KidneyFailureExplainedPage = () => {
                             Back to Home
                         </Link>
                     </Button>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">When Kidneys Stop Working: A Simple Guide to Kidney Failure</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">Your Kidneys Explained: A Simple Guide to Health and Failure</h1>
                     
                     <div className="prose lg:prose-xl max-w-none text-foreground/80 mb-12">
-                        <p>When you hear the term "kidney failure," it can sound very frightening. It's a serious condition, but understanding what it means is the first step toward managing it and protecting your health.</p>
-                        <p>This guide will break down the basics of kidney failure in simple terms—what it is, what causes it, and what can be done about it.</p>
+                        <p>Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble?</p>
+                        <p>When kidneys can no longer do their job properly, harmful waste and fluids can build up in your body. This condition is called kidney failure, and it's a serious health concern. Many things can lead to it, like diabetes and high blood pressure. In India, it's estimated that a significant portion of the population lives with some form of kidney disease, making it crucial to understand the basics.</p>
+                        <p>Let's break down what you need to know about kidney health in a simple way.</p>
                     </div>
 
-                    <InfoCard title="What is Kidney Failure?">
-                        <p>Think of your kidneys as your body's master cleaning crew. Their main job is to filter your blood, removing waste products and extra fluid, which then leave your body as urine.</p>
-                        <p>Kidney failure is what happens when this cleaning system breaks down. The kidneys lose their ability to filter properly, causing dangerous levels of waste and fluid to build up in your body. This condition is usually the final stage of a long process of kidney damage, often caused by common health issues like diabetes and high blood pressure.</p>
-                    </InfoCard>
-
-                    <InfoCard title="The Two Main Types of Kidney Failure">
+                    <InfoCard title="Two Main Types of Kidney Trouble">
+                        <p>Kidney trouble isn't a one-size-fits-all problem. It generally comes in two forms:</p>
                         <div>
-                            <h3 className="text-xl font-semibold text-foreground">1. Sudden (Acute) Kidney Failure</h3>
-                            <p>This is when your kidneys stop working very suddenly, over just a few hours or days. It's often caused by a specific event and can sometimes be reversed if treated quickly.</p>
-                            <p><strong>Common Causes:</strong> A severe infection in the body, major dehydration, a serious injury, or a blockage in the urinary tract (like a very large kidney stone).</p>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-semibold text-foreground mt-4">2. Gradual (Chronic) Kidney Failure</h3>
-                            <p>This is the more common type. It's a slow, silent loss of kidney function over many months or years. You often don't feel sick until the damage is quite advanced.</p>
-                            <p><strong>Common Causes:</strong></p>
+                            <h3 className="text-xl font-semibold text-foreground">Acute Kidney Injury (AKI)</h3>
+                            <p>This is when your kidneys are suddenly damaged and stop working properly over a few hours or days. The good news is that it's often reversible if treated quickly. Common causes include:</p>
                             <ul className="list-disc pl-6">
-                                <li><strong>Diabetes:</strong> High blood sugar slowly damages the kidney's tiny filters.</li>
-                                <li><strong>High Blood Pressure:</strong> The constant force of high BP wears out the kidney's delicate blood vessels.</li>
-                                <li><strong>Genetic Conditions:</strong> Diseases like Polycystic Kidney Disease (PKD) can cause kidney failure.</li>
-                                <li><strong>Long-term Infections or Blockages.</strong></li>
+                                <li><strong>Reduced blood flow:</strong> Severe dehydration or heart problems can prevent enough blood from reaching the kidneys.</li>
+                                <li><strong>Direct damage:</strong> Infections, certain drugs, or toxins can directly harm the kidney tissue.</li>
+                                <li><strong>Blockages:</strong> Things like kidney stones or an enlarged prostate can block urine from leaving the kidneys, causing a backup of pressure and damage.</li>
                             </ul>
-                            <p>The final, most severe stage of chronic kidney failure is called End-Stage Renal Disease (ESRD).</p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-semibold text-foreground">Chronic Kidney Disease (CKD)</h3>
+                            <p>This is a much slower process. Kidney function is lost gradually over months or even years. CKD is often caused by long-term conditions that put a strain on the kidneys. It's measured in five stages, with Stage 5 being the most severe, known as End-Stage Renal Disease (ESRD). The most common causes are:</p>
+                            <ul className="list-disc pl-6">
+                                <li><strong>Diabetes:</strong> High blood sugar can damage the tiny filtering units in the kidneys over time.</li>
+                                <li><strong>High Blood Pressure (Hypertension):</strong> This puts extra pressure on the blood vessels in the kidneys, wearing them out.</li>
+                                <li><strong>Genetic Conditions:</strong> Polycystic Kidney Disease (PKD), which causes cysts to grow on the kidneys, is one example.</li>
+                                <li><strong>Inflammation:</strong> Certain diseases can cause the kidney's filters (the glomeruli) to become inflamed and scarred.</li>
+                            </ul>
+                            <p>When a person reaches End-Stage Renal Disease (ESRD), their kidneys are barely working, or not at all. At this point, they need regular dialysis or a kidney transplant to survive.</p>
                         </div>
                     </InfoCard>
-                    
-                    <InfoCard title="What are the Symptoms to Watch For?">
-                        <p>As kidney function declines, you might start to notice these signs:</p>
+
+                    <InfoCard title="Warning Signs: What to Look For">
+                        <p>Kidney problems can be sneaky, and symptoms might not appear until the condition is advanced. Here are some common signs to watch for:</p>
                         <ul className="list-disc pl-6">
-                            <li><strong>Swelling (soojan):</strong> Puffy swelling in your legs, ankles, feet, or even your face.</li>
-                            <li><strong>Changes in Urination:</strong> Peeing much less than usual, or sometimes, needing to pee more often, especially at night. Your urine might also look foamy or bubbly.</li>
-                            <li><strong>Constant Tiredness:</strong> Feeling exhausted and weak all the time, with no energy.</li>
-                            <li><strong>Feeling Sick:</strong> Nausea, vomiting, and a loss of appetite are common.</li>
-                            <li><strong>Shortness of Breath:</strong> Caused by fluid building up in the lungs.</li>
-                            <li><strong>Brain Fog:</strong> Difficulty concentrating or feeling confused.</li>
+                            <li>Changes in urination: Peeing less than usual, or needing to pee more often, especially at night.</li>
+                            <li>Swelling: Puffy eyes or swelling in your hands, feet, or ankles due to fluid buildup.</li>
+                            <li>Feeling tired: A buildup of waste in your blood can leave you feeling constantly fatigued and weak.</li>
+                            <li>Loss of appetite: You might lose interest in food, which can lead to weight loss.</li>
+                            <li>Nausea and vomiting.</li>
+                            <li>Blood in your urine or foamy-looking urine.</li>
                         </ul>
+                        <p>If you notice these symptoms, it's important to see a doctor.</p>
                     </InfoCard>
-                    
-                    <InfoCard title="How Do Doctors Diagnose Kidney Failure?">
-                        <p>If your doctor suspects a problem, they will use a few simple steps to find out what's going on:</p>
-                         <ul className="list-disc pl-6">
-                            <li><strong>A Health Chat and Physical Check:</strong> Your doctor will ask about your symptoms, your family's health history, and any medications you take. They will also check for physical signs like high blood pressure and swelling.</li>
-                            <li><strong>Simple Blood and Urine Tests:</strong> These are the most important tools. A blood test checks for waste products (like creatinine) to see how well your kidneys are filtering. A urine test looks for things that shouldn't be there, like protein.</li>
-                            <li><strong>An Imaging Scan:</strong> An ultrasound (similar to the one used during pregnancy) creates a picture of your kidneys to check for any blockages or abnormalities.</li>
-                            <li><strong>A Kidney Biopsy (in some cases):</strong> If the cause is unclear, a doctor may need to take a tiny sample of your kidney tissue to examine under a microscope. This is not a routine test.</li>
-                        </ul>
-                    </InfoCard>
-                    
-                    <InfoCard title="What are the Treatment Options?">
-                        <p>Treatment depends on whether the failure is sudden or gradual.</p>
-                        <h3 className="text-xl font-semibold text-foreground">For Sudden (Acute) Failure:</h3>
-                        <p>The main goal is to fix the underlying problem quickly—for example, by giving IV fluids for dehydration or treating the infection that caused it.</p>
-                        <h3 className="text-xl font-semibold text-foreground mt-4">For Gradual (Chronic) Failure:</h3>
-                        <p>Since the damage is often permanent, the focus is on slowing down the disease and managing your health. This includes:</p>
+
+                    <InfoCard title="What Causes Kidney Problems?">
+                        <p>The two biggest causes of kidney failure are by far:</p>
                         <ul className="list-disc pl-6">
-                           <li><strong>Lifestyle Changes:</strong> This is your first line of defence! It includes a special kidney-friendly diet (often low in salt, potassium, and phosphorus), regular exercise, and maintaining a healthy weight.</li>
-                           <li><strong>Medications:</strong> To control blood pressure, manage blood sugar, treat anaemia (low blood count), and balance minerals in your body.</li>
-                           <li><strong>Dialysis:</strong> When your kidneys can no longer clean your blood effectively, a machine has to do the job for them. This life-saving treatment is called dialysis.</li>
-                           <li><strong>Kidney Transplant:</strong> For many patients, the best long-term option is a kidney transplant, where a healthy kidney from a donor is surgically placed in your body to take over the work of your failed kidneys.</li>
+                            <li><strong>Diabetes:</strong> The #1 cause.</li>
+                            <li><strong>High Blood Pressure:</strong> The #2 cause.</li>
+                        </ul>
+                        <p>Other factors include:</p>
+                        <ul className="list-disc pl-6">
+                            <li>Autoimmune diseases like lupus.</li>
+                            <li>Genetic diseases, such as polycystic kidney disease.</li>
+                            <li>Issues in the urinary tract, like recurring kidney stones.</li>
+                            <li>Smoking tobacco.</li>
                         </ul>
                     </InfoCard>
 
-                    <InfoCard title="How to Protect Your Kidneys and Reduce Your Risk">
-                        <p>Prevention is always better than cure. You can take these steps to keep your kidneys healthy:</p>
+                    <InfoCard title="How Do Doctors Find Out What's Wrong?">
+                        <p>To diagnose kidney problems, your doctor will use a few key methods:</p>
                         <ul className="list-disc pl-6">
-                           <li>Control Blood Pressure and Blood Sugar: This is the most important step if you have hypertension or diabetes.</li>
-                           <li>Eat a Healthy Diet: Focus on fresh, home-cooked food. Cut back on salt and processed/packaged foods.</li>
-                           <li>Stay Hydrated: Drink enough water throughout the day.</li>
-                           <li>Maintain a Healthy Weight.</li>
-                           <li>Don't Smoke.</li>
-                           <li>Be Careful with Painkillers: Avoid overusing common pain relievers.</li>
-                           <li>Get Yearly Check-ups: If you have risk factors, get your kidney function checked annually.</li>
+                            <li><strong>A Chat and a Check-up:</strong> They'll ask about your symptoms, family history, and any medications you take, followed by a physical exam to look for signs like swelling or high blood pressure.</li>
+                            <li><strong>Blood Tests:</strong> These are very important. They check for waste products like creatinine and urea in your blood. A key result is the estimated Glomerular Filtration Rate (eGFR), which is a score that shows how well your kidneys are filtering.</li>
+                            <li><strong>Urine Tests:</strong> Checking your pee for things that shouldn't be there, like protein or blood, can signal kidney damage.</li>
+                            <li><strong>Imaging:</strong> An ultrasound, CT scan, or MRI can give your doctor a picture of your kidneys to check for blockages or other structural problems.</li>
+                            <li><strong>Kidney Biopsy:</strong> In some cases, a doctor may need to take a tiny sample of your kidney tissue to examine under a microscope to find the exact cause of the problem.</li>
                         </ul>
                     </InfoCard>
 
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-2xl text-primary">Frequently Asked Questions (FAQs)</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                             <Accordion type="single" collapsible className="w-full">
-                                <AccordionItem value="item-1">
-                                    <AccordionTrigger>Can kidney failure be reversed?</AccordionTrigger>
-                                    <AccordionContent>
-                                    Sudden (acute) kidney failure can often be reversed if the cause is treated quickly. However, damage from gradual (chronic) kidney failure is usually permanent. Treatment can slow down the disease and help you feel better, but it cannot cure it.
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="item-2">
-                                    <AccordionTrigger>Is kidney failure always painful?</AccordionTrigger>
-                                    <AccordionContent>
-                                    Not always. The kidneys themselves don't often hurt. The discomfort usually comes from complications, like swelling or other body issues.
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="item-3">
-                                    <AccordionTrigger>Can dehydration cause kidney failure?</AccordionTrigger>
-                                    <AccordionContent>
-                                    Yes, severe and prolonged dehydration can cause sudden (acute) kidney failure. It's important to stay well-hydrated.
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                        </CardContent>
-                    </Card>
+                    <InfoCard title="Getting Better: Treatment Options">
+                        <p>Treatment depends on whether the kidney problem is acute (sudden) or chronic (long-term).</p>
+                        <ul className="list-disc pl-6">
+                            <li><strong>For Acute Kidney Injury (AKI):</strong> The main goal is to treat the underlying cause. This could mean giving IV fluids for dehydration, stopping a harmful medication, or removing a blockage. Sometimes, temporary dialysis is needed to clean the blood while the kidneys recover.</li>
+                            <li><strong>For Chronic Kidney Disease (CKD):</strong> Since CKD is usually not reversible, the focus is on slowing it down and managing symptoms. This includes:
+                                <ul className="list-disc pl-6">
+                                    <li>Lifestyle Changes: A healthy diet low in salt, phosphorus, and potassium is key. Regular exercise and quitting smoking also help.</li>
+                                    <li>Medications: To control blood pressure, manage anemia (low red blood cells), and balance minerals in your body.</li>
+                                    <li>Dialysis: When kidney function gets very low, dialysis becomes necessary. This is a treatment that cleans your blood for you, either with a machine (hemodialysis) or using the lining of your abdomen (peritoneal dialysis).</li>
+                                    <li>Kidney Transplant: For eligible patients, receiving a healthy kidney from a donor is the best long-term solution, offering a chance at a more normal life.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </InfoCard>
+
+                    <InfoCard title="Can I Prevent Kidney Problems?">
+                        <p>Yes! You can take steps to reduce your risk of developing kidney disease:</p>
+                        <ul className="list-disc pl-6">
+                            <li>Control Blood Pressure: Keep it in a healthy range with diet, exercise, and medication if needed.</li>
+                            <li>Manage Blood Sugar: If you have diabetes, tight control of your blood sugar is the best way to protect your kidneys.</li>
+                            <li>Eat a Healthy Diet: Focus on fruits, vegetables, and whole grains. Cut back on salt and processed foods.</li>
+                            <li>Stay Hydrated: Drink enough water throughout the day.</li>
+                            <li>Exercise Regularly: Aim for at least 30 minutes of activity on most days.</li>
+                            <li>Be Careful with Medications: Avoid overusing over-the-counter pain relievers (NSAIDs), as they can harm kidneys over time.</li>
+                            <li>Maintain a Healthy Weight.</li>
+                        </ul>
+                        <p>If you have risk factors like diabetes, high blood pressure, or a family history of kidney disease, talk to your doctor about getting regular screening tests. Early detection is the best way to keep your kidneys healthy for years to come.</p>
+                    </InfoCard>
                 </div>
             </main>
         </div>
     );
 };
 
-export default KidneyFailureExplainedPage;
+export default KidneysExplainedPage;
