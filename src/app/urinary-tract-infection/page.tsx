@@ -115,31 +115,6 @@ const UrinaryTractInfectionPage = () => {
                             <p>It is imperative to consult a healthcare provider if symptoms of a UTI are present. Immediate medical evaluation is required for severe symptoms, such as high fever, chills, vomiting, or significant back pain, as these may indicate a kidney infection. Individuals experiencing recurrent UTIs should undergo a thorough medical investigation to identify and manage any underlying predisposing factors.</p>
                         </section>
 
-                        <section id="download-summary" className="mt-12">
-                             <Card className="bg-primary/10 border-primary/20">
-                                <CardHeader>
-                                    <CardTitle className="text-2xl text-primary">Download Patient Summary</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-foreground/80 mb-6">Download a summary of this guide with key takeaways for patients. Available in English and Hindi.</p>
-                                    <div className="flex flex-col sm:flex-row gap-4">
-                                        <Button asChild>
-                                            <a href="/UTI_Patient_Summary_English.pdf" download>
-                                                <Download className="mr-2 h-4 w-4" />
-                                                Download in English
-                                            </a>
-                                        </Button>
-                                        <Button asChild>
-                                            <a href="/UTI_Patient_Summary_Hindi.pdf" download>
-                                                <Download className="mr-2 h-4 w-4" />
-                                                Download in Hindi
-                                            </a>
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </section>
-
                     </article>
                 </div>
             </main>
@@ -148,5 +123,3 @@ const UrinaryTractInfectionPage = () => {
 };
 
 export default UrinaryTractInfectionPage;
-
-    
