@@ -1,68 +1,84 @@
-
 'use client';
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Microscope, Stethoscope, Pill, ShieldQuestion, Activity } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-const GlomerulonephritisSummaryHindiPage = () => {
+const SectionCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
+    <Link href={href} target="_blank" rel="noopener noreferrer" className="block">
+        <Card className="h-full hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
+            <CardHeader className="flex flex-row items-center gap-4">
+                {icon}
+                <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+                <p className="text-foreground/80">{description}</p>
+            </CardContent>
+            <CardContent>
+                <div className="text-primary font-semibold flex items-center">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+            </CardContent>
+        </Card>
+    </Link>
+);
 
-    const handlePrint = () => {
-        window.print();
-    };
-
+const GlomerulonephritisPage = () => {
     return (
-        <div className="bg-background text-foreground flex-1" lang="hi">
+        <div className="bg-background text-foreground flex-1">
             <AppHeader />
             <main className="container mx-auto px-4 py-12 md:py-20">
-                <div className="max-w-2xl mx-auto">
-                     <div className="mb-8 flex justify-between items-center print:hidden">
-                         <Button asChild variant="outline">
-                            <Link href="/glomerulonephritis">
-                                <ArrowLeft className="mr-2 h-4 w-4" />
-                                वापस जाएं
-                            </Link>
-                        </Button>
-                        <Button onClick={handlePrint} variant="outline">पीडीएफ के रूप में सहेजें</Button>
+                <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
+                    
+                    <header className="mb-12">
+                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">A Guide to Glomerulonephritis (GN)</h1>
+                         <p className="text-lg text-foreground/80">Glomerulonephritis (GN) refers to a group of diseases that injure the part of the kidney that filters blood. When these filters (glomeruli) are damaged, your kidneys can't function properly. This guide breaks down this complex topic into key areas.</p>
+                    </header>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <SectionCard 
+                            icon={<Microscope className="h-8 w-8 text-primary" />} 
+                            title="Introduction to Glomerulonephritis"
+                            description="Understand what Glomerulonephritis is and the crucial role of the glomeruli."
+                            href="/glomerulonephritis/introduction"
+                        />
+                        <SectionCard 
+                            icon={<Activity className="h-8 w-8 text-primary" />} 
+                            title="Clinical Presentation"
+                            description="Learn how GN appears, including the signs of Nephrotic and Nephritic syndromes."
+                            href="/glomerulonephritis/clinical-presentation"
+                        />
+                        <SectionCard 
+                            icon={<ShieldQuestion className="h-8 w-8 text-primary" />} 
+                            title="Understanding the Causes"
+                            description="Explore the different biological pathways and immune system responses that cause GN."
+                            href="/glomerulonephritis/causes"
+                        />
+                        <SectionCard 
+                            icon={<Stethoscope className="h-8 w-8 text-primary" />} 
+                            title="The Diagnostic Process"
+                            description="Discover how doctors diagnose GN, from initial evaluation to the kidney biopsy."
+                            href="/glomerulonephritis/diagnosis"
+                        />
+                        <SectionCard 
+                            icon={<Pill className="h-8 w-8 text-primary" />} 
+                            title="Management Approach"
+                            description="Learn about the general approach to managing GN, including supportive care and treatment."
+                            href="/glomerulonephritis/management"
+                        />
                     </div>
-
-                    <Card className="print:shadow-none print:border-none">
-                        <CardHeader>
-                            <CardTitle className="text-3xl text-primary text-center">ग्लोमेरुलोनेफ्राइटिस (जीएन) त्वरित गाइड</CardTitle>
-                        </CardHeader>
-                        <CardContent className="prose prose-lg max-w-none">
-                            <section className="mb-6">
-                                <h3 className="font-bold text-primary">ग्लोमेरुलोनेफ्राइटिस क्या है?</h3>
-                                <p>ग्लोमेरुलोनेफ्राइटिस (जीएन) उन बीमारियों का एक समूह है जो किडनी के फिल्टर (ग्लोमेरुली) में सूजन और क्षति का कारण बनती हैं। इस क्षति के कारण किडनी से प्रोटीन और रक्त मूत्र में लीक हो सकते हैं।</p>
-                            </section>
-                            
-                            <section className="mb-6">
-                                <h3 className="font-bold text-primary">इसके दो मुख्य प्रकार</h3>
-                                <ul>
-                                    <li><strong>नेफ्रोटिक सिंड्रोम:</strong> इसका मुख्य लक्षण मूत्र में बड़ी मात्रा में प्रोटीन का आना है, जिससे शरीर में सूजन (एडिमा) हो जाती है।</li>
-                                    <li><strong>नेफ्राइटिक सिंड्रोम:</strong> इसका मुख्य लक्षण मूत्र में रक्त का आना है, जिसके साथ अक्सर उच्च रक्तचाप और किडनी की कार्यक्षमता में कमी होती है।</li>
-                                </ul>
-                            </section>
-
-                            <section className="mb-6 bg-destructive/10 p-4 rounded-lg">
-                                <h3 className="font-bold flex items-center text-destructive"><AlertTriangle className="inline-block h-6 w-6 mr-2" />यह गंभीर क्यों है?</h3>
-                                <p>कुछ प्रकार के जीएन बहुत तेजी से बढ़ सकते हैं (रैपिडली प्रोग्रेसिव जीएन) और अगर तुरंत इलाज न किया जाए तो स्थायी किडनी विफलता का कारण बन सकते हैं। यह एक मेडिकल इमरजेंसी है।</p>
-                            </section>
-
-                            <section>
-                                <h3 className="font-bold text-primary">निदान और उपचार</h3>
-                                <p>निदान के लिए अक्सर रक्त जांच, मूत्र जांच, और एक <strong>किडनी बायोप्सी</strong> की आवश्यकता होती है ताकि जीएन के सटीक प्रकार की पहचान की जा सके। उपचार कारण पर निर्भर करता है लेकिन इसमें अक्सर रक्तचाप को नियंत्रित करने और प्रतिरक्षा प्रणाली को दबाने के लिए दवाएं शामिल होती हैं।</p>
-                            </section>
-                            
-                            <p className="text-sm text-muted-foreground mt-8 text-center">यह एक सारांश है। ग्लोमेरुलोनेफ्राइटिस एक जटिल स्थिति है जिसके लिए किडनी विशेषज्ञ (नेफ्रोलॉजिस्ट) से देखभाल की आवश्यकता होती है। पूरी जानकारी के लिए, कृपया पूरी गाइड पढ़ें।</p>
-                        </CardContent>
-                    </Card>
                 </div>
             </main>
         </div>
     );
 };
 
-export default GlomerulonephritisSummaryHindiPage;
+export default GlomerulonephritisPage;

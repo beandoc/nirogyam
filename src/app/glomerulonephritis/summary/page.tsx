@@ -1,68 +1,84 @@
-
 'use client';
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Microscope, Stethoscope, Pill, ShieldQuestion, Activity } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-const GlomerulonephritisSummaryPage = () => {
-    
-    const handlePrint = () => {
-        window.print();
-    };
+const SectionCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
+    <Link href={href} target="_blank" rel="noopener noreferrer" className="block">
+        <Card className="h-full hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
+            <CardHeader className="flex flex-row items-center gap-4">
+                {icon}
+                <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+                <p className="text-foreground/80">{description}</p>
+            </CardContent>
+            <CardContent>
+                <div className="text-primary font-semibold flex items-center">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+            </CardContent>
+        </Card>
+    </Link>
+);
 
+const GlomerulonephritisPage = () => {
     return (
         <div className="bg-background text-foreground flex-1">
             <AppHeader />
             <main className="container mx-auto px-4 py-12 md:py-20">
-                <div className="max-w-2xl mx-auto">
-                    <div className="mb-8 flex justify-between items-center print:hidden">
-                         <Button asChild variant="outline">
-                            <Link href="/glomerulonephritis">
-                                <ArrowLeft className="mr-2 h-4 w-4" />
-                                Back to Full Guide
-                            </Link>
-                        </Button>
-                        <Button onClick={handlePrint} variant="outline">Save as PDF</Button>
+                <div className="max-w-4xl mx-auto">
+                    <Button asChild variant="outline" className="mb-8">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
+                    
+                    <header className="mb-12">
+                         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">A Guide to Glomerulonephritis (GN)</h1>
+                         <p className="text-lg text-foreground/80">Glomerulonephritis (GN) refers to a group of diseases that injure the part of the kidney that filters blood. When these filters (glomeruli) are damaged, your kidneys can't function properly. This guide breaks down this complex topic into key areas.</p>
+                    </header>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <SectionCard 
+                            icon={<Microscope className="h-8 w-8 text-primary" />} 
+                            title="Introduction to Glomerulonephritis"
+                            description="Understand what Glomerulonephritis is and the crucial role of the glomeruli."
+                            href="/glomerulonephritis/introduction"
+                        />
+                        <SectionCard 
+                            icon={<Activity className="h-8 w-8 text-primary" />} 
+                            title="Clinical Presentation"
+                            description="Learn how GN appears, including the signs of Nephrotic and Nephritic syndromes."
+                            href="/glomerulonephritis/clinical-presentation"
+                        />
+                        <SectionCard 
+                            icon={<ShieldQuestion className="h-8 w-8 text-primary" />} 
+                            title="Understanding the Causes"
+                            description="Explore the different biological pathways and immune system responses that cause GN."
+                            href="/glomerulonephritis/causes"
+                        />
+                        <SectionCard 
+                            icon={<Stethoscope className="h-8 w-8 text-primary" />} 
+                            title="The Diagnostic Process"
+                            description="Discover how doctors diagnose GN, from initial evaluation to the kidney biopsy."
+                            href="/glomerulonephritis/diagnosis"
+                        />
+                        <SectionCard 
+                            icon={<Pill className="h-8 w-8 text-primary" />} 
+                            title="Management Approach"
+                            description="Learn about the general approach to managing GN, including supportive care and treatment."
+                            href="/glomerulonephritis/management"
+                        />
                     </div>
-
-                    <Card className="print:shadow-none print:border-none">
-                        <CardHeader>
-                            <CardTitle className="text-3xl text-primary text-center">Glomerulonephritis (GN) Quick Guide</CardTitle>
-                        </CardHeader>
-                        <CardContent className="prose prose-lg max-w-none">
-                            <section>
-                                <h3 className="font-bold text-primary">What is Glomerulonephritis?</h3>
-                                <p>Glomerulonephritis (GN) is a group of diseases that cause inflammation and damage to the kidney's filters (glomeruli). This damage can cause the kidneys to leak protein and blood into the urine.</p>
-                            </section>
-                            
-                            <section>
-                                <h3 className="font-bold text-primary">Two Main Ways it Appears</h3>
-                                <ul>
-                                    <li><strong>Nephrotic Syndrome:</strong> The main sign is a large amount of protein in the urine, leading to swelling (edema) in the body.</li>
-                                    <li><strong>Nephritic Syndrome:</strong> The main sign is blood in the urine, often accompanied by high blood pressure and reduced kidney function.</li>
-                                </ul>
-                            </section>
-
-                            <section>
-                                <h3 className="font-bold flex items-center text-destructive"><AlertTriangle className="inline-block h-6 w-6 mr-2" />Why It's Serious</h3>
-                                <p>Some forms of GN can progress very quickly (Rapidly Progressive GN) and lead to permanent kidney failure if not treated immediately. It is a medical emergency.</p>
-                            </section>
-
-                             <section>
-                                <h3 className="font-bold text-primary">Diagnosis and Treatment</h3>
-                                <p>Diagnosis often requires blood tests, urine tests, and a <strong>kidney biopsy</strong> to identify the exact type of GN. Treatment depends on the cause but often includes medications to control blood pressure and suppress the immune system.</p>
-                            </section>
-                            
-                            <p className="text-sm text-muted-foreground mt-8">This is a summary. Glomerulonephritis is a complex condition that requires care from a kidney specialist (nephrologist). For full details, please refer to the complete guide.</p>
-                        </CardContent>
-                    </Card>
                 </div>
             </main>
         </div>
     );
 };
 
-export default GlomerulonephritisSummaryPage;
+export default GlomerulonephritisPage;
