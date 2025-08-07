@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, {useState, useEffect } from 'react';
@@ -678,6 +677,14 @@ export default function NirogyamPage() {
             aiHint: "packaged food labels",
             description: "Discover how even 'healthy' packaged foods can be loaded with sodium. Learn to read labels and make smarter choices to protect your heart and blood pressure.",
             href: "/sodium-explained"
+        },
+        {
+            title: "Your Thali, Your Health: How Food Fights Chronic Disease",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "healthy thali",
+            description: "Good nutrition is a powerful tool that can help both prevent and manage chronic diseases. Learn how simple food choices can help you live a healthier, stronger life.",
+            href: "/insights/your-thali-your-health"
         }
     ];
 
