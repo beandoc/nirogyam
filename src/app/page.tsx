@@ -524,6 +524,14 @@ export default function NirogyamPage() {
             aiHint: "clock reversal",
             description: "If you or a loved one has been diagnosed with kidney disease, one of the first questions on your mind is likely: \"Can this be fixed? Can my kidneys heal?\" The answer depends on how early the problem is caught.",
             href: "/insights/kidney-damage-reversal"
+        },
+        {
+            title: "Are You Unknowingly Harming Your Kidneys? 10 Habits to Change Today",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "healthy habits list",
+            description: "Most people don't realize that common routines can silently cause damage over time. Let's uncover 10 of these 'silent kidney killers' and learn how to protect these precious organs.",
+            href: "/insights/are-you-unknowingly-harming-your-kidneys"
         }
     ];
 
