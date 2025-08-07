@@ -590,7 +590,7 @@ export default function NirogyamPage() {
             href: "/insights/water-myths-busted"
         },
         {
-            title: "High Uric Acid: A Guide to Gout and Kidney Health",
+            title: "That Pain in Your Joint? It Could Be High Uric Acid",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
             aiHint: "painful joint",
@@ -598,7 +598,7 @@ export default function NirogyamPage() {
             href: "/insights/high-uric-acid"
         },
         {
-            title: "Inherited Kidney Disease: A Family Guide",
+            title: "When Kidney Problems Run in the Family: A Guide to Inherited Kidney Disease",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
             aiHint: "family tree",
@@ -606,12 +606,20 @@ export default function NirogyamPage() {
             href: "/insights/inherited-kidney-disease"
         },
         {
-            title: "Another UTI? Why They Keep Happening and What to Do",
+            title: "Another UTI? Understanding Why They Keep Happening and What to Do",
             minutesToRead: 4,
             image: "https://placehold.co/600x400.png",
             aiHint: "person discomfort bathroom",
             description: "If you've found yourself dealing with recurrent UTIs, it's often a sign of an underlying issue. Explore why this happens and what you can do to break the cycle.",
             href: "/insights/recurrent-utis"
+        },
+        {
+            title: "The Hidden Danger in Your Blood: Understanding High Phosphorus",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood test tube",
+            description: "High phosphorus is a common and serious problem for people with kidney disease. Learn why it happens and what you can do about it.",
+            href: "/insights/high-phosphorus-explained"
         }
     ];
 
