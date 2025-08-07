@@ -481,7 +481,7 @@ export default function NirogyamPage() {
         {
             title: "Hitting the Brakes on CKD: A Modern Guide",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/slowing-down-ckd.png",
             aiHint: "car brake pedal",
             description: "Explore the modern, holistic approach to protecting your kidneys and living a healthier life with CKD, from lifestyle changes to new medical breakthroughs.",
             href: "/insights/slowing-down-ckd"
@@ -489,7 +489,7 @@ export default function NirogyamPage() {
         {
             title: "Protein Powders, Paneer, and Your Kidneys: Is a High-Protein Diet Safe?",
             minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
+            image: "/protein-diet-and-kidneys.png",
             aiHint: "protein powder paneer",
             description: "A high-protein diet is popular, but is it safe for your kidneys? This guide busts common myths and provides smart tips for healthy protein consumption.",
             href: "/insights/protein-diet-and-kidneys"
@@ -497,7 +497,7 @@ export default function NirogyamPage() {
         {
             title: "Hypertension and Kidney Disease: A Dietary Guide",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/hypertension-and-kidney-disease.png",
             aiHint: "blood pressure healthy food",
             description: "Hypertension and kidney diseases are closely linked. This blog will explore essential dietary strategies to support kidney health while maintaining good control of hypertension.",
             href: "/insights/hypertension-and-kidney-disease"
