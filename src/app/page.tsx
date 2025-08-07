@@ -661,6 +661,14 @@ export default function NirogyamPage() {
             aiHint: "person laughing",
             description: "Urinary incontinence is a common and treatable condition. This guide explains the different types, causes, and effective ways to regain control and confidence.",
             href: "/insights/leaking-when-you-laugh"
+        },
+        {
+            title: "Your Kidney Health Report Card: A Simple Guide to Kidney Function Tests",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "lab report",
+            description: "Learn what the different values on your Kidney Function Test (KFT) mean, from creatinine and eGFR to urine protein, and understand your kidney health better.",
+            href: "/insights/kidney-function-tests-explained"
         }
     ];
 
