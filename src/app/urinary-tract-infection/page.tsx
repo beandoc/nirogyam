@@ -115,6 +115,25 @@ const UrinaryTractInfectionPage = () => {
                             <p>It is imperative to consult a healthcare provider if symptoms of a UTI are present. Immediate medical evaluation is required for severe symptoms, such as high fever, chills, vomiting, or significant back pain, as these may indicate a kidney infection. Individuals experiencing recurrent UTIs should undergo a thorough medical investigation to identify and manage any underlying predisposing factors.</p>
                         </section>
 
+                         <section id="resources" className="mt-12 not-prose">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Resources</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex flex-col sm:flex-row gap-4">
+                                    <Button asChild className="w-full">
+                                        <Link href="/urinary-tract-infection/summary">
+                                            <Download className="mr-2 h-4 w-4" /> View English Summary
+                                        </Link>
+                                    </Button>
+                                    <Button asChild className="w-full">
+                                        <Link href="/urinary-tract-infection/summary-hindi">
+                                            <Download className="mr-2 h-4 w-4" /> View Hindi Summary
+                                        </Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </section>
                     </article>
                 </div>
             </main>
