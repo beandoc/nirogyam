@@ -42,7 +42,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AppHeader } from '@/components/AppHeader';
+import { AppHeader } from '@/components/ui/AppHeader';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -371,7 +371,7 @@ export default function NirogyamPage() {
         {
             title: "Hypertension and Kidney Disease: A Dietary Guide",
             minutesToRead: 5,
-            image: "/hypertension-and-kidney-disease.png",
+            image: "/hypertensionandkidneydisease.png",
             aiHint: "blood pressure healthy food",
             description: "Hypertension and kidney diseases are closely linked. This blog will explore essential dietary strategies to support kidney health while maintaining good control of hypertension.",
             href: "/insights/hypertension-and-kidney-disease"
@@ -379,7 +379,7 @@ export default function NirogyamPage() {
         {
             title: "A Food Guide for a Healthy Urinary System",
             minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
+            image: "/foodguideforurinarysystem.png",
             aiHint: "healthy food plate",
             description: "What you eat can either help your body's natural filters work smoothly or cause them stress. Let's explore a simple guide to eating right for a healthy urinary system.",
             href: "/insights/food-guide-for-urinary-health"
@@ -411,7 +411,7 @@ export default function NirogyamPage() {
         {
             title: "High BP's Secret Victim: Are Your Kidneys Paying the Price?",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/highbpsecretvictim.png",
             aiHint: "blood pressure kidney",
             description: "High blood pressure is one of the top causes of kidney failure. The scariest part is that you might not feel a single thing until serious damage is already done. Learn how to protect these vital organs.",
             href: "/insights/high-bp-secret-victim"
@@ -573,9 +573,14 @@ export default function NirogyamPage() {
                         <div>
                             <h2 className="text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-4 tracking-tight">Empowering Your Kidney Health Journey</h2>
                             <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl">A comprehensive, compassionate resource for understanding kidney health, managing kidney disease, and finding the support you need.</p>
-                            <Button size="lg" asChild>
-                                <a href="#assess-kidney">Assess Your Risk Now</a>
-                            </Button>
+                             <div className="flex flex-wrap gap-4">
+                                <Button size="lg" asChild>
+                                    <a href="#assess-kidney">Assess Your Risk Now</a>
+                                </Button>
+                                <Button size="lg" variant="outline" asChild>
+                                    <Link href="/kidney-health">Explore Topics</Link>
+                                </Button>
+                            </div>
                         </div>
                         <div>
                             <Image src="/herosection_image.png" alt="Illustration of doctors and a patient discussing kidney health" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="doctors patient kidney" />
@@ -779,7 +784,7 @@ export default function NirogyamPage() {
                                     </div>
                                 ) : (
                                     <div className="w-full">
-                                        <Image src="/calculator_image.png" alt="Illustration of a calculator and medical icons" width={400} height={300} className="rounded-lg mx-auto" data-ai-hint="calculator medical" />
+                                        <Image src="/egfrcalculator.png" alt="Illustration of a calculator and medical icons" width={400} height={300} className="rounded-lg mx-auto" data-ai-hint="calculator medical" />
                                         <p className="mt-4 text-muted-foreground">Enter your lab values to get your estimated GFR result.</p>
                                     </div>
                                 )}
@@ -964,19 +969,7 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="about" className="py-20 bg-background">
-                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                        <div className="text-center md:text-left">
-                            <h3 className="text-3xl font-bold text-primary mb-6">About Nirogyam</h3>
-                            <p className="text-lg text-foreground/80 max-w-xl">Nirogyam is dedicated to providing clear, reliable, and accessible information on kidney health. We believe that informed patients and caregivers are empowered to make the best decisions for their health journey. Our content is curated by medical professionals and patient advocates to ensure accuracy and relevance.</p>
-                        </div>
-                        <div>
-                        <Image src="/nirogyamlogo.png" alt="Nirogyam company logo" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="company logo" />
-                        </div>
-                    </div>
-                </section>
-
-                <section id="contact" className="py-20 bg-card">
+                <section id="contact" className="py-20 bg-background">
                     <div className="container mx-auto px-4 text-center">
                         <div className="max-w-2xl mx-auto">
                             <Card className="shadow-xl border-primary/20">
@@ -1044,5 +1037,3 @@ export default function NirogyamPage() {
         </div>
     );
 }
-
-    
