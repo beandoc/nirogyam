@@ -486,6 +486,14 @@ export default function NirogyamPage() {
             href: "/insights/slowing-down-ckd"
         },
         {
+            title: "Protein Powders, Paneer, and Your Kidneys: Is a High-Protein Diet Safe?",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "protein powder paneer",
+            description: "A high-protein diet is popular, but is it safe for your kidneys? This guide busts common myths and provides smart tips for healthy protein consumption.",
+            href: "/insights/protein-diet-and-kidneys"
+        },
+        {
             title: "Hypertension and Kidney Disease: A Dietary Guide",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
@@ -512,7 +520,7 @@ export default function NirogyamPage() {
         {
             title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/kidney_model_with_doctor.png",
             aiHint: "kidney model doctor",
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
