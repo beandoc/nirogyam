@@ -13,14 +13,14 @@ const UtiSummaryPage = () => {
             <AppHeader />
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-2xl mx-auto">
-                    <div className="mb-8 flex justify-between items-center">
+                    <div className="mb-8 flex justify-between items-center print:hidden">
                          <Button asChild variant="outline">
                             <Link href="/urinary-tract-infection">
                                 <ArrowLeft className="mr-2 h-4 w-4" />
                                 Back to Full Guide
                             </Link>
                         </Button>
-                        <Button onClick={() => window.print()} variant="outline">Print Summary</Button>
+                        <Button onClick={() => window.print()} variant="outline">Save as PDF</Button>
                     </div>
 
                     <Card className="print:shadow-none print:border-none">

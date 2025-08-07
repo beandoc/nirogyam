@@ -20,7 +20,7 @@ const UtiSummaryHindiPage = () => {
                                 वापस जाएं
                             </Link>
                         </Button>
-                        <Button onClick={() => window.print()} variant="default">प्रिंट करें</Button>
+                        <Button onClick={() => window.print()} variant="outline">पीडीएफ के रूप में सहेजें</Button>
                     </div>
 
                     <Card className="print:shadow-none print:border-none">
