@@ -516,6 +516,14 @@ export default function NirogyamPage() {
             aiHint: "weight scale blood pressure",
             description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
             href: "/insights/managing-weight-and-bp"
+        },
+        {
+            title: "Kidney Damage: Is It Possible to Turn Back the Clock?",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "clock reversal",
+            description: "If you or a loved one has been diagnosed with kidney disease, one of the first questions on your mind is likely: \"Can this be fixed? Can my kidneys heal?\" The answer depends on how early the problem is caught.",
+            href: "/insights/kidney-damage-reversal"
         }
     ];
 
