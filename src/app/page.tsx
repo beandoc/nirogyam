@@ -435,7 +435,7 @@ export default function NirogyamPage() {
         {
             title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
             minutesToRead: 5,
-            image: "/tacklingthetwinthreat.png",
+            image: "/tacklingthetwinthreats.png",
             aiHint: "weight scale blood pressure",
             description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
             href: "/insights/managing-weight-and-bp"
@@ -459,7 +459,7 @@ export default function NirogyamPage() {
         {
             title: "Kidney Stones vs. Kidney Failure: They're Not the Same!",
             minutesToRead: 4,
-            image: "/kidneystonesvskidneyfaliure.png",
+            image: "/kidneystonesvsfailure.png",
             aiHint: "pain comparison",
             description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
             href: "/insights/kidney-stones-vs-failure"
@@ -467,7 +467,7 @@ export default function NirogyamPage() {
         {
             title: "Myths Busted: How Much Water Do You Really Need?",
             minutesToRead: 4,
-            image: "/howmuchwaterweneed.png",
+            image: "/watermythsbusted.png",
             aiHint: "glass of water",
             description: "We're always told to 'drink more water' to keep our kidneys healthy. But how much is enough? Can you drink too much? Let's bust some common myths about hydration.",
             href: "/insights/water-myths-busted"
@@ -555,7 +555,7 @@ export default function NirogyamPage() {
         {
             title: "Your Thali, Your Health: How Food Fights Chronic Disease",
             minutesToRead: 5,
-            image: "/your-thali-your-health.png",
+            image: "/yourthaliyourhealth.png",
             aiHint: "healthy thali",
             description: "Good nutrition is a powerful tool that can help both prevent and manage chronic diseases. Learn how simple food choices can help you live a healthier, stronger life.",
             href: "/insights/your-thali-your-health"
