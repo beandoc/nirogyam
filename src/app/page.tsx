@@ -637,6 +637,14 @@ export default function NirogyamPage() {
             aiHint: "blood test kidney",
             description: "A simple blood test for creatinine can tell you a huge amount about how well your kidneys are working. Learn why this number is so important for early detection.",
             href: "/insights/creatinine-explained"
+        },
+        {
+            title: "Seeing Red? Why You Should Never Ignore Blood in Your Urine",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "urine test red",
+            description: "Blood in the urine, or hematuria, is a signal from your body that something isn't right. Learn about the common causes, from minor issues to more serious conditions.",
+            href: "/insights/seeing-red"
         }
     ];
 
