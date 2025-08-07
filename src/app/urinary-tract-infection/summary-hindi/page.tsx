@@ -8,6 +8,11 @@ import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const UtiSummaryHindiPage = () => {
+
+    const handlePrint = () => {
+        window.print();
+    };
+
     return (
         <div className="bg-background text-foreground flex-1" lang="hi">
             <AppHeader />
@@ -20,7 +25,7 @@ const UtiSummaryHindiPage = () => {
                                 वापस जाएं
                             </Link>
                         </Button>
-                        <Button onClick={() => window.print()} variant="outline">पीडीएफ के रूप में सहेजें</Button>
+                        <Button onClick={handlePrint} variant="outline">पीडीएफ के रूप में सहेजें</Button>
                     </div>
 
                     <Card className="print:shadow-none print:border-none">
