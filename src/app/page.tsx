@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, {useState, useEffect } from 'react';
@@ -717,7 +718,7 @@ export default function NirogyamPage() {
                                 Whether you're newly diagnosed, managing a chronic condition, or supporting a loved one, we have resources to guide you.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><BookOpen className="h-10 w-10 text-primary"/></div>
@@ -754,6 +755,19 @@ export default function NirogyamPage() {
                                 <CardFooter>
                                      <Button asChild className="w-full">
                                         <Link href="/kidney-transplant">Explore Transplant</Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
+                                <CardHeader className="items-center">
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Shield className="h-10 w-10 text-primary"/></div>
+                                    <CardTitle className="text-primary text-2xl">Glomerulonephritis</CardTitle>
+                                    <CardDescription>Learn about this group of diseases that injure the part of the kidney that filters blood.</CardDescription>
+                                </CardHeader>
+                                <CardContent className="flex-grow" />
+                                <CardFooter>
+                                     <Button asChild className="w-full">
+                                        <Link href="/glomerulonephritis">Learn More</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
