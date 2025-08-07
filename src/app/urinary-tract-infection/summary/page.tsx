@@ -29,12 +29,12 @@ const UtiSummaryPage = () => {
                         </CardHeader>
                         <CardContent className="prose prose-lg max-w-none">
                             <section>
-                                <h3>What is a UTI?</h3>
+                                <h3 className="font-bold text-primary">What is a UTI?</h3>
                                 <p>A Urinary Tract Infection (UTI) is an infection in your urinary system, usually caused by bacteria. It can affect your bladder or, more seriously, your kidneys.</p>
                             </section>
                             
                             <section>
-                                <h3>Common Symptoms</h3>
+                                <h3 className="font-bold text-primary">Common Symptoms</h3>
                                 <ul>
                                     <li>Pain or burning when you pee</li>
                                     <li>Needing to pee often and urgently</li>
@@ -44,7 +44,7 @@ const UtiSummaryPage = () => {
                             </section>
 
                             <section>
-                                <h3><AlertTriangle className="inline-block h-6 w-6 text-destructive mr-2" />When to See a Doctor Immediately</h3>
+                                <h3 className="font-bold flex items-center text-destructive"><AlertTriangle className="inline-block h-6 w-6 mr-2" />When to See a Doctor Immediately</h3>
                                 <p>If you have the symptoms above PLUS any of the following, it could be a kidney infection:</p>
                                 <ul>
                                     <li>Fever and chills</li>
@@ -54,7 +54,7 @@ const UtiSummaryPage = () => {
                             </section>
 
                             <section>
-                                <h3>Key Prevention Tips</h3>
+                                <h3 className="font-bold text-primary">Key Prevention Tips</h3>
                                 <ul>
                                     <li><strong>Drink Plenty of Water:</strong> Helps flush out bacteria.</li>
                                     <li><strong>Wipe Front to Back:</strong> Prevents bacteria spreading.</li>
@@ -64,7 +64,7 @@ const UtiSummaryPage = () => {
                             </section>
 
                             <section>
-                                <h3>Treatment</h3>
+                                <h3 className="font-bold text-primary">Treatment</h3>
                                 <p>UTIs are treated with antibiotics prescribed by a doctor. It is very important to finish the entire course of medicine, even if you start to feel better.</p>
                             </section>
 
