@@ -484,6 +484,14 @@ export default function NirogyamPage() {
             aiHint: "kidney diagram",
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
+        },
+        {
+            title: "Kidney Stones vs. Kidney Failure: They're Not the Same!",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "pain comparison",
+            description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
+            href: "/insights/kidney-stones-vs-failure"
         }
     ];
 
@@ -635,14 +643,14 @@ export default function NirogyamPage() {
                         <Carousel
                             opts={{
                                 align: "start",
-                                loop: keyInsights.length > 1,
+                                loop: keyInsights.length > 2,
                             }}
-                            className="w-full max-w-4xl mx-auto"
+                            className="w-full max-w-6xl mx-auto"
                         >
                             <CarouselContent>
                                 {keyInsights.map((insight, index) => (
                                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                                        <div className="p-1">
+                                        <div className="p-1 h-full">
                                             <Card className="flex flex-col h-full">
                                                 <CardHeader>
                                                     <Image src={insight.image} alt={insight.title} width={600} height={400} className="rounded-t-lg aspect-[3/2] object-cover" data-ai-hint={insight.aiHint} />
