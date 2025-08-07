@@ -573,6 +573,14 @@ export default function NirogyamPage() {
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
         },
+        {
+            title: "Myths Busted: How Much Water Do You Really Need?",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "glass of water",
+            description: "We're always told to 'drink more water' to keep our kidneys healthy. But how much is enough? Can you drink too much? Let's bust some common myths about hydration.",
+            href: "/insights/water-myths-busted"
+        }
     ];
 
     return (
