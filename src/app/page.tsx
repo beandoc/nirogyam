@@ -363,7 +363,7 @@ export default function NirogyamPage() {
         {
             title: "Protein Powders, Paneer, and Your Kidneys: Is a High-Protein Diet Safe?",
             minutesToRead: 4,
-            image: "/protein-diet-and-kidneys.png",
+            image: "/proteinpowder.png",
             aiHint: "protein powder paneer",
             description: "A high-protein diet is popular, but is it safe for your kidneys? This guide busts common myths and provides smart tips for healthy protein consumption.",
             href: "/insights/protein-diet-and-kidneys"
