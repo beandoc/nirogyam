@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Home, Droplet, Wind, Heart, TestTube, Filter, Droplets, ArrowLeft } from 'lucide-react';
+import { Home, Droplet, Wind, Heart, TestTube, Filter, Droplets, ArrowLeft, Download } from 'lucide-react';
 import Image from 'next/image';
 import { AppHeader } from '@/components/AppHeader';
 
@@ -81,6 +81,26 @@ const HowKidneysWorkPage = () => {
                             </InfoCard>
                         </div>
                     </section>
+
+                    <section id="resources" className="mt-12 not-prose">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Resources</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex flex-col sm:flex-row gap-4">
+                                <Button asChild className="w-full">
+                                    <Link href="/how-kidneys-work/summary">
+                                        <Download className="mr-2 h-4 w-4" /> View English Summary
+                                    </Link>
+                                </Button>
+                                <Button asChild className="w-full">
+                                    <Link href="/how-kidneys-work/summary-hindi">
+                                        <Download className="mr-2 h-4 w-4" /> View Hindi Summary
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    </section>
                 </div>
             </main>
         </div>
@@ -88,3 +108,5 @@ const HowKidneysWorkPage = () => {
 };
 
 export default HowKidneysWorkPage;
+
+    

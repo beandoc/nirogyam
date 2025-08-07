@@ -158,14 +158,24 @@ const EgfrExplainedPage = () => {
                     <p>Your eGFR number helps your doctor determine the stage of kidney disease and create an appropriate treatment plan. The results are categorized into stages, from stage 1 (mild) to stage 5 (kidney failure). Discussing your eGFR result with your healthcare provider is the best way to understand your specific situation and next steps.</p>
                 </section>
                 
-                <section id="resources" className="mb-12 scroll-mt-20">
-                <h2 className="text-3xl font-bold text-primary mb-6">More Resources</h2>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download eGFR Fact Sheet
-                    </Button>
-                </div>
+                <section id="resources" className="mt-12 not-prose">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Resources</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex flex-col sm:flex-row gap-4">
+                            <Button asChild className="w-full">
+                                <Link href="/egfr-explained/summary">
+                                    <Download className="mr-2 h-4 w-4" /> View English Summary
+                                </Link>
+                            </Button>
+                            <Button asChild className="w-full">
+                                <Link href="/egfr-explained/summary-hindi">
+                                    <Download className="mr-2 h-4 w-4" /> View Hindi Summary
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
                 </section>
             </article>
         </div>
@@ -175,3 +185,5 @@ const EgfrExplainedPage = () => {
 };
 
 export default EgfrExplainedPage;
+
+    

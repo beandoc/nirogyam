@@ -1,10 +1,11 @@
 
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Home, Droplet, Microscope, ShieldQuestion, Stethoscope, TestTube2, AlertTriangle, Apple, Group, HeartPulse, ShieldCheck, Soup, Wine, ArrowLeft } from 'lucide-react';
+import { Home, Droplet, Microscope, ShieldQuestion, Stethoscope, TestTube2, AlertTriangle, Apple, Group, HeartPulse, ShieldCheck, Soup, Wine, ArrowLeft, Download } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
@@ -145,6 +146,26 @@ const KidneyStonesPage = () => {
                             </div>
                         </InfoCard>
                     </section>
+                    
+                    <section id="resources" className="mt-12 not-prose">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Resources</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex flex-col sm:flex-row gap-4">
+                                <Button asChild className="w-full">
+                                    <Link href="/kidney-stones/summary">
+                                        <Download className="mr-2 h-4 w-4" /> View English Summary
+                                    </Link>
+                                </Button>
+                                <Button asChild className="w-full">
+                                    <Link href="/kidney-stones/summary-hindi">
+                                        <Download className="mr-2 h-4 w-4" /> View Hindi Summary
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    </section>
                 </div>
             </main>
         </div>
@@ -152,3 +173,5 @@ const KidneyStonesPage = () => {
 };
 
 export default KidneyStonesPage;
+
+    
