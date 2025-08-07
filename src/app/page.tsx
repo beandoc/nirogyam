@@ -532,6 +532,14 @@ export default function NirogyamPage() {
             aiHint: "healthy habits list",
             description: "Most people don't realize that common routines can silently cause damage over time. Let's uncover 10 of these 'silent kidney killers' and learn how to protect these precious organs.",
             href: "/insights/are-you-unknowingly-harming-your-kidneys"
+        },
+        {
+            title: "High BP's Secret Victim: Are Your Kidneys Paying the Price?",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood pressure kidney",
+            description: "High blood pressure is one of the top causes of kidney failure. The scariest part is that you might not feel a single thing until serious damage is already done. Learn how to protect these vital organs.",
+            href: "/insights/high-bp-secret-victim"
         }
     ];
 
