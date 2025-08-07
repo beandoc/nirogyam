@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-const CkdSummaryPage = () => {
+export default function CkdSummaryPage() {
     
     const handlePrint = () => {
         window.print();
@@ -76,5 +76,3 @@ const CkdSummaryPage = () => {
         </div>
     );
 };
-
-export default CkdSummaryPage;

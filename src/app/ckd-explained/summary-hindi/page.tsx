@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-const CkdSummaryHindiPage = () => {
+export default function CkdSummaryHindiPage() {
 
     const handlePrint = () => {
         window.print();
@@ -76,5 +76,3 @@ const CkdSummaryHindiPage = () => {
         </div>
     );
 };
-
-export default CkdSummaryHindiPage;
