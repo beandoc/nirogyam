@@ -112,7 +112,7 @@ export const AppHeader = () => {
                    <NavigationMenu>
                       <NavigationMenuList className="gap-2">
                         <NavigationMenuItem>
-                           <Link href="/kidney-health" legacyBehavior passHref>
+                           <Link href="/kidney-health" legacyBehavior={false} passHref>
                             <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), triggerStyles)}>
                                 Patient Education
                             </NavigationMenuLink>
