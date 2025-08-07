@@ -363,7 +363,7 @@ export default function NirogyamPage() {
         {
             title: "Protein Powders, Paneer, and Your Kidneys: Is a High-Protein Diet Safe?",
             minutesToRead: 4,
-            image: "/proteinpowder.png",
+            image: "/proteinpowders.png",
             aiHint: "protein powder paneer",
             description: "A high-protein diet is popular, but is it safe for your kidneys? This guide busts common myths and provides smart tips for healthy protein consumption.",
             href: "/insights/protein-diet-and-kidneys"
@@ -419,7 +419,7 @@ export default function NirogyamPage() {
         {
             title: "Are You Unknowingly Harming Your Kidneys? 10 Habits to Change Today",
             minutesToRead: 5,
-            image: "/areyouharmingyourkidneys.png",
+            image: "/unknowinglyharming.png",
             aiHint: "healthy habits list",
             description: "Most people don't realize that common routines can silently cause damage over time. Let's uncover 10 of these 'silent kidney killers' and learn how to protect these precious organs.",
             href: "/insights/are-you-unknowingly-harming-your-kidneys"
