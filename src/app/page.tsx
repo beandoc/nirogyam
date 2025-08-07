@@ -481,7 +481,7 @@ export default function NirogyamPage() {
         {
             title: "Hitting the Brakes on CKD: A Modern Guide to Slowing Down Kidney Disease",
             minutesToRead: 5,
-            image: "/slowing-down-ckd.png",
+            image: "/hittingthebrakesonckd.png",
             aiHint: "car brake pedal",
             description: "Explore the modern, holistic approach to protecting your kidneys and living a healthier life with CKD, from lifestyle changes to new medical breakthroughs.",
             href: "/insights/slowing-down-ckd"
