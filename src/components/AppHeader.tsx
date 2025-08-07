@@ -101,6 +101,11 @@ const kidneyHealthTopics = [
     href: "/living-with-single-kidney",
     description: "Information and guidance for individuals with one kidney.",
   },
+  {
+    title: "Urinary Tract Infections (UTIs)",
+    href: "/urinary-tract-infection",
+    description: "A comprehensive guide to understanding and preventing urinary tract infections.",
+  },
 ];
 
 const dietAndNutritionTopics = [
@@ -264,3 +269,5 @@ export const AppHeader = () => {
         </header>
     )
 }
+
+    

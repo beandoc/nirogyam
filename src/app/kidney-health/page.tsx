@@ -128,7 +128,7 @@ const KidneyHealthPage = () => {
         { 
             icon: <Shield className="h-8 w-8 text-primary" />,
             title: "Urinary Tract Infections (UTIs)",
-            description: "A comprehensive guide to understanding and preventing urinary tract infections.",
+            description: "A comprehensive, detailed guide to understanding and preventing urinary tract infections.",
             href: "/urinary-tract-infection"
         },
     ];
@@ -165,3 +165,5 @@ const KidneyHealthPage = () => {
 };
 
 export default KidneyHealthPage;
+
+    
