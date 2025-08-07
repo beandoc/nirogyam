@@ -478,6 +478,14 @@ export default function NirogyamPage() {
 
     const keyInsights = [
         {
+            title: "Two Paths: Dialysis vs. Transplantation",
+            minutesToRead: 6,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "decision path",
+            description: "A guide to help you understand the two primary treatments for kidney failure, dialysis and kidney transplant, and how they affect your daily life, long-term health, and emotions.",
+            href: "/insights/dialysis-vs-transplant"
+        },
+        {
             title: "When Kidneys Stop Working: A Simple Guide to Kidney Failure",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
