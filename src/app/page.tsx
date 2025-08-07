@@ -588,6 +588,14 @@ export default function NirogyamPage() {
             aiHint: "family tree",
             description: "Learn about genetic kidney diseases like PKD and understand the importance of family health history and early screening.",
             href: "/insights/inherited-kidney-disease"
+        },
+        {
+            title: "Another UTI? Why They Keep Happening and What to Do",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "person discomfort bathroom",
+            description: "If you've found yourself dealing with recurrent UTIs, it's often a sign of an underlying issue. Explore why this happens and what you can do to break the cycle.",
+            href: "/insights/recurrent-utis"
         }
     ];
 
