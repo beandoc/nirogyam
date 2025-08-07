@@ -435,7 +435,7 @@ export default function NirogyamPage() {
         {
             title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/tacklingthetwinthreats.png",
             aiHint: "weight scale blood pressure",
             description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
             href: "/insights/managing-weight-and-bp"
