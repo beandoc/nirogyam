@@ -139,9 +139,9 @@ export const AppHeader = () => {
                    <NavigationMenu>
                       <NavigationMenuList className="gap-2">
                         <NavigationMenuItem>
-                           <Link href="/kidney-health" passHref>
+                           <Link href="/kidney-health" passHref legacyBehavior>
                             <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), triggerStyles)}>
-                                Patient Education
+                                <a>Patient Education</a>
                             </NavigationMenuLink>
                            </Link>
                         </NavigationMenuItem>
@@ -202,7 +202,7 @@ export const AppHeader = () => {
                                 <Button variant="link" asChild><Link href="/kidney-health">Patient Education</Link></Button>
                                 <Button variant="link" asChild><a href="/#digital-toolkits">Toolkits</a></Button>
                                 <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                <Button variant="link" asChild><a href="/#contact">Contact</a></Button>
+                                <Button variant="link" asChild><a href="#contact">Contact</a></Button>
                             </div>
                         </SheetContent>
                     </Sheet>
