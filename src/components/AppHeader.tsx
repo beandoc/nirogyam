@@ -114,7 +114,7 @@ export const AppHeader = () => {
                         <NavigationMenuItem>
                            <Link href="/kidney-health" passHref>
                             <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), triggerStyles)}>
-                               <a>Patient Education</a>
+                                Patient Education
                             </NavigationMenuLink>
                            </Link>
                         </NavigationMenuItem>
