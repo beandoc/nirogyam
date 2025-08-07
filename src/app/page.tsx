@@ -580,6 +580,14 @@ export default function NirogyamPage() {
             aiHint: "glass of water",
             description: "We're always told to 'drink more water' to keep our kidneys healthy. But how much is enough? Can you drink too much? Let's bust some common myths about hydration.",
             href: "/insights/water-myths-busted"
+        },
+        {
+            title: "High Uric Acid: A Guide to Gout and Kidney Health",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "painful joint",
+            description: "Understand the link between high uric acid, painful gout attacks, and your kidney health. Learn how to manage it through diet and lifestyle changes.",
+            href: "/insights/high-uric-acid"
         }
     ];
 
