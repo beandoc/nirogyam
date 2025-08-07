@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Droplet, Clock, Heart, Download, Settings, Hospital, Syringe, Users, LifeBuoy, Plane, AlertTriangle, ShieldCheck, Dumbbell, Info, ArrowLeft } from 'lucide-react';
+import { Droplet, Clock, Heart, Download, Settings, Hospital, Syringe, Users, LifeBuoy, Plane, AlertTriangle, ShieldCheck, Dumbbell, Info, ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
@@ -43,6 +43,20 @@ const HemodialysisPage = () => {
                     </section>
 
                     <div className="space-y-8">
+                        <Card className="mb-8 bg-primary/10 border-primary/20">
+                            <CardHeader>
+                                <CardTitle>Know Hemodialysis Toolkit</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-foreground/80 mb-4">Dive deeper into the hemodialysis process with our interactive educational guide. </p>
+                                <Button asChild>
+                                    <Link href="/toolkits/know-hemodialysis">
+                                        Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+
                         <InfoCard icon={<Info className="h-8 w-8 text-primary" />} title="What is haemodialysis?">
                             <p>Haemodialysis is a treatment for kidney failure. When your kidneys don’t work properly, they can’t clean your blood, so toxins build up in your bloodstream.</p>
                             <p>Your kidneys also make less urine so excess fluid and waste products remain in the body. Haemodialysis ‘cleans’ your blood by running it through a dialysis machine filter to remove toxins and excess fluid. The clean blood is then returned to your body and the dialysis fluid is thrown away.</p>

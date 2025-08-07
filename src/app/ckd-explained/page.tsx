@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, ChevronsRight, ArrowLeft } from 'lucide-react';
+import { Download, ChevronsRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -54,6 +54,20 @@ const CkdExplainedPage = () => {
                 <p>When a doctor says kidney disease is "chronic," it means the damage has happened over a long period and, unfortunately, can't be reversed. This is different from a "sudden" or "acute" kidney problem, which can often be fixed.</p>
                 <p>The main goal with CKD is to "hit the brakes" and slow the damage down as much as possible. If the damage becomes too severe, it leads to kidney failure, where treatments like dialysis or a kidney transplant are needed to keep you healthy.</p>
             </InfoCard>
+
+            <Card className="mb-8 bg-primary/10 border-primary/20">
+                <CardHeader>
+                    <CardTitle>Your CKD Road Map</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-foreground/80 mb-4">Navigate your journey with CKD using our personalized digital toolkit. Understand your condition better and explore the path ahead.</p>
+                    <Button asChild>
+                        <Link href="/toolkits/ckd-road-map">
+                            Launch Your Road Map <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </CardContent>
+            </Card>
 
             <InfoCard title="How is CKD Found? The 'Silent' Disease">
                 <p>One of the biggest challenges with CKD is that it's often a "silent" disease. You can lose a lot of kidney function without feeling any different. That's why tests are so important.</p>

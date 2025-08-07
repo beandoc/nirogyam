@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Image from 'next/image';
-import { Droplets, Gauge, Scale, Cake, Dna, Cigarette, Heart, Activity, Home, ArrowLeft, Download } from 'lucide-react';
+import { Droplets, Gauge, Scale, Cake, Dna, Cigarette, Heart, Activity, Home, ArrowLeft, Download, ArrowRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { AppHeader } from '@/components/AppHeader';
 
@@ -106,6 +106,20 @@ const CkdStagesPage = () => {
                         </p>
                     </section>
 
+                    <Card className="mb-16 bg-primary/10 border-primary/20">
+                        <CardHeader>
+                            <CardTitle>CKD Assessment Toolkit</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-foreground/80 mb-4">Assess your risk factors and understand the stages of Chronic Kidney Disease with our interactive toolkit.</p>
+                            <Button asChild>
+                                <Link href="/toolkits/ckd-assessment">
+                                    Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
+
                     <section id="stages-of-ckd" className="mb-16">
                         <h2 className="text-3xl font-bold text-primary mb-10 text-center">The 5 Stages of CKD</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -202,5 +216,3 @@ const CkdStagesPage = () => {
 };
 
 export default CkdStagesPage;
-
-    

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -52,6 +52,21 @@ const InheritedKidneyDiseasePage = () => {
                         <p>There are many different types of genetic kidney diseases, but some are more common than others.</p>
                         <h3 className="text-xl font-semibold text-foreground">Polycystic Kidney Disease (PKD)</h3>
                         <p>This is one of the most well-known inherited kidney diseases. In PKD, many fluid-filled sacs called "cysts" begin to grow in the kidneys. Over many years, these cysts can multiply and grow larger, causing the kidneys to become enlarged and eventually lose their ability to function properly.</p>
+                        
+                        <Card className="my-6 bg-primary/10 border-primary/20">
+                            <CardHeader>
+                                <CardTitle>ADPKD Road Map Toolkit</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-foreground/80 mb-4">If you or a loved one is affected by ADPKD, use our interactive road map to navigate the condition.</p>
+                                <Button asChild>
+                                    <Link href="/toolkits/adpkd-road-map">
+                                        Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+
                         <h3 className="text-xl font-semibold text-foreground mt-4">Other Genetic Conditions</h3>
                         <p>There are many other, rarer types of inherited kidney diseases. Some affect the kidney's delicate filtering units, some cause long-term inflammation, and some can even be linked to hearing or vision problems. The specific type of disease will determine the symptoms and how it progresses over time.</p>
                     </InfoCard>

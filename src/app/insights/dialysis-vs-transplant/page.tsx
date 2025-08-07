@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, LifeBuoy, Heart, HandHeart, Banknote, HelpCircle } from 'lucide-react';
+import { ArrowLeft, LifeBuoy, Heart, HandHeart, Banknote, HelpCircle, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Image from 'next/image';
@@ -43,6 +43,20 @@ const DialysisVsTransplantPage = () => {
                         <p>When your kidneys can no longer do their job, you and your family face a major decision about the path forward. The two primary treatments for kidney failure—dialysis and a kidney transplant—are very different from each other.</p>
                         <p>Each path affects your daily life, long-term health, and emotions in its own unique way. This guide will help you understand these two options so you can have a more informed conversation with your doctor and loved ones.</p>
                     </div>
+
+                    <Card className="mb-8 bg-primary/10 border-primary/20">
+                        <CardHeader>
+                            <CardTitle>Kidney Care Choices Toolkit</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-foreground/80 mb-4">Explore your treatment options in more detail and make informed decisions with our interactive Kidney Care Choices guide.</p>
+                            <Button asChild>
+                                <Link href="/toolkits/kidney-care-choices">
+                                    Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
 
                     <InfoCard icon={<LifeBuoy className="h-8 w-8 text-primary" />} title="How Will My Daily Life Change?">
                         <h3 className="text-xl font-semibold text-foreground">Life on Dialysis</h3>

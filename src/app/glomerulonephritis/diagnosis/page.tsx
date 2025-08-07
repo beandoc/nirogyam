@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -75,6 +75,21 @@ const GlomerulonephritisDiagnosisPage = () => {
                     
                     <InfoCard title="4.3 The Kidney Biopsy: The Definitive Diagnostic Tool">
                         <p>For most patients, a kidney biopsy is considered the "gold standard" to diagnose glomerular diseases. It provides definitive information that cannot be obtained from blood or urine tests alone and is crucial for guiding treatment.</p>
+                        
+                        <Card className="my-6 bg-primary/10 border-primary/20">
+                            <CardHeader>
+                                <CardTitle>Biopsy Consent Toolkit</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-foreground/80 mb-4">Prepare for your procedure with our interactive guide to better understand the biopsy consent process.</p>
+                                <Button asChild>
+                                    <Link href="/toolkits/biopsy-consent">
+                                        Launch Toolkit <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+
                         <h3 className="text-xl font-semibold text-foreground mt-4">4.3.1 Biopsy Procedure and Specimen Handling</h3>
                         <p>The procedure typically involves a percutaneous kidney biopsy, where a small sample of kidney tissue is obtained using a needle. Ideally, the specimen will contain a sufficient number of glomeruli (typically 10-15) for a comprehensive evaluation. The tissue is divided into three parts for different types of microscopic analysis.</p>
                         <h3 className="text-xl font-semibold text-foreground mt-4">4.3.2 Microscopic Analysis of Biopsy Tissue</h3>

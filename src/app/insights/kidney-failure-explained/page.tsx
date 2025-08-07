@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const InfoCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -50,6 +50,19 @@ const KidneysExplainedPage = () => {
                                 <li><strong>Direct damage:</strong> Infections, certain drugs, or toxins can directly harm the kidney tissue.</li>
                                 <li><strong>Blockages:</strong> Things like kidney stones or an enlarged prostate can block urine from leaving the kidneys, causing a backup of pressure and damage.</li>
                             </ul>
+                            <Card className="my-6 bg-primary/10 border-primary/20">
+                                <CardHeader>
+                                    <CardTitle>AKI Risk Assessment Toolkit</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-foreground/80 mb-4">Evaluate your personal risk factors for Acute Kidney Injury with our interactive assessment tool.</p>
+                                    <Button asChild>
+                                        <Link href="/toolkits/aki-risk-assessment">
+                                            Assess Your Risk <ArrowRight className="ml-2 h-4 w-4" />
+                                        </Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold text-foreground">Chronic Kidney Disease (CKD)</h3>
