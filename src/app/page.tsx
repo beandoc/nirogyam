@@ -580,6 +580,14 @@ export default function NirogyamPage() {
             aiHint: "painful joint",
             description: "Understand the link between high uric acid, painful gout attacks, and your kidney health. Learn how to manage it through diet and lifestyle changes.",
             href: "/insights/high-uric-acid"
+        },
+        {
+            title: "Inherited Kidney Disease: A Family Guide",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "family tree",
+            description: "Learn about genetic kidney diseases like PKD and understand the importance of family health history and early screening.",
+            href: "/insights/inherited-kidney-disease"
         }
     ];
 
