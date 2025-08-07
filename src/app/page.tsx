@@ -35,6 +35,7 @@ import {
   Home,
   Droplet,
   Download,
+  Shield,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -660,7 +661,7 @@ export default function NirogyamPage() {
                                 A kidney disease diagnosis can be overwhelming. You may be wondering, "What can I do to avoid dialysis?" We're here to show you that there are proactive steps you can take to preserve and even improve your kidney function.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
                                 <CardHeader className="items-center">
                                     <div className="p-4 bg-primary/10 rounded-full mb-3"><HeartPulse className="h-10 w-10 text-primary"/></div>
@@ -694,6 +695,18 @@ export default function NirogyamPage() {
                                 <CardContent>
                                     <ul className="text-foreground/80 text-left space-y-3">
                                         <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/peritoneal-dialysis" className="hover:underline">What is peritoneal dialysis?</Link></li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center">
+                                <CardHeader className="items-center">
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Shield className="h-10 w-10 text-primary"/></div>
+                                    <CardTitle className="text-primary text-2xl">Urinary Tract Infections</CardTitle>
+                                    <CardDescription>A comprehensive guide to understanding, treating, and preventing UTIs.</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="text-foreground/80 text-left space-y-3">
+                                        <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0"/><Link href="/urinary-tract-infection" className="hover:underline">Explore the UTI Guide</Link></li>
                                     </ul>
                                 </CardContent>
                             </Card>
