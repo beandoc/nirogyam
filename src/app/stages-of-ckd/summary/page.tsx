@@ -7,14 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
-export default function StagesCkdSummaryPage() {
-    
-    const handlePrint = () => {
-        if (typeof window !== 'undefined') {
-            window.print();
-        }
-    };
+function handlePrint() {
+    if (typeof window !== 'undefined') {
+        window.print();
+    }
+}
 
+export default function StagesCkdSummaryPage() {
     return (
         <div className="bg-background text-foreground flex-1">
             <AppHeader />
