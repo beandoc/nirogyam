@@ -478,6 +478,14 @@ export default function NirogyamPage() {
 
     const keyInsights = [
         {
+            title: "Hitting the Brakes on CKD: A Modern Guide",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "car brake pedal",
+            description: "Explore the modern, holistic approach to protecting your kidneys and living a healthier life with CKD, from lifestyle changes to new medical breakthroughs.",
+            href: "/insights/slowing-down-ckd"
+        },
+        {
             title: "Hypertension and Kidney Disease: A Dietary Guide",
             minutesToRead: 5,
             image: "https://placehold.co/600x400.png",
