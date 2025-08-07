@@ -478,6 +478,22 @@ export default function NirogyamPage() {
 
     const keyInsights = [
         {
+            title: "Hypertension and Kidney Disease: A Dietary Guide",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "blood pressure healthy food",
+            description: "Hypertension and kidney diseases are closely linked. This blog will explore essential dietary strategies to support kidney health while maintaining good control of hypertension.",
+            href: "/insights/hypertension-and-kidney-disease"
+        },
+        {
+            title: "A Food Guide for a Healthy Urinary System",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "healthy food plate",
+            description: "What you eat can either help your body's natural filters work smoothly or cause them stress. Let's explore a simple guide to eating right for a healthy urinary system.",
+            href: "/insights/food-guide-for-urinary-health"
+        },
+        {
             title: "Two Paths: Dialysis vs. Transplantation",
             minutesToRead: 6,
             image: "https://placehold.co/600x400.png",
@@ -557,14 +573,6 @@ export default function NirogyamPage() {
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
         },
-        {
-            title: "A Food Guide for a Healthy Urinary System",
-            minutesToRead: 4,
-            image: "https://placehold.co/600x400.png",
-            aiHint: "healthy food plate",
-            description: "What you eat can either help your body's natural filters work smoothly or cause them stress. Let's explore a simple guide to eating right for a healthy urinary system.",
-            href: "/insights/food-guide-for-urinary-health"
-        }
     ];
 
     return (
