@@ -479,7 +479,7 @@ export default function NirogyamPage() {
 
     const keyInsights = [
         {
-            title: "Hitting the Brakes on CKD: A Modern Guide",
+            title: "Hitting the Brakes on CKD: A Modern Guide to Slowing Down Kidney Disease",
             minutesToRead: 5,
             image: "/slowing-down-ckd.png",
             aiHint: "car brake pedal",
@@ -521,8 +521,8 @@ export default function NirogyamPage() {
         {
             title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
-            image: "/kidney_model_with_doctor.png",
-            aiHint: "kidney model doctor",
+            image: "/yourkidneyhealth.png",
+            aiHint: "kidney health check",
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
         },
