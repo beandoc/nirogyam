@@ -556,6 +556,14 @@ export default function NirogyamPage() {
             aiHint: "kidney diagram",
             description: "Our kidneys are amazing organs. Think of them as your body's super-efficient cleaning system. Their main job is to filter waste and extra fluid out of your blood to make urine. But what happens when this system runs into trouble? Let's break down what you need to know about kidney health in a simple way.",
             href: "/insights/kidneys-explained"
+        },
+        {
+            title: "A Food Guide for a Healthy Urinary System",
+            minutesToRead: 4,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "healthy food plate",
+            description: "What you eat can either help your body's natural filters work smoothly or cause them stress. Let's explore a simple guide to eating right for a healthy urinary system.",
+            href: "/insights/food-guide-for-urinary-health"
         }
     ];
 
