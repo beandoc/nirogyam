@@ -1,7 +1,8 @@
 
 'use client';
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ArrowLeft, BookOpen } from 'lucide-react';
@@ -59,8 +60,16 @@ const TopicCard = ({ title, description, href }: { title: string, description: s
 );
 
 const KidneyHealthPage = () => {
+    const searchParams = useSearchParams();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
+
+    useEffect(() => {
+        const query = searchParams.get('q');
+        if (query) {
+            setSearchTerm(query);
+        }
+    }, [searchParams]);
 
     const categories = ['All', ...Array.from(new Set(allTopics.map(t => t.category)))];
 

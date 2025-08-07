@@ -1,10 +1,12 @@
 
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,7 +23,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { Menu } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const ListItem = React.forwardRef<
@@ -96,19 +98,44 @@ const aboutUs = [
     },
 ];
 
+const HeaderSearch = () => {
+    const router = useRouter();
+    const [query, setQuery] = useState('');
+
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (query.trim()) {
+            router.push(`/kidney-health?q=${encodeURIComponent(query)}`);
+        }
+    };
+
+    return (
+        <form onSubmit={handleSearch} className="relative w-full max-w-xs">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+                type="text"
+                placeholder="Search topics..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="pl-10 text-base bg-background"
+            />
+        </form>
+    );
+};
+
 
 export const AppHeader = () => {
     const triggerStyles = "bg-transparent text-foreground hover:bg-accent/50 data-[state=open]:bg-accent/50"
     
     return (
         <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-            <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-                <Link href="/" className="flex items-center gap-2">
+            <div className="container mx-auto px-4 py-3 flex justify-between items-center gap-4">
+                <Link href="/" className="flex items-center gap-2 flex-shrink-0">
                     <Image src="/nephrodeptlogo.png" alt="Nirogyam Logo" width={40} height={40} className="rounded-full" />
                     <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
                 </Link>
 
-                <nav className="hidden md:flex items-center">
+                <nav className="hidden md:flex items-center gap-4 flex-grow">
                    <NavigationMenu>
                       <NavigationMenuList className="gap-2">
                         <NavigationMenuItem>
@@ -152,29 +179,33 @@ export const AppHeader = () => {
                         </NavigationMenuItem>
                       </NavigationMenuList>
                     </NavigationMenu>
-                </nav>
-                <div className="flex items-center gap-4">
-                    <div className="md:hidden">
-                        <Sheet>
-                            <SheetTrigger asChild>
-                                <Button variant="ghost" size="icon">
-                                    <Menu className="h-6 w-6" />
-                                    <span className="sr-only">Open menu</span>
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent side="right">
-                                <SheetHeader>
-                                    <SheetTitle>Nirogyam</SheetTitle>
-                                </SheetHeader>
-                                <div className="flex flex-col space-y-4 mt-8">
-                                    <Button variant="link" asChild><Link href="/kidney-health">Patient Education</Link></Button>
-                                    <Button variant="link" asChild><a href="/#digital-toolkits">Toolkits</a></Button>
-                                    <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                    <Button variant="link" asChild><a href="/#contact">Contact</a></Button>
-                                </div>
-                            </SheetContent>
-                        </Sheet>
+                    <div className="flex-grow justify-end hidden lg:flex">
+                        <HeaderSearch />
                     </div>
+                </nav>
+                <div className="md:hidden">
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                                <Menu className="h-6 w-6" />
+                                <span className="sr-only">Open menu</span>
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right">
+                            <SheetHeader>
+                                <SheetTitle>Nirogyam</SheetTitle>
+                            </SheetHeader>
+                            <div className="flex flex-col space-y-4 mt-8">
+                                <div className="px-2">
+                                  <HeaderSearch />
+                                </div>
+                                <Button variant="link" asChild><Link href="/kidney-health">Patient Education</Link></Button>
+                                <Button variant="link" asChild><a href="/#digital-toolkits">Toolkits</a></Button>
+                                <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
+                                <Button variant="link" asChild><a href="/#contact">Contact</a></Button>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
         </header>
