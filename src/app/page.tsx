@@ -395,7 +395,7 @@ export default function NirogyamPage() {
         {
             title: "A Simple Guide to Chronic Kidney Disease (CKD)",
             minutesToRead: 4,
-            image: "/ckd-explained.png",
+            image: "/yourkidneyhealth.png",
             aiHint: "kidney health check",
             description: "A patient-friendly guide to understanding what CKD is, how it's found, and how you can manage it to live a healthier life.",
             href: "/ckd-explained"
@@ -403,7 +403,7 @@ export default function NirogyamPage() {
         {
             title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
-            image: "/kidneys-explained.png",
+            image: "/kidneysareintrouble.png",
             aiHint: "kidney model doctor",
             description: "A simple guide to understanding the signs, causes, and treatments for kidney problems, explaining the difference between sudden and long-term issues.",
             href: "/insights/kidneys-explained"
@@ -427,7 +427,7 @@ export default function NirogyamPage() {
         {
             title: "Kidney Damage: Is It Possible to Turn Back the Clock?",
             minutesToRead: 4,
-            image: "/kidneydamagereversal.png",
+            image: "/turnbacktheclock.png",
             aiHint: "clock reversal",
             description: "If you or a loved one has been diagnosed with kidney disease, one of the first questions on your mind is likely: \"Can this be fixed? Can my kidneys heal?\" The answer depends on how early the problem is caught.",
             href: "/insights/kidney-damage-reversal"
@@ -435,7 +435,7 @@ export default function NirogyamPage() {
         {
             title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
             minutesToRead: 5,
-            image: "/tacklingthetwinthreats.png",
+            image: "/tacklingthetwinthreat.png",
             aiHint: "weight scale blood pressure",
             description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
             href: "/insights/managing-weight-and-bp"
@@ -443,7 +443,7 @@ export default function NirogyamPage() {
         {
             title: "The Dangerous Trio: How Diabetes, High BP, and Your Kidneys Are Linked",
             minutesToRead: 5,
-            image: "/dangeroustrio.png",
+            image: "/thedangeroustrio.png",
             aiHint: "blood pressure monitor diabetes",
             description: "Together, diabetes and high blood pressure are the number one cause of long-term kidney damage. When combined with kidney problems, they form a dangerous trio that often goes unnoticed until the damage is severe.",
             href: "/insights/dangerous-trio"
@@ -451,7 +451,7 @@ export default function NirogyamPage() {
         {
             title: "The Silent Worker: Why Your Kidneys Need a Yearly Check-Up",
             minutesToRead: 4,
-            image: "/yearlycheckup.png",
+            image: "/thesilentworker.png",
             aiHint: "doctor patient checkup",
             description: "Your kidneys are like the silent, hardworking staff of your body. Problems can develop for years without causing any pain or obvious signs. A simple, yearly kidney health check is one of the smartest things you can do.",
             href: "/insights/yearly-check-up"
@@ -459,7 +459,7 @@ export default function NirogyamPage() {
         {
             title: "Kidney Stones vs. Kidney Failure: They're Not the Same!",
             minutesToRead: 4,
-            image: "/kidneystonesvsfailure.png",
+            image: "/kidneystonesvskidneyfaliure.png",
             aiHint: "pain comparison",
             description: "A kidney stone is like a painful pebble stuck in a pipe, while kidney failure is like the entire plumbing system slowly breaking down. Both affect your kidneys, but they are worlds apart. Let's clear up the confusion.",
             href: "/insights/kidney-stones-vs-failure"
@@ -467,7 +467,7 @@ export default function NirogyamPage() {
         {
             title: "Myths Busted: How Much Water Do You Really Need?",
             minutesToRead: 4,
-            image: "/watermythsbusted.png",
+            image: "/howmuchwaterweneed.png",
             aiHint: "glass of water",
             description: "We're always told to 'drink more water' to keep our kidneys healthy. But how much is enough? Can you drink too much? Let's bust some common myths about hydration.",
             href: "/insights/water-myths-busted"
@@ -475,7 +475,7 @@ export default function NirogyamPage() {
         {
             title: "That Pain in Your Joint? It Could Be High Uric Acid",
             minutesToRead: 5,
-            image: "/highuricacid.png",
+            image: "/thatpaininyourjoint.png",
             aiHint: "painful joint",
             description: "Understand the link between high uric acid, painful gout attacks, and your kidney health. Learn how to manage it through diet and lifestyle changes.",
             href: "/insights/high-uric-acid"
@@ -483,7 +483,7 @@ export default function NirogyamPage() {
         {
             title: "When Kidney Problems Run in the Family: A Guide to Inherited Kidney Disease",
             minutesToRead: 5,
-            image: "/inheritedkidneydisease.png",
+            image: "/kidneyproblemruninfamily.png",
             aiHint: "family tree",
             description: "Learn about genetic kidney diseases like PKD and understand the importance of family health history and early screening.",
             href: "/insights/inherited-kidney-disease"
@@ -491,7 +491,7 @@ export default function NirogyamPage() {
         {
             title: "Another UTI? Understanding Why They Keep Happening and What to Do",
             minutesToRead: 4,
-            image: "/recurrentutis.png",
+            image: "/anotheruti.png",
             aiHint: "person discomfort bathroom",
             description: "If you've found yourself dealing with recurrent UTIs, it's often a sign of an underlying issue. Explore why this happens and what you can do to break the cycle.",
             href: "/insights/recurrent-utis"
@@ -499,7 +499,7 @@ export default function NirogyamPage() {
         {
             title: "The Hidden Danger in Your Blood: Understanding High Phosphorus",
             minutesToRead: 4,
-            image: "/highphosphorusexplained.png",
+            image: "/hiddendangerinyourblood.png",
             aiHint: "blood test tube",
             description: "High phosphorus is a common and serious problem for people with kidney disease. Learn why it happens and what you can do about it.",
             href: "/insights/high-phosphorus-explained"
@@ -507,7 +507,7 @@ export default function NirogyamPage() {
         {
             title: "What is Creatinine? The Simple Blood Test That Reveals Your Kidney Health",
             minutesToRead: 4,
-            image: "/creatinineexplained.png",
+            image: "/whatiscreatinine.png",
             aiHint: "blood test kidney",
             description: "A simple blood test for creatinine can tell you a huge amount about how well your kidneys are working. Learn why this number is so important for early detection.",
             href: "/insights/creatinine-explained"
@@ -523,7 +523,7 @@ export default function NirogyamPage() {
         {
             title: "Beyond Drinking Water: Simple Hygiene Habits to Prevent Painful UTIs",
             minutesToRead: 5,
-            image: "/beyonddrinkingwater.png",
+            image: "/BeyondDrinkingWater.png",
             aiHint: "hygiene bathroom",
             description: "Discover practical, everyday hygiene habits that can significantly reduce your risk of UTIs, going beyond the standard advice to just drink more water.",
             href: "/insights/beyond-drinking-water-uti-prevention"
@@ -531,7 +531,7 @@ export default function NirogyamPage() {
         {
             title: "Leaking When You Laugh? A Simple Guide to Urinary Incontinence",
             minutesToRead: 5,
-            image: "/leakingwhenyoulaugh.png",
+            image: "/urineincontinence.png",
             aiHint: "person laughing",
             description: "Urinary incontinence is a common and treatable condition. This guide explains the different types, causes, and effective ways to regain control and confidence.",
             href: "/insights/leaking-when-you-laugh"
@@ -539,7 +539,7 @@ export default function NirogyamPage() {
         {
             title: "Your Kidney Health Report Card: A Simple Guide to Kidney Function Tests",
             minutesToRead: 5,
-            image: "/kidneyfunctiontests.png",
+            image: "/kidneyhealthreportcard.png",
             aiHint: "lab report",
             description: "Learn what the different values on your Kidney Function Test (KFT) mean, from creatinine and eGFR to urine protein, and understand your kidney health better.",
             href: "/insights/kidney-function-tests-explained"
