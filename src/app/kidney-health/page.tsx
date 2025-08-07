@@ -39,6 +39,7 @@ const allTopics: Topic[] = [
     // Dialysis
     { category: "Dialysis Treatments", title: "Hemodialysis Explained", description: "Learn about the hemodialysis process for treating kidney failure.", href: "/hemodialysis" },
     { category: "Dialysis Treatments", title: "Peritoneal Dialysis Explained", description: "Learn about peritoneal dialysis, a treatment you can do at home.", href: "/peritoneal-dialysis" },
+    { category: "Dialysis Treatments", title: "AV Fistula Explained", description: "Learn about AV fistulas, the preferred access for hemodialysis, including benefits, care, and what to expect.", href: "/av-fistula" },
     // Transplant
     { category: "Kidney Transplant", title: "Kidney Transplant Guide", description: "Explore the process and benefits of receiving a kidney transplant.", href: "/kidney-transplant" },
 ];
