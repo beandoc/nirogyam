@@ -508,6 +508,14 @@ export default function NirogyamPage() {
             aiHint: "blood pressure monitor diabetes",
             description: "Together, diabetes and high blood pressure are the number one cause of long-term kidney damage. When combined with kidney problems, they form a dangerous trio that often goes unnoticed until the damage is severe.",
             href: "/insights/dangerous-trio"
+        },
+        {
+            title: "Tackling the Twin Threats: A Simple Guide to Managing Your Weight and Blood Pressure",
+            minutesToRead: 5,
+            image: "https://placehold.co/600x400.png",
+            aiHint: "weight scale blood pressure",
+            description: "Obesity and hypertension are like two sides of the same coin. They are a growing health concern. Let's break down this connection and explore simple ways you can take charge of your health.",
+            href: "/insights/managing-weight-and-bp"
         }
     ];
 
