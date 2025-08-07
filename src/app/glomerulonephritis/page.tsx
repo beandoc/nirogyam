@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight, Microscope, Stethoscope, Pill, ShieldQuestion, A
 import { AppHeader } from '@/components/AppHeader';
 
 const SectionCard = ({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) => (
-    <Link href={href} target="_blank" rel="noopener noreferrer" className="block">
+    <Link href={href} className="block">
         <Card className="h-full hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
             <CardHeader className="flex flex-row items-center gap-4">
                 {icon}
