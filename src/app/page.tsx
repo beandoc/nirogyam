@@ -395,7 +395,7 @@ export default function NirogyamPage() {
         {
             title: "A Simple Guide to Chronic Kidney Disease (CKD)",
             minutesToRead: 4,
-            image: "/yourkidneyhealth.png",
+            image: "/ckd-explained.png",
             aiHint: "kidney health check",
             description: "A patient-friendly guide to understanding what CKD is, how it's found, and how you can manage it to live a healthier life.",
             href: "/ckd-explained"
@@ -403,7 +403,7 @@ export default function NirogyamPage() {
         {
             title: "Your Kidneys Explained: A Simple Guide to Health and Failure",
             minutesToRead: 5,
-            image: "/yourkidneyhealth.png",
+            image: "/kidneys-explained.png",
             aiHint: "kidney model doctor",
             description: "A simple guide to understanding the signs, causes, and treatments for kidney problems, explaining the difference between sudden and long-term issues.",
             href: "/insights/kidneys-explained"
