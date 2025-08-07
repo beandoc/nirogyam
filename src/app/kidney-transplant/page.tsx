@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Home, ChevronsRight, Heart, Shield, Users, Stethoscope, HelpCircle, ArrowRightCircle, ArrowLeft } from 'lucide-react';
+import { Home, ChevronsRight, Heart, Shield, Users, Stethoscope, HelpCircle, ArrowRightCircle, ArrowLeft, HeartPulse, CheckCircle } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 
 const TableOfContents = () => (
@@ -14,14 +14,14 @@ const TableOfContents = () => (
         </CardHeader>
         <CardContent>
             <ul className="space-y-2">
-                <li><a href="#about" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />About Kidney Transplant</a></li>
-                <li><a href="#types" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Types: Living and Deceased Donors</a></li>
-                <li><a href="#benefits" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Benefits of a Transplant</a></li>
-                <li><a href="#risks" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Risks of a Transplant</a></li>
-                <li><a href="#eligibility" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Who Can Get a Transplant?</a></li>
-                <li><a href="#surgery" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />The Transplant Surgery</a></li>
-                <li><a href="#getting-started" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Where to Start</a></li>
-                <li><a href="#questions" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Questions for Your Healthcare Team</a></li>
+                <li><a href="#about" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Introduction to Renal Transplantation</a></li>
+                <li><a href="#evaluation" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Patient Evaluation and Candidacy</a></li>
+                <li><a href="#donors" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Sources of Donor Organs</a></li>
+                <li><a href="#compatibility" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Donor-Recipient Compatibility</a></li>
+                <li><a href="#surgery" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />The Surgical Procedure</a></li>
+                <li><a href="#post-op" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Post-Operative and Long-Term Management</a></li>
+                <li><a href="#outcomes" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Outcomes and Quality of Life</a></li>
+                 <li><a href="#questions" className="flex items-center text-primary hover:underline"><ChevronsRight className="h-4 w-4 mr-2" />Questions for Your Healthcare Team</a></li>
             </ul>
         </CardContent>
     </Card>
@@ -35,12 +35,12 @@ const KidneyTransplantPage = () => {
             <main className="container mx-auto px-4 py-12 md:py-20">
                 <div className="max-w-4xl mx-auto">
                     <Button asChild variant="outline" className="mb-8">
-                        <Link href="/">
+                        <Link href="/kidney-health">
                             <ArrowLeft className="mr-2 h-4 w-4" />
-                            Back to Home
+                            Back to Kidney Health Topics
                         </Link>
                     </Button>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Kidney Transplant: A New Beginning</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">A Guide to Kidney Transplantation</h1>
                     <p className="text-lg text-foreground/80 mb-10">
                         A transplant is a treatment for kidney failure that involves placing a healthy kidney from a donor into your body, potentially offering a longer, more active life than dialysis.
                     </p>
@@ -49,71 +49,84 @@ const KidneyTransplantPage = () => {
 
                     <article className="prose lg:prose-xl max-w-none text-foreground/90 space-y-12">
                         <section id="about" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">About Kidney Transplant</h2>
-                            <p>When kidneys fail, treatment is required to take over their functions. The two primary treatments are dialysis and kidney transplant. A transplant provides you with a healthy kidney to perform the tasks your own kidneys can no longer handle. On average, a kidney from a living donor functions for 15-20 years, while one from a deceased donor lasts 8-12 years, though individual results vary.</p>
-                            <p>While many patients begin dialysis before receiving a transplant, it's also possible to get a <strong className="text-primary">preemptive transplant</strong> before dialysis is needed. Research suggests that a preemptive transplant, with little to no time on dialysis, can lead to better long-term health outcomes and a higher quality of life. If you are in Stage 3B, 4, or 5 of CKD, it's an ideal time to discuss transplant options with your doctor.</p>
+                            <h2 className="text-3xl font-bold text-primary mb-4">Introduction to Renal Transplantation</h2>
+                            <p>Renal transplantation is a definitive surgical treatment for individuals with End-Stage Renal Disease (ESRD), a condition where the kidneys have irreversibly lost their ability to perform their essential filtering functions. The procedure involves implanting a healthy kidney from a living or deceased donor into a recipient whose own kidneys have failed. A successful transplant can restore normal kidney function, eliminate the need for dialysis, and significantly improve the recipient's quality of life and life expectancy.</p>
+                            <p>While many patients begin dialysis before receiving a transplant, it's also possible to get a <strong className="text-primary">preemptive transplant</strong> before dialysis is needed. Research suggests that a preemptive transplant, with little to no time on dialysis, can lead to better long-term health outcomes. If you are in Stage 3B, 4, or 5 of CKD, it's an ideal time to discuss transplant options with your doctor.</p>
                         </section>
 
-                        <section id="types" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">Types: Living and Deceased Donors</h2>
-                            <p>There are two sources for a donor kidney:</p>
-                            <ul className="list-disc pl-6 space-y-3 mt-4">
-                                <li><strong>Deceased Donor:</strong> The kidney comes from an individual who has passed away and chose to be an organ donor.</li>
-                                <li><strong>Living Donor:</strong> The kidney is donated by a living person with two healthy kidneys. A living donor can be a family member, friend, or even a stranger, and does not need to be related to you.</li>
+                        <section id="evaluation" className="scroll-mt-20">
+                            <h2 className="text-3xl font-bold text-primary mb-4">Patient Evaluation and Candidacy</h2>
+                            <p>A comprehensive and rigorous evaluation process is undertaken to determine a patient's suitability for a kidney transplant.</p>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Eligibility Criteria</h3>
+                            <p>Candidates for transplantation must have diagnosed End-Stage Renal Disease (ESRD), typically indicated by a significantly reduced glomerular filtration rate (GFR). While there is no strict upper age limit, a candidate's overall physiological health is a critical factor. The evaluation aims to confirm that the patient is physically and psychologically prepared to undergo major surgery and adhere to the lifelong post-transplant medical regimen.</p>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Pre-Transplant Assessment</h3>
+                            <p>Before being approved, a candidate undergoes a battery of diagnostic tests to assess their overall health. This includes:</p>
+                             <ul className="list-disc pl-6 space-y-3 mt-4">
+                                <li><strong>Cardiovascular Evaluation:</strong> To ensure the patient can tolerate the surgical procedure.</li>
+                                <li><strong>Immunological Testing:</strong> To determine blood and tissue type for donor matching.</li>
+                                <li><strong>Infectious Disease Screening:</strong> To identify and treat any underlying infections.</li>
+                                <li><strong>Imaging Studies:</strong> Chest X-rays, renal ultrasounds, and other scans to evaluate internal organs.</li>
                             </ul>
-                            <p className="mt-4">The first step for either type of transplant is a thorough evaluation at a transplant center. A potential living donor can often be evaluated at the same time as the recipient (the person receiving the kidney).</p>
+                            <p>Patients with severe, uncorrectable cardiovascular disease or active malignancies may be deemed unsuitable for transplantation, in which case dialysis remains the primary treatment modality.</p>
+                        </section>
+                        
+                        <section id="donors" className="scroll-mt-20">
+                            <h2 className="text-3xl font-bold text-primary mb-4">Sources of Donor Organs</h2>
+                            <p>A viable kidney for transplantation can be procured from two primary sources, governed by national organ donation laws.</p>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Living Donors</h3>
+                            <p>A healthy individual can donate one of their two kidneys. The remaining kidney will compensate and provide adequate function for a normal, healthy life.</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4">
+                                <li><strong>Living Related Donors:</strong> First-degree relatives such as parents, siblings, children, and spouses, who often have a higher likelihood of immunological compatibility.</li>
+                                <li><strong>Living Unrelated Donors:</strong> Other relatives or altruistic individuals, as permitted by legal and ethical guidelines.</li>
+                            </ul>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Deceased (Cadaveric) Donors</h3>
+                            <p>These are organs retrieved from individuals who have been declared brain-stem dead, typically as a result of trauma or a cerebrovascular event, and with family consent.</p>
                         </section>
 
-                        <section id="benefits" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">Benefits of a Transplant</h2>
-                            <div className="bg-primary/10 p-6 rounded-lg">
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3"><Heart className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Studies indicate that individuals with kidney transplants generally live longer than those who remain on dialysis.</span></li>
-                                    <li className="flex items-start gap-3"><Heart className="h-5 w-5 text-primary mt-1 shrink-0" /><span>A successful transplant can restore the freedom to work, travel, and spend more time with loved ones, improving your overall quality of life.</span></li>
-                                    <li className="flex items-start gap-3"><Heart className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Dietary restrictions are often less strict, though a heart-healthy diet is recommended to protect your new kidney.</span></li>
-                                    <li className="flex items-start gap-3"><Heart className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Most patients experience improved health and energy levels.</span></li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section id="risks" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">Risks of a Transplant</h2>
-                            <div className="bg-destructive/10 p-6 rounded-lg border-l-4 border-destructive">
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3"><Shield className="h-5 w-5 text-destructive mt-1 shrink-0" /><span>A transplant is a treatment, not a cure for kidney disease.</span></li>
-                                    <li className="flex items-start gap-3"><Shield className="h-5 w-5 text-destructive mt-1 shrink-0" /><span>You must take anti-rejection medications (immunosuppressants) daily for as long as the kidney works. These can have side effects.</span></li>
-                                    <li className="flex items-start gap-3"><Shield className="h-5 w-5 text-destructive mt-1 shrink-0" /><span>There is an increased risk for infections and certain types of cancer due to the immunosuppressant medications.</span></li>
-                                    <li className="flex items-start gap-3"><Shield className="h-5 w-5 text-destructive mt-1 shrink-0" /><span>The lifespan of a transplanted kidney varies, and some individuals may need more than one transplant in their lifetime.</span></li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section id="eligibility" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">Who Can Get a Transplant?</h2>
-                            <p>Kidney patients of all ages can be considered for a transplant. While some centers may have age limits, many do not. Every potential candidate undergoes a comprehensive medical and psychosocial evaluation to ensure they are healthy enough for surgery and prepared for post-transplant care. Even with other health conditions like diabetes, a successful transplant is often possible. It is important to note that being placed on the waitlist is not automatic; you must be evaluated at a transplant center first.</p>
+                        <section id="compatibility" className="scroll-mt-20">
+                            <h2 className="text-3xl font-bold text-primary mb-4">The Principle of Donor-Recipient Compatibility</h2>
+                            <p>To minimize the risk of the recipient's immune system rejecting the new organ, a series of compatibility tests are performed.</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4">
+                                <li><strong>ABO Blood Group Typing:</strong> The donor and recipient must have compatible blood types, following the same rules as a blood transfusion.</li>
+                                <li><strong>Human Leukocyte Antigen (HLA) Tissue Typing:</strong> A closer match of these protein markers on cells correlates with a lower risk of rejection and better long-term graft survival.</li>
+                                <li><strong>Cross-matching:</strong> A final test before surgery where the recipient's blood serum is mixed with the donor's cells to ensure there is no pre-formed antibody reaction that would cause immediate rejection.</li>
+                            </ul>
+                            <h4 className="text-xl font-semibold mt-6">ABO-Incompatible Transplantation</h4>
+                            <p>In cases where a willing living donor is not blood-group compatible, advanced medical protocols can be used to remove the reactive antibodies from the recipient's blood, making the procedure possible with outcomes comparable to compatible transplants.</p>
                         </section>
 
                         <section id="surgery" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">The Transplant Surgery</h2>
-                            <p>The surgery to place the new kidney typically lasts 3-4 hours. The donated kidney is positioned in the lower abdomen to easily connect it to your blood vessels and bladder. Your own kidneys are usually left in place unless there's a specific medical reason to remove them.</p>
-                            <p>Recovery begins quickly. You will be encouraged to stand and walk soon after the surgery. Most patients can return home within a few days, followed by frequent check-ups at the transplant center. Over time, as you and your new kidney stabilize, your regular kidney doctor will resume your care.</p>
-                        </section>
-                        
-                        <section id="getting-started" className="scroll-mt-20">
-                            <h2 className="text-3xl font-bold text-primary mb-4">Where to Start</h2>
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>Your First Step: Evaluation</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p>The journey to a transplant begins with an evaluation at a transplant center. You can ask your doctor for a referral or contact a center directly—a practice known as a self-referral. This evaluation is necessary even if you already have a willing living donor.</p>
-                                    <Button asChild className="mt-4">
-                                        <a href="#contact">Find a Specialist Near You <ArrowRightCircle className="ml-2 h-5 w-5"/></a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                            <h2 className="text-3xl font-bold text-primary mb-4">The Surgical Procedure</h2>
+                             <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Donor Nephrectomy (Kidney Removal)</h3>
+                            <p>The surgical removal of the kidney from a living donor is most commonly performed using <strong>Laparoscopic Donor Nephrectomy</strong>. This minimally invasive "keyhole" technique involves small incisions, resulting in less post-operative pain, a shorter hospital stay (typically 3-5 days), and a faster return to normal activities.</p>
+                             <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Recipient Transplant Surgery</h3>
+                            <p>The transplant procedure typically lasts 3 to 4 hours. The surgeon places the donor kidney in the recipient's lower abdomen (a heterotopic placement). The renal artery and vein of the new kidney are surgically connected to the recipient's iliac vessels, and the new ureter is connected to the bladder. The patient's native, non-functioning kidneys are generally left in place unless they are causing specific problems.</p>
                         </section>
 
+                        <section id="post-op" className="scroll-mt-20">
+                            <h2 className="text-3xl font-bold text-primary mb-4">Post-Operative and Long-Term Management</h2>
+                             <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Immediate Post-Operative Care</h3>
+                            <p>Following surgery, the recipient is closely monitored in a specialized Transplant Intensive Care Unit (ICU). The medical team monitors vital signs, fluid balance, and initial kidney function. The average hospital stay for a recipient is approximately one week.</p>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Immunosuppressive Therapy</h3>
+                             <p>This is the cornerstone of long-term transplant success. The recipient must take a lifelong regimen of immunosuppressive medications to prevent their immune system from attacking the new organ. Adherence to this medication schedule is critical and non-negotiable.</p>
+                            <h3 className="text-2xl font-bold text-primary/90 mt-6 mb-4">Ongoing Monitoring</h3>
+                            <p>Recipients require regular, lifelong follow-up appointments with their nephrology team, including routine blood tests to monitor kidney function and drug levels, as well as management of potential side effects.</p>
+                        </section>
+
+                        <section id="outcomes" className="scroll-mt-20">
+                            <h2 className="text-3xl font-bold text-primary mb-4">Outcomes and Quality of Life</h2>
+                            <div className="bg-primary/10 p-6 rounded-lg">
+                                <p>A successful kidney transplant offers significant advantages over long-term dialysis. One-year success rates for living donor transplants are typically in the range of 90-95%.</p>
+                                <ul className="space-y-3 mt-4">
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Recipients are freed from the demanding schedule of dialysis and strict dietary restrictions.</span></li>
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Restoration of normal kidney function often leads to a disappearance of chronic fatigue and anemia.</span></li>
+                                    <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Many patients can return to full-time work, travel, and enjoy a significantly improved sense of well-being.</span></li>
+                                     <li className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Many women regain fertility and can have successful pregnancies post-transplant with careful medical supervision.</span></li>
+                                </ul>
+                                <p className="mt-4">Should a transplanted kidney eventually fail, a return to dialysis and evaluation for a subsequent transplant are viable options.</p>
+                            </div>
+                        </section>
+                        
                         <section id="questions" className="scroll-mt-20">
                             <h2 className="text-3xl font-bold text-primary mb-4">Questions for Your Healthcare Team</h2>
                             <Accordion type="single" collapsible className="w-full">
