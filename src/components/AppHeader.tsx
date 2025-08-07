@@ -197,10 +197,10 @@ export const AppHeader = () => {
                                 <div className="px-2">
                                   <HeaderSearch />
                                 </div>
-                                <Button variant="link" asChild><Link href="/kidney-health">Patient Education</Link></Button>
-                                <Button variant="link" asChild><a href="/#digital-toolkits">Toolkits</a></Button>
-                                <Button variant="link" asChild><a href="/#faq">FAQs</a></Button>
-                                <Button variant="link" asChild><a href="#contact">Contact</a></Button>
+                                <Button variant="ghost" asChild className="justify-start"><Link href="/kidney-health">Patient Education</Link></Button>
+                                <Button variant="ghost" asChild className="justify-start"><a href="/#digital-toolkits">Toolkits</a></Button>
+                                <Button variant="ghost" asChild className="justify-start"><a href="/#faq">FAQs</a></Button>
+                                <Button variant="ghost" asChild className="justify-start"><a href="/#contact">Contact</a></Button>
                             </div>
                         </SheetContent>
                     </Sheet>

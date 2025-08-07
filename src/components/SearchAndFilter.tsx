@@ -31,7 +31,7 @@ export const SearchAndFilter = ({
                         placeholder="Search for a topic..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="pl-10 text-base"
+                        className="pl-10 text-base h-12 text-lg"
                     />
                 </div>
             </div>

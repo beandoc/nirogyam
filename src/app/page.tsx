@@ -37,6 +37,7 @@ import {
   Download,
   Shield,
   BookOpen,
+  Mail,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -171,128 +172,6 @@ const Quiz = () => {
     );
 };
 
-const EgfrCalculator = () => {
-  const [egfrResult, setEgfrResult] = useState<number | null>(null);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      creatinine: 1.0,
-      age: 50,
-    },
-  });
-
-  const calculateEgfr = (values: z.infer<typeof formSchema>) => {
-    const { creatinine, age, sex } = values;
-    
-    const k = sex === 'female' ? 0.7 : 0.9;
-    const alpha = sex === 'female' ? -0.241 : -0.302;
-    const sexConstant = sex === 'female' ? 1.012 : 1;
-
-    const egfr = 142 * Math.pow(Math.min(creatinine / k, 1), alpha) * Math.pow(Math.max(creatinine / k, 1), -1.200) * Math.pow(0.9938, age) * sexConstant;
-    
-    return Math.round(egfr);
-  };
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const result = calculateEgfr(values);
-    setEgfrResult(result);
-  }
-
-  const getResultInterpretation = (egfr: number | null) => {
-    if (egfr === null) return null;
-    if (egfr >= 90) return { text: "Normal kidney function (Stage 1 if other signs of kidney damage)", color: "text-green-600" };
-    if (egfr >= 60) return { text: "Mildly decreased kidney function (Stage 2 if other signs of kidney damage)", color: "text-yellow-600" };
-    if (egfr >= 45) return { text: "Mild to moderately decreased kidney function (Stage 3a)", color: "text-orange-600" };
-    if (egfr >= 30) return { text: "Moderate to severely decreased kidney function (Stage 3b)", color: "text-orange-700" };
-    if (egfr >= 15) return { text: "Severely decreased kidney function (Stage 4)", color: "text-red-600" };
-    return { text: "Kidney failure (Stage 5)", color: "text-red-800" };
-  };
-
-  const interpretation = getResultInterpretation(egfrResult);
-
-  return (
-    <Card className="shadow-xl border-primary/20">
-        <CardContent className="pt-6">
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                        control={form.control}
-                        name="creatinine"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Serum Creatinine (mg/dL)</FormLabel>
-                                <FormControl>
-                                    <Input type="number" step="0.1" placeholder="e.g., 1.2" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="age"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Age (years)</FormLabel>
-                                <FormControl>
-                                    <Input type="number" placeholder="e.g., 55" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="sex"
-                        render={({ field }) => (
-                            <FormItem className="space-y-2">
-                                <FormLabel>Sex</FormLabel>
-                                <FormControl>
-                                    <RadioGroup
-                                        onValueChange={field.onChange}
-                                        defaultValue={field.value}
-                                        className="flex gap-4"
-                                    >
-                                        <FormItem className="flex items-center space-x-2 space-y-0">
-                                            <FormControl>
-                                                <RadioGroupItem value="male" />
-                                            </FormControl>
-                                            <FormLabel className="font-normal">Male</FormLabel>
-                                        </FormItem>
-                                        <FormItem className="flex items-center space-x-2 space-y-0">
-                                            <FormControl>
-                                                <RadioGroupItem value="female" />
-                                            </FormControl>
-                                            <FormLabel className="font-normal">Female</FormLabel>
-                                        </FormItem>
-                                    </RadioGroup>
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <Button type="submit" className="w-full">Calculate eGFR</Button>
-                </form>
-            </Form>
-
-            {egfrResult !== null && (
-                <div className="mt-6 pt-6 border-t">
-                    <p className="text-4xl font-bold text-primary text-center">{egfrResult} <span className="text-lg font-normal">mL/min/1.73m²</span></p>
-                    {interpretation && (
-                        <p className={`mt-2 text-lg font-semibold text-center ${interpretation.color}`}>{interpretation.text}</p>
-                    )}
-                    <p className="mt-4 text-sm text-foreground/80 text-center">
-                        This calculation uses the CKD-EPI 2021 equation. This result is an estimate. Please consult with your healthcare provider.
-                    </p>
-                </div>
-            )}
-        </CardContent>
-    </Card>
-  );
-};
-
-
 export default function NirogyamPage() {
     const [isClient, setIsClient] = useState(false);
     const [showAllPodcasts, setShowAllPodcasts] = useState(false);
@@ -302,50 +181,6 @@ export default function NirogyamPage() {
     useEffect(() => {
         setIsClient(true);
     }, []);
-
-    const ContactForm = () => {
-        const [name, setName] = useState('');
-        const [email, setEmail] = useState('');
-        const [message, setMessage] = useState('');
-
-        const handleSendMessage = () => {
-            const subject = encodeURIComponent(`Contact from ${name}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            );
-            window.location.href = `mailto:nirogyam93@gmail.com?subject=${subject}&body=${body}`;
-        };
-
-        return (
-            <Card className="max-w-lg mx-auto shadow-xl border-primary/20 bg-card">
-                <CardContent className="pt-6">
-                    <div className="space-y-4">
-                        <Input 
-                            type="text" 
-                            placeholder="Your Name" 
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <Input 
-                            type="email" 
-                            placeholder="Your Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <Textarea 
-                            placeholder="Your Message" 
-                            rows={5} 
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                        />
-                        <Button size="lg" className="w-full" onClick={handleSendMessage}>
-                            Send Message
-                        </Button>
-                    </div>
-                </CardContent>
-            </Card>
-        );
-    };
 
     const toolkits = [
         {
@@ -682,7 +517,7 @@ export default function NirogyamPage() {
         {
             title: "Your Thali, Your Health: How Food Fights Chronic Disease",
             minutesToRead: 5,
-            image: "https://placehold.co/600x400.png",
+            image: "/your-thali-your-health.png",
             aiHint: "healthy thali",
             description: "Good nutrition is a powerful tool that can help both prevent and manage chronic diseases. Learn how simple food choices can help you live a healthier, stronger life.",
             href: "/insights/your-thali-your-health"
@@ -741,7 +576,7 @@ export default function NirogyamPage() {
                                 <CardContent className="flex-grow" />
                                 <CardFooter>
                                      <Button asChild className="w-full">
-                                        <Link href="/kidney-health">Learn About Dialysis</Link>
+                                        <Link href="/kidney-health?q=dialysis">Learn About Dialysis</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -811,19 +646,21 @@ export default function NirogyamPage() {
                 </section>
 
                 <section id="egfr-calculator-section" className="py-20 bg-background">
-                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                         <div>
-                            <h3 className="text-3xl font-bold text-primary mb-6">eGFR Calculator</h3>
-                            <p className="text-lg text-foreground/80 mb-6">
-                                The estimated Glomerular Filtration Rate (eGFR) is a key measure of kidney function. Use our calculator to get an estimate based on your lab results.
-                            </p>
-                            <Button size="lg" asChild>
-                                <Link href="/egfr-calculator">Go to Calculator Page<ArrowRight className="ml-2 h-4 w-4"/></Link>
-                            </Button>
-                        </div>
-                        <div>
-                            <EgfrCalculator />
-                        </div>
+                    <div className="container mx-auto px-4">
+                        <Card className="overflow-hidden md:grid md:grid-cols-2 items-center shadow-xl border-primary/20">
+                            <div className="p-8 md:p-12">
+                                <h3 className="text-3xl font-bold text-primary mb-4">eGFR Calculator</h3>
+                                <p className="text-lg text-foreground/80 mb-6">
+                                    The estimated Glomerular Filtration Rate (eGFR) is a key measure of kidney function. Navigate to our dedicated calculator page to get an estimate based on your lab results.
+                                </p>
+                                <Button size="lg" asChild>
+                                    <Link href="/egfr-calculator">Go to Calculator Page<ArrowRight className="ml-2 h-4 w-4"/></Link>
+                                </Button>
+                            </div>
+                            <div className="bg-primary/5 p-8 h-full">
+                                <Image src="/calculator_image.png" alt="Illustration of a calculator and medical icons" width={500} height={400} className="rounded-lg" data-ai-hint="calculator medical" />
+                            </div>
+                        </Card>
                     </div>
                 </section>
 
@@ -1017,9 +854,22 @@ export default function NirogyamPage() {
 
                 <section id="contact" className="py-20 bg-card">
                     <div className="container mx-auto px-4 text-center">
-                        <h3 className="text-3xl font-bold text-primary mb-4">Share Your Story</h3>
-                        <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">Have questions, need support, or want to tell your story? or Write a testimonial for the department...</p>
-                        <ContactForm />
+                        <div className="max-w-2xl mx-auto">
+                            <Card className="shadow-xl border-primary/20">
+                                <CardHeader>
+                                    <div className="mx-auto bg-primary/10 rounded-full h-20 w-20 flex items-center justify-center mb-4">
+                                        <Mail className="h-10 w-10 text-primary" />
+                                    </div>
+                                    <CardTitle className="text-3xl font-bold text-primary">Share Your Story</CardTitle>
+                                    <CardDescription className="text-lg">Have questions, need support, or want to tell your story? We're here to listen.</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <Button size="lg" asChild>
+                                        <a href="mailto:nirogyam93@gmail.com">Send a Message</a>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </div>
                 </section>
 
