@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/nephnuggets-sle",
+        "destination": "https://kidneydoc.my.canva.site/nephnuggets-sle"
+      }
+    ]
+  }
