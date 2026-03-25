@@ -1035,8 +1035,7 @@ export default function NirogyamPage() {
                         <div className="space-y-6">
                             <h4 className="text-lg font-bold font-heading text-white uppercase tracking-widest">Medical Center</h4>
                             <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 inline-block text-left w-full max-w-sm">
-                                <p className="text-white font-medium mb-1">Command Hospital</p>
-                                <p className="text-slate-400">Department of Nephrology</p>
+                                <p className="text-white font-medium mb-1">Department of Nephrology</p>
                                 <p className="text-slate-400">Pune, Maharashtra</p>
                             </div>
                         </div>
