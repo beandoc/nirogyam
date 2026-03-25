@@ -565,25 +565,31 @@ export default function NirogyamPage() {
     return (
         <div className="bg-background text-foreground flex-1 flex flex-col min-h-screen">
             <AppHeader />
-            <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmdjl8il0001prscdldia2w3v'></zapier-interfaces-chatbot-embed>
 
             <main className="flex-grow">
-                <section className="hero-pattern py-20 md:py-24">
-                    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-4 tracking-tight">Empowering Your Kidney Health Journey</h2>
-                            <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl">A comprehensive, compassionate resource for understanding kidney health, managing kidney disease, and finding the support you need.</p>
-                             <div className="flex flex-wrap gap-4">
-                                <Button size="lg" asChild>
-                                    <a href="#assess-kidney">Assess Your Risk Now</a>
+                <section className="hero-pattern py-20 md:py-32 overflow-hidden">
+                    <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="text-center lg:text-left space-y-8">
+                            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black font-heading bg-clip-text text-transparent bg-gradient-to-br from-primary via-blue-700 to-indigo-900 leading-[1.1] tracking-tight animate-fade-in-up">
+                                Empowering Your <br className="hidden md:block" /> Kidney Health Journey
+                            </h2>
+                            <p className="text-lg md:text-2xl text-foreground/60 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up-delay">
+                                A sovereign, compassionate resource for understanding kidney health and discovering the path to vitality through clinical education.
+                            </p>
+                             <div className="flex flex-wrap justify-center lg:justify-start gap-5 animate-fade-in-up-delay pt-4">
+                                <Button size="lg" className="h-14 px-8 rounded-full text-lg font-bold shadow-2xl shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1" asChild>
+                                    <a href="#assess-kidney">Assess Your Risk</a>
                                 </Button>
-                                <Button size="lg" variant="outline" asChild>
-                                    <Link href="/kidney-health">Explore Topics</Link>
+                                <Button size="lg" variant="outline" className="h-14 px-8 rounded-full text-lg font-bold backdrop-blur-md bg-white/30 border-primary/10 hover:bg-white/50 transition-all hover:-translate-y-1" asChild>
+                                    <Link href="/kidney-health">Explore Repository</Link>
                                 </Button>
                             </div>
                         </div>
-                        <div>
-                            <Image src="/herosection_image.png" alt="Illustration of doctors and a patient discussing kidney health" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="doctors patient kidney" />
+                        <div className="relative animate-float lg:block">
+                            <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-indigo-500/10 blur-3xl opacity-50 rounded-full" />
+                            <div className="relative glass-card p-2 rounded-[2.5rem] shadow-2xl overflow-hidden ring-1 ring-primary/5">
+                                <Image src="/herosection_image.png" alt="Medical Illustration" width={800} height={600} className="rounded-[2rem] object-cover w-full h-auto" priority />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -597,10 +603,10 @@ export default function NirogyamPage() {
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
+                            <Card className="glass-card hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><BookOpen className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Patient Education</CardTitle>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3 shadow-inner"><BookOpen className="h-10 w-10 text-primary" strokeWidth={1.5} /></div>
+                                    <CardTitle className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 text-2xl">Patient Education</CardTitle>
                                     <CardDescription>Browse our full library of articles on kidney health, diet, and treatment.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow" />
@@ -610,10 +616,10 @@ export default function NirogyamPage() {
                                     </Button>
                                 </CardFooter>
                             </Card>
-                             <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
+                            <Card className="glass-card hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col animate-fade-in-up" style={{ animationDelay: '200ms' }}>
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Droplet className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Dialysis Information</CardTitle>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3 shadow-inner"><Droplet className="h-10 w-10 text-primary" strokeWidth={1.5} /></div>
+                                    <CardTitle className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 text-2xl">Dialysis Information</CardTitle>
                                     <CardDescription>Learn about treatment options like Hemodialysis and Peritoneal Dialysis.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow" />
@@ -623,10 +629,10 @@ export default function NirogyamPage() {
                                     </Button>
                                 </CardFooter>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
+                            <Card className="glass-card hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col animate-fade-in-up" style={{ animationDelay: '300ms' }}>
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Users className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Transplant Guide</CardTitle>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3 shadow-inner"><Users className="h-10 w-10 text-primary" strokeWidth={1.5} /></div>
+                                    <CardTitle className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 text-2xl">Transplant Guide</CardTitle>
                                     <CardDescription>Explore the process, benefits, and risks of kidney transplantation.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow" />
@@ -636,10 +642,10 @@ export default function NirogyamPage() {
                                     </Button>
                                 </CardFooter>
                             </Card>
-                            <Card className="hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
+                            <Card className="glass-card hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col animate-fade-in-up" style={{ animationDelay: '400ms' }}>
                                 <CardHeader className="items-center">
-                                    <div className="p-4 bg-primary/10 rounded-full mb-3"><Shield className="h-10 w-10 text-primary"/></div>
-                                    <CardTitle className="text-primary text-2xl">Glomerulonephritis</CardTitle>
+                                    <div className="p-4 bg-primary/10 rounded-full mb-3 shadow-inner"><Shield className="h-10 w-10 text-primary" strokeWidth={1.5} /></div>
+                                    <CardTitle className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 text-2xl">Glomerulonephritis</CardTitle>
                                     <CardDescription>Learn about this group of diseases that injure the part of the kidney that filters blood.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow" />
@@ -990,19 +996,19 @@ export default function NirogyamPage() {
                     </div>
                 </section>
 
-                <section id="whatsapp-cta" className="py-16 bg-green-50">
-                    <div className="container mx-auto px-4 text-center">
-                        <div className="max-w-2xl mx-auto">
-                            <div className="flex justify-center mb-4">
-                               <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 fill-green-600">
+                <section id="whatsapp-cta" className="py-24 bg-gradient-to-br from-emerald-50 to-teal-50 border-y border-emerald-100/50">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-4xl mx-auto text-center space-y-8">
+                            <div className="inline-flex p-4 bg-white rounded-[2rem] shadow-xl shadow-emerald-900/5 ring-1 ring-emerald-100 animate-float">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 fill-emerald-600">
                                     <path d="M17.472 14.382c-.297-.149-.88-.436-1.017-.486s-.282-.08-.41.08c-.128.16-.49.614-.602.737-.112.123-.224.137-.41.04-.187-.097-.796-.293-1.517-.925-.568-.487-.945-1.09-.945-1.09s-.04-.055.03-.105c.06-.05.136-.123.204-.195.07-.07.09-.123.136-.203.048-.08.024-.15-.014-.24-.038-.09-.41-.986-.562-1.355-.15-.37-.304-.32-.41-.326-.102-.005-.224-.005-.346-.005s-.33.04-.49.195c-.16.155-.613.59-.613,1.44s.627,1.66.713,1.78c.085.12.97,1.48,2.34,2.05.34.14.58.22.77.28.32.09.62.08.86.05.28-.04.88-.36,1-1.004.12-.644.12-.97.08-1.014s-.07-.07-.15-.123zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.15c-4.477 0-8.125-3.648-8.125-8.125S7.523 3.875 12 3.875 20.125 7.523 20.125 12 16.477 20.15 12 20.15z" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-bold text-green-800 mb-4">Stay Connected on WhatsApp</h3>
-                            <p className="text-lg text-green-700/80 mb-8 max-w-xl mx-auto">Join our WhatsApp channel for the latest updates, health tips, and a community support directly on your phone.</p>
-                            <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
+                            <h3 className="text-4xl md:text-5xl font-black font-heading text-emerald-900 tracking-tight">Healthy Kidneys, Healthy Life</h3>
+                            <p className="text-xl text-emerald-800/60 max-w-2xl mx-auto leading-relaxed">Join our WhatsApp sanctuary for daily wisdom, clinical updates, and a community that walks the path to vitality together.</p>
+                            <Button size="lg" asChild className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-10 h-14 text-lg font-bold shadow-lg shadow-emerald-200 transition-all hover:-translate-y-1">
                                 <a href="https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R" target="_blank" rel="noopener noreferrer">
-                                    Follow Our Channel
+                                    Join Our Community
                                 </a>
                             </Button>
                         </div>
@@ -1010,27 +1016,35 @@ export default function NirogyamPage() {
                 </section>
             </main>
 
-            <footer className="bg-primary/90 text-primary-foreground">
-                <div className="container mx-auto px-4 py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center md:text-left">
-                        <div>
-                            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
-                            <ul className="space-y-2">
-                                <li><a href="#about" className="hover:underline opacity-80 hover:opacity-100">About Us</a></li>
-                                <li><Link href="/kidney-health" className="hover:underline opacity-80 hover:opacity-100">Patient Education</Link></li>
-                                <li><a href="#faq" className="hover:underline opacity-80 hover:opacity-100">FAQs</a></li>
-                                <li><a href="#contact" className="hover:underline opacity-80 hover:opacity-100">Contact</a></li>
+            <footer className="bg-slate-900 text-slate-300">
+                <div className="container mx-auto px-4 py-20 text-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20 text-center md:text-left">
+                        <div className="space-y-6">
+                            <h4 className="text-2xl font-black font-heading text-white tracking-tight">Nirogyam</h4>
+                            <p className="text-slate-400 leading-relaxed max-w-xs mx-auto md:mx-0">Empowering global kidney health through clinical education and community support.</p>
+                        </div>
+                        <div className="space-y-6">
+                            <h4 className="text-lg font-bold font-heading text-white uppercase tracking-widest">Navigation</h4>
+                            <ul className="space-y-4">
+                                <li><a href="#about" className="hover:text-primary transition-colors">About Nirogyam</a></li>
+                                <li><Link href="/kidney-health" className="hover:text-primary transition-colors">Kidney Health Repository</Link></li>
+                                <li><a href="#faq" className="hover:text-primary transition-colors">Strategic FAQs</a></li>
+                                <li><a href="#contact" className="hover:text-primary transition-colors">Direct Contact</a></li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
-                            <ul className="space-y-2 opacity-80">
-                                <li>Dept of Nephrology Command Hospital, Pune.</li>
-                            </ul>
+                        <div className="space-y-6">
+                            <h4 className="text-lg font-bold font-heading text-white uppercase tracking-widest">Medical Center</h4>
+                            <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 inline-block text-left w-full max-w-sm">
+                                <p className="text-white font-medium mb-1">Command Hospital</p>
+                                <p className="text-slate-400">Department of Nephrology</p>
+                                <p className="text-slate-400">Pune, Maharashtra</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="text-center text-sm border-t border-primary-foreground/20 pt-6 mt-6">
-                        <p>© 2025 Nirogyam. All rights reserved.</p>
+                    <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-center items-center gap-4 text-sm font-medium">
+                        <p className="text-slate-500">© 2026 Nirogyam Digital Initiative.</p>
+                        <span className="hidden md:block h-1 w-1 bg-slate-700 rounded-full" />
+                        <p className="text-slate-500">All rights reserved by Department of Nephrology.</p>
                     </div>
                 </div>
             </footer>

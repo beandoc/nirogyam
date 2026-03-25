@@ -1,7 +1,7 @@
 
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/sheet"
 import { Menu, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { LanguageToggle } from '@/components/LanguageToggle';
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -110,14 +111,14 @@ const HeaderSearch = () => {
     };
 
     return (
-        <form onSubmit={handleSearch} className="relative w-full max-w-xs">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <form onSubmit={handleSearch} className="relative w-full max-w-sm group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 group-focus-within:text-primary transition-colors" />
             <Input
                 type="text"
-                placeholder="Search topics..."
+                placeholder="Search medical resources..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="pl-10 text-base bg-background"
+                className="pl-11 h-11 text-base bg-slate-100/50 border-none rounded-full ring-0 focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:bg-white transition-all shadow-inner"
             />
         </form>
     );
@@ -125,28 +126,47 @@ const HeaderSearch = () => {
 
 
 export const AppHeader = () => {
-    const triggerStyles = "bg-transparent text-foreground hover:bg-accent/50 data-[state=open]:bg-accent/50"
+    const triggerStyles = "bg-transparent text-foreground hover:bg-primary/10 data-[state=open]:bg-primary/10 transition-colors font-medium rounded-full px-5 h-11"
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     
     return (
-        <header className="bg-card/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-            <div className="container mx-auto px-4 py-3 flex justify-between items-center gap-4">
-                <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-                    <Image src="/nephrodeptlogo.png" alt="Nirogyam Logo" width={40} height={40} className="rounded-full" />
-                    <h1 className="text-2xl font-bold text-primary">Nirogyam</h1>
+        <header className={cn(
+            "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-3",
+            scrolled 
+                ? "bg-white/80 backdrop-blur-2xl shadow-xl shadow-primary/5 border-b border-primary/10 py-2" 
+                : "bg-transparent border-b border-transparent"
+        )}>
+            <div className="container mx-auto px-4 flex justify-between items-center gap-6 lg:gap-12">
+                <Link href="/" className="flex items-center gap-2 md:gap-4 group transition-all shrink-0">
+                    <div className="relative overflow-hidden rounded-full shadow-2xl ring-2 ring-primary/10 group-hover:ring-primary/40 transition-all duration-500">
+                        <Image src="/nephrodeptlogo.png" alt="Nirogyam Logo" width={48} height={48} className="rounded-full transform group-hover:scale-110 transition-transform duration-700 w-10 h-10 md:w-12 md:h-12" />
+                    </div>
+                    <div className="flex flex-col">
+                        <h1 className="text-xl md:text-3xl font-black font-heading tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-indigo-700 leading-tight">Nirogyam</h1>
+                        <span className="text-[9px] md:text-[11px] h-3 uppercase tracking-[0.3em] font-black text-primary/60 leading-none">Kidney Health</span>
+                    </div>
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-4 flex-grow">
+                <nav className="hidden xl:flex items-center gap-4 flex-grow">
                    <NavigationMenu>
                       <NavigationMenuList className="gap-2">
                         <NavigationMenuItem>
                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), triggerStyles)}>
-                             <Link href="/kidney-health">Patient Education</Link>
+                             <Link href="/kidney-health">Knowledge Center</Link>
                            </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>Patient Resources</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>Clinical Resources</NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            <ul className="grid w-[450px] gap-4 p-8 md:w-[600px] md:grid-cols-2 lg:w-[750px] glass-card rounded-[2rem] border-primary/5 shadow-2xl">
                               {resources.map((component) => (
                                 <ListItem
                                   key={component.title}
@@ -160,9 +180,9 @@ export const AppHeader = () => {
                           </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                           <NavigationMenuTrigger className={triggerStyles}>About</NavigationMenuTrigger>
+                           <NavigationMenuTrigger className={triggerStyles}>The Journey</NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] ">
+                            <ul className="grid w-[400px] gap-4 p-8 md:w-[500px] glass-card rounded-[2rem] border-primary/5 shadow-2xl">
                               {aboutUs.map((component) => (
                                 <ListItem
                                   key={component.title}
@@ -177,30 +197,52 @@ export const AppHeader = () => {
                         </NavigationMenuItem>
                       </NavigationMenuList>
                     </NavigationMenu>
-                    <div className="flex-grow justify-end hidden lg:flex">
-                        <HeaderSearch />
+                    <div className="flex-grow justify-end flex items-center gap-6">
+                        <div className="hidden lg:flex items-center gap-6">
+                            <HeaderSearch />
+                            <LanguageToggle />
+                        </div>
                     </div>
                 </nav>
-                <div className="md:hidden">
+
+                <div className="xl:hidden flex items-center gap-3">
+                    <div className="hidden sm:block">
+                        <LanguageToggle />
+                    </div>
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon">
-                                <Menu className="h-6 w-6" />
-                                <span className="sr-only">Open menu</span>
+                            <Button variant="ghost" size="icon" className="hover:bg-primary/10 rounded-full transition-all active:scale-95">
+                                <Menu className="h-7 w-7 text-primary" strokeWidth={2} />
+                                <span className="sr-only">Open navigation menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right">
-                            <SheetHeader>
-                                <SheetTitle>Nirogyam</SheetTitle>
-                            </SheetHeader>
-                            <div className="flex flex-col space-y-4 mt-8">
-                                <div className="px-2">
-                                  <HeaderSearch />
+                        <SheetContent side="right" className="glass-card border-none bg-white/95 backdrop-blur-2xl w-full sm:max-w-md p-0 overflow-hidden">
+                            <div className="h-full flex flex-col p-8 md:p-12">
+                                <SheetHeader className="mb-12 text-left">
+                                    <div className="inline-flex mb-4">
+                                         <Image src="/nephrodeptlogo.png" alt="Logo" width={40} height={40} className="rounded-full shadow-lg" />
+                                    </div>
+                                    <SheetTitle className="text-4xl font-black font-heading bg-clip-text text-transparent bg-gradient-to-br from-primary to-indigo-900 tracking-tighter">Navigate Health</SheetTitle>
+                                </SheetHeader>
+                                <div className="flex flex-col space-y-4 flex-grow overflow-y-auto pr-4 -mr-4 scrollbar-hidden">
+                                     <div className="mb-8">
+                                        <p className="text-sm font-black uppercase tracking-widest text-muted-foreground mb-4">Search Resources</p>
+                                        <HeaderSearch />
+                                    </div>
+                                    <p className="text-sm font-black uppercase tracking-widest text-muted-foreground mb-2">Discovery</p>
+                                    <Button variant="ghost" asChild className="justify-start text-xl font-bold font-heading h-14 hover:bg-primary/5 hover:translate-x-2 transition-all duration-300 rounded-2xl px-6"><Link href="/kidney-health">Knowledge Repository</Link></Button>
+                                    <Button variant="ghost" asChild className="justify-start text-xl font-bold font-heading h-14 hover:bg-primary/5 hover:translate-x-2 transition-all duration-300 rounded-2xl px-6"><a href="/#digital-toolkits">Interactive Toolkits</a></Button>
+                                    <Button variant="ghost" asChild className="justify-start text-xl font-bold font-heading h-14 hover:bg-primary/5 hover:translate-x-2 transition-all duration-300 rounded-2xl px-6"><a href="/#faq">Patient FAQs</a></Button>
+                                    <Button variant="ghost" asChild className="justify-start text-xl font-bold font-heading h-14 hover:bg-primary/5 hover:translate-x-2 transition-all duration-300 rounded-2xl px-6"><a href="/#contact">Connect with Us</a></Button>
+                                    
+                                    <div className="pt-8 sm:hidden">
+                                        <p className="text-sm font-black uppercase tracking-widest text-muted-foreground mb-4">Language Select</p>
+                                        <LanguageToggle />
+                                    </div>
                                 </div>
-                                <Button variant="ghost" asChild className="justify-start"><Link href="/kidney-health">Patient Education</Link></Button>
-                                <Button variant="ghost" asChild className="justify-start"><a href="/#digital-toolkits">Toolkits</a></Button>
-                                <Button variant="ghost" asChild className="justify-start"><a href="/#faq">FAQs</a></Button>
-                                <Button variant="ghost" asChild className="justify-start"><a href="/#contact">Contact</a></Button>
+                                <div className="pt-12 mt-auto">
+                                    <p className="text-xs text-muted-foreground/60 italic leading-relaxed">Dedicated to the global kidney health community through education and empowerment.</p>
+                                </div>
                             </div>
                         </SheetContent>
                     </Sheet>
