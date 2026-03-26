@@ -1,0 +1,102 @@
+
+> nextn@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.14
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 3.4s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/74) ...
+   Generating static pages (18/74) 
+   Generating static pages (36/74) 
+   Generating static pages (55/74) 
+ ✓ Generating static pages (74/74)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                Size  First Load JS
+┌ ○ /                                                     21 kB         213 kB
+├ ○ /_not-found                                            1 kB         103 kB
+├ ○ /av-fistula                                         4.18 kB         168 kB
+├ ○ /ckd-explained                                      3.35 kB         167 kB
+├ ○ /ckd-explained/summary                               1.9 kB         165 kB
+├ ○ /ckd-explained/summary-hindi                        2.38 kB         166 kB
+├ ○ /creatinine-explained                               4.04 kB         170 kB
+├ ○ /creatinine-explained/summary                       1.78 kB         165 kB
+├ ○ /creatinine-explained/summary-hindi                 2.18 kB         166 kB
+├ ○ /egfr-calculator                                     3.7 kB         193 kB
+├ ○ /egfr-explained                                     4.84 kB         168 kB
+├ ○ /egfr-explained/summary                             1.89 kB         165 kB
+├ ○ /egfr-explained/summary-hindi                       2.31 kB         166 kB
+├ ○ /glomerulonephritis                                 2.31 kB         166 kB
+├ ○ /glomerulonephritis/causes                          3.39 kB         167 kB
+├ ○ /glomerulonephritis/clinical-presentation            3.6 kB         167 kB
+├ ○ /glomerulonephritis/diagnosis                       3.87 kB         167 kB
+├ ○ /glomerulonephritis/introduction                    3.12 kB         167 kB
+├ ○ /glomerulonephritis/management                      3.31 kB         167 kB
+├ ○ /good-nutrition                                     4.36 kB         168 kB
+├ ○ /good-nutrition/summary                              1.9 kB         165 kB
+├ ○ /good-nutrition/summary-hindi                       2.38 kB         166 kB
+├ ○ /hemodialysis                                       6.43 kB         173 kB
+├ ○ /how-kidneys-work                                     190 B         164 kB
+├ ○ /how-kidneys-work/summary                           1.66 kB         165 kB
+├ ○ /how-kidneys-work/summary-hindi                     2.07 kB         166 kB
+├ ○ /insights/are-you-unknowingly-harming-your-kidneys  3.43 kB         167 kB
+├ ○ /insights/beyond-drinking-water-uti-prevention         4 kB         170 kB
+├ ○ /insights/creatinine-explained                      2.79 kB         166 kB
+├ ○ /insights/dangerous-trio                            3.39 kB         167 kB
+├ ○ /insights/dangerous-trio/summary                    2.01 kB         166 kB
+├ ○ /insights/dangerous-trio/summary-hindi              2.55 kB         166 kB
+├ ○ /insights/dialysis-vs-transplant                    5.05 kB         171 kB
+├ ○ /insights/food-guide-for-urinary-health             3.63 kB         170 kB
+├ ○ /insights/high-bp-secret-victim                     4.11 kB         171 kB
+├ ○ /insights/high-phosphorus-explained                 3.46 kB         167 kB
+├ ○ /insights/high-uric-acid                             3.5 kB         167 kB
+├ ○ /insights/hypertension-and-kidney-disease           3.62 kB         170 kB
+├ ○ /insights/inherited-kidney-disease                  3.61 kB         167 kB
+├ ○ /insights/kidney-damage-reversal                    4.04 kB         170 kB
+├ ○ /insights/kidney-failure-explained                  4.45 kB         168 kB
+├ ○ /insights/kidney-function-tests-explained           3.27 kB         167 kB
+├ ○ /insights/kidney-stones-vs-failure                  4.36 kB         171 kB
+├ ○ /insights/kidneys-explained                         4.25 kB         168 kB
+├ ○ /insights/leaking-when-you-laugh                    4.33 kB         171 kB
+├ ○ /insights/managing-weight-and-bp                     4.1 kB         171 kB
+├ ○ /insights/protein-diet-and-kidneys                  2.85 kB         166 kB
+├ ○ /insights/recurrent-utis                            4.17 kB         171 kB
+├ ○ /insights/seeing-red                                 3.8 kB         170 kB
+├ ○ /insights/slowing-down-ckd                          3.07 kB         167 kB
+├ ○ /insights/water-myths-busted                        3.21 kB         167 kB
+├ ○ /insights/yearly-check-up                           3.75 kB         170 kB
+├ ○ /insights/your-thali-your-health                    3.54 kB         167 kB
+├ ○ /kidney-function-tests                                681 B         167 kB
+├ ○ /kidney-health                                      3.78 kB         167 kB
+├ ○ /kidney-stones                                      6.03 kB         172 kB
+├ ○ /kidney-stones/summary                              1.75 kB         165 kB
+├ ○ /kidney-stones/summary-hindi                        2.12 kB         166 kB
+├ ○ /kidney-transplant                                  7.27 kB         174 kB
+├ ○ /living-with-single-kidney                            196 B         164 kB
+├ ○ /peritoneal-dialysis                                4.99 kB         171 kB
+├ ○ /phosphorus-explained                                 196 B         164 kB
+├ ○ /potassium-explained                                  196 B         164 kB
+├ ○ /protein-explained                                    196 B         164 kB
+├ ○ /renal-nutrition                                    4.51 kB         171 kB
+├ ○ /sodium-explained                                   5.35 kB         172 kB
+├ ○ /stages-of-ckd                                      5.56 kB         172 kB
+├ ○ /test                                                 297 B         164 kB
+├ ƒ /toolkits/[toolkitId]                                 700 B         103 kB
+├ ○ /urinary-tract-infection                             4.8 kB         168 kB
+├ ○ /urinary-tract-infection/summary                    1.89 kB         165 kB
+└ ○ /urinary-tract-infection/summary-hindi              2.38 kB         166 kB
++ First Load JS shared by all                            102 kB
+  ├ chunks/1255-dfb5f8d642ae4426.js                     45.7 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js                 54.2 kB
+  └ other shared chunks (total)                         1.94 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -4,6 +4,20 @@ import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/lib/utils';
 import { ChatbotBubble } from '@/components/ChatbotBubble';
 
+import { Inter, Outfit } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
+
 export const metadata: Metadata = {
   title: 'Nirogyam - Kidney Health Education',
   description: 'Your comprehensive resource for understanding kidney health, managing kidney disease, and finding support.',
@@ -15,11 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className={cn("light", inter.variable, outfit.variable)}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
         <script dangerouslySetInnerHTML={{__html: `
             // DOM Stability Guard (prevents translation-related crashes)
             if (typeof Node === 'function' && Node.prototype) {
